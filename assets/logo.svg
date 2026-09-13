@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="title">
+  <title id="title">Naive Icons</title>
+  <rect x="12" y="12" width="488" height="488" rx="116" fill="#E9C46A" stroke="#264653" stroke-width="24" stroke-linejoin="round"/>
+  <g transform="translate(256 256) scale(0.82) translate(-256 -256) translate(0 -10)">
+    <path d="M256 85 L341 235 L459 235 L363 331 L395 448 L256 363 L117 448 L149 331 L53 235 L171 235 Z"
+          fill="#E76F51" stroke="#264653" stroke-width="24" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="204" cy="266" r="22" fill="#264653"/>
+    <circle cx="308" cy="266" r="22" fill="#264653"/>
+    <path d="M214 330 Q256 372 298 330" fill="none" stroke="#264653" stroke-width="28" stroke-linecap="round"/>
+  </g>
+</svg>

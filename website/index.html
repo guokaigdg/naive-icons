@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Naive Icons — 手绘风格的 React SVG 图标库</title>
+<meta name="description" content="Naive Icons 是一套手绘 naive folk art 风格的 SVG 图标库。101 个原创图标，48×48 画布、3.5 粗描边、9 色复古调色板，为 React 与 TypeScript 打造，MIT 协议。">
+<meta name="author" content="Naive Icons">
+<meta name="theme-color" content="#fbf6ea">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Naive Icons — 手绘风格的 React SVG 图标库">
+<meta property="og:description" content="101 个手绘风格原创 SVG 图标，统一 48×48 画布与 3.5 粗描边，为 React 与 TypeScript 打造。">
+<meta property="og:site_name" content="Naive Icons">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Naive Icons — 手绘风格的 React SVG 图标库">
+<meta name="twitter:description" content="101 个手绘风格原创 SVG 图标，为 React 与 TypeScript 打造。">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  /* 首屏前定主题，避免深浅色切换时的闪烁 */
+  (function () {
+    try {
+      var saved = localStorage.getItem('naive-icons-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#1c1a16' : '#fbf6ea');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip" href="#icons">跳到图标库</a>
+
+<!-- ══════════════════════════════════════════════════════════ 顶栏 -->
+<header class="topbar">
+  <div class="shell topbar__inner">
+    <a class="brand" href="#top" aria-label="Naive Icons 首页">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#264653" stroke-width="3" stroke-linejoin="round">
+          <rect width="48" height="48" rx="10" fill="#E9C46A"/>
+          <path d="M24 8 L32 22 L43 22 L34 31 L37 42 L24 34 L11 42 L14 31 L5 22 L16 22 Z" fill="#E76F51"/>
+          <circle cx="19" cy="25" r="2.1" fill="#264653" stroke="none"/>
+          <circle cx="29" cy="25" r="2.1" fill="#264653" stroke="none"/>
+          <path d="M20 31 Q24 35 28 31" stroke="#264653" stroke-width="2.8" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand__name">Naive Icons</span>
+    </a>
+
+    <nav class="topnav" aria-label="主导航">
+      <a href="#icons">图标</a>
+      <a href="#usage">使用</a>
+      <a href="#system">设计规范</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+
+    <div class="topbar__actions">
+      <button class="iconbtn" id="themeToggle" type="button" aria-label="切换深浅色主题" title="切换深浅色主题">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path id="themeIconPath" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+      </button>
+      <a class="btn btn--solid btn--sm" href="#usage">开始使用</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ════════════════════════════════════════════════════════ Hero -->
+  <section class="hero">
+    <div class="shell hero__inner">
+      <div>
+        <p class="pill"><b>v1.0.0</b> MIT 协议 · 零运行时依赖</p>
+
+        <h1 class="hero__title">
+          手绘质感的图标<br>
+          让界面<em>有温度<svg class="squiggle" viewBox="0 0 120 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7 Q16 2 30 6 T60 5 T92 6 T118 4" fill="none" stroke="#E9C46A" stroke-width="5" stroke-linecap="round"/></svg></em>
+        </h1>
+
+        <p class="hero__lead">
+          一套 naive folk art 风格的 SVG 图标库。统一的 48×48 画布、3.5 粗描边与 9 色复古调色板，
+          刻意保留手绘特有的笨拙感 —— 有些图标还带着一对小眼睛和微笑。
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--solid" href="#icons">浏览 101 个图标</a>
+          <a class="btn btn--line" href="#usage">查看文档</a>
+        </div>
+
+        <div class="cmd">
+          <span class="cmd__sign" aria-hidden="true">$</span>
+          <code>npm install naive-icons</code>
+          <button type="button" data-copy="npm install naive-icons" data-copy-label="安装命令">复制</button>
+        </div>
+
+        <dl class="stats">
+          <div><dt data-count="101">101</dt><dd>原创图标</dd></div>
+          <div><dt>48×48</dt><dd>统一画布</dd></div>
+          <div><dt>9 色</dt><dd>复古调色板</dd></div>
+          <div><dt>0 KB</dt><dd>运行时依赖</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero__stage" id="heroStage" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════ 图标浏览器 -->
+  <section class="sec" id="icons">
+    <div class="shell">
+      <header class="sec__head">
+        <p class="eyebrow">Icon Explorer</p>
+        <h2 class="sec__title">全部图标</h2>
+        <p class="sec__lead">
+          搜索、按分类筛选，实时调整尺寸与描边颜色。点击任意图标查看 React 用法、复制代码或下载 SVG。
+        </p>
+      </header>
+
+      <div class="explorer">
+       <div class="explorer__bar">
+        <div class="explorer__tools">
+          <div class="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                 stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/>
+            </svg>
+            <input id="searchInput" type="search" placeholder="搜索图标，例如 home、企鹅、购物车"
+                   autocomplete="off" spellcheck="false" aria-label="搜索图标">
+            <button class="search__clear" id="searchClear" type="button" aria-label="清空搜索" hidden>&times;</button>
+          </div>
+
+          <div class="tools__group">
+            <label class="tool" for="sizeRange">
+              <span>尺寸</span>
+              <input id="sizeRange" type="range" min="16" max="72" step="2" value="55" aria-label="图标尺寸">
+              <output id="sizeValue" for="sizeRange">55</output>
+            </label>
+
+            <div class="tool">
+              <span>描边</span>
+              <div class="swatches" id="colorSwatches" role="group" aria-label="描边颜色"></div>
+            </div>
+
+            <div class="segmented" role="group" aria-label="预览背景">
+              <button type="button" data-bg="auto" aria-pressed="true">默认</button>
+              <button type="button" data-bg="dark" aria-pressed="false">深色</button>
+              <button type="button" data-bg="grid" aria-pressed="false">网格</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="chips" id="chips" role="group" aria-label="图标分类"></div>
+
+        <div class="explorer__status">
+          <span id="resultCount" role="status" aria-live="polite">共 101 个图标</span>
+          <button class="linkbtn" type="button" id="resetBtn">重置筛选</button>
+        </div>
+       </div>
+
+        <div class="grid" id="grid" data-bg="auto"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════ 使用 -->
+  <section class="sec sec--soft" id="usage">
+    <div class="shell">
+      <header class="sec__head">
+        <p class="eyebrow">Getting Started</p>
+        <h2 class="sec__title">使用方式</h2>
+        <p class="sec__lead">
+          按需引入 React 组件，或直接使用标准 SVG 源文件。每个图标都继承原生 SVG 属性，
+          可自由传入 className、onClick 与内联样式。
+        </p>
+      </header>
+
+      <div class="codetabs" role="tablist" aria-label="使用示例">
+        <button type="button" role="tab" id="ct-install" aria-controls="cp-install" data-code="install" aria-selected="true">安装</button>
+        <button type="button" role="tab" id="ct-react" aria-controls="cp-react" data-code="react" aria-selected="false">React</button>
+        <button type="button" role="tab" id="ct-svg" aria-controls="cp-svg" data-code="svg" aria-selected="false">SVG</button>
+        <button type="button" role="tab" id="ct-types" aria-controls="cp-types" data-code="types" aria-selected="false">TypeScript</button>
+      </div>
+
+      <div class="codepane" id="cp-install" role="tabpanel" aria-labelledby="ct-install">
+        <div class="codepane__bar">
+          <span>终端</span>
+          <button class="copy" type="button" data-copy-target="code-install">复制</button>
+        </div>
+        <pre class="code" id="code-install"><span class="c"># npm</span>
+<span class="k">npm install</span> naive-icons
+
+<span class="c"># yarn</span>
+<span class="k">yarn add</span> naive-icons
+
+<span class="c"># pnpm</span>
+<span class="k">pnpm add</span> naive-icons</pre>
+      </div>
+
+      <div class="codepane" id="cp-react" role="tabpanel" aria-labelledby="ct-react" hidden>
+        <div class="codepane__bar">
+          <span>React 组件</span>
+          <button class="copy" type="button" data-copy-target="code-react">复制</button>
+        </div>
+        <pre class="code" id="code-react"><span class="k">import</span> { HomeIcon, HeartIcon, PenguinIcon } <span class="k">from</span> <span class="s">'naive-icons'</span>;
+
+<span class="k">export function</span> <span class="t">Example</span>() {
+  <span class="k">return</span> (
+    <span class="t">&lt;nav&gt;</span>
+      <span class="t">&lt;HomeIcon</span> <span class="k">size</span>={<span class="s">24</span>} <span class="t">/&gt;</span>
+      <span class="t">&lt;HeartIcon</span> <span class="k">size</span>={<span class="s">24</span>} <span class="k">color</span>=<span class="s">"#E76F51"</span> <span class="t">/&gt;</span>
+      <span class="t">&lt;PenguinIcon</span> <span class="k">size</span>={<span class="s">48</span>} <span class="k">strokeWidth</span>={<span class="s">4</span>} <span class="t">/&gt;</span>
+    <span class="t">&lt;/nav&gt;</span>
+  );
+}</pre>
+      </div>
+
+      <div class="codepane" id="cp-svg" role="tabpanel" aria-labelledby="ct-svg" hidden>
+        <div class="codepane__bar">
+          <span>原生 SVG</span>
+          <button class="copy" type="button" data-copy-target="code-svg">复制</button>
+        </div>
+        <pre class="code" id="code-svg"><span class="c">&lt;!-- 方式一：img 直接引用 --&gt;</span>
+<span class="t">&lt;img</span> <span class="k">src</span>=<span class="s">"naive-icons/svg/home.svg"</span> <span class="k">width</span>=<span class="s">"24"</span> <span class="t">/&gt;</span>
+
+<span class="c">&lt;!-- 方式二：内联并交给 currentColor 控制颜色 --&gt;</span>
+<span class="t">&lt;svg</span> <span class="k">viewBox</span>=<span class="s">"0 0 48 48"</span> <span class="k">width</span>=<span class="s">"24"</span> <span class="k">fill</span>=<span class="s">"none"</span>
+     <span class="k">stroke</span>=<span class="s">"currentColor"</span> <span class="k">stroke-width</span>=<span class="s">"3.5"</span>
+     <span class="k">stroke-linecap</span>=<span class="s">"round"</span> <span class="k">stroke-linejoin</span>=<span class="s">"round"</span><span class="t">&gt;</span>
+  <span class="c">&lt;!-- 粘贴 svg/home.svg 中的 path --&gt;</span>
+<span class="t">&lt;/svg&gt;</span></pre>
+      </div>
+
+      <div class="codepane" id="cp-types" role="tabpanel" aria-labelledby="ct-types" hidden>
+        <div class="codepane__bar">
+          <span>TypeScript 类型</span>
+          <button class="copy" type="button" data-copy-target="code-types">复制</button>
+        </div>
+        <pre class="code" id="code-types"><span class="k">import type</span> { IconProps, IconName, NAIVE_PALETTE } <span class="k">from</span> <span class="s">'naive-icons'</span>;
+
+<span class="k">interface</span> <span class="t">IconProps</span> <span class="k">extends</span> <span class="t">SVGProps</span>&lt;<span class="t">SVGSVGElement</span>&gt; {
+  <span class="k">size</span>?: <span class="t">number</span> | <span class="t">string</span>;        <span class="c">// 默认 24</span>
+  <span class="k">color</span>?: <span class="t">string</span>;                <span class="c">// 默认 currentColor</span>
+  <span class="k">strokeWidth</span>?: <span class="t">number</span> | <span class="t">string</span>; <span class="c">// 默认 3.5</span>
+  <span class="k">fill</span>?: <span class="t">string</span>;                 <span class="c">// 默认 none</span>
+  <span class="k">title</span>?: <span class="t">string</span>;                <span class="c">// 无障碍标题</span>
+}</pre>
+      </div>
+
+      <div class="tablewrap">
+        <table>
+          <caption class="sr-only">IconProps 支持的属性</caption>
+          <thead>
+            <tr><th scope="col">属性</th><th scope="col">类型</th><th scope="col">默认值</th><th scope="col">说明</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>size</code></td><td><code>number | string</code></td><td><code>24</code></td><td>图标尺寸，宽高相等</td></tr>
+            <tr><td><code>color</code></td><td><code>string</code></td><td><code>currentColor</code></td><td>描边颜色，可跟随文字色</td></tr>
+            <tr><td><code>strokeWidth</code></td><td><code>number | string</code></td><td><code>3.5</code></td><td>按 48×48 画布比例缩放</td></tr>
+            <tr><td><code>fill</code></td><td><code>string</code></td><td><code>none</code></td><td>填充色</td></tr>
+            <tr><td><code>title</code></td><td><code>string</code></td><td>—</td><td>无障碍标题</td></tr>
+            <tr><td><code>width</code> / <code>height</code></td><td><code>number | string</code></td><td>跟随 size</td><td>单独指定宽或高</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ 设计规范 -->
+  <section class="sec" id="system">
+    <div class="shell">
+      <header class="sec__head">
+        <p class="eyebrow">Design System</p>
+        <h2 class="sec__title">设计规范</h2>
+        <p class="sec__lead">
+          一致性来自一组简单的约束。9 个颜色构成整套图标的视觉基调，4 条规则约束每一笔线条 ——
+          新增或二次修改图标时沿用即可。
+        </p>
+      </header>
+
+      <div class="palette" id="paletteGrid"></div>
+
+      <ol class="rules">
+        <li>
+          <span class="rules__num">01</span>
+          <h3>网格与出血</h3>
+          <p>全部图形绘制在 48×48 画布内，主体与画布边缘至少保留 3 个单位，保证小尺寸下依旧清晰。</p>
+        </li>
+        <li>
+          <span class="rules__num">02</span>
+          <h3>统一描边</h3>
+          <p>描边宽度固定 3.5，端点与转角均为 round，不使用虚线、渐变与投影。</p>
+        </li>
+        <li>
+          <span class="rules__num">03</span>
+          <h3>有限配色</h3>
+          <p>只使用调色板中的 9 个颜色，扁平填充、不做半透明叠加，保证任意背景下都可读。</p>
+        </li>
+        <li>
+          <span class="rules__num">04</span>
+          <h3>保留性格</h3>
+          <p>允许线条轻微不对称，鼓励给有生命的图形加上圆点眼睛与微笑，留住手绘的笨拙感。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════ 常见问题 -->
+  <section class="sec sec--soft" id="faq">
+    <div class="shell shell--narrow">
+      <header class="sec__head">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="sec__title">常见问题</h2>
+      </header>
+      <div class="faq" id="faqList"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════ 页脚 -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="#top">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#264653" stroke-width="3" stroke-linejoin="round">
+              <rect width="48" height="48" rx="10" fill="#E9C46A"/>
+              <path d="M24 8 L32 22 L43 22 L34 31 L37 42 L24 34 L11 42 L14 31 L5 22 L16 22 Z" fill="#E76F51"/>
+              <circle cx="19" cy="25" r="2.1" fill="#264653" stroke="none"/>
+              <circle cx="29" cy="25" r="2.1" fill="#264653" stroke="none"/>
+              <path d="M20 31 Q24 35 28 31" stroke="#264653" stroke-width="2.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand__name">Naive Icons</span>
+        </a>
+        <p>手绘 naive folk art 风格的 SVG 图标库，为 React 与 TypeScript 打造。全部图标为 AI 生成的原创作品。</p>
+      </div>
+
+      <nav class="footer__col" aria-label="产品">
+        <h3>产品</h3>
+        <a href="#icons">全部图标</a>
+        <a href="#usage">使用文档</a>
+        <a href="#system">设计规范</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="资源">
+        <h3>资源</h3>
+        <a href="https://github.com/guokaigdg/naive-icons" rel="noopener">GitHub</a>
+        <a href="https://www.npmjs.com/package/naive-icons" rel="noopener">npm</a>
+        <a href="https://github.com/guokaigdg/naive-icons/blob/main/CHANGELOG.md" rel="noopener">更新日志</a>
+        <a href="https://github.com/guokaigdg/naive-icons/blob/main/CONTRIBUTING.md" rel="noopener">贡献指南</a>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <span>MIT License · 全部图标均为原创作品，个人与商业项目均可自由使用。</span>
+      <span>Naive Icons v1.0.0</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════════ 详情弹窗 -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="关闭">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+           stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18"/>
+      </svg>
+    </button>
+
+    <div class="modal__nav">
+      <button type="button" id="modalPrev" aria-label="上一个图标" title="上一个图标">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+             stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m14 6-6 6 6 6"/>
+        </svg>
+      </button>
+      <button type="button" id="modalNext" aria-label="下一个图标" title="下一个图标">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+             stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m10 6 6 6-6 6"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="modal__preview" id="modalPreview"></div>
+
+    <div class="modal__body">
+      <h3 class="modal__title" id="modalTitle">图标</h3>
+      <p class="modal__sub" id="modalSub"></p>
+
+      <div class="tabs" role="tablist" aria-label="代码格式">
+        <button type="button" role="tab" data-tab="react" aria-selected="true">React</button>
+        <button type="button" role="tab" data-tab="import" aria-selected="false">引入</button>
+        <button type="button" role="tab" data-tab="svg" aria-selected="false">SVG</button>
+      </div>
+
+      <div class="modal__code"><pre class="code" id="modalCode"></pre></div>
+
+      <div class="modal__actions">
+        <button class="btn btn--solid btn--sm" type="button" id="modalCopy">复制代码</button>
+        <button class="btn btn--line btn--sm" type="button" id="modalDownload">下载 SVG</button>
+        <button class="btn btn--line btn--sm" type="button" id="modalCopyName">复制组件名</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

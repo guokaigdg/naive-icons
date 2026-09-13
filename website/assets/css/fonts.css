@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Naive Icons — Web Fonts
+   自托管子集化字体：LXGW Yozai（悠哉字体）
+   授权：SIL Open Font License 1.1（可自由商用）
+   源：https://github.com/lxgw/yozai-font
+   ========================================================================== */
+
+/* 正文 / 界面 —— 手写感常规字重 */
+@font-face {
+  font-family: "Naive Sans";
+  src: url("../fonts/yozai-regular.woff2") format("woff2"),
+       url("../fonts/yozai-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 标题 / 强调 —— 手写感中等字重 */
+@font-face {
+  font-family: "Naive Sans";
+  src: url("../fonts/yozai-medium.woff2") format("woff2"),
+       url("../fonts/yozai-medium.woff") format("woff");
+  font-weight: 500 700;
+  font-style: normal;
+  font-display: swap;
+}

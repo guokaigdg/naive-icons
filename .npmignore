@@ -1,0 +1,13 @@
+# package.json 的 files 字段已定义白名单（dist / svg / assets / 文档），
+# 这里做进一步排除。注意：绝不能排除 dist，否则构建产物不会发布。
+website/
+scripts/
+.github/
+node_modules/
+__pycache__/
+.gitignore
+.npmignore
+tsconfig.json
+tsup.config.ts
+.DS_Store
+*.py
