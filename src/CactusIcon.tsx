@@ -1,7 +1,8 @@
-import { SVGProps } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps } from './iconProps';
 
-export const CactusIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2A2A2A" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round" {...props}>
+export const CactusIcon = (props: IconProps) => (
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
     
 <rect x="20" y="12" width="8" height="30" rx="4" fill="#588157"/>
 <path d="M20 26 L 15 26 C 10 26 9 16 14 16 C 16 16 16 18 16 20 L 16 22 L 20 22 Z" fill="#588157"/>

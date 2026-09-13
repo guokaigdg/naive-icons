@@ -1,7 +1,8 @@
-import { SVGProps } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps } from './iconProps';
 
-export const FoxIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2A2A2A" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round" {...props}>
+export const FoxIcon = (props: IconProps) => (
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
     
 <path d="M11 18 L14 5 L21 14 Z" fill="#E76F51"/>
 <path d="M37 18 L34 5 L27 14 Z" fill="#E76F51"/>

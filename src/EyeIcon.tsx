@@ -1,7 +1,8 @@
-import { SVGProps } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps } from './iconProps';
 
-export const EyeIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2A2A2A" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round" {...props}>
+export const EyeIcon = (props: IconProps) => (
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
     
 <path d="M5 24 C 11 13 37 13 43 24 C 37 35 11 35 5 24 Z" fill="#FAEDCD"/>
 <circle cx="24" cy="24" r="6.5" fill="#2A9D8F"/>

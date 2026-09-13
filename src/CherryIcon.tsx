@@ -1,7 +1,8 @@
-import { SVGProps } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps } from './iconProps';
 
-export const CherryIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2A2A2A" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round" {...props}>
+export const CherryIcon = (props: IconProps) => (
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
     
 <path d="M15 27 C 15 17 22 11 29 7" stroke="#8B5E3C" stroke-width="2.5" fill="none"/>
 <path d="M33 29 C 33 20 32 12 29 7" stroke="#8B5E3C" stroke-width="2.5" fill="none"/>

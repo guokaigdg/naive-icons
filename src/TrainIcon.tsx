@@ -1,7 +1,8 @@
-import { SVGProps } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps } from './iconProps';
 
-export const TrainIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2A2A2A" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round" {...props}>
+export const TrainIcon = (props: IconProps) => (
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
     
 <rect x="7" y="18" width="26" height="15" rx="3" fill="#E76F51"/>
 <rect x="25" y="9" width="12" height="13" rx="2" fill="#2A9D8F"/>

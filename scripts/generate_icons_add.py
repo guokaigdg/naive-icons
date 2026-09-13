@@ -445,10 +445,11 @@ for name in written:
     comp = pascal(name) + 'Icon'
     svg = NEW_ICONS[name]
     inner = svg.split('>', 1)[1].rsplit('<', 1)[0]
-    tsx = f'''import {{ SVGProps }} from 'react';
+    tsx = f'''import type {{ IconProps }} from './types';
+import {{ normalizeIconProps }} from './iconProps';
 
-export const {comp} = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2A2A2A" strokeWidth={{3.5}} strokeLinecap="round" strokeLinejoin="round" {{...props}}>
+export const {comp} = (props: IconProps) => (
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {{...normalizeIconProps(props)}}>
     {inner}
   </svg>
 );

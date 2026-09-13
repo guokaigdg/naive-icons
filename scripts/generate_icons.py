@@ -354,10 +354,11 @@ for name, svg in ICONS.items():
     # 简化：直接嵌入 SVG 内容，使用函数式组件 + props 透传
     inner = svg.split('>', 1)[1].rsplit('<', 1)[0] if '>' in svg else svg
     # 完整 SVG 内容（带 xmlns）
-    tsx = f'''import {{ SVGProps }} from 'react';
+    tsx = f'''import type { IconProps } from './types';
+import { normalizeIconProps } from './iconProps';
 
-export const {comp_name} = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2A2A2A" strokeWidth={{3.5}} strokeLinecap="round" strokeLinejoin="round" {{...props}}>
+export const {comp_name} = (props: IconProps) => (
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {{...normalizeIconProps(props)}}>
     {inner}
   </svg>
 );

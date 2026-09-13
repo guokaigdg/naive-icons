@@ -1,7 +1,8 @@
-import { SVGProps } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps } from './iconProps';
 
-export const LemonIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2A2A2A" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round" {...props}>
+export const LemonIcon = (props: IconProps) => (
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
     
 <ellipse cx="24" cy="24" rx="14" ry="10" transform="rotate(-20 24 24)" fill="#E9C46A"/>
 <path d="M10.5 30.5 C 7.5 32.5 5.5 30.5 7.5 28.5" stroke="#2A2A2A" stroke-width="2" fill="none"/>
