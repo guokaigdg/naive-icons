@@ -22,8 +22,7 @@
   (function () {
     try {
       var saved = localStorage.getItem('naive-icons-theme');
-      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      var theme = saved || (prefersDark ? 'dark' : 'light');
+      var theme = saved || 'light';
       document.documentElement.setAttribute('data-theme', theme);
       var meta = document.querySelector('meta[name="theme-color"]');
       if (meta) meta.setAttribute('content', theme === 'dark' ? '#1c1a16' : '#fbf6ea');
