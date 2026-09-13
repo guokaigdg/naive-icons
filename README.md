@@ -1,3 +1,6 @@
+
+<h1>Naive Icons</h1>
+
 <p align="right">
   <a href="./README.md">中文</a> | <a href="./README.en.md">English</a>
 </p>
@@ -6,9 +9,19 @@
   <img src="assets/logo.svg" alt="Naive Icons" width="132" height="132">
 </p>
 
-<h1 align="center">Naive Icons</h1>
 
 <p align="center">手绘 naive folk art 风格的 SVG 图标库，为 React 与 TypeScript 打造</p>
+
+<p align="center">
+  <a href="https://github.com/guokaigdg/naive-icons/stargazers"><img src="https://img.shields.io/github/stars/guokaigdg/naive-icons?style=flat-square&color=E9C46A" alt="GitHub stars"></a>
+  <a href="https://www.npmjs.com/package/naive-icons"><img src="https://img.shields.io/npm/v/naive-icons?style=flat-square&color=E76F51" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/naive-icons"><img src="https://img.shields.io/npm/dm/naive-icons?style=flat-square&color=2A9D8F" alt="npm downloads"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-264653?style=flat-square" alt="license: MIT"></a>
+  <br/>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/SVG-FFB13B?style=flat-square&logoColor=black" alt="SVG">
+</p>
 
 Naive Icons 是一套手绘 naive folk art 风格的 SVG 图标库，为 React 与 TypeScript 打造。全部 101 个图标由 AI 生成，均为原创作品。
 
