@@ -16,17 +16,17 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
 
 /**
  * 把 size / color 等语义化属性映射为原生 SVG 属性，
- * 供所有图标组件共享使用。
+ * 供所有图标组件共享使用。始终给 width/height 填默认值 24，
+ * 保证不传 size 时 svg 也有明确尺寸。
  */
 export function normalizeIconProps(props: IconProps): SVGProps<SVGSVGElement> {
-  const { size, color, strokeWidth, ...rest } = props;
+  const { size = 24, color, strokeWidth, fill = "none", ...rest } = props;
 
   const svgProps: SVGProps<SVGSVGElement> = { ...rest };
 
-  if (size !== undefined && size !== null) {
-    svgProps.width = size;
-    svgProps.height = size;
-  }
+  svgProps.width = size;
+  svgProps.height = size;
+  svgProps.fill = fill;
 
   if (color !== undefined && color !== null) {
     svgProps.stroke = color;

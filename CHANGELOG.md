@@ -17,6 +17,13 @@
 - 详情弹窗支持键盘方向键连续切换图标，打开时背景内容设为 inert
 - 无障碍补强：skip link、aria-live 结果计数、标签页方向键切换、焦点归还
 
+## 1.0.2
+
+修复
+
+- 修复组件不传 `size` 时没有明确尺寸的问题：`normalizeIconProps` 现在始终向 svg 写入 `width` / `height`，默认 24，保证 `<HomeIcon />` 也有稳定的 24px 尺寸
+- 顺手补上默认 `fill="none"`，避免与 SVG 内部已有的 `fill` 属性在覆盖时产生歧义
+
 ## 1.0.1
 
 修复
