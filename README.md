@@ -1,3 +1,7 @@
+<p align="right">
+  <a href="./README.md">中文</a> | <a href="./README.en.md">English</a>
+</p>
+
 <p align="center">
   <img src="assets/logo.svg" alt="Naive Icons" width="132" height="132">
 </p>
