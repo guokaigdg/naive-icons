@@ -1140,6 +1140,7 @@ td code {
 
 .swatch {
   padding: 0;
+  height: 125px;
   border: 1px solid var(--line);
   border-radius: var(--r);
   overflow: hidden;
@@ -1155,23 +1156,30 @@ td code {
 }
 
 .swatch__color {
+  display: block; /* 空 span 默认 inline，height 不生效会导致色块塌陷 */
   height: 74px;
   border-bottom: 1px solid var(--line);
 }
 
 .swatch__meta {
-  padding: 9px 13px 11px;
+  padding: 0 12px 0;
+  height: 74px;
 }
 
 .swatch__name {
-  font-size: 13.5px;
+  /* display: block; */
+  font-size: 13px;
   font-weight: 600;
+  line-height: 1;
 }
 
 .swatch__hex {
-  margin-top: 1px;
+  display: block;
+  margin-top: 0;
+  margin-left: 12px;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 11px;
+  line-height: 1;
   color: var(--text-3);
 }
 
