@@ -160,9 +160,9 @@
 
   /* ----------------------------------------------------------- hero stage */
   var HERO_ICONS = [
-    'cat', 'star', 'heart', 'penguin',
+    'image', 'star', 'heart', 'chat',
     'sun', 'flower', 'coffee', 'rocket',
-    'rainbow', 'bee', 'sailboat', 'cake',
+    'ladybug', 'bee', 'sailboat', 'cake',
   ];
   var HERO_ROT = [-6, 4, -3, 5, -5, 3, 6, -4, 4, -6, 3, -3];
   var HERO_DY = [4, -4, 3, -3, 5, -5, 2, -2, 4, -3, 3, -4];
