@@ -129,6 +129,18 @@
     try {
       localStorage.setItem(STORE_THEME, theme);
     } catch (e) {}
+    // hero stage 里的 sticker svg 是一次性生成的，主题切换后要手动换描边色
+    var host = $('#heroStage');
+    if (host) {
+      var strokeColor = theme === 'dark' ? CREAM : INK;
+      var svgs = host.querySelectorAll('svg');
+      for (var i = 0; i < svgs.length; i++) {
+        var html = svgs[i].outerHTML.replace(/stroke="#[0-9A-Fa-f]{3,8}"/g, 'stroke="' + strokeColor + '"');
+        var wrap = document.createElement('div');
+        wrap.innerHTML = html;
+        svgs[i].replaceWith(wrap.firstElementChild);
+      }
+    }
   }
 
   function initTheme() {
