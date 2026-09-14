@@ -24,3 +24,12 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* 品牌名 —— Dynamix */
+@font-face {
+  font-family: "Dynamix";
+  src: url("../fonts/Dynamix-1.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
