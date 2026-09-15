@@ -4,7 +4,7 @@ import { SVGProps } from 'react';
 export interface IconProps extends SVGProps<SVGSVGElement> {
   /** 图标尺寸，宽高相等，默认 24 */
   size?: number | string;
-  /** 描边颜色，默认 currentColor */
+  /** 描边颜色，默认墨色 #2A2A2A */
   color?: string;
   /** 描边宽度，默认 3.5（相对 48x48 画布） */
   strokeWidth?: number | string;
@@ -20,21 +20,15 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
  * 保证不传 size 时 svg 也有明确尺寸。
  */
 export function normalizeIconProps(props: IconProps): SVGProps<SVGSVGElement> {
-  const { size = 24, color, strokeWidth, fill = "none", ...rest } = props;
+  const { size = 24, color = "#2A2A2A", strokeWidth = 3.5, fill = "none", ...rest } = props;
 
   const svgProps: SVGProps<SVGSVGElement> = { ...rest };
 
   svgProps.width = size;
   svgProps.height = size;
   svgProps.fill = fill;
-
-  if (color !== undefined && color !== null) {
-    svgProps.stroke = color;
-  }
-
-  if (strokeWidth !== undefined && strokeWidth !== null) {
-    svgProps.strokeWidth = strokeWidth;
-  }
+  svgProps.stroke = color;
+  svgProps.strokeWidth = strokeWidth;
 
   return svgProps;
 }

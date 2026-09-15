@@ -302,7 +302,7 @@
     },
     {
       q: '项目不是 React，还能用吗？',
-      a: '完全可以。svg/ 目录下是 101 个标准 SVG 1.1 文件，可直接用 img 引用、内联到 HTML、制作 SVG sprite 或转成 Icon Font。',
+      a: '完全可以。svg/ 目录下是 105 个标准 SVG 1.1 文件，可直接用 img 引用、内联到 HTML、制作 SVG sprite 或转成 Icon Font。',
     },
   ];
 

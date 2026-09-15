@@ -37,7 +37,7 @@
 
 新增
 
-- 101 个手绘 naive folk art 风格 SVG 图标，覆盖界面基础、操作、文件与媒体、导航方位、通信、自然天气、动物、食物饮品、日常物品、交通工具、表情共 11 个分类
+- 105 个手绘 naive folk art 风格 SVG 图标，覆盖界面基础、操作、文件与媒体、导航方位、通信、自然天气、动物、食物饮品、日常物品、交通工具、表情共 11 个分类
 - 每个图标同时提供 SVG 源文件与 React TSX 组件
 - 完整 TypeScript 类型定义：IconProps、IconName、IconCategory、PaletteColor、NAIVE_PALETTE
 - 统一规格：48x48 viewBox、3.5 描边宽度、round 线帽与线角
