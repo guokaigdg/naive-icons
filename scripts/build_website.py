@@ -54,6 +54,8 @@ ICON_CATEGORY = {
     # 导航方位
     'location': 'navigation', 'compass': 'navigation', 'map': 'navigation',
     'flag': 'navigation', 'anchor': 'navigation', 'magnet': 'navigation',
+    'arrow-up': 'navigation', 'arrow-down': 'navigation',
+    'arrow-left': 'navigation', 'arrow-right': 'navigation',
     # 通信
     'mail': 'communication', 'chat': 'communication',
     'phone': 'communication', 'wifi': 'communication',
@@ -87,7 +89,8 @@ ICON_CATEGORY = {
 
 # ---------------------------------------------------------------- 中文名
 ZH_NAMES = {
-    'airplane': '飞机', 'anchor': '锚', 'apple': '苹果', 'balloon': '气球',
+    'airplane': '飞机', 'anchor': '锚', 'apple': '苹果', 'arrow-up': '上',
+    'arrow-down': '下', 'arrow-left': '左', 'arrow-right': '右', 'balloon': '气球',
     'bear': '小熊', 'bee': '蜜蜂', 'bell': '铃铛', 'bicycle': '自行车',
     'bird': '小鸟', 'book': '书本', 'bookmark': '书签', 'bulb': '灯泡',
     'butterfly': '蝴蝶', 'cactus': '仙人掌', 'cake': '蛋糕',

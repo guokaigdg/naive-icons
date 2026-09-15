@@ -1,0 +1,13 @@
+import type { IconProps } from './types';
+import { normalizeIconProps } from './iconProps';
+
+export const ArrowRightIcon = (props: IconProps) => (
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+    
+<path d="M9 24 L30 24" stroke="#2A2A2A" stroke-width="4"/>
+<path d="M25 15 L39 24 L25 33 Z" fill="#E76F51"/>
+
+  </svg>
+);
+
+export default ArrowRightIcon;

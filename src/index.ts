@@ -1,6 +1,10 @@
 export { AirplaneIcon } from './AirplaneIcon';
 export { AnchorIcon } from './AnchorIcon';
 export { AppleIcon } from './AppleIcon';
+export { ArrowDownIcon } from './ArrowDownIcon';
+export { ArrowLeftIcon } from './ArrowLeftIcon';
+export { ArrowRightIcon } from './ArrowRightIcon';
+export { ArrowUpIcon } from './ArrowUpIcon';
 export { BalloonIcon } from './BalloonIcon';
 export { BearIcon } from './BearIcon';
 export { BeeIcon } from './BeeIcon';

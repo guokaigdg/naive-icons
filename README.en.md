@@ -22,11 +22,11 @@
 </p>
 
 
-Naive Icons is a hand-drawn SVG icon library with a naive folk art style, built for React and TypeScript. All 101 icons are AI-generated original works.
+Naive Icons is a hand-drawn SVG icon library with a naive folk art style, built for React and TypeScript. All 105 icons are AI-generated original works.
 
 Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a unified retro palette — keeping the charming clumsiness and warmth of hand-drawn illustration. Some icons even feature a pair of dot eyes and a little smile, adding a touch of humanity to your interface.
 
-- Icon count: 101
+- Icon count: 105
 - Per-icon size: roughly 400–700 bytes
 - Dependencies: zero runtime dependencies, React as a peer dependency only
 - License: MIT
@@ -48,7 +48,7 @@ Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a u
 
 ## Features
 
-- 101 original hand-drawn SVG icons spanning 11 categories: interface, actions, media, navigation, animals, food, and more
+- 105 original hand-drawn SVG icons spanning 11 categories: interface, actions, media, navigation, animals, food, and more
 - Unified spec: 48x48 viewBox, 3.5 stroke width, round line caps and joins
 - Unified palette: 9 retro colors, usable directly as design tokens
 - Some icons feature dot eyes and a little smile for a highly recognizable style
@@ -223,8 +223,8 @@ Naive Icons follows four fixed rules. They should be respected when adding new i
 
 ```
 naive-icons/
-├── svg/                 101 SVG source files
-├── src/                 101 React TSX components + index.ts + types.ts
+├── svg/                 105 SVG source files
+├── src/                 105 React TSX components + index.ts + types.ts
 ├── assets/              Brand assets (logo)
 ├── scripts/             Icon generation and preview build scripts
 ├── website/             Official documentation site
