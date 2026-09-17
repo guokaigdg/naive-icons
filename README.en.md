@@ -22,11 +22,11 @@
 </p>
 
 
-Naive Icons is a hand-drawn SVG icon library with a naive folk art style, built for React and TypeScript. All 105 icons are AI-generated original works.
+Naive Icons is a hand-drawn SVG icon library with a naive folk art style, built for React and TypeScript. All 116 icons are AI-generated original works.
 
 Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a unified retro palette — keeping the charming clumsiness and warmth of hand-drawn illustration. Some icons even feature a pair of dot eyes and a little smile, adding a touch of humanity to your interface.
 
-- Icon count: 105
+- Icon count: 116
 - Per-icon size: roughly 400–700 bytes
 - Dependencies: zero runtime dependencies, React as a peer dependency only
 - License: MIT
@@ -48,7 +48,7 @@ Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a u
 
 ## Features
 
-- 105 original hand-drawn SVG icons spanning 11 categories: interface, actions, media, navigation, animals, food, and more
+- 116 original hand-drawn SVG icons spanning 11 categories: interface, actions, media, navigation, animals, food, and more
 - Unified spec: 48x48 viewBox, 3.5 stroke width, round line caps and joins
 - Unified palette: 9 retro colors, usable directly as design tokens
 - Some icons feature dot eyes and a little smile for a highly recognizable style
@@ -175,17 +175,17 @@ import { NAIVE_PALETTE } from 'naive-icons';
 
 ## Icon List
 
-**Interface Basics** (13)
-home, user, settings, search, heart, star, bell, calendar, clock, eye, bulb, tag, bookmark
+**Interface Basics** (18)
+home, user, settings, search, heart, star, bell, calendar, clock, eye, bulb, tag, bookmark, menu, ellipsis, external-link, link, unlink
 
-**Actions** (11)
-edit, trash, download, upload, save, plus, close, check, refresh, share, play
+**Actions** (13)
+edit, trash, download, upload, save, plus, close, check, refresh, share, play, copy, minus
 
-**Files & Media** (9)
-file, folder, image, camera, video, mic, music, code, book
+**Files & Media** (10)
+file, folder, image, camera, video, mic, music, code, book, headphones
 
-**Navigation & Direction** (6)
-location, compass, map, flag, anchor, magnet
+**Navigation & Direction** (14)
+location, compass, map, flag, anchor, magnet, arrow-up, arrow-down, arrow-left, arrow-right, chevron-down, chevron-up, chevron-left, chevron-right
 
 **Communication** (4)
 mail, chat, phone, wifi
@@ -223,8 +223,8 @@ Naive Icons follows four fixed rules. They should be respected when adding new i
 
 ```
 naive-icons/
-├── svg/                 105 SVG source files
-├── src/                 105 React TSX components + index.ts + types.ts
+├── svg/                 116 SVG source files
+├── src/                 116 React TSX components + index.ts + types.ts
 ├── assets/              Brand assets (logo)
 ├── scripts/             Icon generation and preview build scripts
 ├── website/             Official documentation site

@@ -23,11 +23,11 @@
   <img src="https://img.shields.io/badge/SVG-FFB13B?style=flat-square&logoColor=black" alt="SVG">
 </p>
 
-Naive Icons 是一套手绘 naive folk art 风格的 SVG 图标库，为 React 与 TypeScript 打造。全部 105 个图标由 AI 生成，均为原创作品。
+Naive Icons 是一套手绘 naive folk art 风格的 SVG 图标库，为 React 与 TypeScript 打造。全部 116 个图标由 AI 生成，均为原创作品。
 
 每一个图标都建立在 48x48 的网格上，使用 3.5 的粗描边、圆角线帽与统一的复古调色板，并保留了手绘插画特有的笨拙感与温度——部分图标还带有一对小圆点眼睛和微笑，让界面多一点点人情味。
 
-- 图标数量：105
+- 图标数量：116
 - 单个体积：约 400 至 700 字节
 - 依赖：零运行时依赖，仅 peer 依赖 React
 - 许可证：MIT
@@ -49,7 +49,7 @@ Naive Icons 是一套手绘 naive folk art 风格的 SVG 图标库，为 React �
 
 ## 特性
 
-- 105 个手绘风格的原创 SVG 图标，覆盖界面、操作、媒体、导航、动物、食物等 11 个分类
+- 116 个手绘风格的原创 SVG 图标，覆盖界面、操作、媒体、导航、动物、食物等 11 个分类
 - 统一规格：48x48 viewBox、3.5 描边宽度、round 线帽与线角
 - 统一调色板：9 色复古配色，可作为设计令牌直接引用
 - 部分图标带有圆点眼睛与微笑表情，风格辨识度高
@@ -176,17 +176,17 @@ import { NAIVE_PALETTE } from 'naive-icons';
 
 ## 图标清单
 
-**界面基础**（13）
-home, user, settings, search, heart, star, bell, calendar, clock, eye, bulb, tag, bookmark
+**界面基础**（18）
+home, user, settings, search, heart, star, bell, calendar, clock, eye, bulb, tag, bookmark, menu, ellipsis, external-link, link, unlink
 
-**操作**（11）
-edit, trash, download, upload, save, plus, close, check, refresh, share, play
+**操作**（13）
+edit, trash, download, upload, save, plus, close, check, refresh, share, play, copy, minus
 
-**文件与媒体**（9）
-file, folder, image, camera, video, mic, music, code, book
+**文件与媒体**（10）
+file, folder, image, camera, video, mic, music, code, book, headphones
 
-**导航方位**（6）
-location, compass, map, flag, anchor, magnet
+**导航方位**（14）
+location, compass, map, flag, anchor, magnet, arrow-up, arrow-down, arrow-left, arrow-right, chevron-down, chevron-up, chevron-left, chevron-right
 
 **通信**（4）
 mail, chat, phone, wifi
@@ -224,8 +224,8 @@ Naive Icons 遵循四条固定规则，新增图标时也应保持一致。
 
 ```
 naive-icons/
-├── svg/                 105 个 SVG 源文件
-├── src/                 105 个 React TSX 组件 + index.ts + types.ts
+├── svg/                 116 个 SVG 源文件
+├── src/                 116 个 React TSX 组件 + index.ts + types.ts
 ├── assets/              品牌资源（logo）
 ├── scripts/             图标生成与预览构建脚本
 ├── website/             官方文档站点

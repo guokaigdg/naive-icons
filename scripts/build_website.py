@@ -85,6 +85,13 @@ ICON_CATEGORY = {
     'train': 'transport',
     # 表情
     'smile': 'emoji', 'thumbs-up': 'emoji',
+    # 导航 / 操作骨架
+    'menu': 'interface',
+    'chevron-down': 'navigation', 'chevron-up': 'navigation',
+    'chevron-left': 'navigation', 'chevron-right': 'navigation',
+    'ellipsis': 'interface', 'external-link': 'interface',
+    'link': 'interface', 'unlink': 'interface',
+    'copy': 'action', 'minus': 'action',
 }
 
 # ---------------------------------------------------------------- 中文名
@@ -118,6 +125,12 @@ ZH_NAMES = {
     'trash': '垃圾桶', 'tree': '大树', 'trophy': '奖杯', 'umbrella': '雨伞',
     'upload': '上传', 'user': '用户', 'video': '视频',
     'watermelon': '西瓜', 'wifi': '无线网',
+    'menu': '菜单',
+    'chevron-down': '向下', 'chevron-up': '向上',
+    'chevron-left': '向左', 'chevron-right': '向右',
+    'ellipsis': '更多', 'external-link': '外链',
+    'link': '链接', 'unlink': '取消链接',
+    'copy': '复制', 'minus': '减号',
 }
 
 

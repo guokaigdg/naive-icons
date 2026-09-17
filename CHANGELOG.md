@@ -4,7 +4,7 @@
 
 ## Unreleased
 
-官方文档站点重构，并新增 4 个方向键图标。
+新增导航 / 操作骨架一组图标（menu、chevron 四向、ellipsis、external-link、link / unlink、copy、minus），图标总数增至 116。
 
 修复
 

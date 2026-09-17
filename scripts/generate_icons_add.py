@@ -421,6 +421,41 @@ NEW_ICONS = {
     'flag': S(f'''<path d="M12 5 L 12 43" stroke="{INK}" stroke-width="3.5"/>
 <path d="M12 8 C 19 4 26 12 33 8 L 33 22 C 26 26 19 18 12 22 Z" fill="{ORANGE}"/>
 <circle cx="12" cy="5" r="2.5" fill="{YELLOW}"/>'''),
+
+    # ---------- 导航 / 操作骨架 ----------
+    'menu': S(f'''<line x1="10" y1="15" x2="38" y2="15" stroke="{INK}" stroke-width="3.5"/>
+<line x1="10" y1="24" x2="38" y2="24" stroke="{INK}" stroke-width="3.5"/>
+<line x1="14" y1="33" x2="34" y2="33" stroke="{INK}" stroke-width="3.5"/>'''),
+
+    'chevron-down': S(f'''<path d="M12 19 L 24 31 L 36 19" fill="none" stroke="{INK}" stroke-width="3.5"/>'''),
+    'chevron-up': S(f'''<path d="M12 29 L 24 17 L 36 29" fill="none" stroke="{INK}" stroke-width="3.5"/>'''),
+    'chevron-left': S(f'''<path d="M29 12 L 17 24 L 29 36" fill="none" stroke="{INK}" stroke-width="3.5"/>'''),
+    'chevron-right': S(f'''<path d="M19 12 L 31 24 L 19 36" fill="none" stroke="{INK}" stroke-width="3.5"/>'''),
+
+    'ellipsis': S(f'''<circle cx="12" cy="24" r="3" fill="{INK}"/>
+<circle cx="24" cy="24" r="3" fill="{INK}"/>
+<circle cx="36" cy="24" r="3" fill="{INK}"/>'''),
+
+    'external-link': S(f'''<rect x="9" y="9" width="20" height="20" rx="3" fill="none" stroke="{INK}" stroke-width="3.5"/>
+<path d="M21 27 L 35 13" fill="none" stroke="{INK}" stroke-width="3.5"/>
+<path d="M35 13 L 35 22" fill="none" stroke="{INK}" stroke-width="3.5"/>
+<path d="M35 13 L 26 13" fill="none" stroke="{INK}" stroke-width="3.5"/>'''),
+
+    'link': S(f'''<g transform="rotate(45 24 24)">
+<rect x="9" y="17" width="16" height="14" rx="7" fill="none" stroke="{INK}" stroke-width="3.5"/>
+<rect x="23" y="17" width="16" height="14" rx="7" fill="none" stroke="{INK}" stroke-width="3.5"/></g>'''),
+
+    'unlink': S(f'''<g transform="rotate(45 24 24)">
+<rect x="6" y="17" width="14" height="14" rx="7" fill="none" stroke="{INK}" stroke-width="3.5"/>
+<rect x="28" y="17" width="14" height="14" rx="7" fill="none" stroke="{INK}" stroke-width="3.5"/></g>'''),
+
+    'copy': S(f'''<rect x="14" y="13" width="20" height="22" rx="3" fill="{CREAM}" stroke="{INK}" stroke-width="3.5"/>
+<rect x="10" y="9" width="20" height="22" rx="3" fill="{WHITE}" stroke="{INK}" stroke-width="3.5"/>
+<line x1="15" y1="16" x2="25" y2="16" stroke="{INK}" stroke-width="3.5"/>
+<line x1="15" y1="22" x2="25" y2="22" stroke="{INK}" stroke-width="3.5"/>'''),
+
+    'minus': S(f'''<circle cx="24" cy="24" r="17" fill="{YELLOW}"/>
+<path d="M15 24 L 33 24" stroke="{INK}" stroke-width="4.5"/>'''),
 }
 
 
