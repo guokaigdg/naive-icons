@@ -1,15 +1,34 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const CreditCardIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const CreditCardIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <rect x="5" y="12" width="38" height="26" rx="4" fill="#2A9D8F"/>
 <rect x="5" y="18" width="38" height="6" fill="#264653"/>
 <rect x="11" y="28" width="9" height="6" rx="1.5" fill="#E9C46A"/>
 <path d="M24 32.5 L 33 32.5" stroke="#FFFFFF" stroke-width="2.5"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+CreditCardIcon.displayName = 'CreditCardIcon';
 
 export default CreditCardIcon;

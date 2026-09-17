@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const BalloonIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const BalloonIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <path d="M24 5 C 14 5 9 13 9 19 C 9 26 15 31 24 31 C 33 31 39 26 39 19 C 39 13 34 5 24 5 Z" fill="#E76F51"/>
 <path d="M21 31 L 27 31 L 24 35 Z" fill="#E76F51"/>
@@ -12,7 +27,11 @@ export const BalloonIcon = (props: IconProps) => (
 <circle cx="27.5" cy="19" r="1.4" fill="#2A2A2A"/>
 <path d="M21 23 Q 24 25 27 23" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+BalloonIcon.displayName = 'BalloonIcon';
 
 export default BalloonIcon;

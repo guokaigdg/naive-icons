@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const LadybugIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const LadybugIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <path d="M16 17 C 16 9 32 9 32 17 Z" fill="#2A2A2A"/>
 <circle cx="24" cy="27" r="14" fill="#E76F51"/>
@@ -14,7 +29,11 @@ export const LadybugIcon = (props: IconProps) => (
 <path d="M18 10 C 16 6 13 5 11 6" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
 <path d="M30 10 C 32 6 35 5 37 6" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+LadybugIcon.displayName = 'LadybugIcon';
 
 export default LadybugIcon;

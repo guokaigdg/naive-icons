@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const OwlIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const OwlIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <path d="M12 14 L15 5 L21 12 Z" fill="#264653"/>
 <path d="M36 14 L33 5 L27 12 Z" fill="#264653"/>
@@ -17,7 +32,11 @@ export const OwlIcon = (props: IconProps) => (
 <ellipse cx="18" cy="43" rx="3.5" ry="1.8" fill="#E9C46A"/>
 <ellipse cx="30" cy="43" rx="3.5" ry="1.8" fill="#E9C46A"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+OwlIcon.displayName = 'OwlIcon';
 
 export default OwlIcon;

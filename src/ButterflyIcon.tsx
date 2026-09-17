@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const ButterflyIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const ButterflyIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <ellipse cx="14" cy="17" rx="8" ry="6" transform="rotate(-25 14 17)" fill="#F4A6A4"/>
 <ellipse cx="34" cy="17" rx="8" ry="6" transform="rotate(25 34 17)" fill="#F4A6A4"/>
@@ -15,7 +30,11 @@ export const ButterflyIcon = (props: IconProps) => (
 <path d="M21 8 C 18 4 15 4 13 6" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
 <path d="M27 8 C 30 4 33 4 35 6" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+ButterflyIcon.displayName = 'ButterflyIcon';
 
 export default ButterflyIcon;

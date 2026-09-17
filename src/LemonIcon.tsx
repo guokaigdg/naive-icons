@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const LemonIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const LemonIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <ellipse cx="24" cy="24" rx="14" ry="10" transform="rotate(-20 24 24)" fill="#E9C46A"/>
 <path d="M10.5 30.5 C 7.5 32.5 5.5 30.5 7.5 28.5" stroke="#2A2A2A" stroke-width="2" fill="none"/>
@@ -11,7 +26,11 @@ export const LemonIcon = (props: IconProps) => (
 <circle cx="27" cy="19" r="1.5" fill="#2A2A2A"/>
 <path d="M21 26.5 Q 24 28.5 27 25.5" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+LemonIcon.displayName = 'LemonIcon';
 
 export default LemonIcon;

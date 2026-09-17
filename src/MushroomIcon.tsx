@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const MushroomIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const MushroomIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <path d="M6 22 C 6 9 42 9 42 22 C 42 25 39 26 35 26 L 13 26 C 9 26 6 25 6 22 Z" fill="#E76F51"/>
 <circle cx="15" cy="18" r="2.2" fill="#FFFFFF"/>
@@ -14,7 +29,11 @@ export const MushroomIcon = (props: IconProps) => (
 <path d="M22 34 Q 24 36 26 34" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
 <path d="M10 42 L38 42" stroke="#588157" stroke-width="3"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+MushroomIcon.displayName = 'MushroomIcon';
 
 export default MushroomIcon;

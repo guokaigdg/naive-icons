@@ -20,7 +20,7 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
  * 保证不传 size 时 svg 也有明确尺寸。
  */
 export function normalizeIconProps(props: IconProps): SVGProps<SVGSVGElement> {
-  const { size = 24, color = "#2A2A2A", strokeWidth = 3.5, fill = "none", ...rest } = props;
+  const { size = 24, color = "#2A2A2A", strokeWidth = 3.5, fill = "none", title, ...rest } = props;
 
   const svgProps: SVGProps<SVGSVGElement> = { ...rest };
 

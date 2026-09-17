@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const CakeIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const CakeIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <rect x="9" y="28" width="30" height="12" rx="2" fill="#F4A6A4"/>
 <rect x="13" y="18" width="22" height="10" rx="2" fill="#FAEDCD"/>
@@ -11,7 +26,11 @@ export const CakeIcon = (props: IconProps) => (
 <path d="M24 3 C 22 5.5 22 7.5 24 7.5 C 26 7.5 26 5.5 24 3 Z" fill="#E9C46A"/>
 <path d="M6 40 L42 40" stroke="#8B5E3C" stroke-width="3"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+CakeIcon.displayName = 'CakeIcon';
 
 export default CakeIcon;

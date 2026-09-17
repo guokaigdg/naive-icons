@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const CandleIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const CandleIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <rect x="18" y="18" width="12" height="22" rx="2" fill="#FAEDCD"/>
 <path d="M24 5 C 21 9 21 12.5 24 13.5 C 27 12.5 27 9 24 5 Z" fill="#E76F51"/>
@@ -11,7 +26,11 @@ export const CandleIcon = (props: IconProps) => (
 <rect x="13" y="40" width="22" height="4" rx="2" fill="#8B5E3C"/>
 <path d="M18 22 C 19 24 20 24 20 22" stroke="#F4A6A4" stroke-width="1.5" fill="none"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+CandleIcon.displayName = 'CandleIcon';
 
 export default CandleIcon;

@@ -445,14 +445,31 @@ for name in written:
     comp = pascal(name) + 'Icon'
     svg = NEW_ICONS[name]
     inner = svg.split('>', 1)[1].rsplit('<', 1)[0]
-    tsx = f'''import type {{ IconProps }} from './types';
+    tsx = f'''import {{ forwardRef }} from 'react';
+import type {{ IconProps }} from './types';
 import {{ normalizeIconProps }} from './iconProps';
 
-export const {comp} = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {{...normalizeIconProps(props)}}>
-    {inner}
-  </svg>
-);
+export const {comp} = forwardRef<SVGSVGElement, IconProps>((props, ref) => {{
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={{ref}}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={{props.title ? 'img' : undefined}}
+      aria-hidden={{labelled ? undefined : true}}
+      {{...normalizeIconProps(props)}}
+    >
+      {{props.title ? <title>{{props.title}}</title> : null}}
+      {inner}
+    </svg>
+  );
+}});
+
+{comp}.displayName = '{comp}';
 
 export default {comp};
 '''
@@ -470,13 +487,11 @@ print(f'index.ts 重建: {len(all_names)} 个导出')
 
 # 4) 重建 types.ts
 icon_names_ts = ' | '.join(f"'{pascal(n)}Icon'" for n in all_names)
-types_ts = f'''import {{ SVGProps, FC }} from 'react';
+types_ts = f'''import {{ FC }} from 'react';
+import type {{ IconProps as IconPropsBase }} from './iconProps';
 
-/** 所有图标的通用 Props（继承原生 SVG 属性） */
-export interface IconProps extends SVGProps<SVGSVGElement {{
-  /** 图标尺寸（宽高等同），默认 48 */
-  size?: number | string;
-}}
+/** 所有图标的通用 Props（继承原生 SVG 属性），完整定义见 ./iconProps */
+export type IconProps = IconPropsBase;
 
 /** naive 风格调色板 */
 export const NAIVE_PALETTE = {{
@@ -505,11 +520,14 @@ print('types.ts 重建完成')
 
 # 5) 更新 package.json 描述
 import json
+import re as _re
 pkg_path = os.path.join(ROOT, 'package.json')
 with open(pkg_path) as f:
     pkg = json.load(f)
-pkg['description'] = f'Naive folk art style icon set - {len(all_names)} hand-crafted SVG icons for React'
-pkg['version'] = '0.2.0'
+# 仅更新图标数量，保留现有版本号与描述语言，避免回退版本
+new_count = len(all_names)
+desc = pkg.get('description', '')
+pkg['description'] = _re.sub(r'\b\d+\b', str(new_count), desc, count=1)
 with open(pkg_path, 'w') as f:
     json.dump(pkg, f, indent=2, ensure_ascii=False)
-print(f'package.json 更新: {len(all_names)} icons, v0.2.0')
+print(f'package.json 更新: {new_count} icons')

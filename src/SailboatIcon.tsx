@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const SailboatIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const SailboatIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <path d="M22 9 L 22 28 L 9 28 Z" fill="#E76F51"/>
 <path d="M26 6 L 26 28 L 40 28 Z" fill="#FAEDCD"/>
@@ -11,7 +26,11 @@ export const SailboatIcon = (props: IconProps) => (
 <path d="M4 44 C 8 42 10 46 14 44 C 18 42 20 46 24 44 C 28 42 30 46 34 44 C 38 42 40 46 44 44" stroke="#2A9D8F" stroke-width="2.5" fill="none"/>
 <circle cx="30" cy="17" r="1.6" fill="#E76F51"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+SailboatIcon.displayName = 'SailboatIcon';
 
 export default SailboatIcon;

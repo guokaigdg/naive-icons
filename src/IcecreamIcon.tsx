@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const IcecreamIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const IcecreamIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <path d="M15 23 L 24 43 L 33 23 Z" fill="#E9C46A"/>
 <path d="M18 28 L 30 28 M20 33 L 28 33" stroke="#2A2A2A" stroke-width="1.5"/>
@@ -12,7 +27,11 @@ export const IcecreamIcon = (props: IconProps) => (
 <circle cx="27" cy="15" r="1.4" fill="#2A2A2A"/>
 <path d="M21.5 18.5 Q 24 20.5 26.5 18.5" stroke="#2A2A2A" fill="none" stroke-width="1.5"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+IcecreamIcon.displayName = 'IcecreamIcon';
 
 export default IcecreamIcon;

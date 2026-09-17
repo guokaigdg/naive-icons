@@ -1,6 +1,6 @@
 {
   "name": "naive-icons",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Naive Icons — 手绘 naive folk art 风格的 SVG 图标库，105 个原创图标，为 React 与 TypeScript 打造",
   "license": "MIT",
   "sideEffects": false,

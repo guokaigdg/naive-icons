@@ -1,10 +1,8 @@
-import { SVGProps, FC } from 'react';
+import { FC } from 'react';
+import type { IconProps as IconPropsBase } from './iconProps';
 
-/** 所有图标的通用 Props（继承原生 SVG 属性） */
-export interface IconProps extends SVGProps<SVGSVGElement> {
-  /** 图标尺寸（宽高等同），默认 48 */
-  size?: number | string;
-}
+/** 所有图标的通用 Props（继承原生 SVG 属性），完整定义见 ./iconProps */
+export type IconProps = IconPropsBase;
 
 /** naive 风格调色板 */
 export const NAIVE_PALETTE = {
@@ -22,7 +20,7 @@ export const NAIVE_PALETTE = {
 export type PaletteColor = keyof typeof NAIVE_PALETTE;
 
 /** 所有图标组件名（共 105 个） */
-export type IconName = 'AirplaneIconIcon' | 'AnchorIconIcon' | 'AppleIconIcon' | 'ArrowDownIconIcon' | 'ArrowLeftIconIcon' | 'ArrowRightIconIcon' | 'ArrowUpIconIcon' | 'BalloonIconIcon' | 'BearIconIcon' | 'BeeIconIcon' | 'BellIconIcon' | 'BicycleIconIcon' | 'BirdIconIcon' | 'BookIconIcon' | 'BookmarkIconIcon' | 'BulbIconIcon' | 'ButterflyIconIcon' | 'CactusIconIcon' | 'CakeIconIcon' | 'CalendarIconIcon' | 'CameraIconIcon' | 'CandleIconIcon' | 'CarIconIcon' | 'CartIconIcon' | 'CatIconIcon' | 'ChatIconIcon' | 'CheckIconIcon' | 'CherryIconIcon' | 'ClockIconIcon' | 'CloseIconIcon' | 'CloudIconIcon' | 'CodeIconIcon' | 'CoffeeIconIcon' | 'CompassIconIcon' | 'CreditCardIconIcon' | 'DogIconIcon' | 'DonutIconIcon' | 'DownloadIconIcon' | 'EditIconIcon' | 'EyeIconIcon' | 'FileIconIcon' | 'FishIconIcon' | 'FlagIconIcon' | 'FlameIconIcon' | 'FlowerIconIcon' | 'FolderIconIcon' | 'FoxIconIcon' | 'FrogIconIcon' | 'GiftIconIcon' | 'GlobeIconIcon' | 'HeadphonesIconIcon' | 'HeartIconIcon' | 'HomeIconIcon' | 'IcecreamIconIcon' | 'ImageIconIcon' | 'KeyIconIcon' | 'LadybugIconIcon' | 'LampIconIcon' | 'LeafIconIcon' | 'LemonIconIcon' | 'LocationIconIcon' | 'LockIconIcon' | 'MagnetIconIcon' | 'MailIconIcon' | 'MapIconIcon' | 'MicIconIcon' | 'MoonIconIcon' | 'MushroomIconIcon' | 'MusicIconIcon' | 'OwlIconIcon' | 'PaintbrushIconIcon' | 'PencilIconIcon' | 'PenguinIconIcon' | 'PhoneIconIcon' | 'PlayIconIcon' | 'PlusIconIcon' | 'RabbitIconIcon' | 'RainbowIconIcon' | 'RefreshIconIcon' | 'RocketIconIcon' | 'SailboatIconIcon' | 'SaveIconIcon' | 'SearchIconIcon' | 'SettingsIconIcon' | 'ShareIconIcon' | 'ShoppingBagIconIcon' | 'SmileIconIcon' | 'SnailIconIcon' | 'SnowflakeIconIcon' | 'StarIconIcon' | 'StrawberryIconIcon' | 'SunIconIcon' | 'TagIconIcon' | 'ThermometerIconIcon' | 'ThumbsUpIconIcon' | 'TrainIconIcon' | 'TrashIconIcon' | 'TreeIconIcon' | 'TrophyIconIcon' | 'UmbrellaIconIcon' | 'UploadIconIcon' | 'UserIconIcon' | 'VideoIconIcon' | 'WatermelonIconIcon' | 'WifiIconIcon';
+export type IconName = 'AirplaneIcon' | 'AnchorIcon' | 'AppleIcon' | 'ArrowDownIcon' | 'ArrowLeftIcon' | 'ArrowRightIcon' | 'ArrowUpIcon' | 'BalloonIcon' | 'BearIcon' | 'BeeIcon' | 'BellIcon' | 'BicycleIcon' | 'BirdIcon' | 'BookIcon' | 'BookmarkIcon' | 'BulbIcon' | 'ButterflyIcon' | 'CactusIcon' | 'CakeIcon' | 'CalendarIcon' | 'CameraIcon' | 'CandleIcon' | 'CarIcon' | 'CartIcon' | 'CatIcon' | 'ChatIcon' | 'CheckIcon' | 'CherryIcon' | 'ClockIcon' | 'CloseIcon' | 'CloudIcon' | 'CodeIcon' | 'CoffeeIcon' | 'CompassIcon' | 'CreditCardIcon' | 'DogIcon' | 'DonutIcon' | 'DownloadIcon' | 'EditIcon' | 'EyeIcon' | 'FileIcon' | 'FishIcon' | 'FlagIcon' | 'FlameIcon' | 'FlowerIcon' | 'FolderIcon' | 'FoxIcon' | 'FrogIcon' | 'GiftIcon' | 'GlobeIcon' | 'HeadphonesIcon' | 'HeartIcon' | 'HomeIcon' | 'IcecreamIcon' | 'ImageIcon' | 'KeyIcon' | 'LadybugIcon' | 'LampIcon' | 'LeafIcon' | 'LemonIcon' | 'LocationIcon' | 'LockIcon' | 'MagnetIcon' | 'MailIcon' | 'MapIcon' | 'MicIcon' | 'MoonIcon' | 'MushroomIcon' | 'MusicIcon' | 'OwlIcon' | 'PaintbrushIcon' | 'PencilIcon' | 'PenguinIcon' | 'PhoneIcon' | 'PlayIcon' | 'PlusIcon' | 'RabbitIcon' | 'RainbowIcon' | 'RefreshIcon' | 'RocketIcon' | 'SailboatIcon' | 'SaveIcon' | 'SearchIcon' | 'SettingsIcon' | 'ShareIcon' | 'ShoppingBagIcon' | 'SmileIcon' | 'SnailIcon' | 'SnowflakeIcon' | 'StarIcon' | 'StrawberryIcon' | 'SunIcon' | 'TagIcon' | 'ThermometerIcon' | 'ThumbsUpIcon' | 'TrainIcon' | 'TrashIcon' | 'TreeIcon' | 'TrophyIcon' | 'UmbrellaIcon' | 'UploadIcon' | 'UserIcon' | 'VideoIcon' | 'WatermelonIcon' | 'WifiIcon';
 
 /** 图标组件类型 */
 export type IconComponent = FC<IconProps>;

@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const ShoppingBagIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const ShoppingBagIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <path d="M18 17 C 18 8 30 8 30 17" stroke="#2A2A2A" stroke-width="3" fill="none"/>
 <path d="M10 16 L 38 16 L 36 42 L 12 42 Z" fill="#F4A6A4"/>
@@ -10,7 +25,11 @@ export const ShoppingBagIcon = (props: IconProps) => (
 <circle cx="28" cy="26" r="1.6" fill="#2A2A2A"/>
 <path d="M20 30 Q 24 33 28 30" stroke="#2A2A2A" fill="none" stroke-width="2"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+ShoppingBagIcon.displayName = 'ShoppingBagIcon';
 
 export default ShoppingBagIcon;

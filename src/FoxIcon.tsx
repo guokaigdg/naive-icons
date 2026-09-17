@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const FoxIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const FoxIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <path d="M11 18 L14 5 L21 14 Z" fill="#E76F51"/>
 <path d="M37 18 L34 5 L27 14 Z" fill="#E76F51"/>
@@ -14,7 +29,11 @@ export const FoxIcon = (props: IconProps) => (
 <circle cx="30" cy="22" r="1.6" fill="#2A2A2A"/>
 <ellipse cx="24" cy="37.5" rx="2.5" ry="2" fill="#2A2A2A"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+FoxIcon.displayName = 'FoxIcon';
 
 export default FoxIcon;

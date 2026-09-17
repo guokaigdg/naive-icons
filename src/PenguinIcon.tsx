@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const PenguinIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const PenguinIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <ellipse cx="24" cy="26" rx="13" ry="17" fill="#264653"/>
 <ellipse cx="24" cy="30" rx="7.5" ry="10" fill="#FFFFFF"/>
@@ -16,7 +31,11 @@ export const PenguinIcon = (props: IconProps) => (
 <ellipse cx="18" cy="43" rx="4.5" ry="2" fill="#E76F51"/>
 <ellipse cx="30" cy="43" rx="4.5" ry="2" fill="#E76F51"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+PenguinIcon.displayName = 'PenguinIcon';
 
 export default PenguinIcon;

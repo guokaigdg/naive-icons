@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const BearIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const BearIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <circle cx="12" cy="14" r="5" fill="#8B5E3C"/>
 <circle cx="36" cy="14" r="5" fill="#8B5E3C"/>
@@ -17,7 +32,11 @@ export const BearIcon = (props: IconProps) => (
 <ellipse cx="24" cy="30.5" rx="2.5" ry="1.8" fill="#2A2A2A"/>
 <path d="M24 32.3 L24 34 M24 34 Q 21 36 19.5 34.5 M24 34 Q 27 36 28.5 34.5" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+BearIcon.displayName = 'BearIcon';
 
 export default BearIcon;

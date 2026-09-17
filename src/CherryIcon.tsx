@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const CherryIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const CherryIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <path d="M15 27 C 15 17 22 11 29 7" stroke="#8B5E3C" stroke-width="2.5" fill="none"/>
 <path d="M33 29 C 33 20 32 12 29 7" stroke="#8B5E3C" stroke-width="2.5" fill="none"/>
@@ -12,7 +27,11 @@ export const CherryIcon = (props: IconProps) => (
 <circle cx="11" cy="30" r="1.8" fill="#FFFFFF"/>
 <circle cx="30" cy="32" r="1.8" fill="#FFFFFF"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+CherryIcon.displayName = 'CherryIcon';
 
 export default CherryIcon;

@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const CactusIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const CactusIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <rect x="20" y="12" width="8" height="30" rx="4" fill="#588157"/>
 <path d="M20 26 L 15 26 C 10 26 9 16 14 16 C 16 16 16 18 16 20 L 16 22 L 20 22 Z" fill="#588157"/>
@@ -16,7 +31,11 @@ export const CactusIcon = (props: IconProps) => (
 <path d="M23 23 Q 24.5 24.5 26 23" stroke="#2A2A2A" fill="none" stroke-width="1.5"/>
 <path d="M14 44 L34 44" stroke="#8B5E3C" stroke-width="3"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+CactusIcon.displayName = 'CactusIcon';
 
 export default CactusIcon;

@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const BeeIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const BeeIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <ellipse cx="17" cy="13" rx="6" ry="4" transform="rotate(-25 17 13)" fill="#FAEDCD"/>
 <ellipse cx="31" cy="13" rx="6" ry="4" transform="rotate(25 31 13)" fill="#FAEDCD"/>
@@ -15,7 +30,11 @@ export const BeeIcon = (props: IconProps) => (
 <path d="M20 19 C 17 13 14 11 11 12" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
 <path d="M28 19 C 31 13 34 11 37 12" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+BeeIcon.displayName = 'BeeIcon';
 
 export default BeeIcon;

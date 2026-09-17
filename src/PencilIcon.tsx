@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const PencilIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const PencilIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <path d="M13 31 L 31 13 L 35 17 L 17 35 Z" fill="#E9C46A"/>
 <path d="M13 31 L 7 41 L 17 35 Z" fill="#FAEDCD"/>
@@ -10,7 +25,11 @@ export const PencilIcon = (props: IconProps) => (
 <path d="M31 13 L 35 9 L 39 13 L 35 17 Z" fill="#F4A6A4"/>
 <path d="M31 13 L 35 17" stroke="#2A2A2A" stroke-width="2"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+PencilIcon.displayName = 'PencilIcon';
 
 export default PencilIcon;

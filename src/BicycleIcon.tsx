@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const BicycleIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const BicycleIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <circle cx="13" cy="33" r="8" fill="none" stroke="#2A2A2A" stroke-width="3"/>
 <circle cx="35" cy="33" r="8" fill="none" stroke="#2A2A2A" stroke-width="3"/>
@@ -15,7 +30,11 @@ export const BicycleIcon = (props: IconProps) => (
 <circle cx="13" cy="33" r="2" fill="#2A9D8F"/>
 <circle cx="35" cy="33" r="2" fill="#2A9D8F"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+BicycleIcon.displayName = 'BicycleIcon';
 
 export default BicycleIcon;

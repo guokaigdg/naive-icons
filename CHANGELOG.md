@@ -6,6 +6,13 @@
 
 官方文档站点重构，并新增 4 个方向键图标。
 
+修复
+
+- 修正 `IconName` 类型中图标名后缀重复的问题，现在与组件导出名一一对应
+- 全部 105 个组件改用 `forwardRef`，支持 ref 透传，并补全 `displayName` 便于 DevTools 识别
+- 补齐无障碍属性：装饰性图标默认 `aria-hidden`，传入 `title` 时自动渲染 `<title>` 子节点并标记 `role="img"`
+- `normalizeIconProps` 不再把 `title` 误写为原生 `title` 属性，避免与无障碍 `<title>` 节点冲突
+
 改进
 
 - 官网三层（HTML / CSS / JS）完全重写：语义化标签、统一的设计令牌体系（间距 4px 基数、圆角与阴影尺度）、清除模板导出的冗余属性

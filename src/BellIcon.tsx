@@ -1,8 +1,23 @@
+import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const BellIcon = (props: IconProps) => (
-  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" strokeLinecap="round" strokeLinejoin="round" {...normalizeIconProps(props)}>
+export const BellIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
     
 <path d="M10 34 C 10 12 38 12 38 34 Z" fill="#E9C46A"/>
 <path d="M8 34 L40 34" stroke="#2A2A2A" stroke-width="3"/>
@@ -10,7 +25,11 @@ export const BellIcon = (props: IconProps) => (
 <circle cx="24" cy="24" r="1.5" fill="#2A2A2A"/>
 <circle cx="24" cy="29" r="1.5" fill="#2A2A2A"/>
 
-  </svg>
-);
+  
+    </svg>
+  );
+});
+
+BellIcon.displayName = 'BellIcon';
 
 export default BellIcon;
