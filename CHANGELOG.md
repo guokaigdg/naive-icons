@@ -2,7 +2,7 @@
 
 本文件记录 Naive Icons 的每个版本变更。版本号遵循语义化版本规范（SemVer）。
 
-## Unreleased
+## 1.1.0
 
 新增导航 / 操作骨架一组图标（menu、chevron 四向、ellipsis、external-link、link / unlink、copy、minus），图标总数增至 116。
 
