@@ -92,6 +92,12 @@ ICON_CATEGORY = {
     'ellipsis': 'interface', 'external-link': 'interface',
     'link': 'interface', 'unlink': 'interface',
     'copy': 'action', 'minus': 'action',
+    # 运动 / 自然 / 媒体控制 / 饮品 / 品牌
+    'basketball': 'objects', 'dumbbell': 'objects',
+    'mountain': 'nature', 'tent': 'nature',
+    'pause': 'action', 'stop': 'action',
+    'coffee-cup': 'food', 'water-cup': 'food',
+    'google-chrome': 'objects',
 }
 
 # ---------------------------------------------------------------- 中文名
@@ -131,6 +137,11 @@ ZH_NAMES = {
     'ellipsis': '更多', 'external-link': '外链',
     'link': '链接', 'unlink': '取消链接',
     'copy': '复制', 'minus': '减号',
+    'basketball': '篮球', 'dumbbell': '哑铃',
+    'mountain': '山峰', 'tent': '帐篷',
+    'pause': '暂停', 'stop': '停止',
+    'coffee-cup': '咖啡杯', 'water-cup': '水杯',
+    'google-chrome': 'Chrome',
 }
 
 

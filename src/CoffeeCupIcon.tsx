@@ -1,0 +1,34 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps } from './iconProps';
+
+export const CoffeeCupIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+      
+<path d="M13 11 L35 11 L34 16 L14 16 Z" fill="#8B5E3C"/>
+<path d="M14.5 16 L17 40 C 17.5 42 30.5 42 31 40 L33.5 16 Z" fill="#FAEDCD"/>
+<path d="M15.2 23 L32.8 23 L31.9 31 L16.1 31 Z" fill="#E76F51"/>
+<path d="M24 29.6 C 21.8 27.6 21.7 25.7 23.2 25 C 23.9 24.7 24 25.3 24 25.7 C 24 25.3 24.1 24.7 24.8 25 C 26.3 25.7 26.2 27.6 24 29.6 Z" fill="#FAEDCD" stroke="none"/>
+<path d="M20 8 C 20 6 22 6 22 3.5" stroke="#2A2A2A" stroke-width="2"/>
+<path d="M27 8 C 27 6 29 6 29 3.5" stroke="#2A2A2A" stroke-width="2"/>
+
+    </svg>
+  );
+});
+
+CoffeeCupIcon.displayName = 'CoffeeCupIcon';
+
+export default CoffeeCupIcon;

@@ -12,6 +12,7 @@ build/
 .env
 .env.local
 .env.*.local
+.workbuddy/
 
 # 日志
 npm-debug.log*

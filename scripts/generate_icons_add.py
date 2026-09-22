@@ -179,16 +179,10 @@ NEW_ICONS = {
 <path d="M23 23 Q 24.5 24.5 26 23" stroke="{INK}" fill="none" stroke-width="1.5"/>
 <path d="M14 44 L34 44" stroke="{BROWN}" stroke-width="3"/>'''),
 
-    'snowflake': S(f'''<circle cx="24" cy="24" r="3.5" fill="{TEAL}"/>
-<path d="M24 5 L24 43" stroke="{TEAL}" stroke-width="3"/>
-<path d="M7.6 14.5 L40.4 33.5" stroke="{TEAL}" stroke-width="3"/>
-<path d="M7.6 33.5 L40.4 14.5" stroke="{TEAL}" stroke-width="3"/>
-<path d="M20 10 L24 6 L28 10" stroke="{TEAL}" stroke-width="2.5" fill="none"/>
-<path d="M20 38 L24 42 L28 38" stroke="{TEAL}" stroke-width="2.5" fill="none"/>
-<path d="M9.5 11 L8 15.5 L12.5 16.5" stroke="{TEAL}" stroke-width="2.5" fill="none"/>
-<path d="M38.5 37 L40 32.5 L35.5 31.5" stroke="{TEAL}" stroke-width="2.5" fill="none"/>
-<path d="M12.5 31.5 L8 32.5 L9.5 37" stroke="{TEAL}" stroke-width="2.5" fill="none"/>
-<path d="M35.5 16.5 L40 15.5 L38.5 11" stroke="{TEAL}" stroke-width="2.5" fill="none"/>'''),
+    'snowflake': S(f'''<circle cx="24" cy="24" r="3" fill="{TEAL}"/>
+<g transform="rotate(0 24 24)"><path d="M24 5 L24 43 M24 16 L20.1 13.75 M24 16 L27.9 13.75 M24 10 L21.4 8.5 M24 10 L26.6 8.5 M24 32 L20.1 34.25 M24 32 L27.9 34.25 M24 38 L21.4 39.5 M24 38 L26.6 39.5" stroke="{TEAL}" stroke-width="3" fill="none"/></g>
+<g transform="rotate(60 24 24)"><path d="M24 5 L24 43 M24 16 L20.1 13.75 M24 16 L27.9 13.75 M24 10 L21.4 8.5 M24 10 L26.6 8.5 M24 32 L20.1 34.25 M24 32 L27.9 34.25 M24 38 L21.4 39.5 M24 38 L26.6 39.5" stroke="{TEAL}" stroke-width="3" fill="none"/></g>
+<g transform="rotate(120 24 24)"><path d="M24 5 L24 43 M24 16 L20.1 13.75 M24 16 L27.9 13.75 M24 10 L21.4 8.5 M24 10 L26.6 8.5 M24 32 L20.1 34.25 M24 32 L27.9 34.25 M24 38 L21.4 39.5 M24 38 L26.6 39.5" stroke="{TEAL}" stroke-width="3" fill="none"/></g>'''),
 
     'flame': S(f'''<path d="M24 5 C 19 13 12 17 12 27 C 12 36 17 42 24 42 C 31 42 36 36 36 27 C 36 19 30 15 29 9 C 26 13 23 11 24 5 Z" fill="{ORANGE}"/>
 <path d="M24 20 C 20 25 18 28 18 32 C 18 37 21 40 24 40 C 27 40 30 37 30 32 C 30 28 26 26 24 20 Z" fill="{YELLOW}"/>'''),
@@ -456,6 +450,57 @@ NEW_ICONS = {
 
     'minus': S(f'''<circle cx="24" cy="24" r="17" fill="{YELLOW}"/>
 <path d="M15 24 L 33 24" stroke="{INK}" stroke-width="4.5"/>'''),
+
+    # ---------- 运动 / 自然 / 媒体控制 / 饮品 / 品牌 ----------
+    'basketball': S(f'''<circle cx="24" cy="24" r="18" fill="{ORANGE}"/>
+<path d="M24 6 L24 42" stroke="{INK}" stroke-width="2.5"/>
+<path d="M6 24 L42 24" stroke="{INK}" stroke-width="2.5"/>
+<path d="M11 12 C 17 18 17 30 11 36" stroke="{INK}" stroke-width="2.5"/>
+<path d="M37 12 C 31 18 31 30 37 36" stroke="{INK}" stroke-width="2.5"/>'''),
+
+    'dumbbell': S(f'''<rect x="8" y="15" width="6.5" height="18" rx="2.5" fill="{ORANGE}"/>
+<rect x="15.5" y="19" width="4" height="10" rx="2" fill="{YELLOW}"/>
+<path d="M19.5 24 L28.5 24" stroke="{INK}" stroke-width="3.5"/>
+<rect x="28.5" y="19" width="4" height="10" rx="2" fill="{YELLOW}"/>
+<rect x="33.5" y="15" width="6.5" height="18" rx="2.5" fill="{ORANGE}"/>'''),
+
+    'mountain': S(f'''<path d="M4 37 L17 15 L24 26 L31 13 L44 37 Z" fill="{GREEN}"/>
+<path d="M31 13 L34.5 18.5 L32 17.5 L30 19.5 L28.5 17.5 Z" fill="{CREAM}"/>
+<path d="M17 15 L19.5 19 L17.5 18 L15.8 20 L14.6 18.5 Z" fill="{CREAM}"/>
+<path d="M31 13 L31 6.5" stroke="{INK}" stroke-width="2"/>
+<path d="M31 6.5 L37.5 8.5 L31 10.5 Z" fill="{ORANGE}"/>'''),
+
+    'tent': S(f'''<path d="M5 37 L24 11 L43 37 Z" fill="{ORANGE}"/>
+<path d="M24 21 L32.5 37 L15.5 37 Z" fill="{CREAM}"/>
+<path d="M24 11 L24 6" stroke="{INK}" stroke-width="2"/>
+<path d="M24 6 L31 8.5 L24 11 Z" fill="{YELLOW}"/>'''),
+
+    'pause': S(f'''<circle cx="24" cy="24" r="20" fill="{TEAL}"/>
+<path d="M19 16 L19 32" stroke="{YELLOW}" stroke-width="5"/>
+<path d="M29 16 L29 32" stroke="{YELLOW}" stroke-width="5"/>'''),
+
+    'stop': S(f'''<circle cx="24" cy="24" r="20" fill="{TEAL}"/>
+<rect x="17" y="17" width="14" height="14" rx="2.5" fill="{YELLOW}"/>'''),
+
+    'coffee-cup': S(f'''<path d="M13 11 L35 11 L34 16 L14 16 Z" fill="{BROWN}"/>
+<path d="M14.5 16 L17 40 C 17.5 42 30.5 42 31 40 L33.5 16 Z" fill="{CREAM}"/>
+<path d="M15.2 23 L32.8 23 L31.9 31 L16.1 31 Z" fill="{ORANGE}"/>
+<path d="M24 29.6 C 21.8 27.6 21.7 25.7 23.2 25 C 23.9 24.7 24 25.3 24 25.7 C 24 25.3 24.1 24.7 24.8 25 C 26.3 25.7 26.2 27.6 24 29.6 Z" fill="{CREAM}" stroke="none"/>
+<path d="M20 8 C 20 6 22 6 22 3.5" stroke="{INK}" stroke-width="2"/>
+<path d="M27 8 C 27 6 29 6 29 3.5" stroke="{INK}" stroke-width="2"/>'''),
+
+    'water-cup': S(f'''<path d="M13 12 L16 39 C 16.5 41.5 31.5 41.5 32 39 L35 12 Z" fill="{CREAM}"/>
+<path d="M15.8 24 C 21 22.5 27 25.5 32.2 24 L 30.6 35 C 30.2 37.5 17.8 37.5 17.4 35 Z" fill="{TEAL}"/>
+<path d="M28 11 L31.5 4" stroke="{ORANGE}" stroke-width="3"/>
+<circle cx="22" cy="29" r="1.6" fill="{CREAM}"/>
+<circle cx="25.5" cy="32.5" r="1.2" fill="{CREAM}"/>'''),
+
+    'google-chrome': S(f'''<path d="M24 24 L41.32 14 A20 20 0 0 0 6.68 14 Z" fill="{ORANGE}" stroke="none"/>
+<path d="M24 24 L41.32 14 A20 20 0 0 1 24 44 Z" fill="{YELLOW}" stroke="none"/>
+<path d="M24 24 L24 44 A20 20 0 0 1 6.68 14 Z" fill="{GREEN}" stroke="none"/>
+<circle cx="24" cy="24" r="8.8" fill="{CREAM}" stroke="none"/>
+<circle cx="24" cy="24" r="6.8" fill="#4A8FD4"/>
+<circle cx="24" cy="24" r="20" fill="none"/>'''),
 }
 
 
