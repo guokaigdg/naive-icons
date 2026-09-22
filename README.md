@@ -179,8 +179,8 @@ import { NAIVE_PALETTE } from 'naive-icons';
 **界面基础**（18）
 home, user, settings, search, heart, star, bell, calendar, clock, eye, bulb, tag, bookmark, menu, ellipsis, external-link, link, unlink
 
-**操作**（13）
-edit, trash, download, upload, save, plus, close, check, refresh, share, play, copy, minus
+**操作**（15）
+edit, trash, download, upload, save, plus, close, check, refresh, share, play, pause, stop, copy, minus
 
 **文件与媒体**（10）
 file, folder, image, camera, video, mic, music, code, book, headphones
@@ -191,8 +191,8 @@ location, compass, map, flag, anchor, magnet, arrow-up, arrow-down, arrow-left, 
 **通信**（4）
 mail, chat, phone, wifi
 
-**自然天气**（12）
-sun, moon, cloud, umbrella, tree, flower, leaf, rainbow, mushroom, cactus, snowflake, flame
+**自然天气**（14）
+sun, moon, cloud, umbrella, tree, mountain, tent, flower, leaf, rainbow, mushroom, cactus, snowflake, flame
 
 **动物**（14）
 cat, dog, bird, fish, penguin, rabbit, bear, fox, owl, frog, bee, butterfly, snail, ladybug
@@ -200,8 +200,8 @@ cat, dog, bird, fish, penguin, rabbit, bear, fox, owl, frog, bee, butterfly, sna
 **食物饮品**（11）
 apple, strawberry, watermelon, cherry, lemon, cake, icecream, donut, coffee, coffee-cup, water-cup
 
-**日常物品**（13）
-balloon, lamp, candle, pencil, paintbrush, globe, trophy, shopping-bag, credit-card, gift, thermometer, lock, key
+**日常物品**（16）
+balloon, basketball, dumbbell, lamp, candle, pencil, paintbrush, globe, google-chrome, trophy, shopping-bag, credit-card, gift, thermometer, lock, key
 
 **交通工具**（7）
 car, airplane, rocket, cart, bicycle, sailboat, train

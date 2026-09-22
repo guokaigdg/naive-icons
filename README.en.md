@@ -178,8 +178,8 @@ import { NAIVE_PALETTE } from 'naive-icons';
 **Interface Basics** (18)
 home, user, settings, search, heart, star, bell, calendar, clock, eye, bulb, tag, bookmark, menu, ellipsis, external-link, link, unlink
 
-**Actions** (13)
-edit, trash, download, upload, save, plus, close, check, refresh, share, play, copy, minus
+**Actions** (15)
+edit, trash, download, upload, save, plus, close, check, refresh, share, play, pause, stop, copy, minus
 
 **Files & Media** (10)
 file, folder, image, camera, video, mic, music, code, book, headphones
@@ -190,14 +190,14 @@ location, compass, map, flag, anchor, magnet, arrow-up, arrow-down, arrow-left, 
 **Communication** (4)
 mail, chat, phone, wifi
 
-**Nature & Weather** (12)
-sun, moon, cloud, umbrella, tree, flower, leaf, rainbow, mushroom, cactus, snowflake, flame
+**Nature & Weather** (14)
+sun, moon, cloud, umbrella, tree, mountain, tent, flower, leaf, rainbow, mushroom, cactus, snowflake, flame
 
 **Animals** (14)
 cat, dog, bird, fish, penguin, rabbit, bear, fox, owl, frog, bee, butterfly, snail, ladybug
 
-**Food & Drink** (9)
-apple, strawberry, watermelon, cherry, lemon, cake, icecream, donut, coffee
+**Food & Drink** (11)
+apple, strawberry, watermelon, cherry, lemon, cake, icecream, donut, coffee, coffee-cup, water-cup
 
 **Everyday Objects** (16)
 balloon, basketball, dumbbell, lamp, candle, pencil, paintbrush, globe, google-chrome, trophy, shopping-bag, credit-card, gift, thermometer, lock, key
