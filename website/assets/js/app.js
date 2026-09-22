@@ -143,6 +143,22 @@
     }
   }
 
+  function initExplorerBar() {
+    var bar = $('.explorer__bar');
+    if (!bar) return;
+    var headerH = parseInt(
+      getComputedStyle(document.documentElement).getPropertyValue('--header-h'),
+      10
+    ) || 66;
+    var update = function () {
+      var stuck = bar.getBoundingClientRect().top <= headerH + 1;
+      bar.classList.toggle('is-stuck', stuck);
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
   function initTheme() {
     var btn = $('#themeToggle');
     if (btn) {
@@ -302,7 +318,7 @@
     },
     {
       q: '项目不是 React，还能用吗？',
-      a: '完全可以。svg/ 目录下是 105 个标准 SVG 1.1 文件，可直接用 img 引用、内联到 HTML、制作 SVG sprite 或转成 Icon Font。',
+      a: '完全可以。svg/ 目录下是 125 个标准 SVG 1.1 文件，可直接用 img 引用、内联到 HTML、制作 SVG sprite 或转成 Icon Font。',
     },
   ];
 
@@ -702,6 +718,7 @@
     state.color = autoColorFor();
 
     initTheme();
+    initExplorerBar();
     initHero();
     initChips();
     initPalette();
@@ -717,8 +734,17 @@
 
     render();
 
+    // 同步页面上写死的图标总数，避免与 svg/ 实际数量脱节
+    var total = ICONS.length;
+    var browseBtn = $('a.btn--solid[href="#icons"]');
+    if (browseBtn) browseBtn.textContent = '浏览 ' + total + ' 个图标';
+    ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]'].forEach(function (sel) {
+      var m = $(sel);
+      if (m) m.setAttribute('content', m.getAttribute('content').replace(/\d+/, String(total)));
+    });
     $$('[data-count]').forEach(function (el) {
-      el.textContent = ICONS.length;
+      el.textContent = total;
+      el.setAttribute('data-count', String(total));
     });
   }
 

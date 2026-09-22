@@ -22,11 +22,11 @@
 </p>
 
 
-Naive Icons is a hand-drawn SVG icon library with a naive folk art style, built for React and TypeScript. All 116 icons are AI-generated original works.
+Naive Icons is a hand-drawn SVG icon library with a naive folk art style, built for React and TypeScript. All 125 icons are AI-generated original works.
 
 Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a unified retro palette — keeping the charming clumsiness and warmth of hand-drawn illustration. Some icons even feature a pair of dot eyes and a little smile, adding a touch of humanity to your interface.
 
-- Icon count: 116
+- Icon count: 125
 - Per-icon size: roughly 400–700 bytes
 - Dependencies: zero runtime dependencies, React as a peer dependency only
 - License: MIT
@@ -48,7 +48,7 @@ Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a u
 
 ## Features
 
-- 116 original hand-drawn SVG icons spanning 11 categories: interface, actions, media, navigation, animals, food, and more
+- 125 original hand-drawn SVG icons spanning 11 categories: interface, actions, media, navigation, animals, food, and more
 - Unified spec: 48x48 viewBox, 3.5 stroke width, round line caps and joins
 - Unified palette: 9 retro colors, usable directly as design tokens
 - Some icons feature dot eyes and a little smile for a highly recognizable style
@@ -199,8 +199,8 @@ cat, dog, bird, fish, penguin, rabbit, bear, fox, owl, frog, bee, butterfly, sna
 **Food & Drink** (9)
 apple, strawberry, watermelon, cherry, lemon, cake, icecream, donut, coffee
 
-**Everyday Objects** (13)
-balloon, lamp, candle, pencil, paintbrush, globe, trophy, shopping-bag, credit-card, gift, thermometer, lock, key
+**Everyday Objects** (16)
+balloon, basketball, dumbbell, lamp, candle, pencil, paintbrush, globe, google-chrome, trophy, shopping-bag, credit-card, gift, thermometer, lock, key
 
 **Transport** (7)
 car, airplane, rocket, cart, bicycle, sailboat, train
@@ -223,8 +223,8 @@ Naive Icons follows four fixed rules. They should be respected when adding new i
 
 ```
 naive-icons/
-├── svg/                 116 SVG source files
-├── src/                 116 React TSX components + index.ts + types.ts
+├── svg/                 125 SVG source files
+├── src/                 125 React TSX components + index.ts + types.ts
 ├── assets/              Brand assets (logo)
 ├── scripts/             Icon generation and preview build scripts
 ├── website/             Official documentation site

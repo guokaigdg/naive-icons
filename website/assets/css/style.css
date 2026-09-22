@@ -38,7 +38,11 @@
   --r: 14px;
   --r-lg: 20px;
   --r-xl: 28px;
-  --r-hand: 20px 24px 18px 22px;
+  --r-hand-tl: 20px;
+  --r-hand-tr: 24px;
+  --r-hand-br: 18px;
+  --r-hand-bl: 22px;
+  --r-hand: var(--r-hand-tl) var(--r-hand-tr) var(--r-hand-br) var(--r-hand-bl);
   --r-full: 999px;
 
   --shell: 1180px;
@@ -657,7 +661,7 @@ svg {
 .explorer__bar {
   position: relative;
   z-index: 20;
-  border-radius: var(--r-hand) var(--r-hand) 0 0;
+  border-radius: calc(var(--r-hand-tl) - 1px) calc(var(--r-hand-tr) - 1px) 0 0;
   background: var(--card-2);
   border-bottom: 1px solid var(--line);
 }
@@ -671,6 +675,10 @@ svg {
 
   :root[data-theme="dark"] .explorer__bar {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .explorer__bar.is-stuck {
+    border-radius: 0;
   }
 }
 
@@ -901,7 +909,7 @@ svg {
   grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
   gap: 6px;
   padding: var(--s4) var(--s4) var(--s5);
-  border-radius: 0 0 var(--r-hand) var(--r-hand);
+  border-radius: 0 0 calc(var(--r-hand-br) - 1px) calc(var(--r-hand-bl) - 1px);
 }
 
 .grid[data-bg="dark"] {
