@@ -2,6 +2,18 @@
 
 本文件记录 Naive Icons 的每个版本变更。版本号遵循语义化版本规范（SemVer）。
 
+## 1.2.0
+
+新增
+
+- 新增 9 个图标（basketball、dumbbell、google-chrome、mountain、tent、pause、stop、coffee-cup、water-cup），图标总数增至 125
+- 官网图标总数改为从图标数据动态读取，不再硬编码，避免与 svg/ 实际数量脱节
+
+改进
+
+- 重绘 airplane 机尾与 snowflake 雪花几何，雪花改为三等分旋转结构
+- 官网图标浏览器工具栏吸顶时改为直角，与头部贴合；圆角改用独立变量，修复左上/右上边框显示不全的问题
+
 ## 1.1.0
 
 新增导航 / 操作骨架一组图标（menu、chevron 四向、ellipsis、external-link、link / unlink、copy、minus），图标总数增至 116。
