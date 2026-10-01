@@ -2,6 +2,16 @@
 
 本文件记录 Naive Icons 的每个版本变更。版本号遵循语义化版本规范（SemVer）。
 
+## 1.3.0
+
+新增
+
+- 新增 9 个状态 / 反馈图标（alert-circle、alert-triangle、check-circle、eye-off、help-circle、info、lock-open、spinner、x-circle），图标总数增至 134
+
+改进
+
+- 微调 check 图标勾形几何，提升小尺寸下的清晰度
+
 ## 1.2.0
 
 新增

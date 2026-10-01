@@ -98,6 +98,12 @@ ICON_CATEGORY = {
     'pause': 'action', 'stop': 'action',
     'coffee-cup': 'food', 'water-cup': 'food',
     'google-chrome': 'objects',
+    # 状态 / 反馈
+    'check-circle': 'interface', 'x-circle': 'interface',
+    'alert-circle': 'interface', 'alert-triangle': 'interface',
+    'info': 'interface', 'help-circle': 'interface',
+    'eye-off': 'interface', 'lock-open': 'objects',
+    'spinner': 'interface',
 }
 
 # ---------------------------------------------------------------- 中文名
@@ -142,6 +148,11 @@ ZH_NAMES = {
     'pause': '暂停', 'stop': '停止',
     'coffee-cup': '咖啡杯', 'water-cup': '水杯',
     'google-chrome': 'Chrome',
+    'check-circle': '成功', 'x-circle': '错误',
+    'alert-circle': '提示', 'alert-triangle': '警告',
+    'info': '信息', 'help-circle': '帮助',
+    'eye-off': '隐藏', 'lock-open': '解锁',
+    'spinner': '加载',
 }
 
 

@@ -179,10 +179,15 @@ NEW_ICONS = {
 <path d="M23 23 Q 24.5 24.5 26 23" stroke="{INK}" fill="none" stroke-width="1.5"/>
 <path d="M14 44 L34 44" stroke="{BROWN}" stroke-width="3"/>'''),
 
-    'snowflake': S(f'''<circle cx="24" cy="24" r="3" fill="{TEAL}"/>
-<g transform="rotate(0 24 24)"><path d="M24 5 L24 43 M24 16 L20.1 13.75 M24 16 L27.9 13.75 M24 10 L21.4 8.5 M24 10 L26.6 8.5 M24 32 L20.1 34.25 M24 32 L27.9 34.25 M24 38 L21.4 39.5 M24 38 L26.6 39.5" stroke="{TEAL}" stroke-width="3" fill="none"/></g>
-<g transform="rotate(60 24 24)"><path d="M24 5 L24 43 M24 16 L20.1 13.75 M24 16 L27.9 13.75 M24 10 L21.4 8.5 M24 10 L26.6 8.5 M24 32 L20.1 34.25 M24 32 L27.9 34.25 M24 38 L21.4 39.5 M24 38 L26.6 39.5" stroke="{TEAL}" stroke-width="3" fill="none"/></g>
-<g transform="rotate(120 24 24)"><path d="M24 5 L24 43 M24 16 L20.1 13.75 M24 16 L27.9 13.75 M24 10 L21.4 8.5 M24 10 L26.6 8.5 M24 32 L20.1 34.25 M24 32 L27.9 34.25 M24 38 L21.4 39.5 M24 38 L26.6 39.5" stroke="{TEAL}" stroke-width="3" fill="none"/></g>'''),
+    'snowflake': S(f'''<g fill="{TEAL}">
+<g transform="rotate(0 24 24)"><path d="M24 6 L27.5 15 L25 19 L23 19 L20.5 15 Z"/><path d="M26 14 L33 9 L30 16 Z"/><path d="M22 14 L15 9 L18 16 Z"/></g>
+<g transform="rotate(60 24 24)"><path d="M24 6 L27.5 15 L25 19 L23 19 L20.5 15 Z"/><path d="M26 14 L33 9 L30 16 Z"/><path d="M22 14 L15 9 L18 16 Z"/></g>
+<g transform="rotate(120 24 24)"><path d="M24 6 L27.5 15 L25 19 L23 19 L20.5 15 Z"/><path d="M26 14 L33 9 L30 16 Z"/><path d="M22 14 L15 9 L18 16 Z"/></g>
+<g transform="rotate(180 24 24)"><path d="M24 6 L27.5 15 L25 19 L23 19 L20.5 15 Z"/><path d="M26 14 L33 9 L30 16 Z"/><path d="M22 14 L15 9 L18 16 Z"/></g>
+<g transform="rotate(240 24 24)"><path d="M24 6 L27.5 15 L25 19 L23 19 L20.5 15 Z"/><path d="M26 14 L33 9 L30 16 Z"/><path d="M22 14 L15 9 L18 16 Z"/></g>
+<g transform="rotate(300 24 24)"><path d="M24 6 L27.5 15 L25 19 L23 19 L20.5 15 Z"/><path d="M26 14 L33 9 L30 16 Z"/><path d="M22 14 L15 9 L18 16 Z"/></g>
+</g>
+<circle cx="24" cy="24" r="5" fill="{TEAL}"/>'''),
 
     'flame': S(f'''<path d="M24 5 C 19 13 12 17 12 27 C 12 36 17 42 24 42 C 31 42 36 36 36 27 C 36 19 30 15 29 9 C 26 13 23 11 24 5 Z" fill="{ORANGE}"/>
 <path d="M24 20 C 20 25 18 28 18 32 C 18 37 21 40 24 40 C 27 40 30 37 30 32 C 30 28 26 26 24 20 Z" fill="{YELLOW}"/>'''),
@@ -501,6 +506,43 @@ NEW_ICONS = {
 <circle cx="24" cy="24" r="8.8" fill="{CREAM}" stroke="none"/>
 <circle cx="24" cy="24" r="6.8" fill="#4A8FD4"/>
 <circle cx="24" cy="24" r="20" fill="none"/>'''),
+
+    # ---------- 状态 / 反馈 ----------
+    'check-circle': S(f'''<circle cx="24" cy="24" r="17" fill="none" stroke="{INK}" stroke-width="3.5"/>
+<path d="M15 24.5 L21 30.5 L34 16" fill="none" stroke="{GREEN}" stroke-width="4"/>'''),
+
+    'x-circle': S(f'''<circle cx="24" cy="24" r="17" fill="none" stroke="{INK}" stroke-width="3.5"/>
+<path d="M17 17 L31 31" fill="none" stroke="{ORANGE}" stroke-width="4"/>
+<path d="M31 17 L17 31" fill="none" stroke="{ORANGE}" stroke-width="4"/>'''),
+
+    'alert-circle': S(f'''<circle cx="24" cy="24" r="17" fill="none" stroke="{INK}" stroke-width="3.5"/>
+<path d="M24 14 L24 27" fill="none" stroke="{ORANGE}" stroke-width="4"/>
+<circle cx="24" cy="33" r="2.2" fill="{ORANGE}"/>'''),
+
+    'alert-triangle': S(f'''<path d="M24 7 L43 40 L5 40 Z" fill="{YELLOW}" stroke="{INK}" stroke-width="3.5"/>
+<path d="M24 18 L24 30" fill="none" stroke="{INK}" stroke-width="4"/>
+<circle cx="24" cy="35" r="2.2" fill="{INK}"/>'''),
+
+    'info': S(f'''<circle cx="24" cy="24" r="17" fill="none" stroke="{INK}" stroke-width="3.5"/>
+<circle cx="24" cy="16.5" r="2.2" fill="{TEAL}"/>
+<path d="M24 21 L24 34" fill="none" stroke="{TEAL}" stroke-width="4"/>'''),
+
+    'help-circle': S(f'''<circle cx="24" cy="24" r="17" fill="none" stroke="{INK}" stroke-width="3.5"/>
+<path d="M19 19 C 19 14 29 14 29 19 C 29 23 24 23 24 27" fill="none" stroke="{TEAL}" stroke-width="3.5"/>
+<circle cx="24" cy="33" r="2.2" fill="{TEAL}"/>'''),
+
+    'eye-off': S(f'''<path d="M5 24 C 11 13 37 13 43 24 C 37 35 11 35 5 24 Z" fill="{CREAM}"/>
+<circle cx="24" cy="24" r="6.5" fill="{TEAL}"/>
+<circle cx="24" cy="24" r="3" fill="{INK}"/>
+<path d="M8 8 L 40 40" fill="none" stroke="{ORANGE}" stroke-width="3.5"/>'''),
+
+    'lock-open': S(f'''<path d="M16 22 L 16 15 C 16 6 31 6 31 14 L 31 18" fill="none" stroke="{INK}" stroke-width="4"/>
+<rect x="10" y="21" width="28" height="19" rx="3" fill="{YELLOW}"/>
+<circle cx="24" cy="29" r="3" fill="{INK}"/>
+<path d="M24 29 L 21.5 35 L 26.5 35 Z" fill="{INK}"/>'''),
+
+    'spinner': S(f'''<circle cx="24" cy="24" r="14" fill="none" stroke="{CREAM}" stroke-width="3.5"/>
+<path d="M24 10 A 14 14 0 1 1 10 24" fill="none" stroke="{TEAL}" stroke-width="3.5"/>'''),
 }
 
 

@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const CheckIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+export const AlertTriangleIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
   return (
     <svg
@@ -17,16 +17,15 @@ export const CheckIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
+      
+<path d="M24 7 L43 40 L5 40 Z" fill="#E9C46A" stroke="#2A2A2A" stroke-width="3.5"/>
+<path d="M24 18 L24 30" fill="none" stroke="#2A2A2A" stroke-width="4"/>
+<circle cx="24" cy="35" r="2.2" fill="#2A2A2A"/>
 
-    
-<circle cx="24" cy="24" r="17" fill="#588157"/>
-<path d="M15 24.5 L21 30.5 L32 18.5" stroke="#FFFFFF" stroke-width="4.5" fill="none"/>
-
-  
     </svg>
   );
 });
 
-CheckIcon.displayName = 'CheckIcon';
+AlertTriangleIcon.displayName = 'AlertTriangleIcon';
 
-export default CheckIcon;
+export default AlertTriangleIcon;

@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const CheckIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+export const LockOpenIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
   return (
     <svg
@@ -17,16 +17,16 @@ export const CheckIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
+      
+<path d="M16 21 L 16 15 C 16 7 32 7 32 15 L 32 16" fill="none" stroke="#2A2A2A" stroke-width="4"/>
+<rect x="10" y="21" width="28" height="19" rx="3" fill="#E9C46A"/>
+<circle cx="24" cy="29" r="3" fill="#2A2A2A"/>
+<path d="M24 29 L 21.5 35 L 26.5 35 Z" fill="#2A2A2A"/>
 
-    
-<circle cx="24" cy="24" r="17" fill="#588157"/>
-<path d="M15 24.5 L21 30.5 L32 18.5" stroke="#FFFFFF" stroke-width="4.5" fill="none"/>
-
-  
     </svg>
   );
 });
 
-CheckIcon.displayName = 'CheckIcon';
+LockOpenIcon.displayName = 'LockOpenIcon';
 
-export default CheckIcon;
+export default LockOpenIcon;

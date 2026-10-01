@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const CheckIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+export const EyeOffIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
   return (
     <svg
@@ -17,16 +17,16 @@ export const CheckIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
+      
+<path d="M5 24 C 11 13 37 13 43 24 C 37 35 11 35 5 24 Z" fill="#FAEDCD"/>
+<circle cx="24" cy="24" r="6.5" fill="#2A9D8F"/>
+<circle cx="24" cy="24" r="3" fill="#2A2A2A"/>
+<path d="M8 8 L 40 40" fill="none" stroke="#E76F51" stroke-width="3.5"/>
 
-    
-<circle cx="24" cy="24" r="17" fill="#588157"/>
-<path d="M15 24.5 L21 30.5 L32 18.5" stroke="#FFFFFF" stroke-width="4.5" fill="none"/>
-
-  
     </svg>
   );
 });
 
-CheckIcon.displayName = 'CheckIcon';
+EyeOffIcon.displayName = 'EyeOffIcon';
 
-export default CheckIcon;
+export default EyeOffIcon;
