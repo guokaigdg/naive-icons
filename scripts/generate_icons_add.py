@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Naive Icons 扩充脚本 —— 只新增，不修改已有的 50 个图标
-- 新增图标沿用 v1 规范：48x48 viewBox, stroke #2A2A2A / 3.5, 圆角线帽, naive 调色板
+- 新增图标沿用 v1 规范：48x48 viewBox, stroke #2A2A2A / 3.5, 圆角线帽
+- 配色以 9 色 naive 调色板为默认基调，确有必要时可用其他实色（如品牌色，见下方 BLUE），一律扁平填充
 - 生成新 .svg + .tsx，更新 index.ts / types.ts / package.json
 """
 import os
@@ -21,6 +22,8 @@ TEAL = '#2A9D8F'
 BROWN = '#8B5E3C'
 CREAM = '#FAEDCD'
 WHITE = '#FFFFFF'
+# 调色板之外的补充色：仅在确有必要时使用（如品牌色），扁平填充
+BLUE = '#4A8FD4'
 
 
 def S(body):
@@ -517,7 +520,7 @@ NEW_ICONS = {
 <path d="M24 24 L41.32 14 A20 20 0 0 1 24 44 Z" fill="{YELLOW}" stroke="none"/>
 <path d="M24 24 L24 44 A20 20 0 0 1 6.68 14 Z" fill="{GREEN}" stroke="none"/>
 <circle cx="24" cy="24" r="8.8" fill="{CREAM}" stroke="none"/>
-<circle cx="24" cy="24" r="6.8" fill="#4A8FD4"/>
+<circle cx="24" cy="24" r="6.8" fill="{BLUE}"/>
 <circle cx="24" cy="24" r="20" fill="none"/>'''),
 
     # ---------- 状态 / 反馈 ----------

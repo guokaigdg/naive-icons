@@ -21,13 +21,13 @@
   <img src="https://img.shields.io/badge/SVG-FFB13B?style=flat-square&logoColor=black" alt="SVG">
 </p>
 
-Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a unified retro palette — keeping the charming clumsiness and warmth of hand-drawn illustration. Some icons even feature a pair of dot eyes and a little smile, adding a touch of humanity to your interface.
+Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a retro palette — keeping the charming clumsiness and warmth of hand-drawn illustration. Some icons even feature a pair of dot eyes and a little smile, adding a touch of humanity to your interface.
 
 ## Features
 
 - Icons spanning 11 categories: interface, actions, media, navigation, animals, food, and more
 - Every icon ships as both an SVG source file and a React TSX component
-- Full TypeScript types: IconProps, IconName, IconCategory, NAIVE_PALETTE
+- Full TypeScript types: IconProps, IconName, IconComponent, NAIVE_PALETTE
 - Supports currentColor, so icons automatically follow the surrounding text color
 
 ## Installation
@@ -152,7 +152,7 @@ Naive Icons follows four fixed rules. They should be respected when adding new i
 
 1. **Grid & bleed**: All graphics are drawn on a 48x48 canvas, keeping at least 3 units between the main body and the canvas edge.
 2. **Stroke**: A unified 3.5 width with round caps and joins, and no dashed lines.
-3. **Color**: Use only the 9 colors in the palette — no gradients, shadows, or semi-transparent overlays.
+3. **Color**: The 9 palette colors set the default tone; other solid colors are allowed when genuinely needed (e.g. brand colors) — no gradients, shadows, or semi-transparent overlays.
 4. **Personality**: Slight asymmetry is welcome; encourage dot eyes and a smile on living subjects to keep the hand-drawn clumsiness.
 
 ## Local Development
