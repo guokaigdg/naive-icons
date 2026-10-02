@@ -1,0 +1,40 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps } from './iconProps';
+
+export const ScooterIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+      <g transform="translate(48,0) scale(-1,1)">
+<path d="M4 33 L4 22 Q4 16 10 16 L20 16 Q22 24 27 30 L27 33 Z" fill="#E9C46A"/>
+<path d="M6 18 L6 12 Q6 9 9 9 L17 9 Q20 9 20 12 L20 18 Z" fill="#264653"/>
+<circle cx="12" cy="37" r="6" fill="none" stroke="#2A2A2A" stroke-width="3"/>
+<circle cx="38" cy="37" r="6" fill="none" stroke="#2A2A2A" stroke-width="3"/>
+<circle cx="12" cy="37" r="2.2" fill="#2A9D8F"/>
+<circle cx="38" cy="37" r="2.2" fill="#2A9D8F"/>
+<path d="M30 33 Q30 21 38 21 Q46 21 46 33 L44 33 Q44 29.7 38 29.7 Q32 29.7 32 33 Z" fill="#E9C46A"/>
+<path d="M25 29 L34 29 L34 33 L25 33 Z" fill="#E76F51"/>
+<path d="M30 33 L27 14 Q27 11 30 11 Q33 11 33 14 L36 33 Z" fill="#E76F51"/>
+<path d="M33 11 L33 8 Q33 6 35 6 L37 6 Q39 6 39 8 L39 11 Z" fill="#E9C46A"/>
+<path d="M25 10 L32 8" stroke="#2A2A2A" stroke-width="3"/>
+      </g>
+
+    </svg>
+  );
+});
+
+ScooterIcon.displayName = 'ScooterIcon';
+
+export default ScooterIcon;

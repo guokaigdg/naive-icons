@@ -103,6 +103,7 @@ export { RefreshIcon } from './RefreshIcon';
 export { RocketIcon } from './RocketIcon';
 export { SailboatIcon } from './SailboatIcon';
 export { SaveIcon } from './SaveIcon';
+export { ScooterIcon } from './ScooterIcon';
 export { SearchIcon } from './SearchIcon';
 export { SettingsIcon } from './SettingsIcon';
 export { ShareIcon } from './ShareIcon';

@@ -78,11 +78,11 @@ ICON_CATEGORY = {
     'pencil': 'objects', 'paintbrush': 'objects', 'globe': 'objects',
     'trophy': 'objects', 'shopping-bag': 'objects', 'credit-card': 'objects',
     'gift': 'objects', 'thermometer': 'objects', 'lock': 'objects',
-    'key': 'objects',
+    'key': 'objects', 'cart': 'objects',
     # 交通工具
     'car': 'transport', 'airplane': 'transport', 'rocket': 'transport',
-    'cart': 'transport', 'bicycle': 'transport', 'sailboat': 'transport',
-    'train': 'transport',
+    'bicycle': 'transport', 'sailboat': 'transport',
+    'train': 'transport', 'scooter': 'transport',
     # 表情
     'smile': 'emoji', 'thumbs-up': 'emoji',
     # 导航 / 操作骨架
@@ -153,6 +153,7 @@ ZH_NAMES = {
     'info': '信息', 'help-circle': '帮助',
     'eye-off': '隐藏', 'lock-open': '解锁',
     'spinner': '加载',
+    'scooter': '踏板摩托车',
 }
 
 

@@ -282,6 +282,19 @@ NEW_ICONS = {
 <circle cx="24" cy="40" r="1.5" fill="{INK}"/>
 <circle cx="35" cy="40" r="1.5" fill="{INK}"/>'''),
 
+    'scooter': S(f'''<g transform="translate(48,0) scale(-1,1)">
+<path d="M4 33 L4 22 Q4 16 10 16 L20 16 Q22 24 27 30 L27 33 Z" fill="{YELLOW}"/>
+<path d="M6 18 L6 12 Q6 9 9 9 L17 9 Q20 9 20 12 L20 18 Z" fill="{NAVY}"/>
+<circle cx="12" cy="37" r="6" fill="none" stroke="{INK}" stroke-width="3"/>
+<circle cx="38" cy="37" r="6" fill="none" stroke="{INK}" stroke-width="3"/>
+<circle cx="12" cy="37" r="2.2" fill="{TEAL}"/>
+<circle cx="38" cy="37" r="2.2" fill="{TEAL}"/>
+<path d="M30 33 Q30 21 38 21 Q46 21 46 33 L44 33 Q44 29.7 38 29.7 Q32 29.7 32 33 Z" fill="{YELLOW}"/>
+<path d="M25 29 L34 29 L34 33 L25 33 Z" fill="{ORANGE}"/>
+<path d="M30 33 L27 14 Q27 11 30 11 Q33 11 33 14 L36 33 Z" fill="{ORANGE}"/>
+<path d="M33 11 L33 8 Q33 6 35 6 L37 6 Q39 6 39 8 L39 11 Z" fill="{YELLOW}"/>
+<path d="M25 10 L32 8" stroke="{INK}" stroke-width="3"/></g>'''),
+
     # ---------- 物品 ----------
     'balloon': S(f'''<path d="M24 5 C 14 5 9 13 9 19 C 9 26 15 31 24 31 C 33 31 39 26 39 19 C 39 13 34 5 24 5 Z" fill="{ORANGE}"/>
 <path d="M21 31 L 27 31 L 24 35 Z" fill="{ORANGE}"/>
