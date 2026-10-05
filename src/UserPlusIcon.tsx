@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const RefreshIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+export const UserPlusIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
   return (
     <svg
@@ -18,15 +18,17 @@ export const RefreshIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
     >
       {props.title ? <title>{props.title}</title> : null}
       
-<path d="M11 16.5 A 15 15 0 0 1 37 16.5" fill="none" stroke="#2A9D8F" stroke-width="4.5"/>
-<path d="M40.7 23 L33 18.8 L41 14.2 Z" fill="#E76F51" stroke-width="3"/>
-<path d="M37 31.5 A 15 15 0 0 1 11 31.5" fill="none" stroke="#2A9D8F" stroke-width="4.5"/>
-<path d="M7.3 25 L15 29.2 L7 33.8 Z" fill="#E76F51" stroke-width="3"/>
+<circle cx="19" cy="16" r="8" fill="#E76F51"/>
+<path d="M5 42 C 5 33 11 29 19 29 C 26 29 31 31 34 36 L 34 42 Z" fill="#2A9D8F"/>
+<circle cx="16.5" cy="16" r="1.5" fill="#2A2A2A"/>
+<circle cx="21.5" cy="16" r="1.5" fill="#2A2A2A"/>
+<path d="M16 20 Q 19 22.5 22 20" stroke="#2A2A2A" fill="none"/>
+<path d="M37 28 L37 38 M32 33 L42 33" stroke="#E76F51" stroke-width="4.5"/>
 
     </svg>
   );
 });
 
-RefreshIcon.displayName = 'RefreshIcon';
+UserPlusIcon.displayName = 'UserPlusIcon';
 
-export default RefreshIcon;
+export default UserPlusIcon;

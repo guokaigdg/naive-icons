@@ -390,8 +390,10 @@ NEW_ICONS = {
 <path d="M24 15 L 24 33" stroke="{INK}" stroke-width="4.5"/>
 <path d="M15 24 L 33 24" stroke="{INK}" stroke-width="4.5"/>'''),
 
-    'refresh': S(f'''<path d="M37 16 A 14.5 14.5 0 1 0 38.5 24" stroke="{TEAL}" stroke-width="3.5" fill="none"/>
-<path d="M30 10 L 39 11 L 35 19 Z" fill="{ORANGE}"/>'''),
+    'refresh': S(f'''<path d="M11 16.5 A 15 15 0 0 1 37 16.5" fill="none" stroke="{TEAL}" stroke-width="4.5"/>
+<path d="M40.7 23 L33 18.8 L41 14.2 Z" fill="{ORANGE}" stroke-width="3"/>
+<path d="M37 31.5 A 15 15 0 0 1 11 31.5" fill="none" stroke="{TEAL}" stroke-width="4.5"/>
+<path d="M7.3 25 L15 29.2 L7 33.8 Z" fill="{ORANGE}" stroke-width="3"/>'''),
 
     'share': S(f'''<circle cx="13" cy="24" r="5.5" fill="{ORANGE}"/>
 <circle cx="33" cy="11" r="5.5" fill="{TEAL}"/>
@@ -451,10 +453,9 @@ NEW_ICONS = {
 <circle cx="24" cy="24" r="3" fill="{INK}"/>
 <circle cx="36" cy="24" r="3" fill="{INK}"/>'''),
 
-    'external-link': S(f'''<rect x="9" y="9" width="20" height="20" rx="3" fill="none" stroke="{INK}" stroke-width="3.5"/>
-<path d="M21 27 L 35 13" fill="none" stroke="{INK}" stroke-width="3.5"/>
-<path d="M35 13 L 35 22" fill="none" stroke="{INK}" stroke-width="3.5"/>
-<path d="M35 13 L 26 13" fill="none" stroke="{INK}" stroke-width="3.5"/>'''),
+    'external-link': S(f'''<path d="M26.5 25 L26.5 32 Q26.5 38 20.5 38 L12 38 Q6 38 6 32 L6 20 Q6 14 12 14 L20.5 14" fill="none" stroke="{INK}" stroke-width="5"/>
+<path d="M19 25 L30.9 13.1" fill="none" stroke="{ORANGE}" stroke-width="4"/>
+<path d="M33 18.8 L33 11 L25.2 11" fill="none" stroke="{ORANGE}" stroke-width="4"/>'''),
 
     'link': S(f'''<g transform="rotate(45 24 24)">
 <rect x="9" y="17" width="16" height="14" rx="7" fill="none" stroke="{INK}" stroke-width="3.5"/>
@@ -559,6 +560,121 @@ NEW_ICONS = {
 
     'spinner': S(f'''<circle cx="24" cy="24" r="14" fill="none" stroke="{CREAM}" stroke-width="3.5"/>
 <path d="M24 10 A 14 14 0 1 1 10 24" fill="none" stroke="{TEAL}" stroke-width="3.5"/>'''),
+
+    # ---------- 成员 / 视图 ----------
+
+    'users': S(f'''<circle cx="15" cy="14" r="6" fill="{NAVY}"/>
+<path d="M5 34 C 5 26 9 23 15 23 C 19 23 22 24 24 26 L 24 40 L 8 40 Z" fill="{NAVY}"/>
+<circle cx="29" cy="18" r="7.5" fill="{ORANGE}"/>
+<path d="M14 42 C 14 33 21 30 29 30 C 37 30 43 33 43 42 Z" fill="{TEAL}"/>
+<circle cx="26.5" cy="18" r="1.5" fill="{INK}"/>
+<circle cx="31.5" cy="18" r="1.5" fill="{INK}"/>
+<path d="M26 22 Q 29 24.5 32 22" stroke="{INK}" fill="none"/>'''),
+
+    'user-plus': S(f'''<circle cx="19" cy="16" r="8" fill="{ORANGE}"/>
+<path d="M5 42 C 5 33 11 29 19 29 C 26 29 31 31 34 36 L 34 42 Z" fill="{TEAL}"/>
+<circle cx="16.5" cy="16" r="1.5" fill="{INK}"/>
+<circle cx="21.5" cy="16" r="1.5" fill="{INK}"/>
+<path d="M16 20 Q 19 22.5 22 20" stroke="{INK}" fill="none"/>
+<path d="M37 28 L37 38 M32 33 L42 33" stroke="{ORANGE}" stroke-width="4.5"/>'''),
+
+    'grid': S(f'''<rect x="6" y="6" width="16" height="16" rx="3.5" fill="{TEAL}"/>
+<rect x="26" y="6" width="16" height="16" rx="3.5" fill="{YELLOW}"/>
+<rect x="6" y="26" width="16" height="16" rx="3.5" fill="{ORANGE}"/>
+<rect x="26" y="26" width="16" height="16" rx="3.5" fill="{NAVY}"/>'''),
+
+    'list': S(f'''<circle cx="10" cy="14" r="3.4" fill="{TEAL}"/>
+<circle cx="10" cy="24" r="3.4" fill="{ORANGE}"/>
+<circle cx="10" cy="34" r="3.4" fill="{YELLOW}"/>
+<line x1="19" y1="14" x2="41" y2="14" stroke="{INK}" stroke-width="4"/>
+<line x1="19" y1="24" x2="41" y2="24" stroke="{INK}" stroke-width="4"/>
+<line x1="19" y1="34" x2="41" y2="34" stroke="{INK}" stroke-width="4"/>'''),
+
+    'sliders': S(f'''<line x1="6" y1="15" x2="42" y2="15" stroke="{INK}" stroke-width="3.5"/>
+<line x1="6" y1="24" x2="42" y2="24" stroke="{INK}" stroke-width="3.5"/>
+<line x1="6" y1="33" x2="42" y2="33" stroke="{INK}" stroke-width="3.5"/>
+<circle cx="16" cy="15" r="4.6" fill="{ORANGE}"/>
+<circle cx="32" cy="24" r="4.6" fill="{TEAL}"/>
+<circle cx="20" cy="33" r="4.6" fill="{YELLOW}"/>'''),
+
+    'more-vertical': S(f'''<circle cx="24" cy="12" r="3.4" fill="{INK}"/>
+<circle cx="24" cy="24" r="3.4" fill="{INK}"/>
+<circle cx="24" cy="36" r="3.4" fill="{INK}"/>'''),
+
+    # ---------- 数据与表单 ----------
+
+    'filter': S(f'''<path d="M6 8 L42 8 L29 23 L29 41 L19 34 L19 23 Z" fill="{TEAL}"/>
+<path d="M6 8 L42 8 L38 14 L10 14 Z" fill="{CREAM}"/>'''),
+
+    'sort': S(f'''<path d="M15 40 L15 14" stroke="{TEAL}" stroke-width="4.5"/>
+<path d="M7 22 L15 12 L23 22 Z" fill="{TEAL}"/>
+<path d="M33 8 L33 34" stroke="{ORANGE}" stroke-width="4.5"/>
+<path d="M25 26 L33 36 L41 26 Z" fill="{ORANGE}"/>'''),
+
+    'check-square': S(f'''<rect x="7" y="7" width="34" height="34" rx="6" fill="none" stroke="{INK}" stroke-width="3.5"/>
+<path d="M15 24.5 L21.5 31 L33.5 18" stroke="{GREEN}" stroke-width="5" fill="none"/>'''),
+
+    # ---------- 历史与音量 ----------
+
+    'undo': S(f'''<path d="M24 10 A 14 14 0 1 1 11.9 17" fill="none" stroke="{INK}" stroke-width="4.5"/>
+<path d="M17 10 L24 5.5 L24 14.5 Z" fill="{ORANGE}"/>'''),
+
+    'redo': S(f'''<path d="M24 10 A 14 14 0 1 0 36.1 17" fill="none" stroke="{INK}" stroke-width="4.5"/>
+<path d="M31 10 L24 5.5 L24 14.5 Z" fill="{ORANGE}"/>'''),
+
+    'volume': S(f'''<path d="M6 19 L13 19 L23 10 L23 38 L13 29 L6 29 Z" fill="{TEAL}"/>
+<path d="M29 18 A 8 8 0 0 1 29 30" fill="none" stroke="{ORANGE}" stroke-width="4"/>
+<path d="M35 13 A 14 14 0 0 1 35 35" fill="none" stroke="{ORANGE}" stroke-width="3.5"/>'''),
+
+    'volume-x': S(f'''<path d="M5.8 19 L12.8 19 L21 10 L21 38 L12.8 29 L5.8 29 Z" fill="{TEAL}"/>
+<path d="M28 18.5 L37 27.5 M37 18.5 L28 27.5" stroke="{ORANGE}" stroke-width="4.5"/>'''),
+
+    # ---------- 视图缩放 ----------
+
+    'maximize': S(f'''<path d="M6 16 L6 6 L16 6" fill="none" stroke="{INK}" stroke-width="4.5"/>
+<path d="M32 6 L42 6 L42 16" fill="none" stroke="{INK}" stroke-width="4.5"/>
+<path d="M42 32 L42 42 L32 42" fill="none" stroke="{INK}" stroke-width="4.5"/>
+<path d="M16 42 L6 42 L6 32" fill="none" stroke="{INK}" stroke-width="4.5"/>
+<circle cx="24" cy="24" r="3" fill="{ORANGE}"/>'''),
+
+    'zoom-in': S(f'''<circle cx="20" cy="20" r="12.5" fill="none" stroke="{TEAL}" stroke-width="4"/>
+<path d="M29.5 29.5 L40 40" stroke="{INK}" stroke-width="4.5"/>
+<path d="M20 15 L20 25 M15 20 L25 20" stroke="{ORANGE}" stroke-width="4"/>'''),
+
+    'zoom-out': S(f'''<circle cx="20" cy="20" r="12.5" fill="none" stroke="{TEAL}" stroke-width="4"/>
+<path d="M29.5 29.5 L40 40" stroke="{INK}" stroke-width="4.5"/>
+<path d="M15 20 L25 20" stroke="{ORANGE}" stroke-width="4"/>'''),
+
+    'arrow-up-right': S(f'''<path d="M13 35 L33 15" stroke="{ORANGE}" stroke-width="4.5" fill="none"/>
+<path d="M34 24 L34 12 L22 12" stroke="{ORANGE}" stroke-width="4.5" fill="none"/>
+<circle cx="13" cy="35" r="3" fill="{TEAL}"/>'''),
+
+    # ---------- 通信与附件 ----------
+
+    'send': S(f'''<path d="M6 24 L43 7 L31 41 L24.5 27 Z" fill="{ORANGE}"/>
+<path d="M24.5 27 L43 7 L18 21 Z" fill="{YELLOW}"/>'''),
+
+    'inbox': S(f'''<path d="M5 19 L5 41 L43 41 L43 19 L29 19 L26 28 L22 28 L19 19 Z" fill="{TEAL}" stroke="{INK}" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="17" y="33" width="14" height="4" rx="2" fill="{CREAM}"/>'''),
+
+    'paperclip': S(f'''<path d="M17 31 L28 20 A 5 5 0 0 0 21 13 L 12 22 A 9 9 0 0 0 25 35 L 33 27" fill="none" stroke="{TEAL}" stroke-width="4.5"/>'''),
+
+    # ---------- 状态徽章 ----------
+
+    'shield': S(f'''<path d="M24 5 L41 12 C 41 28 34 38 24 43 C 14 38 7 28 7 12 Z" fill="{NAVY}"/>
+<path d="M17 24 L22 29 L31 19" stroke="{YELLOW}" stroke-width="4.5" fill="none"/>'''),
+
+    'badge-check': S(f'''<path d="M17 32 L17 43 L24 38.5 L31 43 L31 32 Z" fill="{ORANGE}"/>
+<circle cx="24" cy="20" r="13" fill="{NAVY}"/>
+<path d="M18 20 L22.5 24.5 L30.5 15.5" stroke="{YELLOW}" stroke-width="4" fill="none"/>'''),
+
+    'bell-off': S(f'''<path d="M11 32 C 11 14 37 14 37 32 Z" fill="{CREAM}" stroke="{INK}" stroke-width="3.5"/>
+<path d="M9 32 L39 32" stroke="{INK}" stroke-width="3"/>
+<path d="M20 36 C 20 40 28 40 28 36" fill="{INK}"/>
+<path d="M10 39 L38 11" stroke="{ORANGE}" stroke-width="4.5"/>'''),
+
+    'ban': S(f'''<circle cx="24" cy="24" r="17" fill="{CREAM}"/>
+<path d="M12 36 L36 12" stroke="{ORANGE}" stroke-width="5"/>'''),
 }
 
 
@@ -668,4 +784,5 @@ desc = pkg.get('description', '')
 pkg['description'] = _re.sub(r'\b\d+\b', str(new_count), desc, count=1)
 with open(pkg_path, 'w') as f:
     json.dump(pkg, f, indent=2, ensure_ascii=False)
+    f.write('\n')  # json.dump 不补尾换行，不手动写会让 package.json 平白多出一行 diff
 print(f'package.json 更新: {new_count} icons')

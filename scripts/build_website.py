@@ -104,6 +104,24 @@ ICON_CATEGORY = {
     'info': 'interface', 'help-circle': 'interface',
     'eye-off': 'interface', 'lock-open': 'objects',
     'spinner': 'interface',
+    # 成员 / 视图
+    'users': 'interface', 'user-plus': 'interface', 'grid': 'interface',
+    'list': 'interface', 'sliders': 'interface',
+    'more-vertical': 'interface',
+    # 数据与表单
+    'filter': 'action', 'sort': 'action', 'check-square': 'interface',
+    # 历史与音量
+    'undo': 'action', 'redo': 'action',
+    'volume': 'media', 'volume-x': 'media',
+    # 视图缩放
+    'maximize': 'action', 'zoom-in': 'action', 'zoom-out': 'action',
+    'arrow-up-right': 'navigation',
+    # 通信与附件
+    'send': 'communication', 'inbox': 'communication',
+    'paperclip': 'media',
+    # 状态徽章
+    'shield': 'interface', 'badge-check': 'interface',
+    'bell-off': 'interface', 'ban': 'interface',
 }
 
 # ---------------------------------------------------------------- 中文名
@@ -154,6 +172,17 @@ ZH_NAMES = {
     'eye-off': '隐藏', 'lock-open': '解锁',
     'spinner': '加载',
     'scooter': '踏板摩托车',
+    'users': '多人', 'user-plus': '添加成员',
+    'grid': '网格', 'list': '列表', 'sliders': '调节',
+    'more-vertical': '更多(竖)',
+    'filter': '筛选', 'sort': '排序', 'check-square': '复选框',
+    'undo': '撤销', 'redo': '重做',
+    'volume': '音量', 'volume-x': '静音',
+    'maximize': '全屏', 'zoom-in': '放大', 'zoom-out': '缩小',
+    'arrow-up-right': '右上箭头',
+    'send': '发送', 'inbox': '收件箱', 'paperclip': '附件',
+    'shield': '安全', 'badge-check': '认证',
+    'bell-off': '免打扰', 'ban': '禁止',
 }
 
 

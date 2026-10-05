@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';
 
-export const RefreshIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+export const BanIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
   return (
     <svg
@@ -18,15 +18,13 @@ export const RefreshIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
     >
       {props.title ? <title>{props.title}</title> : null}
       
-<path d="M11 16.5 A 15 15 0 0 1 37 16.5" fill="none" stroke="#2A9D8F" stroke-width="4.5"/>
-<path d="M40.7 23 L33 18.8 L41 14.2 Z" fill="#E76F51" stroke-width="3"/>
-<path d="M37 31.5 A 15 15 0 0 1 11 31.5" fill="none" stroke="#2A9D8F" stroke-width="4.5"/>
-<path d="M7.3 25 L15 29.2 L7 33.8 Z" fill="#E76F51" stroke-width="3"/>
+<circle cx="24" cy="24" r="17" fill="#FAEDCD"/>
+<path d="M12 36 L36 12" stroke="#E76F51" stroke-width="5"/>
 
     </svg>
   );
 });
 
-RefreshIcon.displayName = 'RefreshIcon';
+BanIcon.displayName = 'BanIcon';
 
-export default RefreshIcon;
+export default BanIcon;
