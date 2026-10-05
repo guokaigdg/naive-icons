@@ -44,9 +44,13 @@
       .replace(/"/g, '&quot;');
   }
 
-  /** 只替换描边色，保留图标内部的扁平填充 —— 那是 naive 风格的一部分 */
+  /**
+   * 只把主结构的墨色描边换成给定颜色。
+   * 图标里的彩色描边（橙点、蓝勾…）和扁平填充都是设计的一部分，原样保留。
+   * 调用方传的是它想要的主色：取色器选中的颜色，或 hero 跟随主题的墨色/奶油色。
+   */
   function recolor(svg, color) {
-    return svg.replace(/stroke="#[0-9A-Fa-f]{3,8}"/g, 'stroke="' + color + '"');
+    return svg.replace(/stroke="#2A2A2A"/g, 'stroke="' + color + '"');
   }
 
   function findIcon(id) {
@@ -120,6 +124,9 @@
   var ICON_SUN = 'M12 4V2M12 22v-2M4 12H2M22 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M5.6 18.4l-1.4 1.4M19.8 4.2l-1.4 1.4M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z';
   var ICON_MOON = 'M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z';
 
+  /* hero 贴纸主结构当前用的描边色；只换这一种，图标自带的彩色描边保持原样 */
+  var heroStroke = INK;
+
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     var path = $('#themeIconPath');
@@ -132,13 +139,16 @@
     // hero stage 里的 sticker svg 是一次性生成的，主题切换后要手动换描边色
     var host = $('#heroStage');
     if (host) {
-      var strokeColor = theme === 'dark' ? CREAM : INK;
-      var svgs = host.querySelectorAll('svg');
-      for (var i = 0; i < svgs.length; i++) {
-        var html = svgs[i].outerHTML.replace(/stroke="#[0-9A-Fa-f]{3,8}"/g, 'stroke="' + strokeColor + '"');
-        var wrap = document.createElement('div');
-        wrap.innerHTML = html;
-        svgs[i].replaceWith(wrap.firstElementChild);
+      var next = theme === 'dark' ? CREAM : INK;
+      if (next !== heroStroke) {
+        var svgs = host.querySelectorAll('svg');
+        for (var i = 0; i < svgs.length; i++) {
+          var html = svgs[i].outerHTML.split('stroke="' + heroStroke + '"').join('stroke="' + next + '"');
+          var wrap = document.createElement('div');
+          wrap.innerHTML = html;
+          svgs[i].replaceWith(wrap.firstElementChild);
+        }
+        heroStroke = next;
       }
     }
   }
@@ -186,12 +196,15 @@
   function initHero() {
     var host = $('#heroStage');
     if (!host) return;
+    // 贴纸落在深色卡片上时必须用奶油描边，否则墨色会和底色糊在一起
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    heroStroke = dark ? CREAM : INK;
     host.innerHTML = HERO_ICONS.map(function (id, i) {
       var icon = findIcon(id);
       if (!icon) return '';
       return (
         '<div class="sticker" style="--rot:' + HERO_ROT[i % 12] + 'deg;--dy:' + HERO_DY[i % 12] + 'px">' +
-        recolor(icon.svg, INK) +
+        recolor(icon.svg, heroStroke) +
         '</div>'
       );
     }).join('');
@@ -563,21 +576,6 @@
     return recolor(icon.svg, state.color);
   }
 
-  function indexOfCurrent() {
-    for (var i = 0; i < view.length; i++) {
-      if (view[i].id === current.id) return i;
-    }
-    return -1;
-  }
-
-  function step(delta) {
-    if (!view.length) return;
-    var i = indexOfCurrent();
-    if (i < 0) return;
-    var next = (i + delta + view.length) % view.length;
-    openModal(view[next].id);
-  }
-
   function openModal(id) {
     var icon = findIcon(id);
     if (!icon) return;
@@ -631,16 +629,6 @@
       var modal = $('#modal');
       if (!modal || modal.hidden) return;
       if (e.key === 'Escape') closeModal();
-      else if (e.key === 'ArrowLeft') step(-1);
-      else if (e.key === 'ArrowRight') step(1);
-    });
-
-    $('#modalPrev').addEventListener('click', function () {
-      step(-1);
-    });
-
-    $('#modalNext').addEventListener('click', function () {
-      step(1);
     });
 
     $$('.tabs button').forEach(function (btn) {

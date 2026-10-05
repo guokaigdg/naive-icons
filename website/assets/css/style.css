@@ -1323,10 +1323,10 @@ td code {
   }
 }
 
-.modal__close,
-.modal__nav button {
+.modal__close {
   position: absolute;
   top: 14px;
+  right: 14px;
   width: 34px;
   height: 34px;
   display: grid;
@@ -1339,27 +1339,9 @@ td code {
   transition: color 0.16s, border-color 0.16s;
 }
 
-.modal__close:hover,
-.modal__nav button:hover {
+.modal__close:hover {
   color: var(--text);
   border-color: var(--line-2);
-}
-
-.modal__close {
-  right: 14px;
-}
-
-.modal__nav button {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#modalPrev {
-  left: 12px;
-}
-
-#modalNext {
-  right: 12px;
 }
 
 .modal__preview {
