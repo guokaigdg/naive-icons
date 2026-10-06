@@ -2,6 +2,40 @@
 
 本文件记录 Naive Icons 的每个版本变更。版本号遵循语义化版本规范（SemVer）。
 
+## 1.5.2
+
+修复
+
+- **109 / 159 枚图标（68%）的 JSX 里带 kebab-case 属性**。SVG 里 `stroke-width` /
+  `stroke-linecap` / `stroke-linejoin` 是合法的 kebab-case，JSX 里必须写 camelCase。
+  TSX 的 body 是从 SVG 原样搬过来的，历史上忘了转换，React 会报
+  `Invalid DOM property \`stroke-width\``。该缺陷自 1.1/1.2 起就在线上（v1.3.0 时已有 89 枚命中）
+- **`strokeWidth` 真正作用到整枚图标**。SVG 的 `stroke-width` 是可继承属性，但子元素一旦自带值
+  就不再继承根节点。库里有 220 处内层自带描边（182 处是刻意的粗细层次：细节 1.5–2、
+  主体 3.5、强调 4–5），所以以前只改根节点的话，`<Icon strokeWidth={7} />` 会得到
+  「外框 7、内层还是 3.5 与 4」的断裂效果。现在内层写成 `strokeWidth={sw(设计值)}`，
+  `sw` 由 `scaledStroke(props.strokeWidth)` 提供，把 `strokeWidth` 当作**相对 3.5 的缩放系数**：
+  默认 3.5 时 scale 为 1，设计值一根线都不变；传 7 则所有描边一起加倍，层次关系保持
+- `size` 传 `null` 时不再让尺寸属性消失。以前用解构默认值 `const { size = 24 }`，
+  它只对 `undefined` 生效，于是 `size={isLarge ? 32 : null}` 这种很自然的写法会传进 `null`，
+  结果 svg 上 `width` / `height` 属性整个缺失，图标按浏览器默认尺寸渲染。
+  现在改用 `??`，负数同样回落 24；`size={0}` 保留（用 0 隐藏图标是合理用法）
+
+其他
+
+- 订正 1.5.1 CHANGELOG 里的体积数据。当时用 `sourcemap: false` 的探针构建去量，
+  却发布了 `sourcemap: true` 的版本，数字对不上。实际是 141.9 KB → 222.7 KB
+- 发布时排除 `dist/**/*.map`（640 个文件，占 dist 总量 52%）。仓库里仍然保留，
+  只是不进 tarball。tarball 因此从 222.7 KB 回到 **149.9 KB**，相对 1.5.0 只 +5.6%，
+  文件数 1775 → 1135
+- 两个生成器（`generate_icons.py` / `generate_icons_add.py`）都加上 kebab → camel 转换
+  与描边缩放，`emit.py` 的 tsx 输出也一并修正，以后新增图标不会再犯
+- `scaledStroke` 与 `normalizeIconProps` 从包入口导出
+- 测试从 13 个增加到 27 个：
+  - `tests/jsx-attrs.test.ts` 断言 159 个 tsx 的 JSX 体内没有 kebab 属性、内层描边是
+    `sw(...)` 形式、svg/ 源文件仍保持 kebab（那是合法的，不能被「修」成 camel）
+  - `tests/iconProps.test.ts` 补 size 的 5 个边界用例与 `scaledStroke` 的 4 组缩放用例
+
 ## 1.5.1
 
 修复
@@ -12,7 +46,10 @@
   「整个模块」，管不到模块内部的顶层语句，所以那时它等于没写。
   实测只导入 `HomeIcon` 一个图标会打进 **105 KB（gzip 11.8 KB）**。
   改为每个图标各自成为入口 + `splitting: true` 后，同样的导入是 **935 B**（约 1/112），
-  产物里只剩用到的那一个图标。tarball 体积只从 141.9 KB 涨到 142.1 KB
+  产物里只剩用到的那一个图标。
+  代价是 dist 文件数从 6 涨到约 960，tarball 从 141.9 KB 涨到 222.7 KB（+57%）、
+  unpacked 从 1.37 MB 涨到 1.73 MB。1.5.2 起发布时排除 `.map`（占 dist 总量 52%），
+  tarball 回到 149.9 KB，相对 1.5.0 只 +5.6%
 - 新增 `naive-icons/icons/*` 子路径，可绕过顶层入口直接引单个图标
 - `width` / `height` 不再被静默忽略。以前 `normalizeIconProps` 无条件写
   `svgProps.width = size`，导致 `width={40}` 渲染出来还是 24×24，README 承诺的
