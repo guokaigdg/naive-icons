@@ -2,6 +2,53 @@
 
 本文件记录 Naive Icons 的每个版本变更。版本号遵循语义化版本规范（SemVer）。
 
+## 1.5.0
+
+新增
+
+- 官方 Agent Skill：让 AI 编码助手能按语义检索图标、输出可直接粘贴的代码，并知道这套图标的设计规范
+- 一条命令装好，不用先装本库、不用挑 agent：
+
+  ```bash
+  npx skills add guokaigdg/naive-icons
+  ```
+
+  会先展示要装的内容再确认，并自动识别本机已装的 agent。
+  可选 Project（跟着仓库走，团队共享）或 Global（装到用户目录），加 `-g` 可跳过该选择。
+- Skill 自带全部 SVG 源码（收在 `scripts/icons.json` 一个文件里），装到哪都能出码，
+  不依赖项目里是否装了本库
+- 脚本只用 Python 标准库，skill 被装到任何位置都能跑
+- 新增 `scripts/build_skill_assets.py`，从 `svg/` 生成 skill 的 `catalog.md` 与
+  `icons.json`，并校验 `svg/`、`ICON_CATEGORY`、`ZH_NAMES` 三者一致
+
+## 1.4.0
+
+新增
+
+- 新增 25 个图标，图标总数增至 159
+  - 界面基础 +11：users、user-plus、more-vertical、check-square、shield、bell-off、sliders、grid、list、ban、badge-check
+  - 操作 +7：filter、sort、undo、redo、maximize、zoom-in、zoom-out
+  - 文件与媒体 +3：volume、volume-x、paperclip
+  - 通信 +2：send、inbox
+  - 导航方位 +1：arrow-up-right
+  - 交通工具 +1：scooter
+- 撤销 / 重做改为墨色长弧搭配橙色实心箭头的形态，两枚互为镜像，箭头水平朝外
+- 放大 / 缩小改用青色线框镜片加橙色大符号，与 search 的实心镜片彻底区分开
+
+改进
+
+- 重绘 refresh 为上下双弧的循环箭头，两段弧各占 120°，上下各留 100° 缺口，弧段与留白接近 1:2
+- external-link 的橙色箭头描边由 3.5 加粗到 4.0，小尺寸下更清晰
+- cart 从「交通工具」重新归入「日常物品」
+- 官网取色器与主题换色改为只替换墨色描边。图标自带的彩色描边（橙色箭头、黄色勾等）本来就是 naive 风格的一部分，此前会被一并刷成单色
+
+修复
+
+- 官网深色模式下首次加载时，hero 贴纸改用奶油色描边，不会因墨色与深色底糊在一起而看不见
+- hero 贴纸切换主题时只替换上一个主题色并在颜色未变时跳过，不再逐个重写 DOM
+- 移除图标详情弹窗的左右切换按钮与键盘 ← → 导航，连带删除 step / indexOfCurrent 等死代码
+- 扩充脚本重新生成 package.json 时会剥掉文件末尾的换行，导致凭空多出一行 diff，现已修复
+
 ## 1.3.0
 
 新增
