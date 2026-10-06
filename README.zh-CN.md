@@ -89,11 +89,21 @@ export function Example() {
 }
 ```
 
-按需引入：包是 ESM 且标记了 `sideEffects: false`，用具名导入即可，打包器会自动 tree-shaking：
+按需引入：包是 ESM 且标记了 `sideEffects: false`，用具名导入即可，打包器会自动 tree-shaking——
+只用到的图标才会进你的包：
 
 ```tsx
 import { HomeIcon, SearchIcon } from 'naive-icons';
 ```
+
+也可以从子路径直接引单个图标，完全跳过顶层入口：
+
+```tsx
+import { HomeIcon } from 'naive-icons/icons/HomeIcon';
+```
+
+两种写法实测产出的体积一致（只有一个图标时约 0.9 KB minified）。
+仓库里有 `tests/bundle-size.test.ts` 盯着这个体积，改坏构建会直接测试失败。
 
 想跟随父级文字颜色，显式传 `currentColor`（默认是墨色 `#2A2A2A`，不会自动继承）：
 
@@ -119,9 +129,13 @@ Naive Icons 的每个组件都继承原生 `SVGProps<SVGSVGElement>`，可以直
 | size | number \| string | 24 | 图标尺寸，宽高相等。传入后覆盖 width 与 height |
 | color | string | `#2A2A2A` | 描边颜色。传 `currentColor` 可跟随父级文字颜色 |
 | strokeWidth | number \| string | 3.5 | 描边宽度，按 48x48 画布比例缩放 |
-| fill | string | none | 填充色 |
+| fill | string | none | 填充色。**只对没有自带 fill 的图元生效**——本库图标的色块是画上去的，传 `fill` 改不了它们 |
 | title | string | — | 无障碍标题，渲染为 SVG title 节点 |
-| width / height | number \| string | 跟随 size | 单独指定宽或高 |
+| width / height | number \| string | 跟随 size | 单独指定宽或高，**优先级高于 size**，没传的那一边回落到 size |
+
+> `fill` 那一行值得单独说一句：naive 风格靠的就是实心色块，730 个图元里 489 个硬编码了自己的
+> `fill`，所以根节点的 `fill` 对它们无效。这不是 bug，是风格本身——要换配色请用 `color`
+> 换描边，或直接取 `NAIVE_PALETTE` 里已有的十色。
 
 ```typescript
 import type { IconProps } from 'naive-icons';

@@ -93,11 +93,21 @@ export function Example() {
 ```
 
 Tree-shaking works out of the box: the package is ESM and sets `sideEffects: false`, so a
-named import is all you need.
+named import pulls in only the icons you actually use:
 
 ```tsx
 import { HomeIcon, SearchIcon } from 'naive-icons';
 ```
+
+Or import a single icon straight from a subpath, bypassing the entry entirely:
+
+```tsx
+import { HomeIcon } from 'naive-icons/icons/HomeIcon';
+```
+
+Both forms produce the same bundle size (~0.9 KB minified for a single icon). The repo has a
+`tests/bundle-size.test.ts` guarding that number, so a build change that breaks tree-shaking
+fails the test suite.
 
 To follow the parent text color, pass `currentColor` explicitly — the default is ink `#2A2A2A`
 and is **not** inherited automatically:
@@ -124,9 +134,14 @@ Every Naive Icon component extends the native `SVGProps<SVGSVGElement>`, so you 
 | size | number \| string | 24 | Icon size, equal width and height. Overrides width and height when set |
 | color | string | `#2A2A2A` | Stroke color. Pass `currentColor` to follow the surrounding text color |
 | strokeWidth | number \| string | 3.5 | Stroke width, scaled to the 48x48 canvas |
-| fill | string | none | Fill color |
+| fill | string | none | Fill color. **Only affects primitives that don't set their own `fill`** — this library paints its colour blocks in, so a root `fill` won't override them |
 | title | string | — | Accessibility title, rendered as an SVG title node |
-| width / height | number \| string | follows size | Set width or height individually |
+
+> The `fill` row deserves a note: the naive look depends on solid colour blocks, so 489 of the 730
+> primitives hard-code their own `fill` and a root `fill` has no effect on them. That is the style
+> itself, not a bug — to recolour, switch the stroke with `color`, or pick from the ten colours in
+> `NAIVE_PALETTE`.
+| width / height | number \| string | follows size | Set width or height individually; takes **precedence over `size`**, and the side you omit falls back to `size` |
 
 ```typescript
 import type { IconProps } from 'naive-icons';

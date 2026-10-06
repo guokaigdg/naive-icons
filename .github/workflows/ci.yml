@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+      # 体积回归测试要读 dist/，所以必须排在 build 之后
+      - name: Test
+        run: npm test
+
+      # 三处派生产物（官网数据、skill 目录与 icons.json）必须与 svg/ 同源。
+      # 不一致说明有人加了图标但忘了重跑生成脚本。
+      - name: Check generated assets are up to date
+        run: |
+          python3 scripts/build_website.py
+          python3 scripts/build_skill_assets.py --check
+          git diff --exit-code

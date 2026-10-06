@@ -19,7 +19,17 @@
       }
     },
     "./svg/*": "./svg/*",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./icons/*": {
+      "import": {
+        "types": "./dist/*.d.mts",
+        "default": "./dist/*.mjs"
+      },
+      "require": {
+        "types": "./dist/*.d.ts",
+        "default": "./dist/*.js"
+      }
+    }
   },
   "files": [
     "dist",
@@ -35,10 +45,10 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "prepublishOnly": "npm run build",
     "website": "python3 -m http.server 8080 --directory website",
     "icons:data": "python3 scripts/build_website.py",
-    "icons:build": "python3 scripts/generate_icons.py && python3 scripts/build_website.py",
     "icons:add": "python3 scripts/generate_icons_add.py && python3 scripts/build_website.py"
   },
   "keywords": [
@@ -64,15 +74,22 @@
     "url": "https://github.com/guokaigdg/naive-icons/issues"
   },
   "peerDependencies": {
-    "react": ">=16.8.0"
+    "react": ">=16.8.0",
+    "@types/react": "^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.12",
     "react": "^18.3.1",
     "tsup": "^8.3.5",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "vitest": "^3.2.7"
   },
   "engines": {
     "node": ">=16"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
   }
 }

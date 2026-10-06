@@ -1,17 +1,50 @@
 #!/usr/bin/env python3
 """
-Naive 风格 SVG 图标生成器 + React 组件库
-- 50 个 SVG 图标 (48x48 viewBox, 粗描边 + 扁平彩色填充)
-- 每个图标生成 .svg + .tsx React 函数组件
-- index.ts 统一导出
-- package.json + README.md + 预览页
+⚠️ 1.0.0 的一次性引导脚本，已停用。保留仅作历史参考，请勿在当前仓库运行。
+
+本脚本会**全量覆盖**以下文件，跑到现在的仓库上等于毁掉它：
+  - package.json  写回 "version": "0.1.0" 与另一套 exports / scripts
+  - README.md      整个替换成 50 图标版的说明
+  - src/index.ts   重建为它内置的那 50 个图标
+  - svg/*.svg 与 src/*Icon.tsx   覆盖与它同名的那些
+  - index.html     在仓库根新建一个
+
+现在维护图标请用：
+  - 新增图标   python3 scripts/generate_icons_add.py
+  - 刷新官网   python3 scripts/build_website.py
+  - 刷新 skill python3 scripts/build_skill_assets.py
+
+下面的守卫会让误跑直接退出，而不是默默把仓库改坏。
 """
 import os
+import sys
 from pathlib import Path
 
 ROOT = str(Path(__file__).resolve().parent.parent)
 SVG_DIR = os.path.join(ROOT, 'svg')
 SRC_DIR = os.path.join(ROOT, 'src')
+
+
+def _assert_not_live_repo():
+    """当前仓库已有 100+ 图标，说明不是 1.0.0 那个 50 图标的起点，拒跑。"""
+    if not os.path.isdir(SVG_DIR):
+        return  # 全新目录，随便跑
+    existing = [f for f in os.listdir(SVG_DIR) if f.endswith('.svg')]
+    if len(existing) > 100 and not os.environ.get('NAIVE_ALLOW_BOOTSTRAP'):
+        sys.exit(
+            f'拒绝运行：{SVG_DIR} 下已有 {len(existing)} 个图标，'
+            '这不是 1.0.0 的起点。\n'
+            '本脚本会覆盖 package.json / README.md / src/index.ts 等，'
+            '在当前仓库跑会毁掉它们。\n'
+            '请改用：\n'
+            '  新增图标   python3 scripts/generate_icons_add.py\n'
+            '  刷新官网   python3 scripts/build_website.py\n'
+            '  刷新 skill python3 scripts/build_skill_assets.py\n'
+            '若确实要在全新目录里用这份引导脚本，设 NAIVE_ALLOW_BOOTSTRAP=1。'
+        )
+
+
+_assert_not_live_repo()
 
 os.makedirs(SVG_DIR, exist_ok=True)
 os.makedirs(SRC_DIR, exist_ok=True)

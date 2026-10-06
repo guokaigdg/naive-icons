@@ -18,14 +18,18 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
  * 把 size / color 等语义化属性映射为原生 SVG 属性，
  * 供所有图标组件共享使用。始终给 width/height 填默认值 24，
  * 保证不传 size 时 svg 也有明确尺寸。
+ *
+ * width / height 优先于 size：传了具体的宽或高就以它为准，
+ * 没传的另一边回落到 size，这样才能真的实现「只设一边」。
+ * 例：size={32} width={64} → 64 × 32
  */
 export function normalizeIconProps(props: IconProps): SVGProps<SVGSVGElement> {
   const { size = 24, color = "#2A2A2A", strokeWidth = 3.5, fill = "none", title, ...rest } = props;
 
   const svgProps: SVGProps<SVGSVGElement> = { ...rest };
 
-  svgProps.width = size;
-  svgProps.height = size;
+  svgProps.width = rest.width ?? size;
+  svgProps.height = rest.height ?? size;
   svgProps.fill = fill;
   svgProps.stroke = color;
   svgProps.strokeWidth = strokeWidth;

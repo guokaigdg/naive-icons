@@ -296,7 +296,8 @@ NEW_ICONS = {
 <path d="M25 29 L34 29 L34 33 L25 33 Z" fill="{ORANGE}"/>
 <path d="M30 33 L27 14 Q27 11 30 11 Q33 11 33 14 L36 33 Z" fill="{ORANGE}"/>
 <path d="M33 11 L33 8 Q33 6 35 6 L37 6 Q39 6 39 8 L39 11 Z" fill="{YELLOW}"/>
-<path d="M25 10 L32 8" stroke="{INK}" stroke-width="3"/></g>'''),
+<path d="M25 10 L32 8" stroke="{INK}" stroke-width="3"/>
+</g>'''),
 
     # ---------- 物品 ----------
     'balloon': S(f'''<path d="M24 5 C 14 5 9 13 9 19 C 9 26 15 31 24 31 C 33 31 39 26 39 19 C 39 13 34 5 24 5 Z" fill="{ORANGE}"/>

@@ -17,7 +17,8 @@ export const ScooterIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      <g transform="translate(48,0) scale(-1,1)">
+
+<g transform="translate(48,0) scale(-1,1)">
 <path d="M4 33 L4 22 Q4 16 10 16 L20 16 Q22 24 27 30 L27 33 Z" fill="#E9C46A"/>
 <path d="M6 18 L6 12 Q6 9 9 9 L17 9 Q20 9 20 12 L20 18 Z" fill="#264653"/>
 <circle cx="12" cy="37" r="6" fill="none" stroke="#2A2A2A" stroke-width="3"/>
@@ -29,7 +30,7 @@ export const ScooterIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
 <path d="M30 33 L27 14 Q27 11 30 11 Q33 11 33 14 L36 33 Z" fill="#E76F51"/>
 <path d="M33 11 L33 8 Q33 6 35 6 L37 6 Q39 6 39 8 L39 11 Z" fill="#E9C46A"/>
 <path d="M25 10 L32 8" stroke="#2A2A2A" stroke-width="3"/>
-      </g>
+</g>
 
     </svg>
   );
@@ -38,3 +39,4 @@ export const ScooterIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
 ScooterIcon.displayName = 'ScooterIcon';
 
 export default ScooterIcon;
+
