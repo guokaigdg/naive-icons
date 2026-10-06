@@ -157,3 +157,10 @@ export { WifiIcon } from './WifiIcon';
 export { XCircleIcon } from './XCircleIcon';
 export { ZoomInIcon } from './ZoomInIcon';
 export { ZoomOutIcon } from './ZoomOutIcon';
+
+// 转发类型与色板。少了这两行，README 里的
+//   import { NAIVE_PALETTE } from 'naive-icons'
+//   import type { IconProps } from 'naive-icons'
+// 会分别报运行时 SyntaxError 与 TS2305 / TS2459。
+export type { IconProps, IconName, IconComponent, PaletteColor } from './types';
+export { NAIVE_PALETTE } from './types';

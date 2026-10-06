@@ -737,7 +737,17 @@ with open(os.path.join(SRC_DIR, 'index.ts'), 'w') as f:
     for n in all_names:
         comp = pascal(n) + 'Icon'
         f.write(f"export {{ {comp} }} from './{comp}';\n")
-print(f'index.ts 重建: {len(all_names)} 个导出')
+    # 必须转发 types.ts 的类型与色板。少了这两行，README 里的
+    #   import { NAIVE_PALETTE } from 'naive-icons'
+    #   import type { IconProps } from 'naive-icons'
+    # 会分别报运行时 SyntaxError 与 TS2305 / TS2459。
+    f.write("\n// 转发类型与色板。少了这两行，README 里的\n")
+    f.write("//   import { NAIVE_PALETTE } from 'naive-icons'\n")
+    f.write("//   import type { IconProps } from 'naive-icons'\n")
+    f.write("// 会分别报运行时 SyntaxError 与 TS2305 / TS2459。\n")
+    f.write("export type { IconProps, IconName, IconComponent, PaletteColor } from './types';\n")
+    f.write("export { NAIVE_PALETTE } from './types';\n")
+print(f'index.ts 重建: {len(all_names)} 个图标导出 + 类型与色板')
 
 # 4) 重建 types.ts
 icon_names_ts = ' | '.join(f"'{pascal(n)}Icon'" for n in all_names)

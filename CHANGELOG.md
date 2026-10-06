@@ -21,6 +21,17 @@
 - 新增 `scripts/build_skill_assets.py`，从 `svg/` 生成 skill 的 `catalog.md` 与
   `icons.json`，并校验 `svg/`、`ICON_CATEGORY`、`ZH_NAMES` 三者一致
 
+修复
+
+- 补上 `index.ts` 对类型与色板的转发，`NAIVE_PALETTE`、`IconProps`、`IconName`、
+  `IconComponent`、`PaletteColor` 从包入口真正可用了。此前 `src/types.ts` 里都有定义，
+  但入口只导出 159 个图标组件，导致 README 里的
+  `import { NAIVE_PALETTE } from 'naive-icons'` 报运行时 `SyntaxError`、
+  `import type { IconProps } from 'naive-icons'` 报 `TS2305` / `TS2459`。
+  该问题自 1.0.0 起就存在
+- 两个生成器（`generate_icons.py` / `generate_icons_add.py`）的 `index.ts` 模板同步补上
+  转发，否则下次新增图标时会被全量重建冲掉
+
 ## 1.4.0
 
 新增
