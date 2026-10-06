@@ -2,6 +2,44 @@
 
 本文件记录 Naive Icons 的每个版本变更。版本号遵循语义化版本规范（SemVer）。
 
+## 1.5.1
+
+修复
+
+- **tree-shaking 恢复生效**。以前只把 `src/index.ts` 作为单一入口，产物是一个大文件，
+  里面有 159 条顶层 `XxxIcon.displayName = "..."` 赋值。打包器无法证明这些语句无副作用，
+  于是整个模块必须保留，连带保留全部 159 个组件——`sideEffects: false` 只允许跳过
+  「整个模块」，管不到模块内部的顶层语句，所以那时它等于没写。
+  实测只导入 `HomeIcon` 一个图标会打进 **105 KB（gzip 11.8 KB）**。
+  改为每个图标各自成为入口 + `splitting: true` 后，同样的导入是 **935 B**（约 1/112），
+  产物里只剩用到的那一个图标。tarball 体积只从 141.9 KB 涨到 142.1 KB
+- 新增 `naive-icons/icons/*` 子路径，可绕过顶层入口直接引单个图标
+- `width` / `height` 不再被静默忽略。以前 `normalizeIconProps` 无条件写
+  `svgProps.width = size`，导致 `width={40}` 渲染出来还是 24×24，README 承诺的
+  「单独指定宽或高」根本做不到。现在 `width` / `height` 优先于 `size`，
+  没传的那一边回落到 `size`：`size={32} width={64}` → 64 × 32
+- 补上 1.0.0 CHANGELOG 提到过的 `IconCategory`：它实际在 1.2.0 重构 `types.ts` 时被移除，
+  且从未从包入口导出过。1.5.1 起以本条为准，分类信息请查官网或 `catalog.md`
+
+其他
+
+- 新增测试：`npm test`（vitest），13 个用例
+  - `tests/bundle-size.test.ts` 盯住单图标打包体积与残留图标数，
+    把 tsup 配置改回单入口或关掉 splitting 会直接失败
+  - `tests/iconProps.test.ts` 钉住 width/height 优先级规则
+  - `tests/exports.test.ts` 钉住包入口的导出数量与 svg/ 目录的对应关系
+- 新增 CI（`.github/workflows/ci.yml`）：typecheck → build → test，
+  并校验官网数据与 skill 派生产物是否与 `svg/` 同源
+- 补 `files` 里的 `skills`，`npm i naive-icons` 后可从 `node_modules` 直接取用 skill
+- 把 `@types/react` 声明为可选 peer dependency。包的 `.d.ts` 引用了 React 类型，
+  消费者若没装 `@types/react`，`SVGProps` 解析失败会让 `IconProps` 只剩自己声明的
+  5 个属性——而这个错误会被 `skipLibCheck` 静默吞掉，直到用到 `className` 之类才暴露
+- 移除有破坏性的 `npm run icons:build`：`scripts/generate_icons.py` 是 1.0.0 的一次性引导
+  脚本，会把 `package.json` 写回 `0.1.0`、覆盖 `README.md`、重建 `src/index.ts`。
+  现已从 npm scripts 摘除，并给脚本加了守卫：检测到仓库已有 100+ 图标就拒跑
+- 归一 svg 文件格式：7 个文件去掉多余的尾换行，`scooter` 去掉 body 缩进。
+  159 个 tsx 与 svg 现在全部同源，`emit.py` 可逐行复现
+
 ## 1.5.0
 
 新增
