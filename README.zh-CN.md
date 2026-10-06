@@ -21,6 +21,12 @@
   <img src="https://img.shields.io/badge/SVG-FFB13B?style=flat-square&logoColor=black" alt="SVG">
 </p>
 
+<p align="center">
+  <b>🤖 AI Agent Skill</b> — 给 Claude Code / Cursor / Codex 等 AI 编码助手装一份，<br/>
+  它就能按语义帮你挑图标、生成可直接粘贴的代码，并且知道这套图标的设计规范。<br/>
+  <code>npx skills add guokaigdg/naive-icons</code> &nbsp;·&nbsp; <a href="#ai-agent-skill">看详情 &rarr;</a>
+</p>
+
 每一个图标都建立在 48x48 的网格上，使用 3.5 的粗描边、圆角线帽与复古调色板，并保留了手绘插画特有的笨拙感与温度——部分图标还带有一对小圆点眼睛和微笑，让界面多一点点人情味。
 
 ## 特性
@@ -29,6 +35,27 @@
 - 每个图标同时提供 SVG 源文件与 React TSX 组件
 - 完整 TypeScript 类型：IconProps、IconName、IconComponent、NAIVE_PALETTE
 - 支持 currentColor，传入后图标跟随文字颜色
+- 官方 Agent Skill：一条命令装到 AI 编码助手，按语义帮你挑图标并生成代码
+
+## AI Agent Skill
+
+给 AI 编码助手（Claude Code、Cursor、Codex 等）装一份，它就能按语义帮你挑图标、
+生成可直接粘贴的代码，并且知道这套图标的设计规范。
+
+```bash
+npx skills add guokaigdg/naive-icons
+```
+
+不用先装本库。装完**新开会话**，然后直接说：
+
+- 「用 naive 图标给这个登录页配一套图标」
+- 「找个表示『已读』的图标」
+
+Skill 自带完整图标目录、设计规范和用法，以及全部 SVG 源码，助手生成代码不依赖项目里
+是否装了本库。库升级后重跑同一条命令即可更新。
+
+> 装 skill 和用组件是两件事。要在代码里 `import { HomeIcon } from 'naive-icons'`，
+> 才需要下面「安装」里的 `npm install naive-icons`。
 
 ## 安装
 

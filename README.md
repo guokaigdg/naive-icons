@@ -21,6 +21,12 @@
   <img src="https://img.shields.io/badge/SVG-FFB13B?style=flat-square&logoColor=black" alt="SVG">
 </p>
 
+<p align="center">
+  <b>🤖 AI Agent Skill</b> — install it into Claude Code, Cursor, Codex and friends,<br/>
+  and they can pick icons by meaning, emit ready-to-paste code, and know the design rules.<br/>
+  <code>npx skills add guokaigdg/naive-icons</code> &nbsp;·&nbsp; <a href="#ai-agent-skill">See details &rarr;</a>
+</p>
+
 Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a retro palette — keeping the charming clumsiness and warmth of hand-drawn illustration. Some icons even feature a pair of dot eyes and a little smile, adding a touch of humanity to your interface.
 
 ## Features
@@ -29,6 +35,30 @@ Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a r
 - Every icon ships as both an SVG source file and a React TSX component
 - Full TypeScript types: IconProps, IconName, IconComponent, NAIVE_PALETTE
 - Supports `currentColor` to follow the surrounding text color
+- Official Agent Skill: one command installs it into your AI coding agent, which can then pick icons by meaning and emit ready-to-paste code
+
+## AI Agent Skill
+
+Install it into your AI coding agent (Claude Code, Cursor, Codex, …) and it can pick icons by
+meaning, emit ready-to-paste code, and know this library's design rules.
+
+```bash
+npx skills add guokaigdg/naive-icons
+```
+
+You do not need to install the package first. **Start a new session** afterwards,
+then just ask:
+
+- "Give this login page a set of naive icons"
+- "Find an icon that means 'already read'"
+
+The skill bundles the full icon catalog, the design spec, usage patterns and every SVG source
+file, so the agent can generate code even when the package isn't installed in your project.
+Re-run the same command after upgrading the library to update it.
+
+> Installing the skill and using the components are separate things. You only need
+> `npm install naive-icons` from the Installation section below when you actually want to
+> `import { HomeIcon } from 'naive-icons'` in your own code.
 
 ## Installation
 

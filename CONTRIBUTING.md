@@ -18,8 +18,18 @@
    python3 scripts/build_website.py
    ```
 
-5. 本地打开 `website/index.html` 预览，确认在 16、24、48 三个尺寸下都清晰可辨。
-6. 提交 Pull Request，说明图标用途与命名理由。
+5. 刷新 Agent Skill 的派生产物。`skills/naive-icons/reference/catalog.md` 和
+   `skills/naive-icons/scripts/icons.json` 都是从 `svg/` 生成的，不重跑的话不会自动更新：
+
+   ```bash
+   python3 scripts/build_skill_assets.py
+   ```
+
+   该脚本会先校验 `svg/`、`ICON_CATEGORY`、`ZH_NAMES` 三者数量一致，再重建两个产物。
+   想在 CI 里只做校验（不写文件）就用 `--check`，内容过期时返回非零。
+
+6. 本地打开 `website/index.html` 预览，确认在 16、24、48 三个尺寸下都清晰可辨。
+7. 提交 Pull Request，说明图标用途与命名理由。
 
 ## 设计规范
 
