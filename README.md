@@ -28,7 +28,7 @@ Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a r
 - Icons spanning 11 categories: interface, actions, media, navigation, animals, food, and more
 - Every icon ships as both an SVG source file and a React TSX component
 - Full TypeScript types: IconProps, IconName, IconComponent, NAIVE_PALETTE
-- Supports currentColor, so icons automatically follow the surrounding text color
+- Supports `currentColor` to follow the surrounding text color
 
 ## Installation
 
@@ -62,17 +62,19 @@ export function Example() {
 }
 ```
 
-Import per icon to further reduce bundle size:
+Tree-shaking works out of the box: the package is ESM and sets `sideEffects: false`, so a
+named import is all you need.
 
 ```tsx
-import HomeIcon from 'naive-icons/src/HomeIcon';
+import { HomeIcon, SearchIcon } from 'naive-icons';
 ```
 
-Use with currentColor so icons automatically inherit the parent text color:
+To follow the parent text color, pass `currentColor` explicitly — the default is ink `#2A2A2A`
+and is **not** inherited automatically:
 
 ```tsx
 <span style={{ color: '#264653' }}>
-  <HomeIcon size={20} />
+  <HomeIcon size={20} color="currentColor" />
   Home
 </span>
 ```
@@ -90,7 +92,7 @@ Every Naive Icon component extends the native `SVGProps<SVGSVGElement>`, so you 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
 | size | number \| string | 24 | Icon size, equal width and height. Overrides width and height when set |
-| color | string | currentColor | Stroke color |
+| color | string | `#2A2A2A` | Stroke color. Pass `currentColor` to follow the surrounding text color |
 | strokeWidth | number \| string | 3.5 | Stroke width, scaled to the 48x48 canvas |
 | fill | string | none | Fill color |
 | title | string | — | Accessibility title, rendered as an SVG title node |

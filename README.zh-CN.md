@@ -28,7 +28,7 @@
 - 图标覆盖界面、操作、媒体、导航、动物、食物等 11 个分类
 - 每个图标同时提供 SVG 源文件与 React TSX 组件
 - 完整 TypeScript 类型：IconProps、IconName、IconComponent、NAIVE_PALETTE
-- 支持 currentColor，可跟随文字颜色自动变化
+- 支持 currentColor，传入后图标跟随文字颜色
 
 ## 安装
 
@@ -62,17 +62,17 @@ export function Example() {
 }
 ```
 
-按需引入可以进一步减小打包体积：
+按需引入：包是 ESM 且标记了 `sideEffects: false`，用具名导入即可，打包器会自动 tree-shaking：
 
 ```tsx
-import HomeIcon from 'naive-icons/src/HomeIcon';
+import { HomeIcon, SearchIcon } from 'naive-icons';
 ```
 
-配合 currentColor 使用，图标会自动继承父级文字颜色：
+想跟随父级文字颜色，显式传 `currentColor`（默认是墨色 `#2A2A2A`，不会自动继承）：
 
 ```tsx
 <span style={{ color: '#264653' }}>
-  <HomeIcon size={20} />
+  <HomeIcon size={20} color="currentColor" />
   首页
 </span>
 ```
@@ -90,7 +90,7 @@ Naive Icons 的每个组件都继承原生 `SVGProps<SVGSVGElement>`，可以直
 | 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
 | size | number \| string | 24 | 图标尺寸，宽高相等。传入后覆盖 width 与 height |
-| color | string | currentColor | 描边颜色 |
+| color | string | `#2A2A2A` | 描边颜色。传 `currentColor` 可跟随父级文字颜色 |
 | strokeWidth | number \| string | 3.5 | 描边宽度，按 48x48 画布比例缩放 |
 | fill | string | none | 填充色 |
 | title | string | — | 无障碍标题，渲染为 SVG title 节点 |
