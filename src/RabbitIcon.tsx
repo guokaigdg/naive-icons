@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const RabbitIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,7 +19,6 @@ export const RabbitIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <ellipse cx="17" cy="12" rx="4" ry="9" fill="#FAEDCD"/>
 <ellipse cx="31" cy="12" rx="4" ry="9" fill="#FAEDCD"/>
 <ellipse cx="17" cy="13" rx="1.8" ry="5.5" fill="#F4A6A4"/>
@@ -27,14 +27,13 @@ export const RabbitIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <circle cx="19" cy="29" r="1.6" fill="#2A2A2A"/>
 <circle cx="29" cy="29" r="1.6" fill="#2A2A2A"/>
 <path d="M22 33 L26 33 L24 35.5 Z" fill="#F4A6A4"/>
-<path d="M24 35.5 L24 37" stroke="#2A2A2A" stroke-width="1.8"/>
-<path d="M20 39 Q 24 41.5 28 39" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
-<path d="M11 31 L5 29" stroke="#2A2A2A" stroke-width="1.5"/>
-<path d="M11 35 L5 36" stroke="#2A2A2A" stroke-width="1.5"/>
-<path d="M37 31 L43 29" stroke="#2A2A2A" stroke-width="1.5"/>
-<path d="M37 35 L43 36" stroke="#2A2A2A" stroke-width="1.5"/>
+<path d="M24 35.5 L24 37" stroke="#2A2A2A" strokeWidth={sw(1.8)}/>
+<path d="M20 39 Q 24 41.5 28 39" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.8)}/>
+<path d="M11 31 L5 29" stroke="#2A2A2A" strokeWidth={sw(1.5)}/>
+<path d="M11 35 L5 36" stroke="#2A2A2A" strokeWidth={sw(1.5)}/>
+<path d="M37 31 L43 29" stroke="#2A2A2A" strokeWidth={sw(1.5)}/>
+<path d="M37 35 L43 36" stroke="#2A2A2A" strokeWidth={sw(1.5)}/>
 
-  
     </svg>
   );
 });
@@ -42,3 +41,4 @@ export const RabbitIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 RabbitIcon.displayName = 'RabbitIcon';
 
 export default RabbitIcon;
+

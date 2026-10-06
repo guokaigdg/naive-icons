@@ -23,6 +23,7 @@ import argparse
 import json
 import os
 import re
+import re
 import sys
 
 # SVG 属性名 -> JSX 属性名。只列真正需要改写的，其余（cx/cy/r/d/fill/viewBox…）两边同名。
@@ -163,6 +164,9 @@ def apply_overrides(body, color=None, stroke_width=None):
     return out
 
 
+_STROKE_W_RE = re.compile(r'(?<![\w-])stroke-width="([0-9.]+)"')
+
+
 def to_jsx_attrs(line):
     """把单行 SVG 标签里的属性名转成 JSX 写法。"""
     def sub(m):
@@ -198,10 +202,11 @@ def render_jsx(body, size=None, color=None, stroke_width=None):
 
 TSX_TEMPLATE = """import {{ forwardRef }} from 'react';
 import type {{ IconProps }} from './types';
-import {{ normalizeIconProps }} from './iconProps';
+import {{ normalizeIconProps, scaledStroke }} from './iconProps';
 
 export const {comp} = forwardRef<SVGSVGElement, IconProps>((props, ref) => {{
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={{ref}}
@@ -233,9 +238,17 @@ def render_tsx(icon_id, body):
     仓库内 159 个 tsx 的空行缩进有三种历史写法（104 个用 4 空格、54 个用 6 空格、
     1 个无空行），这里统一输出不带尾随空格的版本——本脚本是给下游用户复制用的，
     没必要复刻某一版历史排版。
+
+    body 必须过 to_jsx_attrs：SVG 里 stroke-width 是合法的，JSX 里必须写 strokeWidth，
+    否则 React 报 "Invalid DOM property" 且该属性不生效，表现为 strokeWidth 只加粗外框、
+    内层线条纹丝不动。仓库里曾有 109/159 枚中招。
     """
     comp = component_name(icon_id)
-    return TSX_TEMPLATE.format(comp=comp, body='\n'.join(body))
+    def conv(l):
+        l = _STROKE_W_RE.sub(lambda m: 'strokeWidth={sw(%s)}' % m.group(1), l)
+        return to_jsx_attrs(l)
+    inner = '\n'.join(conv(l) for l in body)
+    return TSX_TEMPLATE.format(comp=comp, body=inner)
 
 
 def render_html(icon_id, body, size=24, color=None):

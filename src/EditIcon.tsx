@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const EditIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,12 +19,10 @@ export const EditIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M8 38 L8 32 L30 10 L38 18 L16 40 L10 40 Z" fill="#E9C46A"/>
 <path d="M30 10 L36 4 L42 10 L38 16" fill="#F4A6A4"/>
-<path d="M8 38 L14 38" stroke="#2A2A2A" stroke-width="2"/>
+<path d="M8 38 L14 38" stroke="#2A2A2A" strokeWidth={sw(2)}/>
 
-  
     </svg>
   );
 });
@@ -31,3 +30,4 @@ export const EditIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 EditIcon.displayName = 'EditIcon';
 
 export default EditIcon;
+

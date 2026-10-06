@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const BadgeCheckIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,10 +18,10 @@ export const BadgeCheckIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) 
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
+
 <path d="M17 32 L17 43 L24 38.5 L31 43 L31 32 Z" fill="#E76F51"/>
 <circle cx="24" cy="20" r="13" fill="#264653"/>
-<path d="M18 20 L22.5 24.5 L30.5 15.5" stroke="#E9C46A" stroke-width="4" fill="none"/>
+<path d="M18 20 L22.5 24.5 L30.5 15.5" stroke="#E9C46A" strokeWidth={sw(4)} fill="none"/>
 
     </svg>
   );
@@ -29,3 +30,4 @@ export const BadgeCheckIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) 
 BadgeCheckIcon.displayName = 'BadgeCheckIcon';
 
 export default BadgeCheckIcon;
+

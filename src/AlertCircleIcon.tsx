@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const AlertCircleIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,9 +18,9 @@ export const AlertCircleIcon = forwardRef<SVGSVGElement, IconProps>((props, ref)
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
-<circle cx="24" cy="24" r="17" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
-<path d="M24 14 L24 27" fill="none" stroke="#E76F51" stroke-width="4"/>
+
+<circle cx="24" cy="24" r="17" fill="none" stroke="#2A2A2A" strokeWidth={sw(3.5)}/>
+<path d="M24 14 L24 27" fill="none" stroke="#E76F51" strokeWidth={sw(4)}/>
 <circle cx="24" cy="33" r="2.2" fill="#E76F51"/>
 
     </svg>
@@ -29,3 +30,4 @@ export const AlertCircleIcon = forwardRef<SVGSVGElement, IconProps>((props, ref)
 AlertCircleIcon.displayName = 'AlertCircleIcon';
 
 export default AlertCircleIcon;
+

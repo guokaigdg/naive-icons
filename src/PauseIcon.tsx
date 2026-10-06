@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const PauseIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,10 +18,10 @@ export const PauseIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
+
 <circle cx="24" cy="24" r="20" fill="#2A9D8F"/>
-<path d="M19 16 L19 32" stroke="#E9C46A" stroke-width="5"/>
-<path d="M29 16 L29 32" stroke="#E9C46A" stroke-width="5"/>
+<path d="M19 16 L19 32" stroke="#E9C46A" strokeWidth={sw(5)}/>
+<path d="M29 16 L29 32" stroke="#E9C46A" strokeWidth={sw(5)}/>
 
     </svg>
   );
@@ -29,3 +30,4 @@ export const PauseIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 PauseIcon.displayName = 'PauseIcon';
 
 export default PauseIcon;
+

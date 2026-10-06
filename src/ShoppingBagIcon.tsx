@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const ShoppingBagIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,14 +19,12 @@ export const ShoppingBagIcon = forwardRef<SVGSVGElement, IconProps>((props, ref)
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
-<path d="M18 17 C 18 8 30 8 30 17" stroke="#2A2A2A" stroke-width="3" fill="none"/>
+<path d="M18 17 C 18 8 30 8 30 17" stroke="#2A2A2A" strokeWidth={sw(3)} fill="none"/>
 <path d="M10 16 L 38 16 L 36 42 L 12 42 Z" fill="#F4A6A4"/>
 <circle cx="20" cy="26" r="1.6" fill="#2A2A2A"/>
 <circle cx="28" cy="26" r="1.6" fill="#2A2A2A"/>
-<path d="M20 30 Q 24 33 28 30" stroke="#2A2A2A" fill="none" stroke-width="2"/>
+<path d="M20 30 Q 24 33 28 30" stroke="#2A2A2A" fill="none" strokeWidth={sw(2)}/>
 
-  
     </svg>
   );
 });
@@ -33,3 +32,4 @@ export const ShoppingBagIcon = forwardRef<SVGSVGElement, IconProps>((props, ref)
 ShoppingBagIcon.displayName = 'ShoppingBagIcon';
 
 export default ShoppingBagIcon;
+

@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const BasketballIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,12 +18,12 @@ export const BasketballIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) 
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
+
 <circle cx="24" cy="24" r="18" fill="#E76F51"/>
-<path d="M24 6 L24 42" stroke="#2A2A2A" stroke-width="2.5"/>
-<path d="M6 24 L42 24" stroke="#2A2A2A" stroke-width="2.5"/>
-<path d="M11 12 C 17 18 17 30 11 36" stroke="#2A2A2A" stroke-width="2.5"/>
-<path d="M37 12 C 31 18 31 30 37 36" stroke="#2A2A2A" stroke-width="2.5"/>
+<path d="M24 6 L24 42" stroke="#2A2A2A" strokeWidth={sw(2.5)}/>
+<path d="M6 24 L42 24" stroke="#2A2A2A" strokeWidth={sw(2.5)}/>
+<path d="M11 12 C 17 18 17 30 11 36" stroke="#2A2A2A" strokeWidth={sw(2.5)}/>
+<path d="M37 12 C 31 18 31 30 37 36" stroke="#2A2A2A" strokeWidth={sw(2.5)}/>
 
     </svg>
   );
@@ -31,3 +32,4 @@ export const BasketballIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) 
 BasketballIcon.displayName = 'BasketballIcon';
 
 export default BasketballIcon;
+

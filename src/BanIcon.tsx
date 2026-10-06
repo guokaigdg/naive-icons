@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const BanIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,9 +18,9 @@ export const BanIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
+
 <circle cx="24" cy="24" r="17" fill="#FAEDCD"/>
-<path d="M12 36 L36 12" stroke="#E76F51" stroke-width="5"/>
+<path d="M12 36 L36 12" stroke="#E76F51" strokeWidth={sw(5)}/>
 
     </svg>
   );
@@ -28,3 +29,4 @@ export const BanIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 BanIcon.displayName = 'BanIcon';
 
 export default BanIcon;
+

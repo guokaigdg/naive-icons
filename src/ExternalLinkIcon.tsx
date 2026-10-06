@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const ExternalLinkIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,10 +18,10 @@ export const ExternalLinkIcon = forwardRef<SVGSVGElement, IconProps>((props, ref
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
-<path d="M26.5 25 L26.5 32 Q26.5 38 20.5 38 L12 38 Q6 38 6 32 L6 20 Q6 14 12 14 L20.5 14" fill="none" stroke="#2A2A2A" stroke-width="5"/>
-<path d="M19 25 L30.9 13.1" fill="none" stroke="#E76F51" stroke-width="4"/>
-<path d="M33 18.8 L33 11 L25.2 11" fill="none" stroke="#E76F51" stroke-width="4"/>
+
+<path d="M26.5 25 L26.5 32 Q26.5 38 20.5 38 L12 38 Q6 38 6 32 L6 20 Q6 14 12 14 L20.5 14" fill="none" stroke="#2A2A2A" strokeWidth={sw(5)}/>
+<path d="M19 25 L30.9 13.1" fill="none" stroke="#E76F51" strokeWidth={sw(4)}/>
+<path d="M33 18.8 L33 11 L25.2 11" fill="none" stroke="#E76F51" strokeWidth={sw(4)}/>
 
     </svg>
   );
@@ -29,3 +30,4 @@ export const ExternalLinkIcon = forwardRef<SVGSVGElement, IconProps>((props, ref
 ExternalLinkIcon.displayName = 'ExternalLinkIcon';
 
 export default ExternalLinkIcon;
+

@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const ThermometerIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,12 +19,10 @@ export const ThermometerIcon = forwardRef<SVGSVGElement, IconProps>((props, ref)
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M24 6 C 20 6 18 10 18 14 L18 32 C 14 36 16 42 24 42 C 32 42 34 36 30 32 L30 14 C 30 10 28 6 24 6 Z" fill="#FAEDCD"/>
 <circle cx="24" cy="36" r="5" fill="#E76F51"/>
 <rect x="22" y="18" width="4" height="14" fill="#E76F51"/>
 
-  
     </svg>
   );
 });
@@ -31,3 +30,4 @@ export const ThermometerIcon = forwardRef<SVGSVGElement, IconProps>((props, ref)
 ThermometerIcon.displayName = 'ThermometerIcon';
 
 export default ThermometerIcon;
+

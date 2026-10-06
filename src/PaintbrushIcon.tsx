@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const PaintbrushIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,13 +19,11 @@ export const PaintbrushIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) 
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M13 31 L 27 17 L 31 21 L 17 35 Z" fill="#8B5E3C"/>
 <path d="M27 17 L 31 13 L 35 17 L 31 21 Z" fill="#264653"/>
 <path d="M31 13 C 33 7 39 5 42 7 C 42 12 37 16 35 17 Z" fill="#F4A6A4"/>
 <circle cx="11" cy="40" r="3" fill="#2A9D8F"/>
 
-  
     </svg>
   );
 });
@@ -32,3 +31,4 @@ export const PaintbrushIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) 
 PaintbrushIcon.displayName = 'PaintbrushIcon';
 
 export default PaintbrushIcon;
+

@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const ArrowUpRightIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,9 +18,9 @@ export const ArrowUpRightIcon = forwardRef<SVGSVGElement, IconProps>((props, ref
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
-<path d="M13 35 L33 15" stroke="#E76F51" stroke-width="4.5" fill="none"/>
-<path d="M34 24 L34 12 L22 12" stroke="#E76F51" stroke-width="4.5" fill="none"/>
+
+<path d="M13 35 L33 15" stroke="#E76F51" strokeWidth={sw(4.5)} fill="none"/>
+<path d="M34 24 L34 12 L22 12" stroke="#E76F51" strokeWidth={sw(4.5)} fill="none"/>
 <circle cx="13" cy="35" r="3" fill="#2A9D8F"/>
 
     </svg>
@@ -29,3 +30,4 @@ export const ArrowUpRightIcon = forwardRef<SVGSVGElement, IconProps>((props, ref
 ArrowUpRightIcon.displayName = 'ArrowUpRightIcon';
 
 export default ArrowUpRightIcon;
+

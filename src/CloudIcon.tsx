@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const CloudIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,12 +19,10 @@ export const CloudIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M14 30 C 8 30 6 22 12 20 C 12 14 20 12 24 16 C 28 10 38 14 36 22 C 42 22 42 30 36 30 Z" fill="#FAEDCD"/>
 <circle cx="20" cy="24" r="1.5" fill="#2A2A2A"/>
 <circle cx="28" cy="24" r="1.5" fill="#2A2A2A"/>
 
-  
     </svg>
   );
 });
@@ -31,3 +30,4 @@ export const CloudIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 CloudIcon.displayName = 'CloudIcon';
 
 export default CloudIcon;
+

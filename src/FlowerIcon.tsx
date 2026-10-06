@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const FlowerIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,7 +19,6 @@ export const FlowerIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <circle cx="24" cy="16" r="7" fill="#F4A6A4"/>
 <circle cx="14" cy="22" r="7" fill="#F4A6A4"/>
 <circle cx="34" cy="22" r="7" fill="#F4A6A4"/>
@@ -26,7 +26,6 @@ export const FlowerIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <circle cx="30" cy="32" r="7" fill="#F4A6A4"/>
 <circle cx="24" cy="24" r="6" fill="#E9C46A"/>
 
-  
     </svg>
   );
 });
@@ -34,3 +33,4 @@ export const FlowerIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 FlowerIcon.displayName = 'FlowerIcon';
 
 export default FlowerIcon;
+

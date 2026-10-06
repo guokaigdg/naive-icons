@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const DogIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,7 +19,6 @@ export const DogIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <ellipse cx="10" cy="18" rx="6" ry="10" fill="#8B5E3C"/>
 <ellipse cx="38" cy="18" rx="6" ry="10" fill="#8B5E3C"/>
 <circle cx="24" cy="26" r="16" fill="#8B5E3C"/>
@@ -28,7 +28,6 @@ export const DogIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <circle cx="30" cy="25" r="1.3" fill="#2A2A2A"/>
 <ellipse cx="24" cy="32" rx="4" ry="3" fill="#2A2A2A"/>
 
-  
     </svg>
   );
 });
@@ -36,3 +35,4 @@ export const DogIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 DogIcon.displayName = 'DogIcon';
 
 export default DogIcon;
+

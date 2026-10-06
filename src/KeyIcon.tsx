@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const KeyIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,14 +19,12 @@ export const KeyIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <circle cx="14" cy="24" r="10" fill="#E9C46A"/>
 <circle cx="14" cy="24" r="4" fill="#FAEDCD"/>
-<path d="M24 24 L42 24" stroke="#2A2A2A" stroke-width="4"/>
-<path d="M30 24 L30 30" stroke="#2A2A2A" stroke-width="3"/>
-<path d="M36 24 L36 30" stroke="#2A2A2A" stroke-width="3"/>
+<path d="M24 24 L42 24" stroke="#2A2A2A" strokeWidth={sw(4)}/>
+<path d="M30 24 L30 30" stroke="#2A2A2A" strokeWidth={sw(3)}/>
+<path d="M36 24 L36 30" stroke="#2A2A2A" strokeWidth={sw(3)}/>
 
-  
     </svg>
   );
 });
@@ -33,3 +32,4 @@ export const KeyIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 KeyIcon.displayName = 'KeyIcon';
 
 export default KeyIcon;
+

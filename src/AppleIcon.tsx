@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const AppleIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,14 +19,12 @@ export const AppleIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M24 14 C 14 12 6 22 10 32 C 12 38 18 42 24 38 C 30 42 36 38 38 32 C 42 22 34 12 24 14 Z" fill="#E76F51"/>
 <path d="M24 14 C 24 8 28 4 32 6" stroke="#2A2A2A" fill="none"/>
 <path d="M28 8 C 32 6 36 10 34 12" fill="#588157"/>
 <circle cx="20" cy="26" r="1.5" fill="#2A2A2A"/>
 <circle cx="28" cy="26" r="1.5" fill="#2A2A2A"/>
 
-  
     </svg>
   );
 });
@@ -33,3 +32,4 @@ export const AppleIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 AppleIcon.displayName = 'AppleIcon';
 
 export default AppleIcon;
+

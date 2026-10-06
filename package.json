@@ -39,7 +39,8 @@
     "README.md",
     "README.zh-CN.md",
     "CHANGELOG.md",
-    "LICENSE"
+    "LICENSE",
+    "!dist/**/*.map"
   ],
   "scripts": {
     "build": "tsup",

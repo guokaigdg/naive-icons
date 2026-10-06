@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const VolumeXIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,9 +18,9 @@ export const VolumeXIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
+
 <path d="M5.8 19 L12.8 19 L21 10 L21 38 L12.8 29 L5.8 29 Z" fill="#2A9D8F"/>
-<path d="M28 18.5 L37 27.5 M37 18.5 L28 27.5" stroke="#E76F51" stroke-width="4.5"/>
+<path d="M28 18.5 L37 27.5 M37 18.5 L28 27.5" stroke="#E76F51" strokeWidth={sw(4.5)}/>
 
     </svg>
   );
@@ -28,3 +29,4 @@ export const VolumeXIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
 VolumeXIcon.displayName = 'VolumeXIcon';
 
 export default VolumeXIcon;
+

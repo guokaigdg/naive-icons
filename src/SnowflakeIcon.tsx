@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const SnowflakeIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,13 +19,11 @@ export const SnowflakeIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <circle cx="24" cy="24" r="3" fill="#2A9D8F"/>
-<g transform="rotate(0 24 24)"><path d="M24 5 L24 43 M24 16 L20.1 13.75 M24 16 L27.9 13.75 M24 10 L21.4 8.5 M24 10 L26.6 8.5 M24 32 L20.1 34.25 M24 32 L27.9 34.25 M24 38 L21.4 39.5 M24 38 L26.6 39.5" stroke="#2A9D8F" stroke-width="3" fill="none"/></g>
-<g transform="rotate(60 24 24)"><path d="M24 5 L24 43 M24 16 L20.1 13.75 M24 16 L27.9 13.75 M24 10 L21.4 8.5 M24 10 L26.6 8.5 M24 32 L20.1 34.25 M24 32 L27.9 34.25 M24 38 L21.4 39.5 M24 38 L26.6 39.5" stroke="#2A9D8F" stroke-width="3" fill="none"/></g>
-<g transform="rotate(120 24 24)"><path d="M24 5 L24 43 M24 16 L20.1 13.75 M24 16 L27.9 13.75 M24 10 L21.4 8.5 M24 10 L26.6 8.5 M24 32 L20.1 34.25 M24 32 L27.9 34.25 M24 38 L21.4 39.5 M24 38 L26.6 39.5" stroke="#2A9D8F" stroke-width="3" fill="none"/></g>
+<g transform="rotate(0 24 24)"><path d="M24 5 L24 43 M24 16 L20.1 13.75 M24 16 L27.9 13.75 M24 10 L21.4 8.5 M24 10 L26.6 8.5 M24 32 L20.1 34.25 M24 32 L27.9 34.25 M24 38 L21.4 39.5 M24 38 L26.6 39.5" stroke="#2A9D8F" strokeWidth={sw(3)} fill="none"/></g>
+<g transform="rotate(60 24 24)"><path d="M24 5 L24 43 M24 16 L20.1 13.75 M24 16 L27.9 13.75 M24 10 L21.4 8.5 M24 10 L26.6 8.5 M24 32 L20.1 34.25 M24 32 L27.9 34.25 M24 38 L21.4 39.5 M24 38 L26.6 39.5" stroke="#2A9D8F" strokeWidth={sw(3)} fill="none"/></g>
+<g transform="rotate(120 24 24)"><path d="M24 5 L24 43 M24 16 L20.1 13.75 M24 16 L27.9 13.75 M24 10 L21.4 8.5 M24 10 L26.6 8.5 M24 32 L20.1 34.25 M24 32 L27.9 34.25 M24 38 L21.4 39.5 M24 38 L26.6 39.5" stroke="#2A9D8F" strokeWidth={sw(3)} fill="none"/></g>
 
-  
     </svg>
   );
 });
@@ -32,3 +31,4 @@ export const SnowflakeIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =
 SnowflakeIcon.displayName = 'SnowflakeIcon';
 
 export default SnowflakeIcon;
+

@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const CheckSquareIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,9 +18,9 @@ export const CheckSquareIcon = forwardRef<SVGSVGElement, IconProps>((props, ref)
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
-<rect x="7" y="7" width="34" height="34" rx="6" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
-<path d="M15 24.5 L21.5 31 L33.5 18" stroke="#588157" stroke-width="5" fill="none"/>
+
+<rect x="7" y="7" width="34" height="34" rx="6" fill="none" stroke="#2A2A2A" strokeWidth={sw(3.5)}/>
+<path d="M15 24.5 L21.5 31 L33.5 18" stroke="#588157" strokeWidth={sw(5)} fill="none"/>
 
     </svg>
   );
@@ -28,3 +29,4 @@ export const CheckSquareIcon = forwardRef<SVGSVGElement, IconProps>((props, ref)
 CheckSquareIcon.displayName = 'CheckSquareIcon';
 
 export default CheckSquareIcon;
+

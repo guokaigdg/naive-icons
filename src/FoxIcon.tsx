@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const FoxIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,7 +19,6 @@ export const FoxIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M11 18 L14 5 L21 14 Z" fill="#E76F51"/>
 <path d="M37 18 L34 5 L27 14 Z" fill="#E76F51"/>
 <path d="M13.5 15 L15 9 L18.5 13.5 Z" fill="#F4A6A4"/>
@@ -29,7 +29,6 @@ export const FoxIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <circle cx="30" cy="22" r="1.6" fill="#2A2A2A"/>
 <ellipse cx="24" cy="37.5" rx="2.5" ry="2" fill="#2A2A2A"/>
 
-  
     </svg>
   );
 });
@@ -37,3 +36,4 @@ export const FoxIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 FoxIcon.displayName = 'FoxIcon';
 
 export default FoxIcon;
+

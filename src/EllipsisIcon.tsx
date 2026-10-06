@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const EllipsisIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,7 +18,7 @@ export const EllipsisIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
+
 <circle cx="12" cy="24" r="3" fill="#2A2A2A"/>
 <circle cx="24" cy="24" r="3" fill="#2A2A2A"/>
 <circle cx="36" cy="24" r="3" fill="#2A2A2A"/>
@@ -29,3 +30,4 @@ export const EllipsisIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
 EllipsisIcon.displayName = 'EllipsisIcon';
 
 export default EllipsisIcon;
+

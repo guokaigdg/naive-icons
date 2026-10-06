@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const LocationIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,11 +19,9 @@ export const LocationIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M24 6 C 14 6 8 14 8 22 C 8 32 24 42 24 42 C 24 42 40 32 40 22 C 40 14 34 6 24 6 Z" fill="#E76F51"/>
 <circle cx="24" cy="22" r="6" fill="#FAEDCD"/>
 
-  
     </svg>
   );
 });
@@ -30,3 +29,4 @@ export const LocationIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
 LocationIcon.displayName = 'LocationIcon';
 
 export default LocationIcon;
+

@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const HeartIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,12 +19,10 @@ export const HeartIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M24 40 C 8 30 4 18 12 12 C 18 8 22 12 24 16 C 26 12 30 8 36 12 C 44 18 40 30 24 40 Z" fill="#E76F51"/>
 <circle cx="18" cy="20" r="1.5" fill="#2A2A2A"/>
 <circle cx="30" cy="20" r="1.5" fill="#2A2A2A"/>
 
-  
     </svg>
   );
 });
@@ -31,3 +30,4 @@ export const HeartIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 HeartIcon.displayName = 'HeartIcon';
 
 export default HeartIcon;
+

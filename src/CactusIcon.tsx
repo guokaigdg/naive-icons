@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const CactusIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,7 +19,6 @@ export const CactusIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <rect x="20" y="12" width="8" height="30" rx="4" fill="#588157"/>
 <path d="M20 26 L 15 26 C 10 26 9 16 14 16 C 16 16 16 18 16 20 L 16 22 L 20 22 Z" fill="#588157"/>
 <path d="M28 32 L 33 32 C 38 32 39 22 34 22 C 32 22 32 24 32 26 L 32 28 L 28 28 Z" fill="#588157"/>
@@ -28,10 +28,9 @@ export const CactusIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <circle cx="24" cy="12.5" r="2.5" fill="#F4A6A4"/>
 <circle cx="23" cy="20" r="1.3" fill="#2A2A2A"/>
 <circle cx="26" cy="20" r="1.3" fill="#2A2A2A"/>
-<path d="M23 23 Q 24.5 24.5 26 23" stroke="#2A2A2A" fill="none" stroke-width="1.5"/>
-<path d="M14 44 L34 44" stroke="#8B5E3C" stroke-width="3"/>
+<path d="M23 23 Q 24.5 24.5 26 23" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.5)}/>
+<path d="M14 44 L34 44" stroke="#8B5E3C" strokeWidth={sw(3)}/>
 
-  
     </svg>
   );
 });
@@ -39,3 +38,4 @@ export const CactusIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 CactusIcon.displayName = 'CactusIcon';
 
 export default CactusIcon;
+

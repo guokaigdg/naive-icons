@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const TrainIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,7 +19,6 @@ export const TrainIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <rect x="7" y="18" width="26" height="15" rx="3" fill="#E76F51"/>
 <rect x="25" y="9" width="12" height="13" rx="2" fill="#2A9D8F"/>
 <rect x="28" y="12" width="6" height="5" fill="#FAEDCD"/>
@@ -32,7 +32,6 @@ export const TrainIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <circle cx="24" cy="40" r="1.5" fill="#2A2A2A"/>
 <circle cx="35" cy="40" r="1.5" fill="#2A2A2A"/>
 
-  
     </svg>
   );
 });
@@ -40,3 +39,4 @@ export const TrainIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 TrainIcon.displayName = 'TrainIcon';
 
 export default TrainIcon;
+

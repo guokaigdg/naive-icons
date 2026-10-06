@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const BulbIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,14 +19,12 @@ export const BulbIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M24 6 C 14 6 10 16 14 24 L14 30 L34 30 L34 24 C 38 16 34 6 24 6 Z" fill="#E9C46A"/>
 <rect x="16" y="30" width="16" height="6" fill="#264653"/>
 <rect x="18" y="36" width="12" height="4" fill="#264653"/>
 <circle cx="20" cy="18" r="1.5" fill="#2A2A2A"/>
 <circle cx="28" cy="18" r="1.5" fill="#2A2A2A"/>
 
-  
     </svg>
   );
 });
@@ -33,3 +32,4 @@ export const BulbIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 BulbIcon.displayName = 'BulbIcon';
 
 export default BulbIcon;
+

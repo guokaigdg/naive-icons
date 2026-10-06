@@ -163,4 +163,5 @@ export { ZoomOutIcon } from './ZoomOutIcon';
 //   import type { IconProps } from 'naive-icons'
 // 会分别报运行时 SyntaxError 与 TS2305 / TS2459。
 export type { IconProps, IconName, IconComponent, PaletteColor } from './types';
+export { normalizeIconProps, scaledStroke } from './iconProps';
 export { NAIVE_PALETTE } from './types';

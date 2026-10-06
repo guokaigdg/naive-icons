@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const FolderIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,11 +19,9 @@ export const FolderIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M6 16 L6 38 L42 38 L42 18 L22 18 L18 12 L6 12 Z" fill="#E9C46A"/>
-<path d="M6 18 L42 18" stroke="#2A2A2A" stroke-width="2"/>
+<path d="M6 18 L42 18" stroke="#2A2A2A" strokeWidth={sw(2)}/>
 
-  
     </svg>
   );
 });
@@ -30,3 +29,4 @@ export const FolderIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 FolderIcon.displayName = 'FolderIcon';
 
 export default FolderIcon;
+

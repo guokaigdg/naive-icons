@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const StarIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,12 +19,10 @@ export const StarIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M24 6 L29 18 L42 19 L32 28 L35 41 L24 34 L13 41 L16 28 L6 19 L19 18 Z" fill="#E9C46A"/>
 <circle cx="20" cy="22" r="1.3" fill="#2A2A2A"/>
 <circle cx="28" cy="22" r="1.3" fill="#2A2A2A"/>
 
-  
     </svg>
   );
 });
@@ -31,3 +30,4 @@ export const StarIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 StarIcon.displayName = 'StarIcon';
 
 export default StarIcon;
+

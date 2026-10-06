@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const CameraIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,14 +19,12 @@ export const CameraIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <rect x="6" y="16" width="36" height="24" rx="3" fill="#264653"/>
 <path d="M18 16 L20 10 L28 10 L30 16" fill="#264653"/>
 <circle cx="24" cy="28" r="8" fill="#FAEDCD"/>
 <circle cx="24" cy="28" r="4" fill="#E76F51"/>
 <rect x="34" y="19" width="4" height="3" fill="#E9C46A"/>
 
-  
     </svg>
   );
 });
@@ -33,3 +32,4 @@ export const CameraIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 CameraIcon.displayName = 'CameraIcon';
 
 export default CameraIcon;
+

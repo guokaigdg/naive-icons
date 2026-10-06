@@ -20,6 +20,28 @@ import os
 import sys
 from pathlib import Path
 
+# SVG 里 stroke-width 等是合法的 kebab-case，JSX 只认 camelCase。
+# 另外 SVG 的 stroke-width 是可继承属性，但子元素一旦自带值就不再继承根节点的——
+# 库里有 220 处内层自带 stroke-width，其中 182 处是刻意的粗细层次。
+# 所以不能只改根节点，必须让内层跟着 strokeWidth 属性按比例缩放：
+# 组件里 const sw = scaledStroke(props.strokeWidth)，内层写 strokeWidth={sw(4)}。
+# 默认 3.5 → scale 1，粗细分毫不变；传 7 → scale 2，所有描边一起加倍。
+_JSX_ATTRS = {
+    'stroke-linecap': 'strokeLinecap',
+    'stroke-linejoin': 'strokeLinejoin',
+    'fill-rule': 'fillRule',
+    'clip-rule': 'clipRule',
+}
+_JSX_ATTR_RE = __import__('re').compile(r'(?<![\w-])([a-z]+-[a-z]+)="')
+_STROKE_W_RE = __import__('re').compile(r'(?<![\w-])stroke-width="([0-9.]+)"')
+
+
+def to_jsx_attrs(svg_body):
+    """SVG body -> JSX body：属性名转 camelCase，stroke-width 转成缩放调用。"""
+    out = _JSX_ATTR_RE.sub(lambda m: _JSX_ATTRS.get(m.group(1), m.group(1)) + '="', svg_body)
+    return _STROKE_W_RE.sub(lambda m: 'strokeWidth={sw(%s)}' % m.group(1), out)
+
+
 ROOT = str(Path(__file__).resolve().parent.parent)
 SVG_DIR = os.path.join(ROOT, 'svg')
 SRC_DIR = os.path.join(ROOT, 'src')
@@ -385,7 +407,7 @@ for name, svg in ICONS.items():
     comp_name = pascal(name) + 'Icon'
     # 从 SVG 中提取内部路径作为 children
     # 简化：直接嵌入 SVG 内容，使用函数式组件 + props 透传
-    inner = svg.split('>', 1)[1].rsplit('<', 1)[0] if '>' in svg else svg
+    inner = to_jsx_attrs(svg.split('>', 1)[1].rsplit('<', 1)[0]) if '>' in svg else svg
     # 完整 SVG 内容（带 xmlns）
     tsx = f'''import type { IconProps } from './types';
 import { normalizeIconProps } from './iconProps';

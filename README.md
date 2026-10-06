@@ -133,7 +133,7 @@ Every Naive Icon component extends the native `SVGProps<SVGSVGElement>`, so you 
 | --- | --- | --- | --- |
 | size | number \| string | 24 | Icon size, equal width and height. Overrides width and height when set |
 | color | string | `#2A2A2A` | Stroke color. Pass `currentColor` to follow the surrounding text color |
-| strokeWidth | number \| string | 3.5 | Stroke width, scaled to the 48x48 canvas |
+| strokeWidth | number \| string | 3.5 | Stroke width, as a **scale factor relative to the 3.5 baseline**. Passing 7 doubles every stroke while preserving the thickness hierarchy |
 | fill | string | none | Fill color. **Only affects primitives that don't set their own `fill`** — this library paints its colour blocks in, so a root `fill` won't override them |
 | title | string | — | Accessibility title, rendered as an SVG title node |
 

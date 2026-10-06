@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const OwlIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,7 +19,6 @@ export const OwlIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M12 14 L15 5 L21 12 Z" fill="#264653"/>
 <path d="M36 14 L33 5 L27 12 Z" fill="#264653"/>
 <ellipse cx="24" cy="27" rx="15" ry="16" fill="#264653"/>
@@ -27,12 +27,11 @@ export const OwlIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <circle cx="18" cy="23" r="2.5" fill="#2A2A2A"/>
 <circle cx="30" cy="23" r="2.5" fill="#2A2A2A"/>
 <path d="M21.5 28 L26.5 28 L24 32 Z" fill="#E9C46A"/>
-<path d="M17 37 Q 20 39 23 37" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
-<path d="M25 37 Q 28 39 31 37" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
+<path d="M17 37 Q 20 39 23 37" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.8)}/>
+<path d="M25 37 Q 28 39 31 37" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.8)}/>
 <ellipse cx="18" cy="43" rx="3.5" ry="1.8" fill="#E9C46A"/>
 <ellipse cx="30" cy="43" rx="3.5" ry="1.8" fill="#E9C46A"/>
 
-  
     </svg>
   );
 });
@@ -40,3 +39,4 @@ export const OwlIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 OwlIcon.displayName = 'OwlIcon';
 
 export default OwlIcon;
+

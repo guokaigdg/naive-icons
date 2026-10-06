@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const LadybugIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,18 +19,16 @@ export const LadybugIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M16 17 C 16 9 32 9 32 17 Z" fill="#2A2A2A"/>
 <circle cx="24" cy="27" r="14" fill="#E76F51"/>
-<path d="M24 15 L24 41" stroke="#2A2A2A" stroke-width="2.5"/>
+<path d="M24 15 L24 41" stroke="#2A2A2A" strokeWidth={sw(2.5)}/>
 <circle cx="17" cy="23" r="2.5" fill="#2A2A2A"/>
 <circle cx="31" cy="23" r="2.5" fill="#2A2A2A"/>
 <circle cx="15" cy="32" r="2" fill="#2A2A2A"/>
 <circle cx="33" cy="32" r="2" fill="#2A2A2A"/>
-<path d="M18 10 C 16 6 13 5 11 6" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
-<path d="M30 10 C 32 6 35 5 37 6" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
+<path d="M18 10 C 16 6 13 5 11 6" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.8)}/>
+<path d="M30 10 C 32 6 35 5 37 6" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.8)}/>
 
-  
     </svg>
   );
 });
@@ -37,3 +36,4 @@ export const LadybugIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
 LadybugIcon.displayName = 'LadybugIcon';
 
 export default LadybugIcon;
+

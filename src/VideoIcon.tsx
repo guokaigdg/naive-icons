@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const VideoIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,12 +19,10 @@ export const VideoIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <rect x="4" y="14" width="28" height="20" rx="4" fill="#264653"/>
 <path d="M32 21 L 44 14 L 44 34 L 32 27 Z" fill="#E76F51"/>
 <path d="M14 20 L 23 24 L 14 28 Z" fill="#E9C46A"/>
 
-  
     </svg>
   );
 });
@@ -31,3 +30,4 @@ export const VideoIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 VideoIcon.displayName = 'VideoIcon';
 
 export default VideoIcon;
+

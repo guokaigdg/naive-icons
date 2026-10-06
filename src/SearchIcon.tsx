@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const SearchIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,12 +19,10 @@ export const SearchIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <circle cx="20" cy="20" r="12" fill="#2A9D8F"/>
 <circle cx="20" cy="20" r="6" fill="#FFFFFF"/>
-<path d="M30 30 L42 42" stroke="#2A2A2A" stroke-width="4.5"/>
+<path d="M30 30 L42 42" stroke="#2A2A2A" strokeWidth={sw(4.5)}/>
 
-  
     </svg>
   );
 });
@@ -31,3 +30,4 @@ export const SearchIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 SearchIcon.displayName = 'SearchIcon';
 
 export default SearchIcon;
+

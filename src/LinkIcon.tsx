@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const LinkIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,10 +18,10 @@ export const LinkIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
+
 <g transform="rotate(45 24 24)">
-<rect x="9" y="17" width="16" height="14" rx="7" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
-<rect x="23" y="17" width="16" height="14" rx="7" fill="none" stroke="#2A2A2A" stroke-width="3.5"/></g>
+<rect x="9" y="17" width="16" height="14" rx="7" fill="none" stroke="#2A2A2A" strokeWidth={sw(3.5)}/>
+<rect x="23" y="17" width="16" height="14" rx="7" fill="none" stroke="#2A2A2A" strokeWidth={sw(3.5)}/></g>
 
     </svg>
   );
@@ -29,3 +30,4 @@ export const LinkIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 LinkIcon.displayName = 'LinkIcon';
 
 export default LinkIcon;
+

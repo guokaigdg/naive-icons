@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const PenguinIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,7 +19,6 @@ export const PenguinIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <ellipse cx="24" cy="26" rx="13" ry="17" fill="#264653"/>
 <ellipse cx="24" cy="30" rx="7.5" ry="10" fill="#FFFFFF"/>
 <circle cx="19" cy="19" r="2.5" fill="#FFFFFF"/>
@@ -31,7 +31,6 @@ export const PenguinIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
 <ellipse cx="18" cy="43" rx="4.5" ry="2" fill="#E76F51"/>
 <ellipse cx="30" cy="43" rx="4.5" ry="2" fill="#E76F51"/>
 
-  
     </svg>
   );
 });
@@ -39,3 +38,4 @@ export const PenguinIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
 PenguinIcon.displayName = 'PenguinIcon';
 
 export default PenguinIcon;
+

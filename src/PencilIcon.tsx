@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const PencilIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,14 +19,12 @@ export const PencilIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M13 31 L 31 13 L 35 17 L 17 35 Z" fill="#E9C46A"/>
 <path d="M13 31 L 7 41 L 17 35 Z" fill="#FAEDCD"/>
 <path d="M9.5 38.5 L 7 41 L 10.5 39.5 Z" fill="#2A2A2A"/>
 <path d="M31 13 L 35 9 L 39 13 L 35 17 Z" fill="#F4A6A4"/>
-<path d="M31 13 L 35 17" stroke="#2A2A2A" stroke-width="2"/>
+<path d="M31 13 L 35 17" stroke="#2A2A2A" strokeWidth={sw(2)}/>
 
-  
     </svg>
   );
 });
@@ -33,3 +32,4 @@ export const PencilIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 PencilIcon.displayName = 'PencilIcon';
 
 export default PencilIcon;
+

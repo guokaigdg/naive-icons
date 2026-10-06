@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const SaveIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,14 +19,12 @@ export const SaveIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M10 7 L 32 7 L 40 15 L 40 41 L 8 41 L 8 7 Z" fill="#264653"/>
 <rect x="15" y="7" width="14" height="11" fill="#F4A6A4"/>
 <rect x="26" y="9.5" width="4" height="6" fill="#FAEDCD"/>
 <rect x="15" y="25" width="18" height="16" fill="#FAEDCD"/>
-<path d="M19 31 L 29 31 M 19 35 L 26 35" stroke="#2A2A2A" stroke-width="2"/>
+<path d="M19 31 L 29 31 M 19 35 L 26 35" stroke="#2A2A2A" strokeWidth={sw(2)}/>
 
-  
     </svg>
   );
 });
@@ -33,3 +32,4 @@ export const SaveIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 SaveIcon.displayName = 'SaveIcon';
 
 export default SaveIcon;
+

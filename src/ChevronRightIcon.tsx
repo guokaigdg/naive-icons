@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const ChevronRightIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,8 +18,8 @@ export const ChevronRightIcon = forwardRef<SVGSVGElement, IconProps>((props, ref
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
-<path d="M19 12 L 31 24 L 19 36" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
+
+<path d="M19 12 L 31 24 L 19 36" fill="none" stroke="#2A2A2A" strokeWidth={sw(3.5)}/>
 
     </svg>
   );
@@ -27,3 +28,4 @@ export const ChevronRightIcon = forwardRef<SVGSVGElement, IconProps>((props, ref
 ChevronRightIcon.displayName = 'ChevronRightIcon';
 
 export default ChevronRightIcon;
+

@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const DonutIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,7 +19,6 @@ export const DonutIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <circle cx="24" cy="24" r="15" fill="#F4A6A4"/>
 <circle cx="24" cy="24" r="6" fill="#FFFFFF"/>
 <rect x="17" y="13" width="4.5" height="1.8" rx="0.9" transform="rotate(25 19 14)" fill="#E9C46A"/>
@@ -28,7 +28,6 @@ export const DonutIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <rect x="30" y="30" width="4.5" height="1.8" rx="0.9" transform="rotate(15 32 31)" fill="#2A9D8F"/>
 <rect x="17" y="31" width="4.5" height="1.8" rx="0.9" transform="rotate(60 19 32)" fill="#264653"/>
 
-  
     </svg>
   );
 });
@@ -36,3 +35,4 @@ export const DonutIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 DonutIcon.displayName = 'DonutIcon';
 
 export default DonutIcon;
+

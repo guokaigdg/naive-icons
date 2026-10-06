@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const RedoIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,8 +18,8 @@ export const RedoIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
-<path d="M24 10 A 14 14 0 1 0 36.1 17" fill="none" stroke="#2A2A2A" stroke-width="4.5"/>
+
+<path d="M24 10 A 14 14 0 1 0 36.1 17" fill="none" stroke="#2A2A2A" strokeWidth={sw(4.5)}/>
 <path d="M31 10 L24 5.5 L24 14.5 Z" fill="#E76F51"/>
 
     </svg>
@@ -28,3 +29,4 @@ export const RedoIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 RedoIcon.displayName = 'RedoIcon';
 
 export default RedoIcon;
+

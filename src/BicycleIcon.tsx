@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const BicycleIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,19 +19,17 @@ export const BicycleIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
-<circle cx="13" cy="33" r="8" fill="none" stroke="#2A2A2A" stroke-width="3"/>
-<circle cx="35" cy="33" r="8" fill="none" stroke="#2A2A2A" stroke-width="3"/>
-<path d="M13 33 L 20 21 L 31 21" stroke="#2A2A2A" stroke-width="3" fill="none"/>
-<path d="M20 21 L 26 33 L 13 33" stroke="#2A2A2A" stroke-width="3" fill="none"/>
-<path d="M26 33 L 35 33 L 31 21" stroke="#2A2A2A" stroke-width="3" fill="none"/>
-<path d="M31 21 L 33 14 L 38 14" stroke="#2A2A2A" stroke-width="3" fill="none"/>
-<path d="M20 21 L 19 15 L 24 15" stroke="#2A2A2A" stroke-width="3" fill="none"/>
+<circle cx="13" cy="33" r="8" fill="none" stroke="#2A2A2A" strokeWidth={sw(3)}/>
+<circle cx="35" cy="33" r="8" fill="none" stroke="#2A2A2A" strokeWidth={sw(3)}/>
+<path d="M13 33 L 20 21 L 31 21" stroke="#2A2A2A" strokeWidth={sw(3)} fill="none"/>
+<path d="M20 21 L 26 33 L 13 33" stroke="#2A2A2A" strokeWidth={sw(3)} fill="none"/>
+<path d="M26 33 L 35 33 L 31 21" stroke="#2A2A2A" strokeWidth={sw(3)} fill="none"/>
+<path d="M31 21 L 33 14 L 38 14" stroke="#2A2A2A" strokeWidth={sw(3)} fill="none"/>
+<path d="M20 21 L 19 15 L 24 15" stroke="#2A2A2A" strokeWidth={sw(3)} fill="none"/>
 <circle cx="26" cy="33" r="2.5" fill="#E76F51"/>
 <circle cx="13" cy="33" r="2" fill="#2A9D8F"/>
 <circle cx="35" cy="33" r="2" fill="#2A9D8F"/>
 
-  
     </svg>
   );
 });
@@ -38,3 +37,4 @@ export const BicycleIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
 BicycleIcon.displayName = 'BicycleIcon';
 
 export default BicycleIcon;
+

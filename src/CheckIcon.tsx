@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const CheckIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,11 +19,9 @@ export const CheckIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <circle cx="24" cy="24" r="17" fill="#588157"/>
-<path d="M15 24.5 L21 30.5 L32 18.5" stroke="#FFFFFF" stroke-width="4.5" fill="none"/>
+<path d="M15 24.5 L21 30.5 L32 18.5" stroke="#FFFFFF" strokeWidth={sw(4.5)} fill="none"/>
 
-  
     </svg>
   );
 });
@@ -30,3 +29,4 @@ export const CheckIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 CheckIcon.displayName = 'CheckIcon';
 
 export default CheckIcon;
+

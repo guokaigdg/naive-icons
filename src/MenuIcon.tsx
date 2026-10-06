@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const MenuIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,10 +18,10 @@ export const MenuIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
-<line x1="10" y1="15" x2="38" y2="15" stroke="#2A2A2A" stroke-width="3.5"/>
-<line x1="10" y1="24" x2="38" y2="24" stroke="#2A2A2A" stroke-width="3.5"/>
-<line x1="14" y1="33" x2="34" y2="33" stroke="#2A2A2A" stroke-width="3.5"/>
+
+<line x1="10" y1="15" x2="38" y2="15" stroke="#2A2A2A" strokeWidth={sw(3.5)}/>
+<line x1="10" y1="24" x2="38" y2="24" stroke="#2A2A2A" strokeWidth={sw(3.5)}/>
+<line x1="14" y1="33" x2="34" y2="33" stroke="#2A2A2A" strokeWidth={sw(3.5)}/>
 
     </svg>
   );
@@ -29,3 +30,4 @@ export const MenuIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 MenuIcon.displayName = 'MenuIcon';
 
 export default MenuIcon;
+

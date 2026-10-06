@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const CatIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,7 +19,6 @@ export const CatIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M8 16 L14 8 L18 16 Z" fill="#E76F51"/>
 <path d="M30 16 L34 8 L40 16 Z" fill="#E76F51"/>
 <circle cx="24" cy="28" r="16" fill="#E76F51"/>
@@ -29,7 +29,6 @@ export const CatIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <path d="M24 30 L22 33 L26 33 Z" fill="#F4A6A4"/>
 <path d="M19 34 Q 24 38 29 34" stroke="#2A2A2A" fill="none"/>
 
-  
     </svg>
   );
 });
@@ -37,3 +36,4 @@ export const CatIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 CatIcon.displayName = 'CatIcon';
 
 export default CatIcon;
+

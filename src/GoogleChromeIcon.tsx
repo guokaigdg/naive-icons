@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const GoogleChromeIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,7 +18,7 @@ export const GoogleChromeIcon = forwardRef<SVGSVGElement, IconProps>((props, ref
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
+
 <path d="M24 24 L41.32 14 A20 20 0 0 0 6.68 14 Z" fill="#E76F51" stroke="none"/>
 <path d="M24 24 L41.32 14 A20 20 0 0 1 24 44 Z" fill="#E9C46A" stroke="none"/>
 <path d="M24 24 L24 44 A20 20 0 0 1 6.68 14 Z" fill="#588157" stroke="none"/>
@@ -32,3 +33,4 @@ export const GoogleChromeIcon = forwardRef<SVGSVGElement, IconProps>((props, ref
 GoogleChromeIcon.displayName = 'GoogleChromeIcon';
 
 export default GoogleChromeIcon;
+

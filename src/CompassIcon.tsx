@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const CompassIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,12 +19,10 @@ export const CompassIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <circle cx="24" cy="24" r="18" fill="#264653"/>
 <path d="M24 10 L29 24 L24 38 L19 24 Z" fill="#E76F51"/>
-<path d="M24 10 L24 24" stroke="#2A2A2A" stroke-width="2"/>
+<path d="M24 10 L24 24" stroke="#2A2A2A" strokeWidth={sw(2)}/>
 
-  
     </svg>
   );
 });
@@ -31,3 +30,4 @@ export const CompassIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
 CompassIcon.displayName = 'CompassIcon';
 
 export default CompassIcon;
+

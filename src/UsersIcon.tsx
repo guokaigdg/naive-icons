@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const UsersIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,7 +18,7 @@ export const UsersIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
+
 <circle cx="15" cy="14" r="6" fill="#264653"/>
 <path d="M5 34 C 5 26 9 23 15 23 C 19 23 22 24 24 26 L 24 40 L 8 40 Z" fill="#264653"/>
 <circle cx="29" cy="18" r="7.5" fill="#E76F51"/>
@@ -33,3 +34,4 @@ export const UsersIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 UsersIcon.displayName = 'UsersIcon';
 
 export default UsersIcon;
+

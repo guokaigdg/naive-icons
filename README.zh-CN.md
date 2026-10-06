@@ -128,7 +128,7 @@ Naive Icons 的每个组件都继承原生 `SVGProps<SVGSVGElement>`，可以直
 | --- | --- | --- | --- |
 | size | number \| string | 24 | 图标尺寸，宽高相等。传入后覆盖 width 与 height |
 | color | string | `#2A2A2A` | 描边颜色。传 `currentColor` 可跟随父级文字颜色 |
-| strokeWidth | number \| string | 3.5 | 描边宽度，按 48x48 画布比例缩放 |
+| strokeWidth | number \| string | 3.5 | 描边宽度，**相对基准值 3.5 的缩放系数**。传 7 相当于整体描边加倍，粗细层次保持不变 |
 | fill | string | none | 填充色。**只对没有自带 fill 的图元生效**——本库图标的色块是画上去的，传 `fill` 改不了它们 |
 | title | string | — | 无障碍标题，渲染为 SVG title 节点 |
 | width / height | number \| string | 跟随 size | 单独指定宽或高，**优先级高于 size**，没传的那一边回落到 size |

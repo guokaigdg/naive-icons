@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const MicIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,13 +19,11 @@ export const MicIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <rect x="18" y="5" width="12" height="20" rx="6" fill="#E76F51"/>
-<path d="M12 21 C 12 31 16 33 24 33 C 32 33 36 31 36 21" stroke="#2A2A2A" stroke-width="3" fill="none"/>
-<path d="M24 33 L 24 39" stroke="#2A2A2A" stroke-width="3"/>
-<path d="M17 42 L 31 42" stroke="#2A2A2A" stroke-width="3.5"/>
+<path d="M12 21 C 12 31 16 33 24 33 C 32 33 36 31 36 21" stroke="#2A2A2A" strokeWidth={sw(3)} fill="none"/>
+<path d="M24 33 L 24 39" stroke="#2A2A2A" strokeWidth={sw(3)}/>
+<path d="M17 42 L 31 42" stroke="#2A2A2A" strokeWidth={sw(3.5)}/>
 
-  
     </svg>
   );
 });
@@ -32,3 +31,4 @@ export const MicIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 MicIcon.displayName = 'MicIcon';
 
 export default MicIcon;
+

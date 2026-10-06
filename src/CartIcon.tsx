@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const CartIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,12 +19,10 @@ export const CartIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M6 8 L12 8 L16 32 L38 32 L42 16 L16 16" fill="#2A9D8F"/>
 <circle cx="18" cy="40" r="4" fill="#E76F51"/>
 <circle cx="34" cy="40" r="4" fill="#E76F51"/>
 
-  
     </svg>
   );
 });
@@ -31,3 +30,4 @@ export const CartIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 CartIcon.displayName = 'CartIcon';
 
 export default CartIcon;
+

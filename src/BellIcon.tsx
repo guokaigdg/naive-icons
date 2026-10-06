@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const BellIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,14 +19,12 @@ export const BellIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M10 34 C 10 12 38 12 38 34 Z" fill="#E9C46A"/>
-<path d="M8 34 L40 34" stroke="#2A2A2A" stroke-width="3"/>
+<path d="M8 34 L40 34" stroke="#2A2A2A" strokeWidth={sw(3)}/>
 <path d="M20 38 C 20 42 28 42 28 38" fill="#E76F51"/>
 <circle cx="24" cy="24" r="1.5" fill="#2A2A2A"/>
 <circle cx="24" cy="29" r="1.5" fill="#2A2A2A"/>
 
-  
     </svg>
   );
 });
@@ -33,3 +32,4 @@ export const BellIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 BellIcon.displayName = 'BellIcon';
 
 export default BellIcon;
+

@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const IcecreamIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,16 +19,14 @@ export const IcecreamIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M15 23 L 24 43 L 33 23 Z" fill="#E9C46A"/>
-<path d="M18 28 L 30 28 M20 33 L 28 33" stroke="#2A2A2A" stroke-width="1.5"/>
+<path d="M18 28 L 30 28 M20 33 L 28 33" stroke="#2A2A2A" strokeWidth={sw(1.5)}/>
 <circle cx="24" cy="16" r="9" fill="#F4A6A4"/>
 <circle cx="24" cy="6.5" r="2.5" fill="#E76F51"/>
 <circle cx="21" cy="15" r="1.4" fill="#2A2A2A"/>
 <circle cx="27" cy="15" r="1.4" fill="#2A2A2A"/>
-<path d="M21.5 18.5 Q 24 20.5 26.5 18.5" stroke="#2A2A2A" fill="none" stroke-width="1.5"/>
+<path d="M21.5 18.5 Q 24 20.5 26.5 18.5" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.5)}/>
 
-  
     </svg>
   );
 });
@@ -35,3 +34,4 @@ export const IcecreamIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
 IcecreamIcon.displayName = 'IcecreamIcon';
 
 export default IcecreamIcon;
+

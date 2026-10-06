@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const FrogIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,7 +19,6 @@ export const FrogIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <circle cx="14" cy="14" r="6.5" fill="#588157"/>
 <circle cx="34" cy="14" r="6.5" fill="#588157"/>
 <circle cx="14" cy="14" r="3.5" fill="#FFFFFF"/>
@@ -26,11 +26,10 @@ export const FrogIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <circle cx="14" cy="15" r="1.8" fill="#2A2A2A"/>
 <circle cx="34" cy="15" r="1.8" fill="#2A2A2A"/>
 <ellipse cx="24" cy="29" rx="16" ry="12" fill="#588157"/>
-<path d="M13 29 Q 24 39 35 29" stroke="#2A2A2A" fill="none" stroke-width="2.5"/>
+<path d="M13 29 Q 24 39 35 29" stroke="#2A2A2A" fill="none" strokeWidth={sw(2.5)}/>
 <circle cx="11" cy="33" r="2" fill="#F4A6A4"/>
 <circle cx="37" cy="33" r="2" fill="#F4A6A4"/>
 
-  
     </svg>
   );
 });
@@ -38,3 +37,4 @@ export const FrogIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 FrogIcon.displayName = 'FrogIcon';
 
 export default FrogIcon;
+

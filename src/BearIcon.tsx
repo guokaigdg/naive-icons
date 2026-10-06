@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const BearIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,7 +19,6 @@ export const BearIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <circle cx="12" cy="14" r="5" fill="#8B5E3C"/>
 <circle cx="36" cy="14" r="5" fill="#8B5E3C"/>
 <circle cx="12" cy="14" r="2" fill="#F4A6A4"/>
@@ -30,9 +30,8 @@ export const BearIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <circle cx="30" cy="25" r="1.3" fill="#2A2A2A"/>
 <ellipse cx="24" cy="32" rx="6" ry="4.5" fill="#FAEDCD"/>
 <ellipse cx="24" cy="30.5" rx="2.5" ry="1.8" fill="#2A2A2A"/>
-<path d="M24 32.3 L24 34 M24 34 Q 21 36 19.5 34.5 M24 34 Q 27 36 28.5 34.5" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
+<path d="M24 32.3 L24 34 M24 34 Q 21 36 19.5 34.5 M24 34 Q 27 36 28.5 34.5" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.8)}/>
 
-  
     </svg>
   );
 });
@@ -40,3 +39,4 @@ export const BearIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 BearIcon.displayName = 'BearIcon';
 
 export default BearIcon;
+

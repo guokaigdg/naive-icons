@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const ListIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,13 +18,13 @@ export const ListIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
+
 <circle cx="10" cy="14" r="3.4" fill="#2A9D8F"/>
 <circle cx="10" cy="24" r="3.4" fill="#E76F51"/>
 <circle cx="10" cy="34" r="3.4" fill="#E9C46A"/>
-<line x1="19" y1="14" x2="41" y2="14" stroke="#2A2A2A" stroke-width="4"/>
-<line x1="19" y1="24" x2="41" y2="24" stroke="#2A2A2A" stroke-width="4"/>
-<line x1="19" y1="34" x2="41" y2="34" stroke="#2A2A2A" stroke-width="4"/>
+<line x1="19" y1="14" x2="41" y2="14" stroke="#2A2A2A" strokeWidth={sw(4)}/>
+<line x1="19" y1="24" x2="41" y2="24" stroke="#2A2A2A" strokeWidth={sw(4)}/>
+<line x1="19" y1="34" x2="41" y2="34" stroke="#2A2A2A" strokeWidth={sw(4)}/>
 
     </svg>
   );
@@ -32,3 +33,4 @@ export const ListIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 ListIcon.displayName = 'ListIcon';
 
 export default ListIcon;
+

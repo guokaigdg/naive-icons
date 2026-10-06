@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const WatermelonIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,7 +19,6 @@ export const WatermelonIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) 
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M7 16 A 17 17 0 0 0 41 16 Z" fill="#588157"/>
 <path d="M11 16 A 13 13 0 0 0 37 16 Z" fill="#FAEDCD"/>
 <path d="M13.5 16 A 10.5 10.5 0 0 0 34.5 16 Z" fill="#E76F51"/>
@@ -28,7 +28,6 @@ export const WatermelonIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) 
 <circle cx="21.5" cy="29" r="1.3" fill="#2A2A2A"/>
 <circle cx="26.5" cy="29" r="1.3" fill="#2A2A2A"/>
 
-  
     </svg>
   );
 });
@@ -36,3 +35,4 @@ export const WatermelonIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) 
 WatermelonIcon.displayName = 'WatermelonIcon';
 
 export default WatermelonIcon;
+

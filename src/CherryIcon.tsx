@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const CherryIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,16 +19,14 @@ export const CherryIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
-<path d="M15 27 C 15 17 22 11 29 7" stroke="#8B5E3C" stroke-width="2.5" fill="none"/>
-<path d="M33 29 C 33 20 32 12 29 7" stroke="#8B5E3C" stroke-width="2.5" fill="none"/>
+<path d="M15 27 C 15 17 22 11 29 7" stroke="#8B5E3C" strokeWidth={sw(2.5)} fill="none"/>
+<path d="M33 29 C 33 20 32 12 29 7" stroke="#8B5E3C" strokeWidth={sw(2.5)} fill="none"/>
 <ellipse cx="27" cy="7" rx="5" ry="2.5" transform="rotate(-15 27 7)" fill="#588157"/>
 <circle cx="14" cy="33" r="8" fill="#E76F51"/>
 <circle cx="33" cy="35" r="8" fill="#E76F51"/>
 <circle cx="11" cy="30" r="1.8" fill="#FFFFFF"/>
 <circle cx="30" cy="32" r="1.8" fill="#FFFFFF"/>
 
-  
     </svg>
   );
 });
@@ -35,3 +34,4 @@ export const CherryIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 CherryIcon.displayName = 'CherryIcon';
 
 export default CherryIcon;
+

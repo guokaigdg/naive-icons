@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const MushroomIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,7 +19,6 @@ export const MushroomIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M6 22 C 6 9 42 9 42 22 C 42 25 39 26 35 26 L 13 26 C 9 26 6 25 6 22 Z" fill="#E76F51"/>
 <circle cx="15" cy="18" r="2.2" fill="#FFFFFF"/>
 <circle cx="24" cy="15" r="2.6" fill="#FFFFFF"/>
@@ -26,10 +26,9 @@ export const MushroomIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
 <path d="M18 26 L 18 37 C 18 41 30 41 30 37 L 30 26 Z" fill="#FAEDCD"/>
 <circle cx="22" cy="31" r="1.4" fill="#2A2A2A"/>
 <circle cx="26" cy="31" r="1.4" fill="#2A2A2A"/>
-<path d="M22 34 Q 24 36 26 34" stroke="#2A2A2A" fill="none" stroke-width="1.8"/>
-<path d="M10 42 L38 42" stroke="#588157" stroke-width="3"/>
+<path d="M22 34 Q 24 36 26 34" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.8)}/>
+<path d="M10 42 L38 42" stroke="#588157" strokeWidth={sw(3)}/>
 
-  
     </svg>
   );
 });
@@ -37,3 +36,4 @@ export const MushroomIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
 MushroomIcon.displayName = 'MushroomIcon';
 
 export default MushroomIcon;
+

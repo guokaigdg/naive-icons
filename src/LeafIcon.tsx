@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const LeafIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,11 +19,9 @@ export const LeafIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
 <path d="M8 40 C 8 18 24 6 40 8 C 40 24 26 40 8 40 Z" fill="#588157"/>
-<path d="M8 40 L40 8" stroke="#2A2A2A" stroke-width="2"/>
+<path d="M8 40 L40 8" stroke="#2A2A2A" strokeWidth={sw(2)}/>
 
-  
     </svg>
   );
 });
@@ -30,3 +29,4 @@ export const LeafIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 LeafIcon.displayName = 'LeafIcon';
 
 export default LeafIcon;
+

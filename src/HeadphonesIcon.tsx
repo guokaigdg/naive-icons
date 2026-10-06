@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const HeadphonesIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -18,12 +19,10 @@ export const HeadphonesIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) 
     >
       {props.title ? <title>{props.title}</title> : null}
 
-    
-<path d="M10 31 L 10 25 C 10 11 38 11 38 25 L 38 31" stroke="#2A2A2A" stroke-width="4" fill="none"/>
+<path d="M10 31 L 10 25 C 10 11 38 11 38 25 L 38 31" stroke="#2A2A2A" strokeWidth={sw(4)} fill="none"/>
 <rect x="6" y="27" width="8" height="12" rx="3.5" fill="#E76F51"/>
 <rect x="34" y="27" width="8" height="12" rx="3.5" fill="#E76F51"/>
 
-  
     </svg>
   );
 });
@@ -31,3 +30,4 @@ export const HeadphonesIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) 
 HeadphonesIcon.displayName = 'HeadphonesIcon';
 
 export default HeadphonesIcon;
+

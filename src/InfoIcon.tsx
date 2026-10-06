@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import type { IconProps } from './types';
-import { normalizeIconProps } from './iconProps';
+import { normalizeIconProps, scaledStroke } from './iconProps';
 
 export const InfoIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
   return (
     <svg
       ref={ref}
@@ -17,10 +18,10 @@ export const InfoIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       {...normalizeIconProps(props)}
     >
       {props.title ? <title>{props.title}</title> : null}
-      
-<circle cx="24" cy="24" r="17" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
+
+<circle cx="24" cy="24" r="17" fill="none" stroke="#2A2A2A" strokeWidth={sw(3.5)}/>
 <circle cx="24" cy="15.5" r="2.2" fill="#2A9D8F"/>
-<path d="M24 22.5 L24 34" fill="none" stroke="#2A9D8F" stroke-width="4"/>
+<path d="M24 22.5 L24 34" fill="none" stroke="#2A9D8F" strokeWidth={sw(4)}/>
 
     </svg>
   );
@@ -29,3 +30,4 @@ export const InfoIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 InfoIcon.displayName = 'InfoIcon';
 
 export default InfoIcon;
+
