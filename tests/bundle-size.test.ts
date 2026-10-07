@@ -7,13 +7,9 @@ import { describe, expect, it } from 'vitest';
 /**
  * tree-shaking 回归测试。
  *
- * 以前 tsup 只把 src/index.ts 当单一入口，打出来是一个大文件，里面有 159 条顶层语句
- *   AirplaneIcon.displayName = "AirplaneIcon";
- * 打包器无法证明这些赋值无副作用，于是整个模块必须保留，159 个图标全进包。
- * package.json 的 sideEffects: false 只允许跳过「整个模块」，管不到模块内部的顶层语句，
- * 所以那时它等于没写。实测只导入一个图标会打进 105 KB。
- *
- * 现在每个图标各自成为入口 + splitting，代码被拆进独立 chunk，同样的导入降到 1 KB 左右。
+ * 单入口产物里有 159 条顶层 `XxxIcon.displayName = "..."`，打包器无法证明无副作用，
+ * 于是整个模块必须保留，159 个图标全进包；`sideEffects: false` 只允许跳过「整个模块」，
+ * 管不到模块内部的顶层语句。实测只导入一个图标打进 105 KB，改成逐图标入口后降到约 1 KB。
  * 这个测试的作用是：以后谁把 tsup 配置改回单入口，会在这里红掉。
  */
 
@@ -58,7 +54,6 @@ describe('tree-shaking', () => {
   });
 
   it('tsup 配置仍按图标多入口输出（防止有人改回单入口）', () => {
-    // 单入口 + splitting:false 都会让 tree-shaking 失效，这里锁住关键前提
     const cfg = readFileSync('tsup.config.ts', 'utf8');
     expect(cfg).toMatch(/entry:\s*\['src\/index\.ts',\s*'src\/\*Icon\.tsx'\]/);
     expect(cfg).toMatch(/splitting:\s*true/);

@@ -33,7 +33,8 @@ Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a r
 
 - Icons spanning 11 categories: interface, actions, media, navigation, animals, food, and more
 - Every icon ships as both an SVG source file and a React TSX component
-- Full TypeScript types: IconProps, IconName, IconComponent, NAIVE_PALETTE
+- Full TypeScript types: IconProps, IconName, IconComponent, PaletteColor, NAIVE_PALETTE
+- Exports `scaledStroke` / `resolveStrokeWidth` / `normalizeIconProps` for building your own icons
 - Supports `currentColor` to follow the surrounding text color
 - Official Agent Skill: one command installs it into your AI coding agent, which can then pick icons by meaning and emit ready-to-paste code
 
@@ -86,7 +87,7 @@ export function Example() {
     <nav>
       <HomeIcon size={24} />
       <HeartIcon size={24} color="#E76F51" />
-      <PenguinIcon size={48} strokeWidth={4} />
+      <PenguinIcon size={48} strokeWidth={7} />  {/* doubles every stroke */}
     </nav>
   );
 }
@@ -131,7 +132,7 @@ Every Naive Icon component extends the native `SVGProps<SVGSVGElement>`, so you 
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| size | number \| string | 24 | Icon size, equal width and height. Overrides width and height when set |
+| size | number \| string \| null | 24 | Icon size, equal width and height. `null` behaves as unset. **Takes precedence *below* `width` / `height`** |
 | color | string | `#2A2A2A` | Stroke color. Pass `currentColor` to follow the surrounding text color |
 | strokeWidth | number \| string | 3.5 | Stroke width, as a **scale factor relative to the 3.5 baseline**. Passing 7 doubles every stroke while preserving the thickness hierarchy |
 | fill | string | none | Fill color. **Only affects primitives that don't set their own `fill`** — this library paints its colour blocks in, so a root `fill` won't override them |
@@ -147,12 +148,14 @@ Every Naive Icon component extends the native `SVGProps<SVGSVGElement>`, so you 
 import type { IconProps } from 'naive-icons';
 
 interface IconProps extends SVGProps<SVGSVGElement> {
-  size?: number | string;
+  size?: number | string | null;
   color?: string;
   strokeWidth?: number | string;
   fill?: string;
   title?: string;
 }
+
+// also exports scaledStroke / resolveStrokeWidth / normalizeIconProps
 ```
 
 ## Using the SVG Directly

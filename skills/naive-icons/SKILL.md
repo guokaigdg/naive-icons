@@ -157,11 +157,14 @@ python3 <仓库根>/scripts/build_skill_assets.py    # skill 的 catalog.md 与 
 
 ## 五、事实速查
 
-- 版本 1.5.0，159 枚，11 个分类。分类计数：界面基础 37、操作 22、日常物品 18、导航方位 15、
+- 版本 1.5.3，159 枚，11 个分类。分类计数：界面基础 37、操作 22、日常物品 18、导航方位 15、
   动物 14、自然天气 14、文件与媒体 13、食物饮品 11、交通工具 7、通信 6、表情 2。
 - 组件名 = id 各段首字母大写 + `Icon`：`user-plus` → `UserPlusIcon`。
 - 属性默认：`size=24`、`color=#2A2A2A`、`strokeWidth=3.5`、`fill=none`。
+  `strokeWidth` 是相对 3.5 基准的**缩放系数**而非绝对宽度，传 7 即整体描边加倍且层次保持；
+  `width` / `height` 优先级高于 `size`，`size={null}` 等同不传。
 - `color` **不是** `currentColor` 而是墨色 `#2A2A2A`，要跟随文字颜色必须显式传
   `color="currentColor"`。
-- 按需引入用具名导入 + tree-shaking；`naive-icons/src/*` **不可用**（`files` 不含 `src`，
-  `exports` 也没开这条），只能用 `import { HomeIcon } from 'naive-icons'`。
+- 按需引入用具名导入即可，打包器会 tree-shaking（只导入 1 个约 1 KB）。
+  也可以走子路径绕过顶层入口：`import { HomeIcon } from 'naive-icons/icons/HomeIcon'`。
+  `naive-icons/src/*` **不可用**（`files` 不含 `src`）。

@@ -236,6 +236,20 @@ def main():
     )
     OUT_FILE.write_text(js, encoding='utf-8')
 
+    html_path = ROOT / 'website' / 'index.html'
+    if html_path.is_file():
+        html = html_path.read_text(encoding='utf-8')
+        before = html
+        total = len(icons)
+        html = re.sub(r'(浏览 )\d+( 个图标)', rf'\g<1>{total}\g<2>', html)
+        html = re.sub(r'(共 )\d+( 个图标)', rf'\g<1>{total}\g<2>', html)
+        ver = json.loads((ROOT / 'package.json').read_text(encoding='utf-8'))['version']
+        html = re.sub(r'<b>v\d+\.\d+\.\d+</b>', f'<b>v{ver}</b>', html)
+        html = re.sub(r'(Naive Icons )v\d+\.\d+\.\d+', rf'\g<1>v{ver}', html)
+        if html != before:
+            html_path.write_text(html, encoding='utf-8')
+            print(f'已同步 website/index.html：图标总数 {total}、版本 v{ver}')
+
     print(f'图标总数: {len(icons)}')
     print(f'输出文件: {OUT_FILE}')
     print(f'文件大小: {OUT_FILE.stat().st_size / 1024:.1f} KB')

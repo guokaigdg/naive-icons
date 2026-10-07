@@ -22,7 +22,7 @@ export function Example() {
     <nav>
       <HomeIcon size={24} />
       <HeartIcon size={24} color="#E76F51" />
-      <PenguinIcon size={48} strokeWidth={4} />
+      <PenguinIcon size={48} strokeWidth={7} />  {/* 描边整体加倍 */}
     </nav>
   );
 }
@@ -40,9 +40,9 @@ export function Example() {
 
 | 属性 | 类型 | **实际默认值** | 说明 |
 |---|---|---|---|
-| `size` | number \| string | `24` | 同时映射 `width` 与 `height` |
+| `size` | number \| string \| null | `24` | 同时映射 `width` 与 `height`；`null` 等同不传 |
 | `color` | string | **`#2A2A2A`** | 映射到根节点 `stroke` |
-| `strokeWidth` | number \| string | `3.5` | 相对 48 画布 |
+| `strokeWidth` | number \| string | `3.5` | **相对 3.5 基准的缩放系数**，见第 4 节 |
 | `fill` | string | `none` | 根节点填充 |
 | `title` | string | — | 渲染为 `<title>` 子节点 |
 
@@ -68,10 +68,19 @@ export function Example() {
 | 32 | 空状态、功能卡片标题 | 能看到手作细节 |
 | 48 | 插画式空状态、品牌区、加载页 | 表情与笔触最完整 |
 
-`strokeWidth` **不要**随手调。3.5 是 48 画布下的值，会随 `size` 等比缩放；
-调到 2 以下会让 16px 档糊成一团。只有两种情况该动它：
+`strokeWidth` 是**相对基准值 3.5 的缩放系数**，不是绝对宽度：
 
-- 想让整组图标更「重」：`strokeWidth={4.5}`
+- `3.5`（默认）→ scale 1，**一根线都不变**，就是 svg/ 里的设计值
+- `7` → scale 2，所有描边一起加倍，粗细层次保持
+- `"7"` 与 `7` 等价；`'abc'` / `NaN` / 负数会回落到 3.5
+- `0` → 不描边
+
+它作用到**整枚图标**：内层的粗细层次（细节 1.5–2、主体 3.5、强调 4–5）会按同一比例缩放，
+不会出现「外框变粗、内层没变」的断裂。数字与字符串都支持。
+
+不要随手调。调到 2 以下（scale 0.57）会让 16px 档糊成一团。只有两种情况该动它：
+
+- 想让整组图标更「重」：`strokeWidth={5.25}`（1.5 倍）
 - 单个图标在特定尺寸下描边过粗：先试放大 `size`，再考虑收窄
 
 ## 5. 非 React 项目

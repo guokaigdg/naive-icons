@@ -18,14 +18,14 @@
 | `bell-off` | 免打扰 | `BellOffIcon` | 免打扰、静音提醒、belloff |
 | `bookmark` | 书签 | `BookmarkIcon` | 书签、收藏夹、收藏、bookmark、favorite |
 | `bulb` | 灯泡 | `BulbIcon` | 灵感、创意、想法、灯泡、灯、idea、bulb |
-| `calendar` | 日历 | `CalendarIcon` | — |
+| `calendar` | 日历 | `CalendarIcon` | 日历、日程、预约、schedule、agenda、events |
 | `check-circle` | 成功 | `CheckCircleIcon` | 验证、确认、确定、完成、成功、完成度、进度 |
 | `check-square` | 复选框 | `CheckSquareIcon` | 复选框、多选、未选中、checkbox |
 | `clock` | 时钟 | `ClockIcon` | 稍后、历史、最近 |
 | `ellipsis` | 更多 | `EllipsisIcon` | 更多、更多操作、more |
 | `external-link` | 外链 | `ExternalLinkIcon` | 链接、外链、站外、新窗口、退出、externallink |
-| `eye` | 眼睛 | `EyeIcon` | 无障碍、可访问性 |
-| `eye-off` | 隐藏 | `EyeOffIcon` | 隐私 |
+| `eye` | 眼睛 | `EyeIcon` | 无障碍、可访问性、password |
+| `eye-off` | 隐藏 | `EyeOffIcon` | 隐私、隐藏、隐身、password |
 | `grid` | 网格 | `GridIcon` | 视图、展示方式、网格、宫格、看板、拖拽、工作区 |
 | `heart` | 爱心 | `HeartIcon` | 爱心、喜欢、点赞、heart、like |
 | `help-circle` | 帮助 | `HelpCircleIcon` | 帮助、问号、客服、答疑、help、question |
@@ -183,7 +183,7 @@
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
 | `balloon` | 气球 | `BalloonIcon` | 气球、balloon |
-| `basketball` | 篮球 | `BasketballIcon` | — |
+| `basketball` | 篮球 | `BasketballIcon` | 篮球、投篮、hoops、ball |
 | `candle` | 蜡烛 | `CandleIcon` | 蜡烛、candle |
 | `cart` | 购物车 | `CartIcon` | 购物车、加购、购物篮、购物、商城、cart、shopping |
 | `credit-card` | 信用卡 | `CreditCardIcon` | 支付、付款、收银、结算、卡、信用卡、银行卡 |

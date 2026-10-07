@@ -29,14 +29,28 @@
    想在 CI 里只做校验（不写文件）就用 `--check`，内容过期时返回非零。
 
 6. 本地打开 `website/index.html` 预览，确认在 16、24、48 三个尺寸下都清晰可辨。
-7. 提交 Pull Request，说明图标用途与命名理由。
+7. 跑测试：
+
+   ```bash
+   npm ci && npm test
+   ```
+
+   `tests/bundle-size.test.ts` 会打一个只导入单个图标的包并断言体积，
+   `tests/jsx-attrs.test.ts` 会断言 JSX 里没有 kebab 属性、内层描边是 `sw(设计值)` 形式。
+   生成器漏了属性名转换或 tsup 配置被改回单入口，这两条会直接失败。
+8. 提交 Pull Request，说明图标用途与命名理由。
 
 ## 设计规范
 
 提交前请逐条自查：
 
-- 画布为 48x48，主体与画布边缘至少留出 3 个单位
+- 画布为 48x48，主体与画布边缘至少留出 3 个单位（按描边外缘算，不是中心线）
 - 描边宽度 3.5，`stroke-linecap` 与 `stroke-linejoin` 均为 round
+- 内层元素若自带 `stroke-width`，必须是刻意的粗细层次（细节 1.5–2、主体 3.5、强调 4–5）。
+  组件里它会写成 `strokeWidth={sw(设计值)}` 跟着 `strokeWidth` 属性等比缩放，
+  不要图省事改成固定值——那样 `strokeWidth` 就管不到内层了
+- SVG 里 `stroke-width` 是合法 kebab-case，**转 TSX 时必须转成 `strokeWidth` / `strokeLinecap`**，
+  否则 React 会报 `Invalid DOM property`。生成器已自动处理，手写组件时注意
 - 不使用虚线、渐变、阴影与半透明叠加
 - 以调色板的 9 色为默认基调；确有必要时可用其他实色（如品牌色），一律扁平填充
 - 不使用外部字体、图片与滤镜，SVG 必须自包含
@@ -64,12 +78,13 @@
 
 ## 提交信息
 
-建议使用 Conventional Commits：
+使用 Conventional Commits，**正文一律英文**（scope 可用中文）：
 
 ```
-feat: 新增 watering-can 图标
-fix: 修正 bicycle 链条路径
-docs: 补充说明 strokeWidth 用法
+feat(icons): add watering-can icon
+fix(icons): correct bicycle chain path
+docs(icons): clarify strokeWidth semantics
+chore(release): 1.5.3
 ```
 
 ## 版权

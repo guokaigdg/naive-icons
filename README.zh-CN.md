@@ -33,7 +33,8 @@
 
 - 图标覆盖界面、操作、媒体、导航、动物、食物等 11 个分类
 - 每个图标同时提供 SVG 源文件与 React TSX 组件
-- 完整 TypeScript 类型：IconProps、IconName、IconComponent、NAIVE_PALETTE
+- 完整 TypeScript 类型：IconProps、IconName、IconComponent、PaletteColor、NAIVE_PALETTE
+- 导出 `scaledStroke` / `resolveStrokeWidth` / `normalizeIconProps`，需要自建图标时用得上
 - 支持 currentColor，传入后图标跟随文字颜色
 - 官方 Agent Skill：一条命令装到 AI 编码助手，按语义帮你挑图标并生成代码
 
@@ -83,7 +84,7 @@ export function Example() {
     <nav>
       <HomeIcon size={24} />
       <HeartIcon size={24} color="#E76F51" />
-      <PenguinIcon size={48} strokeWidth={4} />
+      <PenguinIcon size={48} strokeWidth={7} />  {/* 描边整体加倍 */}
     </nav>
   );
 }
@@ -126,7 +127,7 @@ Naive Icons 的每个组件都继承原生 `SVGProps<SVGSVGElement>`，可以直
 
 | 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| size | number \| string | 24 | 图标尺寸，宽高相等。传入后覆盖 width 与 height |
+| size | number \| string \| null | 24 | 图标尺寸，宽高相等。`null` 等同不传。**优先级低于 width / height** |
 | color | string | `#2A2A2A` | 描边颜色。传 `currentColor` 可跟随父级文字颜色 |
 | strokeWidth | number \| string | 3.5 | 描边宽度，**相对基准值 3.5 的缩放系数**。传 7 相当于整体描边加倍，粗细层次保持不变 |
 | fill | string | none | 填充色。**只对没有自带 fill 的图元生效**——本库图标的色块是画上去的，传 `fill` 改不了它们 |
@@ -141,12 +142,14 @@ Naive Icons 的每个组件都继承原生 `SVGProps<SVGSVGElement>`，可以直
 import type { IconProps } from 'naive-icons';
 
 interface IconProps extends SVGProps<SVGSVGElement> {
-  size?: number | string;
+  size?: number | string | null;
   color?: string;
   strokeWidth?: number | string;
   fill?: string;
   title?: string;
 }
+
+// 也导出了 scaledStroke / resolveStrokeWidth / normalizeIconProps
 ```
 
 ## 直接使用 SVG

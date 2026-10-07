@@ -295,6 +295,11 @@ SYNONYMS = {
     '猫头鹰': ['owl'], 'owl': ['owl'], '企鹅': ['penguin'], 'penguin': ['penguin'],
     '兔子': ['rabbit'], 'rabbit': ['rabbit'], '蜗牛': ['snail'], 'snail': ['snail'],
     '仙人掌': ['cactus'], 'cactus': ['cactus'], '蘑菇': ['mushroom'], 'mushroom': ['mushroom'],
+    '篮球': ['basketball'], 'hoops': ['basketball'], '投篮': ['basketball'],
+    'ball': ['basketball'],
+    '日历': ['calendar'], 'schedule': ['calendar'], 'agenda': ['calendar'],
+    '日程': ['calendar'], '预约': ['calendar'], 'events': ['calendar'],
+    '隐藏': ['eye-off'], '隐身': ['eye-off'], 'password': ['eye', 'eye-off'],
     # 食物饮品
     '食物': ['cake', 'donut', 'apple'], '吃': ['cake', 'donut', 'apple'], 'food': ['cake', 'donut'],
     '咖啡': ['coffee', 'coffee-cup'], 'coffee': ['coffee', 'coffee-cup'],

@@ -2,11 +2,9 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 
 /**
- * SVG 里 stroke-width / stroke-linecap / stroke-linejoin 是合法的 kebab-case，
- * JSX 里必须写 camelCase。TSX 的 body 是从 SVG 原样搬过来的，历史上忘了转换，
- * 结果 React 报 "Invalid DOM property `stroke-width`" 且属性完全失效——
- * 表现为 <Icon strokeWidth={7} /> 只加粗外框、内层线条纹丝不动，视觉直接断裂。
- * 159 枚里曾有 109 枚（68%）中招，从 1.1/1.2 一路带到线上。
+ * SVG 的 stroke-width 是合法 kebab-case，JSX 里必须写 camelCase。TSX 的 body 从 SVG
+ * 原样搬过来，历史上忘了转换，React 会报 "Invalid DOM property `stroke-width`"。
+ * 159 枚里曾有 109 枚（68%）中招。
  */
 const files = readdirSync('src').filter((f) => f.endsWith('Icon.tsx'));
 const KEBAB = /\s([a-z]+-[a-z]+)="/;
@@ -30,10 +28,7 @@ describe('TSX 里的 SVG 属性名', () => {
   });
 
   it('内层描边写成按比例缩放，而不是写死的字面量', () => {
-    // alert-circle 的内层原本是 stroke-width="3.5" / "4"。只转成 camelCase 还不够：
-    // SVG 的 stroke-width 可继承，但子元素自带值就挡住了根节点的 strokeWidth，
-    // 表现为 <Icon strokeWidth={7} /> 只加粗外框、内层纹丝不动。
-    // 所以内层必须写成 strokeWidth={sw(设计值)}，跟着属性按比例缩放。
+    // 只转 camelCase 不够：子元素自带值会挡住继承，内层必须写成 sw(设计值) 跟着缩放
     const body = jsxBody('AlertCircleIcon.tsx');
     expect(body).toContain('strokeWidth={sw(3.5)}');
     expect(body).toContain('strokeWidth={sw(4)}');

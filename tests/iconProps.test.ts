@@ -1,12 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { HomeIcon, scaledStroke } from '../src';
+import { HomeIcon, normalizeIconProps, scaledStroke, resolveStrokeWidth } from '../src';
 
-/**
- * 以前 normalizeIconProps 无条件写 svgProps.width = size，
- * 于是 props 里传的 width / height 被静默吃掉，README 承诺的
- * 「单独指定宽或高」根本做不到。这里钉住优先级规则：
- *   传了具体的宽或高就以它为准，没传的另一边回落到 size。
- */
+/** 钉住优先级：传了具体的宽或高就以它为准，没传的另一边回落到 size。 */
 describe('normalizeIconProps 的 width / height', () => {
   const render = (props: Record<string, unknown>) =>
     (HomeIcon as unknown as { render: (p: unknown, r: null) => { props: Record<string, unknown> } })
@@ -55,9 +50,7 @@ describe('size 的边界值', () => {
     (HomeIcon as unknown as { render: (p: unknown, r: null) => { props: Record<string, unknown> } })
       .render(props, null).props;
 
-  // 以前用解构默认值 `const { size = 24 }`，它只对 undefined 生效。
-  // `size={isLarge ? 32 : null}` 这种写法会传进 null，导致 svg 上 width/height
-  // 属性整个消失，图标按浏览器默认尺寸渲染。
+  // 解构默认值只对 undefined 生效，null 会让尺寸属性整个消失
   it('size={null} 回落 24，而不是让属性消失', () => {
     expect(render({ size: null }).width).toBe(24);
     expect(render({ size: null }).height).toBe(24);
@@ -102,9 +95,54 @@ describe('strokeWidth 按比例缩放', () => {
     expect(sw(7)).toBeCloseTo(4);
   });
 
-  it('非法值（0 / 负数 / 字符串）回落到基准 3.5，不至于把图标画没', () => {
-    for (const v of [0, -4, '3px', undefined, null]) {
+  it('非法值回落到基准 3.5，不至于把图标画没', () => {
+    // 0 不在这里：它是合法的「不描边」，根与内层一起归零才算一致
+    for (const v of [-4, '3px', 'abc', undefined, null]) {
       expect(scaledStroke(v as never)(3.5)).toBe(3.5);
     }
+  });
+});
+
+describe('strokeWidth 的边界与非法值', () => {
+  const render = (props: Record<string, unknown>) =>
+    (HomeIcon as unknown as { render: (p: unknown, r: null) => { props: Record<string, unknown> } })
+      .render(props, null).props;
+
+  it('字符串与数字等价——"7" 必须同样触发缩放', () => {
+    const a = scaledStroke(7)(4);
+    const b = scaledStroke('7')(4);
+    expect(a).toBe(b);
+    expect(a).toBe(8);
+  });
+
+  it('非法值回落到基准，不透传到 DOM', () => {
+    for (const v of ['abc', '', '3.5px', NaN, -4, null, undefined, {} as never]) {
+      expect(resolveStrokeWidth(v as never)).toBe(3.5);
+      expect(scaledStroke(v as never)(4)).toBe(4);
+    }
+  });
+
+  it('0 合法，根节点与内层一起归零', () => {
+    expect(resolveStrokeWidth(0)).toBe(0);
+    expect(scaledStroke(0)(4)).toBe(0);
+    expect(render({ strokeWidth: 0 }).strokeWidth).toBe(0);
+  });
+
+  it('缩放结果取两位小数，不输出 17 位浮点', () => {
+    expect(scaledStroke(10)(4)).toBe(11.43);
+    expect(scaledStroke(100)(4)).toBe(114.29);
+    expect(scaledStroke(0.5)(3.5)).toBe(0.5);
+    // 整数倍必须精确
+    expect(scaledStroke(7)(3.5)).toBe(7);
+    expect(scaledStroke(7)(4)).toBe(8);
+  });
+
+  it('size / width / height 不泄漏进 svg 的 props', () => {
+    // 不是 SVG 属性，留在 rest 里会被 {...rest} 带进 svg 的 props 污染下游
+    const p = normalizeIconProps({ size: 32, width: 40, className: 'x' });
+    expect(p).not.toHaveProperty('size');
+    expect(p.width).toBe(40);
+    expect(p.height).toBe(32);
+    expect(p.className).toBe('x');
   });
 });
