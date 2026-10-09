@@ -146,3 +146,77 @@ describe('strokeWidth 的边界与非法值', () => {
     expect(p.className).toBe('x');
   });
 });
+
+describe('size / width / height 的非有限值', () => {
+  const render = (props: Record<string, unknown>) =>
+    (HomeIcon as unknown as { render: (p: unknown, r: null) => { props: Record<string, unknown> } })
+      .render(props, null).props;
+
+  const BAD = [NaN, Infinity, -Infinity, -1, -10];
+
+  // 以前只有 size 过了 Number.isFinite 校验，width / height 走的是裸 `?? resolved`，
+  // 于是 width={NaN} 会直接进 DOM：React 报 Received NaN，浏览器也忽略该属性。
+  it.each(BAD)('size={%p} 回落 24', (v) => {
+    expect(render({ size: v }).width).toBe(24);
+    expect(render({ size: v }).height).toBe(24);
+  });
+
+  it.each(BAD)('width={%p} 回落，且不会被 size 救成 NaN', (v) => {
+    expect(render({ width: v }).width).toBe(24);
+    // size 合法时，width 非法仍回落到 size 的值而不是 NaN
+    expect(render({ size: 32, width: v }).width).toBe(32);
+  });
+
+  it.each(BAD)('height={%p} 回落，且不会被 size 救成 NaN', (v) => {
+    expect(render({ height: v }).height).toBe(24);
+    expect(render({ size: 32, height: v }).height).toBe(32);
+  });
+
+  it('null 与 undefined 都回落', () => {
+    for (const v of [null, undefined]) {
+      expect(render({ size: v }).width).toBe(24);
+      expect(render({ width: v }).width).toBe(24);
+      expect(render({ height: v }).height).toBe(24);
+    }
+  });
+
+  it('0 在三者上都保留（用来隐藏图标）', () => {
+    expect(render({ size: 0 }).width).toBe(0);
+    expect(render({ size: 0 }).height).toBe(0);
+    expect(render({ width: 0 }).width).toBe(0);
+    expect(render({ height: 0 }).height).toBe(0);
+  });
+
+  it('字符串尺寸原样透传', () => {
+    expect(render({ size: '1em' }).width).toBe('1em');
+    expect(render({ width: '2em' }).width).toBe('2em');
+    expect(render({ height: '100%' }).height).toBe('100%');
+  });
+
+  // 空串不是合法尺寸值：渲染成 width="" 会被浏览器忽略，图标退回默认尺寸。
+  // resolveStrokeWidth 早就把 '' 挡住了，三者必须一致。
+  it.each(['', ' ', '\t', '\n', '   '])('空串尺寸 %p 回落，不透传', (v) => {
+    expect(render({ size: v }).width).toBe(24);
+    expect(render({ width: v }).width).toBe(24);
+    expect(render({ height: v }).height).toBe(24);
+    // size 合法时，width 空串回落到 size
+    expect(render({ size: 32, width: v }).width).toBe(32);
+    expect(render({ size: 32, height: v }).height).toBe(32);
+  });
+
+  it('带空白的合法字符串仍透传', () => {
+    expect(render({ size: ' 1em ' }).width).toBe(' 1em ');
+  });
+
+  it('归一化后不产生任何 NaN / Infinity', () => {
+    for (const v of BAD) {
+      for (const p of [{ size: v }, { width: v }, { height: v }, { size: 32, width: v, height: v }]) {
+        const r = render(p) as { width: unknown; height: unknown };
+        expect(Number.isNaN(r.width)).toBe(false);
+        expect(Number.isFinite(r.width) || typeof r.width === 'string').toBe(true);
+        expect(Number.isNaN(r.height)).toBe(false);
+        expect(Number.isFinite(r.height) || typeof r.height === 'string').toBe(true);
+      }
+    }
+  });
+});

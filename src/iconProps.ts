@@ -44,6 +44,21 @@ export function scaledStroke(strokeWidth?: number | string | null) {
 }
 
 /**
+ * 尺寸归一：NaN / Infinity / 负数一律回落 fallback，非有限值不该进 DOM
+ * （React 会报 Received NaN，浏览器也会直接忽略该属性）。
+ * 空串与纯空白同样回落——它们不是合法尺寸值，与 resolveStrokeWidth 的处理保持一致。
+ * 0 保留——用 size={0} 或 width={0} 隐藏图标是合理用法。合法字符串原样透传。
+ */
+function safeDimension(
+  value: number | string | null | undefined,
+  fallback: number | string,
+): number | string {
+  if (value === undefined || value === null) return fallback;
+  if (typeof value === 'number') return Number.isFinite(value) && value >= 0 ? value : fallback;
+  return value.trim() === '' ? fallback : value;
+}
+
+/**
  * 把语义化属性映射为原生 SVG 属性，供所有图标组件共享。
  * width / height 优先于 size，没传的那一边回落到 size（size={32} width={64} → 64 × 32）。
  */
@@ -64,17 +79,11 @@ export function normalizeIconProps(props: IconProps): SVGProps<SVGSVGElement> {
   const svgProps: SVGProps<SVGSVGElement> = { ...rest };
 
   // ?? 而非解构默认值：后者只对 undefined 生效，null 会让尺寸属性整个消失。
-  // 数值还要过 finite + 非负（NaN < 0 为 false，挡不住 NaN），字符串原样透传
-  const rawSize = size ?? 24;
-  const resolved =
-    typeof rawSize === 'number'
-      ? Number.isFinite(rawSize) && rawSize >= 0
-        ? rawSize
-        : 24
-      : rawSize;
+  // 三者走同一条归一化路径，否则 width={NaN} 会绕过 size 的校验直接进 DOM。
+  const resolved = safeDimension(size, 24);
 
-  svgProps.width = width ?? resolved;
-  svgProps.height = height ?? resolved;
+  svgProps.width = safeDimension(width, resolved);
+  svgProps.height = safeDimension(height, resolved);
   svgProps.fill = fill;
   svgProps.stroke = color;
   // 与 scaledStroke 共用同一套归一化，保证根节点与内层永远一致

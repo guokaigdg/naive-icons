@@ -40,9 +40,9 @@
 其他
 
 - 订正 1.5.1 CHANGELOG 里的体积数据。当时用 `sourcemap: false` 的探针构建去量，
-  却发布了 `sourcemap: true` 的版本，数字对不上。实际是 141.9 KB → 222.7 KB
+  却发布了 `sourcemap: true` 的版本，数字对不上。实测 145.8 KB → 217.5 KB（单位 KB = 1024 字节）
 - 发布时排除 `dist/**/*.map`（640 个文件，占 dist 总量 52%）。仓库里仍然保留，
-  只是不进 tarball。tarball 因此从 222.7 KB 回到 **149.9 KB**，相对 1.5.0 只 +5.6%，
+  只是不进 tarball。tarball 因此从 217.5 KB 回到 **153.2 KB**，相对 1.5.0 只 +5.1%，
   文件数 1775 → 1135
 - 两个生成器（`generate_icons.py` / `generate_icons_add.py`）都加上 kebab → camel 转换
   与描边缩放，`emit.py` 的 tsx 输出也一并修正，以后新增图标不会再犯
@@ -60,12 +60,12 @@
   里面有 159 条顶层 `XxxIcon.displayName = "..."` 赋值。打包器无法证明这些语句无副作用，
   于是整个模块必须保留，连带保留全部 159 个组件——`sideEffects: false` 只允许跳过
   「整个模块」，管不到模块内部的顶层语句，所以那时它等于没写。
-  实测只导入 `HomeIcon` 一个图标会打进 **105 KB（gzip 11.8 KB）**。
-  改为每个图标各自成为入口 + `splitting: true` 后，同样的导入是 **935 B**（约 1/112），
+  实测只导入 `HomeIcon` 一个图标会打进 **105,054 B（gzip 11.8 KB）**。
+  改为每个图标各自成为入口 + `splitting: true` 后，同样的导入降到 **1,200 B**（约 1/88），
   产物里只剩用到的那一个图标。
-  代价是 dist 文件数从 6 涨到约 960，tarball 从 141.9 KB 涨到 222.7 KB（+57%）、
+  代价是 dist 文件数从 6 涨到约 960，tarball 从 145.8 KB 涨到 217.5 KB（+49%）、
   unpacked 从 1.37 MB 涨到 1.73 MB。1.5.2 起发布时排除 `.map`（占 dist 总量 52%），
-  tarball 回到 149.9 KB，相对 1.5.0 只 +5.6%
+  tarball 回到 153.2 KB，相对 1.5.0 只 +5.1%
 - 新增 `naive-icons/icons/*` 子路径，可绕过顶层入口直接引单个图标
 - `width` / `height` 不再被静默忽略。以前 `normalizeIconProps` 无条件写
   `svgProps.width = size`，导致 `width={40}` 渲染出来还是 24×24，README 承诺的
