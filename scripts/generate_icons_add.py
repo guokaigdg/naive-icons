@@ -677,6 +677,27 @@ NEW_ICONS = {
 
     'ban': S(f'''<circle cx="24" cy="24" r="17" fill="{CREAM}"/>
 <path d="M12 36 L36 12" stroke="{ORANGE}" stroke-width="5"/>'''),
+
+    # ---------- 外设 ----------
+
+    'keyboard': S(f'''<rect x="5" y="15" width="38" height="19" rx="4" fill="{YELLOW}"/>
+<path d="M12 21 L14.5 21 M18.5 21 L21 21 M25 21 L27.5 21 M31.5 21 L34 21" stroke-width="3"/>
+<path d="M12 27 L14.5 27 M18.5 27 L21 27 M25 27 L27.5 27" stroke-width="3"/>
+<path d="M16 31.5 L32 31.5" stroke="{ORANGE}" stroke-width="3"/>'''),
+
+    'mouse': S(f'''<rect x="14" y="8" width="20" height="32" rx="10" fill="{TEAL}"/>
+<path d="M14 20 L34 20" stroke-width="2.5"/>
+<rect x="21.5" y="12" width="5" height="4" rx="2" fill="{ORANGE}" stroke-width="2"/>'''),
+
+    'monitor': S(f'''<rect x="5" y="9" width="38" height="26" rx="4" fill="{TEAL}"/>
+<path d="M12 17 L21 17" stroke="{CREAM}" stroke-width="3"/>
+<path d="M12 24 L27 24" stroke="{CREAM}" stroke-width="3"/>
+<path d="M24 35 L24 41" stroke-width="3.5"/>
+<path d="M17 41 L31 41" stroke-width="3.5"/>'''),
+
+    'charger': S(f'''<rect x="11" y="14" width="26" height="26" rx="5" fill="{ORANGE}"/>
+<path d="M19 14 L19 8 M29 14 L29 8" stroke-width="3.5"/>
+<circle cx="24" cy="27" r="6" fill="none" stroke="{CREAM}" stroke-width="3"/>'''),
 }
 
 

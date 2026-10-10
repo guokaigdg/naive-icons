@@ -79,6 +79,8 @@ ICON_CATEGORY = {
     'trophy': 'objects', 'shopping-bag': 'objects', 'credit-card': 'objects',
     'gift': 'objects', 'thermometer': 'objects', 'lock': 'objects',
     'key': 'objects', 'cart': 'objects',
+    'keyboard': 'objects', 'mouse': 'objects', 'monitor': 'objects',
+    'charger': 'objects',
     # 交通工具
     'car': 'transport', 'airplane': 'transport', 'rocket': 'transport',
     'bicycle': 'transport', 'sailboat': 'transport',
@@ -162,6 +164,8 @@ ZH_NAMES = {
     'link': '链接', 'unlink': '取消链接',
     'copy': '复制', 'minus': '减号',
     'basketball': '篮球', 'dumbbell': '哑铃',
+    'keyboard': '键盘', 'mouse': '鼠标',
+    'monitor': '显示器', 'charger': '充电头',
     'mountain': '山峰', 'tent': '帐篷',
     'pause': '暂停', 'stop': '停止',
     'coffee-cup': '咖啡杯', 'water-cup': '水杯',

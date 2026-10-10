@@ -2,7 +2,7 @@
 """
 naive-icons 代码输出 —— 把图标变成可直接粘贴的代码。
 
-只用标准库。SVG 源码主要来自同目录的 icons.json（全部 159 枚收在这一个文件里，
+只用标准库。SVG 源码主要来自同目录的 icons.json（全部 163 枚收在这一个文件里，
 由 scripts/build_skill_assets.py 从 svg/ 生成）。这样 skill 自包含：无论用
 npx skills add 还是手动复制装到哪，都能出码，不需要项目里装了本库。
 
@@ -35,7 +35,7 @@ ATTR_JSX = {
     'clip-rule': 'clipRule',
 }
 
-ICON_COUNT = 159
+ICON_COUNT = 163
 
 
 def component_name(icon_id):
@@ -140,7 +140,7 @@ def read_svg(icon_id):
 
 
 def split_svg(text):
-    """拆成 (根节点整行, body 列表)。根节点在仓库里 159 枚完全统一。"""
+    """拆成 (根节点整行, body 列表)。根节点在仓库里 163 枚完全统一。"""
     lines = text.strip().split('\n')
     if len(lines) < 3 or not lines[0].startswith('<svg') or lines[-1] != '</svg>':
         return None, []

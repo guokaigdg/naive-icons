@@ -109,7 +109,7 @@
 | `chevron-up` | 向上 | `ChevronUpIcon` | 收起、向上、折叠、up |
 | `compass` | 指南针 | `CompassIcon` | 指南针、方向、compass |
 | `flag` | 旗帜 | `FlagIcon` | 旗帜、flag |
-| `location` | 定位 | `LocationIcon` | 定位、位置、地点、gps、location |
+| `location` | 定位 | `LocationIcon` | 定位、位置、地点、指针、gps、location |
 | `magnet` | 磁铁 | `MagnetIcon` | 磁铁、magnet |
 | `map` | 地图 | `MapIcon` | 地图、旅行、出行、map、travel |
 
@@ -178,7 +178,7 @@
 | `water-cup` | 水杯 | `WaterCupIcon` | 杯子、水、喝水、water |
 | `watermelon` | 西瓜 | `WatermelonIcon` | 西瓜、watermelon |
 
-## 日常物品（18 枚）
+## 日常物品（22 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -186,15 +186,19 @@
 | `basketball` | 篮球 | `BasketballIcon` | 篮球、投篮、hoops、ball |
 | `candle` | 蜡烛 | `CandleIcon` | 蜡烛、candle |
 | `cart` | 购物车 | `CartIcon` | 购物车、加购、购物篮、购物、商城、cart、shopping |
+| `charger` | 充电头 | `ChargerIcon` | 充电头、充电器、插头、电源适配器、快充、充电、charger |
 | `credit-card` | 信用卡 | `CreditCardIcon` | 支付、付款、收银、结算、卡、信用卡、银行卡 |
 | `dumbbell` | 哑铃 | `DumbbellIcon` | 健身、运动、举铁、dumbbell |
 | `gift` | 礼物 | `GiftIcon` | 礼物、礼品、送礼、免费、新品、gift |
 | `globe` | 地球仪 | `GlobeIcon` | 地球、全球、国际、语言、globe |
 | `google-chrome` | Chrome | `GoogleChromeIcon` | 浏览器、chrome |
 | `key` | 钥匙 | `KeyIcon` | 登录、登陆、注册、权限、认证、密码、钥匙 |
+| `keyboard` | 键盘 | `KeyboardIcon` | 键盘、键鼠、快捷键、打字、输入设备、keyboard |
 | `lamp` | 台灯 | `LampIcon` | 台灯、灯、lamp |
 | `lock` | 锁 | `LockIcon` | 登录、登陆、权限、隐私、安全、密码、锁 |
 | `lock-open` | 解锁 | `LockOpenIcon` | 解锁、unlock |
+| `monitor` | 显示器 | `MonitorIcon` | 显示器、屏幕、大屏、副屏、显示设备、monitor、screen |
+| `mouse` | 鼠标 | `MouseIcon` | 键鼠、鼠标、点击、指针、滚轮、点击设备、mouse |
 | `paintbrush` | 画笔 | `PaintbrushIcon` | 画笔、绘画、涂鸦、paint、paintbrush |
 | `pencil` | 铅笔 | `PencilIcon` | 编辑、修改、新建、撰写、绘画、铅笔、edit |
 | `shopping-bag` | 购物袋 | `ShoppingBagIcon` | 购物、商城、购物袋、shopping、bag |

@@ -1,6 +1,6 @@
 # naive-icons 用法模式
 
-本文档只写**经过源码核实**的行为。库版本 1.5.0，共 159 枚图标。
+本文档只写**经过源码核实**的行为。库版本 1.5.3，共 163 枚图标。
 
 ---
 
@@ -85,7 +85,7 @@ export function Example() {
 
 ## 5. 非 React 项目
 
-`svg/` 下 159 个文件都是自包含 SVG，无外部引用。
+`svg/` 下 163 个文件都是自包含 SVG，无外部引用。
 
 ```html
 <img src="node_modules/naive-icons/svg/home.svg" width="24" height="24" alt="首页" />

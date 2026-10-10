@@ -7,8 +7,8 @@ import { describe, expect, it } from 'vitest';
 /**
  * tree-shaking 回归测试。
  *
- * 单入口产物里有 159 条顶层 `XxxIcon.displayName = "..."`，打包器无法证明无副作用，
- * 于是整个模块必须保留，159 个图标全进包；`sideEffects: false` 只允许跳过「整个模块」，
+ * 单入口产物里有 163 条顶层 `XxxIcon.displayName = "..."`，打包器无法证明无副作用，
+ * 于是整个模块必须保留，163 个图标全进包；`sideEffects: false` 只允许跳过「整个模块」，
  * 管不到模块内部的顶层语句。实测只导入一个图标打进 105 KB，改成逐图标入口后降到约 1 KB。
  * 这个测试的作用是：以后谁把 tsup 配置改回单入口，会在这里红掉。
  */
@@ -41,7 +41,7 @@ describe('tree-shaking', () => {
     expect(iconsLeft).toBe(1);
   });
 
-  it('体积随导入数量线性增长，不随库的 159 枚总量增长', () => {
+  it('体积随导入数量线性增长，不随库的 163 枚总量增长', () => {
     const one = bundle(['HomeIcon']).bytes;
     const many = bundle([
       'HomeIcon', 'UsersIcon', 'LockIcon', 'HeartIcon', 'SearchIcon', 'BellIcon',

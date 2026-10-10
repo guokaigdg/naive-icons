@@ -32,7 +32,7 @@ CATEGORIES = {
     'transport': '交通工具', 'emoji': '表情',
 }
 
-# ── 159 枚图标：id -> (中文名, 分类) ──────────────────────────────────
+# ── 163 枚图标：id -> (中文名, 分类) ──────────────────────────────────
 ICONS = {
     'airplane': ('飞机', 'transport'), 'alert-circle': ('提示', 'interface'),
     'alert-triangle': ('警告', 'interface'), 'anchor': ('锚', 'navigation'),
@@ -49,7 +49,8 @@ ICONS = {
     'cactus': ('仙人掌', 'nature'), 'cake': ('蛋糕', 'food'),
     'calendar': ('日历', 'interface'), 'camera': ('相机', 'media'),
     'candle': ('蜡烛', 'objects'), 'car': ('汽车', 'transport'),
-    'cart': ('购物车', 'objects'), 'cat': ('小猫', 'animals'),
+    'cart': ('购物车', 'objects'), 'charger': ('充电头', 'objects'),
+    'cat': ('小猫', 'animals'),
     'chat': ('对话', 'communication'), 'check': ('勾选', 'action'),
     'check-circle': ('成功', 'interface'), 'check-square': ('复选框', 'interface'),
     'cherry': ('樱桃', 'food'), 'chevron-down': ('向下', 'navigation'),
@@ -74,7 +75,8 @@ ICONS = {
     'help-circle': ('帮助', 'interface'), 'home': ('家', 'interface'),
     'icecream': ('冰淇淋', 'food'), 'image': ('图片', 'media'),
     'inbox': ('收件箱', 'communication'), 'info': ('信息', 'interface'),
-    'key': ('钥匙', 'objects'), 'ladybug': ('瓢虫', 'animals'),
+    'key': ('钥匙', 'objects'), 'keyboard': ('键盘', 'objects'),
+    'ladybug': ('瓢虫', 'animals'),
     'lamp': ('台灯', 'objects'), 'leaf': ('叶子', 'nature'),
     'lemon': ('柠檬', 'food'), 'link': ('链接', 'interface'),
     'list': ('列表', 'interface'), 'location': ('定位', 'navigation'),
@@ -82,9 +84,11 @@ ICONS = {
     'magnet': ('磁铁', 'navigation'), 'mail': ('邮件', 'communication'),
     'map': ('地图', 'navigation'), 'maximize': ('全屏', 'action'),
     'menu': ('菜单', 'interface'), 'mic': ('麦克风', 'media'),
-    'minus': ('减号', 'action'), 'moon': ('月亮', 'nature'),
+    'minus': ('减号', 'action'), 'monitor': ('显示器', 'objects'),
+    'moon': ('月亮', 'nature'),
     'more-vertical': ('更多(竖)', 'interface'), 'mountain': ('山峰', 'nature'),
-    'mushroom': ('蘑菇', 'nature'), 'music': ('音乐', 'media'),
+    'mushroom': ('蘑菇', 'nature'), 'mouse': ('鼠标', 'objects'),
+    'music': ('音乐', 'media'),
     'owl': ('猫头鹰', 'animals'), 'paintbrush': ('画笔', 'objects'),
     'paperclip': ('附件', 'media'), 'pause': ('暂停', 'action'),
     'pencil': ('铅笔', 'objects'), 'penguin': ('企鹅', 'animals'),
@@ -270,6 +274,15 @@ SYNONYMS = {
     '温度': ['thermometer'], '气温': ['thermometer'], 'thermometer': ['thermometer'],
     '气球': ['balloon'], 'balloon': ['balloon'],
     '健身': ['dumbbell'], '运动': ['dumbbell'], '举铁': ['dumbbell'], 'dumbbell': ['dumbbell'],
+    # 外设
+    '键盘': ['keyboard'], '键鼠': ['keyboard', 'mouse'], '快捷键': ['keyboard'],
+    '打字': ['keyboard'], '输入设备': ['keyboard'], 'keyboard': ['keyboard'],
+    '鼠标': ['mouse'], '点击': ['mouse'], '指针': ['mouse', 'location'],
+    '滚轮': ['mouse'], '点击设备': ['mouse'], 'mouse': ['mouse'],
+    '显示器': ['monitor'], '屏幕': ['monitor'], '大屏': ['monitor'],
+    '副屏': ['monitor'], '显示设备': ['monitor'], 'monitor': ['monitor'], 'screen': ['monitor'],
+    '充电头': ['charger'], '充电器': ['charger'], '插头': ['charger'],
+    '电源适配器': ['charger'], '快充': ['charger'], '充电': ['charger'], 'charger': ['charger'],
     # 自然天气
     '太阳': ['sun'], '晴天': ['sun'], '白天': ['sun'], 'sun': ['sun'],
     '云': ['cloud'], '多云': ['cloud'], 'cloud': ['cloud'],
