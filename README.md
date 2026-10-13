@@ -195,6 +195,7 @@ import { NAIVE_PALETTE } from 'naive-icons';
 | teal | #2A9D8F | Secondary |
 | brown | #8B5E3C | Wood and earth |
 | cream | #FAEDCD | Light background |
+| white | #FFFFFF | Cut-out shapes on solid fills |
 
 ## Design Principles
 
@@ -202,7 +203,7 @@ Naive Icons follows four fixed rules. They should be respected when adding new i
 
 1. **Grid & bleed**: All graphics are drawn on a 48x48 canvas, keeping at least 3 units between the main body and the canvas edge.
 2. **Stroke**: A unified 3.5 width with round caps and joins, and no dashed lines.
-3. **Color**: The 9 palette colors set the default tone; other solid colors are allowed when genuinely needed (e.g. brand colors) — no gradients, shadows, or semi-transparent overlays.
+3. **Color**: The 10 palette colors set the default tone; other solid colors are allowed when genuinely needed (e.g. brand colors) — no gradients, shadows, or semi-transparent overlays.
 4. **Personality**: Slight asymmetry is welcome; encourage dot eyes and a smile on living subjects to keep the hand-drawn clumsiness.
 
 ## Local Development

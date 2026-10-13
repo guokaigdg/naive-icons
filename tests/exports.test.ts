@@ -15,7 +15,7 @@ describe('包入口的导出', () => {
 
   it('导出 NAIVE_PALETTE', () => {
     expect(pkg.NAIVE_PALETTE).toBeDefined();
-    expect(Object.keys(pkg.NAIVE_PALETTE)).toHaveLength(9);
+    expect(Object.keys(pkg.NAIVE_PALETTE)).toHaveLength(10);
     expect(pkg.NAIVE_PALETTE.ink).toBe('#2A2A2A');
   });
 

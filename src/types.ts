@@ -15,6 +15,7 @@ export const NAIVE_PALETTE = {
   teal: '#2A9D8F',
   brown: '#8B5E3C',
   cream: '#FAEDCD',
+  white: '#FFFFFF',
 } as const;
 
 export type PaletteColor = keyof typeof NAIVE_PALETTE;
