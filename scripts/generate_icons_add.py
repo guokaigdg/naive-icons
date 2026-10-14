@@ -698,6 +698,15 @@ NEW_ICONS = {
     'charger': S(f'''<rect x="11" y="14" width="26" height="26" rx="5" fill="{ORANGE}"/>
 <path d="M19 14 L19 8 M29 14 L29 8" stroke-width="3.5"/>
 <circle cx="24" cy="27" r="6" fill="none" stroke="{CREAM}" stroke-width="3"/>'''),
+
+    # ---------- 基础能力缺口 ----------
+
+
+    'printer': S(f'''<path d="M17 6 L31 6 L31 15 L17 15 Z" fill="{CREAM}"/>
+<path d="M6 18 C 6 14.5 8.5 12 12 12 L36 12 C 39.5 12 42 14.5 42 18 L42 32 L6 32 Z" fill="{TEAL}"/>
+<path d="M17 27 L31 27 L31 42 L17 42 Z" fill="{CREAM}"/>
+<path d="M9 22 L14 22" stroke="{CREAM}" stroke-width="2.5"/>
+<circle cx="36" cy="22" r="1.6" fill="{ORANGE}" stroke="none"/>'''),
 }
 
 

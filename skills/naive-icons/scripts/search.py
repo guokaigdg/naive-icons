@@ -32,7 +32,7 @@ CATEGORIES = {
     'transport': '交通工具', 'emoji': '表情',
 }
 
-# ── 163 枚图标：id -> (中文名, 分类) ──────────────────────────────────
+# ── 164 枚图标：id -> (中文名, 分类) ──────────────────────────────────
 ICONS = {
     'airplane': ('飞机', 'transport'), 'alert-circle': ('提示', 'interface'),
     'alert-triangle': ('警告', 'interface'), 'anchor': ('锚', 'navigation'),
@@ -83,7 +83,8 @@ ICONS = {
     'lock': ('锁', 'objects'), 'lock-open': ('解锁', 'objects'),
     'magnet': ('磁铁', 'navigation'), 'mail': ('邮件', 'communication'),
     'map': ('地图', 'navigation'), 'maximize': ('全屏', 'action'),
-    'menu': ('菜单', 'interface'), 'mic': ('麦克风', 'media'),
+    'menu': ('菜单', 'interface'),
+    'mic': ('麦克风', 'media'),
     'minus': ('减号', 'action'), 'monitor': ('显示器', 'objects'),
     'moon': ('月亮', 'nature'),
     'more-vertical': ('更多(竖)', 'interface'), 'mountain': ('山峰', 'nature'),
@@ -108,6 +109,8 @@ ICONS = {
     'sun': ('太阳', 'nature'), 'tag': ('标签', 'interface'),
     'tent': ('帐篷', 'nature'), 'thermometer': ('温度计', 'objects'),
     'thumbs-up': ('点赞', 'emoji'), 'train': ('火车', 'transport'),
+    'printer': ('打印机', 'objects'),
+
     'trash': ('垃圾桶', 'action'), 'tree': ('大树', 'nature'),
     'trophy': ('奖杯', 'objects'), 'umbrella': ('雨伞', 'nature'),
     'undo': ('撤销', 'action'), 'unlink': ('取消链接', 'interface'),
@@ -247,6 +250,7 @@ SYNONYMS = {
     '地点': ['location'], 'gps': ['location'], 'location': ['location'],
     '地图': ['map'], 'map': ['map'], '指南针': ['compass'], '方向': ['compass'],
     'compass': ['compass'], '锚': ['anchor'], 'anchor': ['anchor'],
+    '打印': ['printer'], '打印机': ['printer'], 'printer': ['printer'],
     '旗帜': ['flag'], 'flag': ['flag'], '箭头': ['arrow-up', 'arrow-down', 'arrow-left', 'arrow-right'],
     'arrow': ['arrow-up', 'arrow-down', 'arrow-left', 'arrow-right'],
     # 日常物品

@@ -178,7 +178,7 @@
 | `water-cup` | 水杯 | `WaterCupIcon` | 杯子、水、喝水、water |
 | `watermelon` | 西瓜 | `WatermelonIcon` | 西瓜、watermelon |
 
-## 日常物品（22 枚）
+## 日常物品（23 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -201,6 +201,7 @@
 | `mouse` | 鼠标 | `MouseIcon` | 键鼠、鼠标、点击、指针、滚轮、点击设备、mouse |
 | `paintbrush` | 画笔 | `PaintbrushIcon` | 画笔、绘画、涂鸦、paint、paintbrush |
 | `pencil` | 铅笔 | `PencilIcon` | 编辑、修改、新建、撰写、绘画、铅笔、edit |
+| `printer` | 打印机 | `PrinterIcon` | 打印、打印机、printer |
 | `shopping-bag` | 购物袋 | `ShoppingBagIcon` | 购物、商城、购物袋、shopping、bag |
 | `thermometer` | 温度计 | `ThermometerIcon` | 温度、气温、thermometer |
 | `trophy` | 奖杯 | `TrophyIcon` | 奖杯、冠军、获奖、推荐、trophy |

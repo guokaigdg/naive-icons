@@ -113,6 +113,7 @@ export { PenguinIcon } from './PenguinIcon';
 export { PhoneIcon } from './PhoneIcon';
 export { PlayIcon } from './PlayIcon';
 export { PlusIcon } from './PlusIcon';
+export { PrinterIcon } from './PrinterIcon';
 export { RabbitIcon } from './RabbitIcon';
 export { RainbowIcon } from './RainbowIcon';
 export { RedoIcon } from './RedoIcon';
