@@ -404,6 +404,24 @@
   }
 
   /* ---------------------------------------------------------- category chips */
+  /**
+   * 切换分类 / 重置筛选后，若已滚过图标浏览器工具栏（.explorer__bar 吸顶中
+   * 或已位于视口上方），立即跳回工具栏自然位置（无平滑动画），保证第一行图标可见。
+   * 目标位置 = 网格文档坐标 - 工具栏高度 - 顶栏高度（网格紧跟工具栏，反推自然顶）。
+   */
+  function scrollExplorerIntoView() {
+    var grid = $('#grid');
+    var bar = $('.explorer__bar');
+    if (!grid || !bar) return;
+    var headerH = parseFloat(
+      getComputedStyle(document.documentElement).getPropertyValue('--header-h')
+    ) || 0;
+    var target =
+      grid.getBoundingClientRect().top + window.scrollY -
+      bar.offsetHeight - headerH - 10;
+    if (window.scrollY > target) window.scrollTo({ top: target, behavior: 'instant' });
+  }
+
   function initChips() {
     var host = $('#chips');
     if (!host) return;
@@ -431,6 +449,7 @@
           b.setAttribute('aria-pressed', String(b === btn));
         });
         render();
+        scrollExplorerIntoView();
       });
     });
   }
@@ -561,6 +580,7 @@
         b.setAttribute('aria-pressed', String(i === 0));
       });
       applyColor(autoColorFor());
+      scrollExplorerIntoView();
       toast('已重置筛选条件');
     });
   }
