@@ -19,11 +19,11 @@ export const KeyIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<circle cx="14" cy="24" r="10" fill="#E9C46A"/>
-<circle cx="14" cy="24" r="4" fill="#FAEDCD"/>
-<path d="M24 24 L42 24" stroke="#2A2A2A" strokeWidth={sw(4)}/>
-<path d="M30 24 L30 30" stroke="#2A2A2A" strokeWidth={sw(3)}/>
-<path d="M36 24 L36 30" stroke="#2A2A2A" strokeWidth={sw(3)}/>
+<circle cx="14.4" cy="24" r="9.6" fill="#E9C46A"/>
+<circle cx="14.4" cy="24" r="3.84" fill="#FAEDCD"/>
+<path d="M24 24 L41.28 24" stroke="#2A2A2A" strokeWidth={sw(4)}/>
+<path d="M29.76 24 L29.76 29.76" stroke="#2A2A2A" strokeWidth={sw(3)}/>
+<path d="M35.52 24 L35.52 29.76" stroke="#2A2A2A" strokeWidth={sw(3)}/>
 
     </svg>
   );
@@ -32,4 +32,3 @@ export const KeyIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 KeyIcon.displayName = 'KeyIcon';
 
 export default KeyIcon;
-

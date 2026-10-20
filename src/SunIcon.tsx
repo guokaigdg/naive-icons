@@ -19,15 +19,15 @@ export const SunIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<circle cx="24" cy="24" r="10" fill="#E9C46A"/>
-<path d="M24 4 L24 10" stroke="#2A2A2A"/>
-<path d="M24 38 L24 44" stroke="#2A2A2A"/>
-<path d="M4 24 L10 24" stroke="#2A2A2A"/>
-<path d="M38 24 L44 24" stroke="#2A2A2A"/>
-<path d="M10 10 L14 14" stroke="#2A2A2A"/>
-<path d="M34 34 L38 38" stroke="#2A2A2A"/>
-<path d="M10 38 L14 34" stroke="#2A2A2A"/>
-<path d="M34 14 L38 10" stroke="#2A2A2A"/>
+<circle cx="24" cy="24" r="9.6" fill="#E9C46A"/>
+<path d="M24 4.8 L24 10.56" stroke="#2A2A2A"/>
+<path d="M24 37.44 L24 43.2" stroke="#2A2A2A"/>
+<path d="M4.8 24 L10.56 24" stroke="#2A2A2A"/>
+<path d="M37.44 24 L43.2 24" stroke="#2A2A2A"/>
+<path d="M10.56 10.56 L14.4 14.4" stroke="#2A2A2A"/>
+<path d="M33.6 33.6 L37.44 37.44" stroke="#2A2A2A"/>
+<path d="M10.56 37.44 L14.4 33.6" stroke="#2A2A2A"/>
+<path d="M33.6 14.4 L37.44 10.56" stroke="#2A2A2A"/>
 
     </svg>
   );
@@ -36,4 +36,3 @@ export const SunIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 SunIcon.displayName = 'SunIcon';
 
 export default SunIcon;
-

@@ -19,12 +19,12 @@ export const GoogleChromeIcon = forwardRef<SVGSVGElement, IconProps>((props, ref
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<path d="M24 24 L41.32 14 A20 20 0 0 0 6.68 14 Z" fill="#E76F51" stroke="none"/>
-<path d="M24 24 L41.32 14 A20 20 0 0 1 24 44 Z" fill="#E9C46A" stroke="none"/>
-<path d="M24 24 L24 44 A20 20 0 0 1 6.68 14 Z" fill="#588157" stroke="none"/>
-<circle cx="24" cy="24" r="8.8" fill="#FAEDCD" stroke="none"/>
-<circle cx="24" cy="24" r="6.8" fill="#4A8FD4"/>
-<circle cx="24" cy="24" r="20" fill="none"/>
+<path d="M24 24 L40.63 14.4 A19.2 19.2 0 0 0 7.37 14.4 Z" fill="#E76F51" stroke="none"/>
+<path d="M24 24 L40.63 14.4 A19.2 19.2 0 0 1 24 43.2 Z" fill="#E9C46A" stroke="none"/>
+<path d="M24 24 L24 43.2 A19.2 19.2 0 0 1 7.37 14.4 Z" fill="#588157" stroke="none"/>
+<circle cx="24" cy="24" r="8.45" fill="#FAEDCD" stroke="none"/>
+<circle cx="24" cy="24" r="6.53" fill="#4A8FD4"/>
+<circle cx="24" cy="24" r="19.2" fill="none"/>
 
     </svg>
   );
@@ -33,4 +33,3 @@ export const GoogleChromeIcon = forwardRef<SVGSVGElement, IconProps>((props, ref
 GoogleChromeIcon.displayName = 'GoogleChromeIcon';
 
 export default GoogleChromeIcon;
-

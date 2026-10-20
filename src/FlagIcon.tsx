@@ -19,9 +19,9 @@ export const FlagIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<path d="M12 5 L 12 43" stroke="#2A2A2A" strokeWidth={sw(3.5)}/>
-<path d="M12 8 C 19 4 26 12 33 8 L 33 22 C 26 26 19 18 12 22 Z" fill="#E76F51"/>
-<circle cx="12" cy="5" r="2.5" fill="#E9C46A"/>
+<path d="M13.28 7.03 L 13.28 40.97" stroke="#2A2A2A" strokeWidth={sw(3.5)}/>
+<path d="M13.28 9.71 C 19.53 6.14 25.79 13.28 32.04 9.71 L 32.04 22.21 C 25.79 25.79 19.53 18.64 13.28 22.21 Z" fill="#E76F51"/>
+<circle cx="13.28" cy="7.03" r="2.23" fill="#E9C46A"/>
 
     </svg>
   );
@@ -30,4 +30,3 @@ export const FlagIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 FlagIcon.displayName = 'FlagIcon';
 
 export default FlagIcon;
-

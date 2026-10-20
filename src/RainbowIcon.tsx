@@ -19,13 +19,13 @@ export const RainbowIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<path d="M7 34 A 17 17 0 0 1 41 34" stroke="#E76F51" strokeWidth={sw(4.5)} fill="none"/>
-<path d="M12.5 34 A 11.5 11.5 0 0 1 35.5 34" stroke="#E9C46A" strokeWidth={sw(4.5)} fill="none"/>
-<path d="M18 34 A 6 6 0 0 1 30 34" stroke="#2A9D8F" strokeWidth={sw(4.5)} fill="none"/>
-<circle cx="6" cy="37" r="3.5" fill="#FAEDCD"/>
-<circle cx="11" cy="38.5" r="3" fill="#FAEDCD"/>
-<circle cx="42" cy="37" r="3.5" fill="#FAEDCD"/>
-<circle cx="37" cy="38.5" r="3" fill="#FAEDCD"/>
+<path d="M8.82 32.93 A 15.18 15.18 0 0 1 39.18 32.93" stroke="#E76F51" strokeWidth={sw(4.5)} fill="none"/>
+<path d="M13.73 32.93 A 10.27 10.27 0 0 1 34.27 32.93" stroke="#E9C46A" strokeWidth={sw(4.5)} fill="none"/>
+<path d="M18.64 32.93 A 5.36 5.36 0 0 1 29.36 32.93" stroke="#2A9D8F" strokeWidth={sw(4.5)} fill="none"/>
+<circle cx="7.93" cy="35.61" r="3.13" fill="#FAEDCD"/>
+<circle cx="12.39" cy="36.95" r="2.68" fill="#FAEDCD"/>
+<circle cx="40.07" cy="35.61" r="3.13" fill="#FAEDCD"/>
+<circle cx="35.61" cy="36.95" r="2.68" fill="#FAEDCD"/>
 
     </svg>
   );
@@ -34,4 +34,3 @@ export const RainbowIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => 
 RainbowIcon.displayName = 'RainbowIcon';
 
 export default RainbowIcon;
-

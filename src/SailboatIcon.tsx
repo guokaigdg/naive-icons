@@ -19,12 +19,12 @@ export const SailboatIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<path d="M22 9 L 22 28 L 9 28 Z" fill="#E76F51"/>
-<path d="M26 6 L 26 28 L 40 28 Z" fill="#FAEDCD"/>
-<path d="M24 4 L 24 30" stroke="#2A2A2A" strokeWidth={sw(3)}/>
-<path d="M7 32 L 41 32 L 36 40 L 12 40 Z" fill="#8B5E3C"/>
-<path d="M4 44 C 8 42 10 46 14 44 C 18 42 20 46 24 44 C 28 42 30 46 34 44 C 38 42 40 46 44 44" stroke="#2A9D8F" strokeWidth={sw(2.5)} fill="none"/>
-<circle cx="30" cy="17" r="1.6" fill="#E76F51"/>
+<path d="M22.08 9.64 L 22.08 27.83 L 9.64 27.83 Z" fill="#E76F51"/>
+<path d="M25.92 6.76 L 25.92 27.83 L 39.32 27.83 Z" fill="#FAEDCD"/>
+<path d="M24 4.85 L 24 29.75" stroke="#2A2A2A" strokeWidth={sw(3)}/>
+<path d="M7.72 31.66 L 40.28 31.66 L 35.49 39.32 L 12.51 39.32 Z" fill="#8B5E3C"/>
+<path d="M4.85 43.15 C 8.68 41.24 10.59 45.07 14.42 43.15 C 18.25 41.24 20.17 45.07 24 43.15 C 27.83 41.24 29.75 45.07 33.58 43.15 C 37.41 41.24 39.32 45.07 43.15 43.15" stroke="#2A9D8F" strokeWidth={sw(2.5)} fill="none"/>
+<circle cx="29.75" cy="17.3" r="1.53" fill="#E76F51"/>
 
     </svg>
   );
@@ -33,4 +33,3 @@ export const SailboatIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
 SailboatIcon.displayName = 'SailboatIcon';
 
 export default SailboatIcon;
-

@@ -19,9 +19,9 @@ export const PauseIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<circle cx="24" cy="24" r="20" fill="#2A9D8F"/>
-<path d="M19 16 L19 32" stroke="#E9C46A" strokeWidth={sw(5)}/>
-<path d="M29 16 L29 32" stroke="#E9C46A" strokeWidth={sw(5)}/>
+<circle cx="24" cy="24" r="19.2" fill="#2A9D8F"/>
+<path d="M19.2 16.32 L19.2 31.68" stroke="#E9C46A" strokeWidth={sw(5)}/>
+<path d="M28.8 16.32 L28.8 31.68" stroke="#E9C46A" strokeWidth={sw(5)}/>
 
     </svg>
   );
@@ -30,4 +30,3 @@ export const PauseIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 PauseIcon.displayName = 'PauseIcon';
 
 export default PauseIcon;
-

@@ -19,16 +19,16 @@ export const ButterflyIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<ellipse cx="14" cy="17" rx="8" ry="6" transform="rotate(-25 14 17)" fill="#F4A6A4"/>
-<ellipse cx="34" cy="17" rx="8" ry="6" transform="rotate(25 34 17)" fill="#F4A6A4"/>
-<ellipse cx="15" cy="32" rx="6.5" ry="5" transform="rotate(20 15 32)" fill="#E76F51"/>
-<ellipse cx="33" cy="32" rx="6.5" ry="5" transform="rotate(-20 33 32)" fill="#E76F51"/>
-<circle cx="13" cy="16" r="1.8" fill="#FFFFFF"/>
-<circle cx="35" cy="16" r="1.8" fill="#FFFFFF"/>
-<circle cx="24" cy="11" r="3" fill="#264653"/>
-<rect x="21.5" y="13" width="5" height="24" rx="2.5" fill="#264653"/>
-<path d="M21 8 C 18 4 15 4 13 6" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.8)}/>
-<path d="M27 8 C 30 4 33 4 35 6" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.8)}/>
+<ellipse cx="14.3" cy="17.21" rx="7.76" ry="5.82" transform="rotate(-25 14.3 17.21)" fill="#F4A6A4"/>
+<ellipse cx="33.7" cy="17.21" rx="7.76" ry="5.82" transform="rotate(25 33.7 17.21)" fill="#F4A6A4"/>
+<ellipse cx="15.27" cy="31.76" rx="6.31" ry="4.85" transform="rotate(20 15.27 31.76)" fill="#E76F51"/>
+<ellipse cx="32.73" cy="31.76" rx="6.31" ry="4.85" transform="rotate(-20 32.73 31.76)" fill="#E76F51"/>
+<circle cx="13.33" cy="16.24" r="1.75" fill="#FFFFFF"/>
+<circle cx="34.67" cy="16.24" r="1.75" fill="#FFFFFF"/>
+<circle cx="24" cy="11.39" r="2.91" fill="#264653"/>
+<rect x="21.57" y="13.33" width="4.85" height="23.29" rx="2.43" fill="#264653"/>
+<path d="M21.09 8.47 C 18.18 4.59 15.27 4.59 13.33 6.53" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.8)}/>
+<path d="M26.91 8.47 C 29.82 4.59 32.73 4.59 34.67 6.53" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.8)}/>
 
     </svg>
   );
@@ -37,4 +37,3 @@ export const ButterflyIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =
 ButterflyIcon.displayName = 'ButterflyIcon';
 
 export default ButterflyIcon;
-

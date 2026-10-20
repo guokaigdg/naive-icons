@@ -19,8 +19,8 @@ export const StopIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<circle cx="24" cy="24" r="20" fill="#2A9D8F"/>
-<rect x="17" y="17" width="14" height="14" rx="2.5" fill="#E9C46A"/>
+<circle cx="24" cy="24" r="19.2" fill="#2A9D8F"/>
+<rect x="17.28" y="17.28" width="13.44" height="13.44" rx="2.4" fill="#E9C46A"/>
 
     </svg>
   );
@@ -29,4 +29,3 @@ export const StopIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 StopIcon.displayName = 'StopIcon';
 
 export default StopIcon;
-

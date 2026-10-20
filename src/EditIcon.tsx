@@ -19,9 +19,9 @@ export const EditIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<path d="M8 38 L8 32 L30 10 L38 18 L16 40 L10 40 Z" fill="#E9C46A"/>
-<path d="M30 10 L36 4 L42 10 L38 16" fill="#F4A6A4"/>
-<path d="M8 38 L14 38" stroke="#2A2A2A" strokeWidth={sw(2)}/>
+<path d="M8.64 37.44 L8.64 31.68 L29.76 10.56 L37.44 18.24 L16.32 39.36 L10.56 39.36 Z" fill="#E9C46A"/>
+<path d="M29.76 10.56 L35.52 4.8 L41.28 10.56 L37.44 16.32" fill="#F4A6A4"/>
+<path d="M8.64 37.44 L14.4 37.44" stroke="#2A2A2A" strokeWidth={sw(2)}/>
 
     </svg>
   );
@@ -30,4 +30,3 @@ export const EditIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 EditIcon.displayName = 'EditIcon';
 
 export default EditIcon;
-

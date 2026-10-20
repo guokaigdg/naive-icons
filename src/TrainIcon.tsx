@@ -19,18 +19,18 @@ export const TrainIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<rect x="7" y="18" width="26" height="15" rx="3" fill="#E76F51"/>
-<rect x="25" y="9" width="12" height="13" rx="2" fill="#2A9D8F"/>
-<rect x="28" y="12" width="6" height="5" fill="#FAEDCD"/>
-<rect x="10" y="10" width="6" height="8" fill="#264653"/>
-<circle cx="13" cy="6" r="2.5" fill="#FAEDCD"/>
-<rect x="5" y="33" width="36" height="4" fill="#264653"/>
-<circle cx="13" cy="40" r="4" fill="#E9C46A"/>
-<circle cx="24" cy="40" r="4" fill="#E9C46A"/>
-<circle cx="35" cy="40" r="4" fill="#E9C46A"/>
-<circle cx="13" cy="40" r="1.5" fill="#2A2A2A"/>
-<circle cx="24" cy="40" r="1.5" fill="#2A2A2A"/>
-<circle cx="35" cy="40" r="1.5" fill="#2A2A2A"/>
+<rect x="8.08" y="18.38" width="24.35" height="14.05" rx="2.81" fill="#E76F51"/>
+<rect x="24.94" y="9.95" width="11.24" height="12.18" rx="1.87" fill="#2A9D8F"/>
+<rect x="27.75" y="12.76" width="5.62" height="4.68" fill="#FAEDCD"/>
+<rect x="10.89" y="10.89" width="5.62" height="7.49" fill="#264653"/>
+<circle cx="13.7" cy="7.14" r="2.34" fill="#FAEDCD"/>
+<rect x="6.2" y="32.43" width="33.72" height="3.75" fill="#264653"/>
+<circle cx="13.7" cy="38.99" r="3.75" fill="#E9C46A"/>
+<circle cx="24" cy="38.99" r="3.75" fill="#E9C46A"/>
+<circle cx="34.3" cy="38.99" r="3.75" fill="#E9C46A"/>
+<circle cx="13.7" cy="38.99" r="1.4" fill="#2A2A2A"/>
+<circle cx="24" cy="38.99" r="1.4" fill="#2A2A2A"/>
+<circle cx="34.3" cy="38.99" r="1.4" fill="#2A2A2A"/>
 
     </svg>
   );
@@ -39,4 +39,3 @@ export const TrainIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 TrainIcon.displayName = 'TrainIcon';
 
 export default TrainIcon;
-

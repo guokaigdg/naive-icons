@@ -19,9 +19,9 @@ export const UploadIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<path d="M24 16 L24 40" stroke="#2A2A2A" strokeWidth={sw(4)}/>
-<path d="M14 24 L24 14 L34 24" fill="#E76F51"/>
-<rect x="8" y="38" width="32" height="6" rx="2" fill="#2A9D8F"/>
+<path d="M24 16.32 L24 39.36" stroke="#2A2A2A" strokeWidth={sw(4)}/>
+<path d="M14.4 24 L24 14.4 L33.6 24" fill="#E76F51"/>
+<rect x="8.64" y="37.44" width="30.72" height="5.76" rx="1.92" fill="#2A9D8F"/>
 
     </svg>
   );
@@ -30,4 +30,3 @@ export const UploadIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 UploadIcon.displayName = 'UploadIcon';
 
 export default UploadIcon;
-

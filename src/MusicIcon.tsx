@@ -19,9 +19,9 @@ export const MusicIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<ellipse cx="16" cy="32" rx="8" ry="6" transform="rotate(-15 16 32)" fill="#E76F51"/>
-<ellipse cx="34" cy="28" rx="8" ry="6" transform="rotate(-15 34 28)" fill="#E76F51"/>
-<path d="M22 14 L40 10 L40 28" stroke="#2A2A2A" strokeWidth={sw(3)}/>
+<ellipse cx="16.03" cy="31.97" rx="7.97" ry="5.98" transform="rotate(-15 16.03 31.97)" fill="#E76F51"/>
+<ellipse cx="33.96" cy="27.98" rx="7.97" ry="5.98" transform="rotate(-15 33.96 27.98)" fill="#E76F51"/>
+<path d="M22.01 14.04 L39.93 10.06 L39.93 27.98" stroke="#2A2A2A" strokeWidth={sw(3)}/>
 
     </svg>
   );
@@ -30,4 +30,3 @@ export const MusicIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 MusicIcon.displayName = 'MusicIcon';
 
 export default MusicIcon;
-

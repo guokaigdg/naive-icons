@@ -19,11 +19,11 @@ export const MountainIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<path d="M4 37 L17 15 L24 26 L31 13 L44 37 Z" fill="#588157"/>
-<path d="M31 13 L34.5 18.5 L32 17.5 L30 19.5 L28.5 17.5 Z" fill="#FAEDCD"/>
-<path d="M17 15 L19.5 19 L17.5 18 L15.8 20 L14.6 18.5 Z" fill="#FAEDCD"/>
-<path d="M31 13 L31 6.5" stroke="#2A2A2A" strokeWidth={sw(2)}/>
-<path d="M31 6.5 L37.5 8.5 L31 10.5 Z" fill="#E76F51"/>
+<path d="M4.8 36.48 L17.28 15.36 L24 25.92 L30.72 13.44 L43.2 36.48 Z" fill="#588157"/>
+<path d="M30.72 13.44 L34.08 18.72 L31.68 17.76 L29.76 19.68 L28.32 17.76 Z" fill="#FAEDCD"/>
+<path d="M17.28 15.36 L19.68 19.2 L17.76 18.24 L16.13 20.16 L14.98 18.72 Z" fill="#FAEDCD"/>
+<path d="M30.72 13.44 L30.72 7.2" stroke="#2A2A2A" strokeWidth={sw(2)}/>
+<path d="M30.72 7.2 L36.96 9.12 L30.72 11.04 Z" fill="#E76F51"/>
 
     </svg>
   );
@@ -32,4 +32,3 @@ export const MountainIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
 MountainIcon.displayName = 'MountainIcon';
 
 export default MountainIcon;
-

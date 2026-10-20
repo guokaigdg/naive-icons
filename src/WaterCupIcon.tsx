@@ -19,11 +19,11 @@ export const WaterCupIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<path d="M13 12 L16 39 C 16.5 41.5 31.5 41.5 32 39 L35 12 Z" fill="#FAEDCD"/>
-<path d="M15.8 24 C 21 22.5 27 25.5 32.2 24 L 30.6 35 C 30.2 37.5 17.8 37.5 17.4 35 Z" fill="#2A9D8F"/>
-<path d="M28 11 L31.5 4" stroke="#E76F51" strokeWidth={sw(3)}/>
-<circle cx="22" cy="29" r="1.6" fill="#FAEDCD"/>
-<circle cx="25.5" cy="32.5" r="1.2" fill="#FAEDCD"/>
+<path d="M13.3 12.33 L16.22 38.59 C 16.71 41.02 31.29 41.02 31.78 38.59 L34.7 12.33 Z" fill="#FAEDCD"/>
+<path d="M16.03 24 C 21.08 22.54 26.92 25.46 31.97 24 L 30.42 34.7 C 30.03 37.13 17.97 37.13 17.58 34.7 Z" fill="#2A9D8F"/>
+<path d="M27.89 11.36 L31.29 4.55" stroke="#E76F51" strokeWidth={sw(3)}/>
+<circle cx="22.05" cy="28.86" r="1.56" fill="#FAEDCD"/>
+<circle cx="25.46" cy="32.27" r="1.17" fill="#FAEDCD"/>
 
     </svg>
   );
@@ -32,4 +32,3 @@ export const WaterCupIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
 WaterCupIcon.displayName = 'WaterCupIcon';
 
 export default WaterCupIcon;
-
