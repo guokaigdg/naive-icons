@@ -35,6 +35,8 @@
 - 每个图标同时提供 SVG 源文件与 React TSX 组件
 - 完整 TypeScript 类型：IconProps、IconName、IconComponent、PaletteColor、NAIVE_PALETTE
 - 导出 `scaledStroke` / `resolveStrokeWidth` / `normalizeIconProps`，需要自建图标时用得上
+- `iconNames`——全部图标的运行时 id 列表，按名字取图标时不用牺牲 tree-shaking
+- `createIcon`——图标工厂，自建图标能拿到与内置图标完全一致的根节点、无障碍与描边缩放
 - 支持 currentColor，传入后图标跟随文字颜色
 - 官方 Agent Skill：一条命令装到 AI 编码助手，按语义帮你挑图标并生成代码
 
@@ -171,6 +173,46 @@ interface IconProps extends SVGProps<SVGSVGElement> {
 ```
 
 也可以做成 SVG sprite 或 Icon Font，源文件结构足够简单，便于二次加工。
+
+## 动态取图标与自建图标
+
+`IconName` 是纯类型，编译后就不存在了。需要运行时按名字取图标（主题选择器、后台配置的
+图标字段），用 `iconNames`：
+
+```tsx
+import { iconNames } from 'naive-icons';
+import type { IconId } from 'naive-icons';
+
+const map: Record<IconId, () => Promise<unknown>> = {
+  // 只有列出来的图标才会被加载
+  'arrow-up-down': () => import('naive-icons/icons/ArrowUpDownIcon').then((m) => m.ArrowUpDownIcon),
+  'arrow-jump': () => import('naive-icons/icons/ArrowJumpIcon').then((m) => m.ArrowJumpIcon),
+};
+```
+
+用 `import * as icons` 也能按名字取，但会把全部 178 枚都打进包，tree-shaking 直接归零。
+`iconNames` 让你搭一张只加载真正用得到的图标的查找表。
+
+想自己画一个同样风格的图标，用 `createIcon` 工厂。它产出的根节点、无障碍属性和描边缩放
+与内置的 178 枚完全一致：
+
+```tsx
+import { createIcon } from 'naive-icons';
+
+const MyIcon = createIcon('my-icon', (sw) => (
+  <>
+    <path d="M12 12 L36 36" stroke="#2A2A2A" strokeWidth={sw(3.5)} />
+    <path d="M14 20 L20 26" stroke="#E76F51" strokeWidth={sw(2)} />
+  </>
+));
+
+<MyIcon size={24} strokeWidth={7} title="我的图标" />;
+```
+
+图形部分既可以是一个普通节点，也可以是接收 `sw(designed)` 的函数。把设计时的描边宽度交给
+`sw()`，传 `strokeWidth` 时整枚图标会一起加粗——不然就只剩外框变粗、内层细节还停在 3.5。
+
+displayName 由 id 自动推导：`my-icon` 变成 `MyIcon`，`arrow-up-down` 变成 `ArrowUpDownIcon`。
 
 ## 调色板
 

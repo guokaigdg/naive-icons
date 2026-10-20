@@ -6,7 +6,8 @@ import { describe, expect, it } from 'vitest';
  * 原样搬过来，历史上忘了转换，React 会报 "Invalid DOM property `stroke-width`"。
  * 159 枚里曾有 109 枚（68%）中招。
  */
-const files = readdirSync('src').filter((f) => f.endsWith('Icon.tsx'));
+// createIcon 是工厂不是图标组件，它同样以 Icon.tsx 结尾，得排除掉
+const files = readdirSync('src').filter((f) => f.endsWith('Icon.tsx') && f !== 'createIcon.tsx');
 const KEBAB = /\s([a-z]+-[a-z]+)="/;
 
 /** 只取 JSX 体：根 <svg ...> 之后、</svg> 之前。根节点本来就是 camelCase。 */

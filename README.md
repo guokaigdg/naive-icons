@@ -35,6 +35,8 @@ Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a r
 - Every icon ships as both an SVG source file and a React TSX component
 - Full TypeScript types: IconProps, IconName, IconComponent, PaletteColor, NAIVE_PALETTE
 - Exports `scaledStroke` / `resolveStrokeWidth` / `normalizeIconProps` for building your own icons
+- `iconNames` — the runtime list of all icon ids, for lookups by name without giving up tree-shaking
+- `createIcon` — a factory that gives your own icons the same root node, a11y and stroke scaling as the built-ins
 - Supports `currentColor` to follow the surrounding text color
 - Official Agent Skill: one command installs it into your AI coding agent, which can then pick icons by meaning and emit ready-to-paste code
 
@@ -177,6 +179,49 @@ To follow the surrounding text color when inlining, replace `stroke="#2A2A2A"` w
 ```
 
 You can also build an SVG sprite or icon font — the source files are simple enough to work with.
+
+## Dynamic Icons & Custom Icons
+
+`IconName` is a type only — it disappears at compile time. When you have to look an icon up by
+name at runtime (a theme picker, an icon field coming from a CMS), use `iconNames`:
+
+```tsx
+import { iconNames } from 'naive-icons';
+import type { IconId } from 'naive-icons';
+
+const map: Record<IconId, () => Promise<unknown>> = {
+  // only the icons you list are ever loaded
+  'arrow-up-down': () => import('naive-icons/icons/ArrowUpDownIcon').then((m) => m.ArrowUpDownIcon),
+  'arrow-jump': () => import('naive-icons/icons/ArrowJumpIcon').then((m) => m.ArrowJumpIcon),
+};
+```
+
+Importing the package as a namespace (`import * as icons`) also lets you look icons up by name,
+but it pulls all 178 icons into the bundle and zeroes out tree-shaking. `iconNames` lets you
+build a lookup that only loads the icons you actually reach for.
+
+To draw an icon of your own in the same style, use the `createIcon` factory. It produces the
+exact same root node, accessibility attributes and stroke scaling as the 178 built-in icons:
+
+```tsx
+import { createIcon } from 'naive-icons';
+
+const MyIcon = createIcon('my-icon', (sw) => (
+  <>
+    <path d="M12 12 L36 36" stroke="#2A2A2A" strokeWidth={sw(3.5)} />
+    <path d="M14 20 L20 26" stroke="#E76F51" strokeWidth={sw(2)} />
+  </>
+));
+
+<MyIcon size={24} strokeWidth={7} title="My icon" />;
+```
+
+The body can be a plain node, or a function that receives `sw(designed)`. Pass the designed
+stroke width through `sw()` and the whole icon thickens together when you set `strokeWidth` —
+otherwise the outer frame scales while the inner details stay at 3.5.
+
+The display name is derived from the id: `my-icon` becomes `MyIcon`, `arrow-up-down` becomes
+`ArrowUpDownIcon`.
 
 ## Palette
 

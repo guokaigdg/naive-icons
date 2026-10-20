@@ -168,3 +168,8 @@ python3 <仓库根>/scripts/build_skill_assets.py    # skill 的 catalog.md 与 
 - 按需引入用具名导入即可，打包器会 tree-shaking（只导入 1 个约 1 KB）。
   也可以走子路径绕过顶层入口：`import { HomeIcon } from 'naive-icons/icons/HomeIcon'`。
   `naive-icons/src/*` **不可用**（`files` 不含 `src`）。
+- 需要「按名字动态取图标」时用 `iconNames`（178 个 kebab id 的运行时数组）与类型 `IconId`。
+  **不要用 `import * as icons`**——那会把全部 178 枚打进包，tree-shaking 直接归零。
+- 自建图标用 `createIcon(name, body)` 工厂：根节点、无障碍属性、描边缩放与内置图标完全一致。
+  `body` 可以是普通节点，也可以是接收 `sw(designed)` 的函数——把设计时的描边宽度交给 `sw()`，
+  整体加粗时层次才不会散。

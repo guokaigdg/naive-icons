@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import * as pkg from '../src';
 
-const ids = Object.keys(pkg).filter((k) => k.endsWith('Icon'));
+// createIcon 是工厂函数不是图标组件，它也以 Icon 结尾，得排除掉
+const ids = Object.keys(pkg).filter((k) => k.endsWith('Icon') && k !== 'createIcon');
 
 /**
  * 这两条曾经长期是坏的：src/types.ts 里 NAIVE_PALETTE / IconProps / IconName /
@@ -28,3 +29,30 @@ describe('包入口的导出', () => {
   });
 });
 
+/**
+ * iconNames 是唯一一份「图标 id 的运行时真相」。
+ * 它如果和 svg/ 目录或实际导出漂移，按名字动态取图标就会取到 undefined。
+ */
+describe('iconNames', () => {
+  it('长度与图标总数一致', () => {
+    expect(pkg.iconNames.length).toBe(178);
+  });
+
+  it('与 svg/ 目录一一对应', async () => {
+    const { readdirSync } = await import('node:fs');
+    const svgs = readdirSync('svg').filter((f) => f.endsWith('.svg')).map((f) => f.slice(0, -4)).sort();
+    expect([...pkg.iconNames].sort()).toEqual(svgs);
+  });
+
+  it('每个 id 都能推导出真实导出的组件', () => {
+    const missing = pkg.iconNames.filter((id) => {
+      const comp = `${id.split('-').map((p) => p[0].toUpperCase() + p.slice(1)).join('')}Icon`;
+      return !(comp in pkg);
+    });
+    expect(missing).toEqual([]);
+  });
+
+  it('没有重复 id', () => {
+    expect(new Set(pkg.iconNames).size).toBe(pkg.iconNames.length);
+  });
+});

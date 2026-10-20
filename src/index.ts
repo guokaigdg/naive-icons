@@ -184,3 +184,11 @@ export { ZoomOutIcon } from './ZoomOutIcon';
 export type { IconProps, IconName, IconComponent, PaletteColor } from './types';
 export { normalizeIconProps, scaledStroke, resolveStrokeWidth } from './iconProps';
 export { NAIVE_PALETTE } from './types';
+
+// 运行时图标名列表 + 自建图标工厂。
+// iconNames 让「按名字动态取图标」不再需要 import * as（那会把 178 枚全打进包）；
+// createIcon 让自建图标复用与内置图标一致的根节点、无障碍与描边缩放逻辑。
+export { iconNames } from './iconNames';
+export type { IconId } from './iconNames';
+export { createIcon, NAIVE_ROOT } from './createIcon';
+export type { IconBody } from './createIcon';
