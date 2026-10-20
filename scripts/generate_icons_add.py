@@ -707,6 +707,49 @@ NEW_ICONS = {
 <path d="M17 27 L31 27 L31 42 L17 42 Z" fill="{CREAM}"/>
 <path d="M9 22 L14 22" stroke="{CREAM}" stroke-width="2.5"/>
 <circle cx="36" cy="22" r="1.6" fill="{ORANGE}" stroke="none"/>'''),
+    # ---------- 2026-10 补充：文本格式 / 编辑器 / 设备 / 物流 / 订阅 ----------
+    'arrow-up-down': S(f'''
+<path d="M16.5 19 L24 8 L31.5 19 Z" fill="#E76F51"/><path d="M24 15 L24 33" stroke="#2A2A2A" stroke-width="4" fill="none"/><path d="M31.5 29 L24 40 L16.5 29 Z" fill="#E76F51"/>
+'''),
+    'arrow-jump': S(f'''
+<path d="M15 22 L24 9 L33 22 Z" fill="#E76F51"/><path d="M24 34 L24 20" stroke="#2A2A2A" stroke-width="4" fill="none"/><path d="M11 38 L37 38" stroke="#2A2A2A" stroke-width="4" fill="none"/><path d="M18 38 L30 38" stroke="#FAEDCD" stroke-width="2" fill="none"/>
+'''),
+    'bold': S(f'''
+<path d="M19 13 L25.5 13 C 29.5 14 29.5 21 25.5 22 L19 22 Z" fill="#E76F51" stroke="none"/><path d="M16 10 L16 38" stroke="#2A2A2A" stroke-width="4.5" fill="none"/><path d="M16 10 L26 10 C 32 10 32 24 26 24 L16 24" stroke="#2A2A2A" stroke-width="4" fill="none"/><path d="M16 24 L28 24 C 34 24 34 38 28 38 L16 38" stroke="#2A2A2A" stroke-width="4" fill="none"/>
+'''),
+    'italic': S(f'''
+<path d="M22 11 L33 11" stroke="#2A2A2A" stroke-width="4.5" fill="none"/><path d="M31 11 L22 37" stroke="#E76F51" stroke-width="4.5" fill="none"/><path d="M20 37 L31 37" stroke="#2A2A2A" stroke-width="4.5" fill="none"/>
+'''),
+    'underline': S(f'''
+<path d="M17 10 L17 27 C 17 35 31 35 31 27 L31 10" stroke="#2A9D8F" stroke-width="4" fill="none"/><path d="M8 40 L40 40" stroke="#2A2A2A" stroke-width="4.5" fill="none"/><circle cx="24" cy="19" r="2.5" fill="#E9C46A" stroke="none"/>
+'''),
+    'scissors': S(f'''
+<path d="M24 22 L11 8" stroke="#2A2A2A" stroke-width="4.5" fill="none"/><path d="M24 22 L37 8" stroke="#2A2A2A" stroke-width="4.5" fill="none"/><path d="M24 22 L17 31" stroke="#2A2A2A" stroke-width="4" fill="none"/><path d="M24 22 L31 31" stroke="#2A2A2A" stroke-width="4" fill="none"/><circle cx="14" cy="36" r="6.5" fill="#E76F51"/><circle cx="34" cy="36" r="6.5" fill="#E76F51"/><circle cx="24" cy="22" r="2.2" fill="#FAEDCD" stroke="none"/>
+'''),
+    'power': S(f'''
+<path d="M16 17 A12 12 0 1 0 32 17" stroke="#E76F51" stroke-width="4.5" fill="none"/><path d="M24 8 L24 22" stroke="#2A2A2A" stroke-width="4.5" fill="none"/>
+'''),
+    'clipboard': S(f'''
+<rect x="10" y="10" width="28" height="32" rx="4" fill="#FAEDCD"/><rect x="18" y="6" width="12" height="8" rx="3" fill="#E9C46A"/><path d="M18 24 L30 24" stroke="#2A2A2A" stroke-width="2.5" fill="none"/><path d="M18 32 L26 32" stroke="#2A2A2A" stroke-width="2.5" fill="none"/>
+'''),
+    'battery': S(f'''
+<rect x="7" y="15" width="28" height="18" rx="4" fill="#2A9D8F"/><rect x="36" y="21" width="6" height="6" rx="2" fill="#2A9D8F"/><rect x="12" y="20" width="11" height="8" rx="2" fill="#E9C46A" stroke="none"/>
+'''),
+    'rss': S(f'''
+<circle cx="12" cy="37" r="3.5" fill="#E76F51" stroke="none"/><path d="M12 26 A11 11 0 0 1 23 37" stroke="#E76F51" stroke-width="4" fill="none"/><path d="M12 14 A23 23 0 0 1 35 37" stroke="#E76F51" stroke-width="4" fill="none"/>
+'''),
+    'folder-plus': S(f'''
+<path d="M7 16 L7 38 L36 38 L36 18 L22 18 L18 12 L7 12 Z" fill="#E9C46A"/><path d="M7 18 L36 18" stroke="#2A2A2A" stroke-width="2" fill="none"/><path d="M38 27 L38 35" stroke="#E76F51" stroke-width="4.5" fill="none"/><path d="M34 31 L42 31" stroke="#E76F51" stroke-width="4.5" fill="none"/>
+'''),
+    'folder-minus': S(f'''
+<path d="M7 16 L7 38 L36 38 L36 18 L22 18 L18 12 L7 12 Z" fill="#E9C46A"/><path d="M7 18 L36 18" stroke="#2A2A2A" stroke-width="2" fill="none"/><path d="M34 31 L42 31" stroke="#E76F51" stroke-width="4.5" fill="none"/>
+'''),
+    'user-minus': S(f'''
+<circle cx="19" cy="16" r="8" fill="#264653"/><circle cx="14" cy="16" r="1.5" fill="#2A2A2A" stroke="none"/><circle cx="24" cy="16" r="1.5" fill="#2A2A2A" stroke="none"/><path d="M16 20 Q 19 22.5 22 20" stroke="#2A2A2A" fill="none" stroke-width="2"/><path d="M5 42 C 5 33 11 29 19 29 C 26 29 31 31 34 36 L 34 42 Z" fill="#2A9D8F"/><path d="M32 33 L42 33" stroke="#E76F51" stroke-width="4.5" fill="none"/>
+'''),
+    'truck': S(f'''
+<path d="M6 13 L28 13 L28 32 L6 32 Z" fill="#E76F51"/><path d="M28 19 L35 19 L41 27 L41 32 L28 32 Z" fill="#FAEDCD"/><circle cx="14" cy="36" r="4.5" fill="#2A2A2A"/><circle cx="34" cy="36" r="4.5" fill="#2A2A2A"/><circle cx="14" cy="36" r="1.5" fill="#FAEDCD" stroke="none"/><circle cx="34" cy="36" r="1.5" fill="#FAEDCD" stroke="none"/>
+'''),
 }
 
 

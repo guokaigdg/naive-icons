@@ -125,6 +125,11 @@ ICON_CATEGORY = {
     # 状态徽章
     'shield': 'interface', 'badge-check': 'interface',
     'bell-off': 'interface', 'ban': 'interface',
+    # 2026-10 补充：文本格式 / 编辑器 / 设备 / 物流 / 订阅
+    'arrow-up-down': 'navigation', 'arrow-jump': 'navigation', 'bold': 'interface', 'italic': 'interface',
+    'underline': 'interface', 'scissors': 'action', 'power': 'action', 'clipboard': 'objects',
+    'battery': 'objects', 'rss': 'media', 'folder-plus': 'media', 'folder-minus': 'media',
+    'user-minus': 'interface', 'truck': 'transport',
 }
 
 # ---------------------------------------------------------------- 中文名
@@ -156,7 +161,6 @@ ZH_NAMES = {
     'strawberry': '草莓', 'sun': '太阳', 'tag': '标签',
     'thermometer': '温度计', 'thumbs-up': '点赞', 'train': '火车',
     'trash': '垃圾桶', 'tree': '大树', 'trophy': '奖杯', 'umbrella': '雨伞',
-    'printer': '打印机',
     'printer': '打印机',
     'upload': '上传', 'user': '用户', 'video': '视频',
     'watermelon': '西瓜', 'wifi': '无线网',
@@ -190,6 +194,11 @@ ZH_NAMES = {
     'send': '发送', 'inbox': '收件箱', 'paperclip': '附件',
     'shield': '安全', 'badge-check': '认证',
     'bell-off': '免打扰', 'ban': '禁止',
+    # 2026-10 补充
+    'arrow-up-down': '上下双箭头', 'arrow-jump': '跳转', 'bold': '加粗', 'italic': '斜体',
+    'underline': '下划线', 'scissors': '剪刀', 'power': '电源', 'clipboard': '剪贴板',
+    'battery': '电池', 'rss': '订阅', 'folder-plus': '新建文件夹', 'folder-minus': '删除文件夹',
+    'user-minus': '移除成员', 'truck': '卡车',
 }
 
 

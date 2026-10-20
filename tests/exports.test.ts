@@ -10,7 +10,7 @@ const ids = Object.keys(pkg).filter((k) => k.endsWith('Icon'));
  */
 describe('包入口的导出', () => {
   it('导出全部图标组件', () => {
-    expect(ids.length).toBe(164);
+    expect(ids.length).toBe(178);
   });
 
   it('导出 NAIVE_PALETTE', () => {
@@ -27,3 +27,4 @@ describe('包入口的导出', () => {
     expect(missing).toEqual([]);
   });
 });
+

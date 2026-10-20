@@ -6,7 +6,7 @@
 
 组件名规则：连字符分段首字母大写 + `Icon`，如 `user-plus` → `UserPlusIcon`。
 
-## 界面基础（37 枚）
+## 界面基础（41 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -16,6 +16,7 @@
 | `ban` | 禁止 | `BanIcon` | 禁止、屏蔽、ban |
 | `bell` | 铃铛 | `BellIcon` | 警报、通知、提醒、铃铛、alert、bell |
 | `bell-off` | 免打扰 | `BellOffIcon` | 免打扰、静音提醒、belloff |
+| `bold` | 加粗 | `BoldIcon` | 加粗、粗体、bold |
 | `bookmark` | 书签 | `BookmarkIcon` | 书签、收藏夹、收藏、bookmark、favorite |
 | `bulb` | 灯泡 | `BulbIcon` | 灵感、创意、想法、灯泡、灯、idea、bulb |
 | `calendar` | 日历 | `CalendarIcon` | 日历、日程、预约、schedule、agenda、events |
@@ -31,6 +32,7 @@
 | `help-circle` | 帮助 | `HelpCircleIcon` | 帮助、问号、客服、答疑、help、question |
 | `home` | 家 | `HomeIcon` | 家、首页、总览、仪表盘、home、dashboard |
 | `info` | 信息 | `InfoIcon` | 信息、详情、说明、无障碍、info |
+| `italic` | 斜体 | `ItalicIcon` | 斜体、倾斜、italic |
 | `link` | 链接 | `LinkIcon` | 链接、网址、link |
 | `list` | 列表 | `ListIcon` | 视图、展示方式、列表、清单、list |
 | `menu` | 菜单 | `MenuIcon` | 拖拽、把手、菜单、汉堡、menu |
@@ -42,13 +44,15 @@
 | `spinner` | 加载 | `SpinnerIcon` | 加载、等待、转圈、加载中、请稍候、转圈圈、进度 |
 | `star` | 星星 | `StarIcon` | 收藏、评分、五星、推荐、新品、favorite、star |
 | `tag` | 标签 | `TagIcon` | 标签、标记、新建标签、标签页、价格、tag |
+| `underline` | 下划线 | `UnderlineIcon` | 下划线、underline |
 | `unlink` | 取消链接 | `UnlinkIcon` | 取消链接、断开、unlink |
 | `user` | 用户 | `UserIcon` | 登录、账户、帐号、账号、用户、联系人、个人中心 |
+| `user-minus` | 移除成员 | `UserMinusIcon` | 移除成员、删除用户、user-minus |
 | `user-plus` | 添加成员 | `UserPlusIcon` | 注册、成员、团队、邀请、加好友、添加成员、新增 |
 | `users` | 多人 | `UsersIcon` | 账户、帐号、账号、用户、成员、团队、联系人 |
 | `x-circle` | 错误 | `XCircleIcon` | 关闭、取消、错误、失败、cancel、error |
 
-## 操作（22 枚）
+## 操作（24 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -63,9 +67,11 @@
 | `pause` | 暂停 | `PauseIcon` | 暂停、pause |
 | `play` | 播放 | `PlayIcon` | 播放、下一个、play、prev |
 | `plus` | 加号 | `PlusIcon` | 新增、添加、新建、新建标签、add、create |
+| `power` | 电源 | `PowerIcon` | 电源、开关、断电、power |
 | `redo` | 重做 | `RedoIcon` | 重做、redo |
 | `refresh` | 刷新 | `RefreshIcon` | 刷新、重新加载、同步、历史、refresh、reload |
 | `save` | 保存 | `SaveIcon` | 保存、存、下载、save |
+| `scissors` | 剪刀 | `ScissorsIcon` | 剪切、剪刀、裁剪、scissors |
 | `share` | 分享 | `ShareIcon` | 分享、转发、share |
 | `sort` | 排序 | `SortIcon` | 排序、sort |
 | `stop` | 停止 | `StopIcon` | 停止、stop |
@@ -75,7 +81,7 @@
 | `zoom-in` | 放大 | `ZoomInIcon` | 放大、放大镜、zoomin |
 | `zoom-out` | 缩小 | `ZoomOutIcon` | 缩小、zoomout |
 
-## 文件与媒体（13 枚）
+## 文件与媒体（16 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -84,24 +90,29 @@
 | `code` | 代码 | `CodeIcon` | 代码、开发、编程、源码、code |
 | `file` | 文件 | `FileIcon` | 文件、文档、file |
 | `folder` | 文件夹 | `FolderIcon` | 文件夹、目录、folder |
+| `folder-minus` | 删除文件夹 | `FolderMinusIcon` | 删除文件夹、folder-minus |
+| `folder-plus` | 新建文件夹 | `FolderPlusIcon` | 新建文件夹、folder-plus |
 | `headphones` | 耳机 | `HeadphonesIcon` | 耳机、headphones |
 | `image` | 图片 | `ImageIcon` | 图片、照片、图像、image |
 | `mic` | 麦克风 | `MicIcon` | 音频、麦克风、录音、语音、audio、mic |
 | `music` | 音乐 | `MusicIcon` | 音乐、歌曲、音频、music、audio |
 | `paperclip` | 附件 | `PaperclipIcon` | 附件、attach、paperclip |
+| `rss` | 订阅 | `RssIcon` | 订阅、rss、feed |
 | `video` | 视频 | `VideoIcon` | 视频、影片、video |
 | `volume` | 音量 | `VolumeIcon` | 音量、声音大小、sound、volume |
 | `volume-x` | 静音 | `VolumeXIcon` | 无声、闭音、sound、mute |
 
-## 导航方位（15 枚）
+## 导航方位（17 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
 | `anchor` | 锚 | `AnchorIcon` | 锚、anchor |
 | `arrow-down` | 下 | `ArrowDownIcon` | 向下、箭头、下降、down、arrow |
+| `arrow-jump` | 跳转 | `ArrowJumpIcon` | 跳转、跳到、时间轴、arrow-jump |
 | `arrow-left` | 左 | `ArrowLeftIcon` | 返回、后退、左、箭头、back、left、arrow |
 | `arrow-right` | 右 | `ArrowRightIcon` | 前进、右、箭头、forward、right、arrow |
 | `arrow-up` | 上 | `ArrowUpIcon` | 向上、箭头、上升、up、arrow |
+| `arrow-up-down` | 上下双箭头 | `ArrowUpDownIcon` | 上下双箭头、双向箭头、上下切换、arrow-up-down |
 | `arrow-up-right` | 右上箭头 | `ArrowUpRightIcon` | 右上、趋势 |
 | `chevron-down` | 向下 | `ChevronDownIcon` | 展开、向下、down |
 | `chevron-left` | 向左 | `ChevronLeftIcon` | 返回、左、prev、back、left |
@@ -178,15 +189,17 @@
 | `water-cup` | 水杯 | `WaterCupIcon` | 杯子、水、喝水、water |
 | `watermelon` | 西瓜 | `WatermelonIcon` | 西瓜、watermelon |
 
-## 日常物品（23 枚）
+## 日常物品（25 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
 | `balloon` | 气球 | `BalloonIcon` | 气球、balloon |
 | `basketball` | 篮球 | `BasketballIcon` | 篮球、投篮、hoops、ball |
+| `battery` | 电池 | `BatteryIcon` | 电池、电量、battery |
 | `candle` | 蜡烛 | `CandleIcon` | 蜡烛、candle |
 | `cart` | 购物车 | `CartIcon` | 购物车、加购、购物篮、购物、商城、cart、shopping |
 | `charger` | 充电头 | `ChargerIcon` | 充电头、充电器、插头、电源适配器、快充、充电、charger |
+| `clipboard` | 剪贴板 | `ClipboardIcon` | 剪贴板、粘贴、clipboard |
 | `credit-card` | 信用卡 | `CreditCardIcon` | 支付、付款、收银、结算、卡、信用卡、银行卡 |
 | `dumbbell` | 哑铃 | `DumbbellIcon` | 健身、运动、举铁、dumbbell |
 | `gift` | 礼物 | `GiftIcon` | 礼物、礼品、送礼、免费、新品、gift |
@@ -206,7 +219,7 @@
 | `thermometer` | 温度计 | `ThermometerIcon` | 温度、气温、thermometer |
 | `trophy` | 奖杯 | `TrophyIcon` | 奖杯、冠军、获奖、推荐、trophy |
 
-## 交通工具（7 枚）
+## 交通工具（8 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -217,6 +230,7 @@
 | `sailboat` | 帆船 | `SailboatIcon` | 帆船、船、ship、sailboat |
 | `scooter` | 踏板摩托车 | `ScooterIcon` | 踏板车、电动车、滑板车、scooter |
 | `train` | 火车 | `TrainIcon` | 火车、地铁、列车、train |
+| `truck` | 卡车 | `TruckIcon` | 卡车、货车、配送、truck |
 
 ## 表情（2 枚）
 
