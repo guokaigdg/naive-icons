@@ -32,7 +32,7 @@ CATEGORIES = {
     'transport': '交通工具', 'emoji': '表情',
 }
 
-# ── 178 枚图标：id -> (中文名, 分类) ──────────────────────────────────
+# ── 201 枚图标：id -> (中文名, 分类) ──────────────────────────────────
 ICONS = {
     'airplane': ('飞机', 'transport'), 'alert-circle': ('提示', 'interface'),
     'alert-triangle': ('警告', 'interface'), 'anchor': ('锚', 'navigation'),
@@ -135,7 +135,10 @@ ICONS = {
     'watermelon': ('西瓜', 'food'), 'wifi': ('无线网', 'communication'),
     'x-circle': ('错误', 'interface'), 'zoom-in': ('放大', 'action'),
     'zoom-out': ('缩小', 'action'),
-}
+    # 2026-10 第二批
+    'arrow-up-left': ('左上箭头', 'navigation'),     'arrow-down-left': ('左下箭头', 'navigation'),     'arrow-down-right': ('右下箭头', 'navigation'),     'arrow-up-circle': ('向上圆圈', 'navigation'),     'arrow-down-circle': ('向下圆圈', 'navigation'),     'arrow-left-circle': ('向左圆圈', 'navigation'),     'arrow-right-circle': ('向右圆圈', 'navigation'),     'map-pin': ('地图标记', 'navigation'),     'plus-circle': ('加号圆圈', 'action'),     'minus-circle': ('减号圆圈', 'action'),     'play-circle': ('播放圆圈', 'action'),     'pause-circle': ('暂停圆圈', 'action'),     'stop-circle': ('停止圆圈', 'action'),     'radio': ('收音机', 'objects'),     'shopping-cart': ('购物推车', 'objects'),     'tv': ('电视', 'media'), 
+    # 2026-10 第三批
+    'sparkles': ('星光', 'interface'),     'user-circle': ('圆形用户', 'interface'),     'calculator': ('计算器', 'objects'),     'palette': ('调色板', 'objects'),     'newspaper': ('报纸', 'media'),     'bolt': ('闪电', 'communication'),     'wifi-off': ('无线关闭', 'communication'),     }
 
 # ── 同义词 / 意图映射：关键词 -> 候选图标 ──────────────────────────────
 # 按 UI 意图组织，而不是按字母表。左边可写中文、英文或常见缩写，
@@ -387,7 +390,10 @@ SYNONYMS = {
     'folder-minus': ['folder-minus'], '移除成员': ['user-minus'], '删除用户': ['user-minus'],
     'user-minus': ['user-minus'], '卡车': ['truck'], '货车': ['truck'],
     '配送': ['truck'], 'truck': ['truck'],
-}
+    # 2026-10 第二批：圆形容器 / 对角箭头 / 媒体 / 符号
+    "左上": ["arrow-up-left"],     "左上箭头": ["arrow-up-left"],     "up-left": ["arrow-up-left"],     "左下": ["arrow-down-left"],     "左下箭头": ["arrow-down-left"],     "down-left": ["arrow-down-left"],     "右下": ["arrow-down-right"],     "右下箭头": ["arrow-down-right"],     "down-right": ["arrow-down-right"],     "向上圆圈": ["arrow-up-circle"],     "向下圆圈": ["arrow-down-circle"],     "向左圆圈": ["arrow-left-circle"],     "向右圆圈": ["arrow-right-circle"],     "加号圆圈": ["plus-circle"],     "减号圆圈": ["minus-circle"],     "播放圆圈": ["play-circle"],     "暂停圆圈": ["pause-circle"],     "停止圆圈": ["stop-circle"],     "收音机": ["radio"],     "电台": ["radio"],     "radio": ["radio"],     "购物推车": ["shopping-cart"],     "shopping-cart": ["shopping-cart"],     "电视": ["tv"],     "电视机": ["tv"],     "tv": ["tv"],     "地图标记": ["map-pin"],     "图钉": ["map-pin"],     "map-pin": ["map-pin"], 
+    # 2026-10 第三批：界面 / 日常物品 / 媒体 / 通信 / 天气
+    "sparkles": ["sparkles"],     "星光": ["sparkles"],     "魔法": ["sparkles"],     "闪亮": ["sparkles"],     "user-circle": ["user-circle"],     "圆形用户": ["user-circle"],     "个人中心": ["user-circle"],     "calculator": ["calculator"],     "计算器": ["calculator"],     "palette": ["palette"],     "调色板": ["palette"],     "配色": ["palette"],     "newspaper": ["newspaper"],     "报纸": ["newspaper"],     "报刊": ["newspaper"],     "新闻": ["newspaper"],     "bolt": ["bolt"],     "闪电": ["bolt"],     "电力": ["bolt"],     "wifi-off": ["wifi-off"],     "无线关闭": ["wifi-off"],     "无信号": ["wifi-off"],     }
 
 # ── 检索 ──────────────────────────────────────────────────────────────
 W_EXACT_ID = 100      # 查询里直接出现完整 id

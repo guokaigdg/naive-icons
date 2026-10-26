@@ -750,6 +750,138 @@ NEW_ICONS = {
     'truck': S(f'''
 <path d="M6 13 L28 13 L28 32 L6 32 Z" fill="#E76F51"/><path d="M28 19 L35 19 L41 27 L41 32 L28 32 Z" fill="#FAEDCD"/><circle cx="14" cy="36" r="4.5" fill="#2A2A2A"/><circle cx="34" cy="36" r="4.5" fill="#2A2A2A"/><circle cx="14" cy="36" r="1.5" fill="#FAEDCD" stroke="none"/><circle cx="34" cy="36" r="1.5" fill="#FAEDCD" stroke="none"/>
 '''),
+    # ---------- 2026-10 第二批：圆形容器 / 对角箭头 / 媒体 / 符号 ----------
+    'arrow-up-left': S('''
+<path d="M37.44 37.44 L21.17 21.17" stroke="#2A2A2A" stroke-width="4" fill="none"/>
+<path d="M11.27 11.27 L27.54 14.81 L14.81 27.54 Z" fill="#E76F51"/>
+'''),
+    'arrow-down-left': S('''
+<path d="M37.44 10.56 L21.17 26.83" stroke="#2A2A2A" stroke-width="4" fill="none"/>
+<path d="M11.27 36.73 L14.81 20.46 L27.54 33.19 Z" fill="#E76F51"/>
+'''),
+    'arrow-down-right': S('''
+<path d="M10.56 10.56 L26.83 26.83" stroke="#2A2A2A" stroke-width="4" fill="none"/>
+<path d="M36.73 36.73 L20.46 33.19 L33.19 20.46 Z" fill="#E76F51"/>
+'''),
+    'arrow-up-circle': S('''
+<circle cx="24" cy="24" r="17" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
+<path d="M24 34 L24 21" stroke="#2A2A2A" stroke-width="3.5" fill="none"/>
+<path d="M24 12 L30.5 21 L17.5 21 Z" fill="#E76F51" stroke="none"/>
+'''),
+    'arrow-down-circle': S('''
+<circle cx="24" cy="24" r="17" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
+<path d="M24 14 L24 27" stroke="#2A2A2A" stroke-width="3.5" fill="none"/>
+<path d="M24 36 L17.5 27 L30.5 27 Z" fill="#E76F51" stroke="none"/>
+'''),
+    'arrow-left-circle': S('''
+<circle cx="24" cy="24" r="17" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
+<path d="M34 24 L21 24" stroke="#2A2A2A" stroke-width="3.5" fill="none"/>
+<path d="M12 24 L21 17.5 L21 30.5 Z" fill="#E76F51" stroke="none"/>
+'''),
+    'arrow-right-circle': S('''
+<circle cx="24" cy="24" r="17" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
+<path d="M14 24 L27 24" stroke="#2A2A2A" stroke-width="3.5" fill="none"/>
+<path d="M36 24 L27 30.5 L27 17.5 Z" fill="#E76F51" stroke="none"/>
+'''),
+    'map-pin': S('''
+<rect x="7" y="17" width="30" height="23" rx="3" fill="#FAEDCD"/>
+<path d="M22 17 L22 40" stroke="#2A2A2A" stroke-width="2.5" fill="none"/>
+<path d="M30 5 C 25.8 5 22.8 8 22.8 12 C 22.8 16.4 30 23 30 23 C 30 23 37.2 16.4 37.2 12 C 37.2 8 34.2 5 30 5 Z" fill="#E76F51"/>
+<circle cx="30" cy="11.6" r="2.3" fill="#FFFFFF" stroke="none"/>
+'''),
+    'plus-circle': S('''
+<circle cx="24" cy="24" r="17" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
+<path d="M24 15 L24 33" stroke="#588157" stroke-width="4.5"/>
+<path d="M15 24 L33 24" stroke="#588157" stroke-width="4.5"/>
+'''),
+    'minus-circle': S('''
+<circle cx="24" cy="24" r="17" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
+<path d="M15 24 L33 24" stroke="#588157" stroke-width="4.5"/>
+'''),
+    'play-circle': S('''
+<circle cx="24" cy="24" r="17" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
+<path d="M19 14 L34 24 L19 34 Z" fill="none" stroke="#2A9D8F" stroke-width="4.5" stroke-linejoin="round"/>
+'''),
+    'pause-circle': S('''
+<circle cx="24" cy="24" r="17" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
+<path d="M19 15 L19 33" stroke="#E76F51" stroke-width="4.5"/>
+<path d="M29 15 L29 33" stroke="#E76F51" stroke-width="4.5"/>
+'''),
+    'stop-circle': S('''
+<circle cx="24" cy="24" r="17" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
+<rect x="16.5" y="16.5" width="15" height="15" rx="2" fill="none" stroke="#E76F51" stroke-width="4.5"/>
+'''),
+    'radio': S('''
+<path d="M32 19 L39 7" stroke="#2A2A2A" stroke-width="3" fill="none"/>
+<rect x="8" y="19" width="32" height="21" rx="4" fill="#E76F51"/>
+<circle cx="17" cy="29" r="5" fill="#FAEDCD"/>
+<path d="M27 25 L36 25" stroke="#2A2A2A" stroke-width="2.5" fill="none"/>
+<path d="M27 33 L36 33" stroke="#2A2A2A" stroke-width="2.5" fill="none"/>
+'''),
+    'shopping-cart': S('''
+<rect x="20" y="10" width="7" height="10" rx="1.5" fill="#E9C46A"/>
+<rect x="29" y="12" width="7" height="8" rx="1.5" fill="#FAEDCD"/>
+<path d="M15 19 L41 19 L37 32 L16 32 Z" fill="#E76F51"/>
+<path d="M7 11 L12 11 L16 32" stroke="#2A2A2A" stroke-width="3" fill="none"/>
+<path d="M12 11 L15 11" stroke="#2A2A2A" stroke-width="3" fill="none"/>
+<circle cx="19" cy="38" r="3.5" fill="#2A2A2A" stroke="none"/>
+<circle cx="34" cy="38" r="3.5" fill="#2A2A2A" stroke="none"/>
+'''),
+    'tv': S('''
+<path d="M16 13 L32 13" stroke="#2A2A2A" stroke-width="3" fill="none"/>
+<path d="M24 13 L17 6" stroke="#2A2A2A" stroke-width="3" fill="none"/>
+<path d="M24 13 L31 6" stroke="#2A2A2A" stroke-width="3" fill="none"/>
+<rect x="8" y="13" width="32" height="24" rx="4" fill="#E76F51"/>
+<rect x="13" y="18" width="22" height="14" rx="2" fill="#FAEDCD"/>
+<path d="M17 37 L15 42" stroke="#2A2A2A" stroke-width="3" fill="none"/>
+<path d="M31 37 L33 42" stroke="#2A2A2A" stroke-width="3" fill="none"/>
+'''),
+    # ---------- 2026-10 第三批：界面 / 日常物品 / 媒体 / 通信 / 天气 ----------
+    'sparkles': S('''
+<path d="M18 7 L22 14 L29 18 L22 22 L18 29 L14 22 L7 18 L14 14 Z" fill="#E9C46A" stroke="none"/>
+<path d="M32 22 L35 27 L40 30 L35 33 L32 38 L29 33 L24 30 L29 27 Z" fill="#E76F51" stroke="none"/>
+<path d="M36 5 L38 8 L41 10 L38 12 L36 15 L34 12 L31 10 L34 8 Z" fill="#F4A6A4" stroke="none"/>
+'''),
+    'user-circle': S('''
+<circle cx="24" cy="24" r="17" fill="none" stroke="#2A2A2A" stroke-width="3.5"/>
+<circle cx="24" cy="19" r="5.5" fill="#E76F51"/>
+<path d="M12 36 C 12 29 18 26 24 26 C 30 26 36 29 36 36 Z" fill="#2A9D8F"/>
+'''),
+    'calculator': S('''
+<rect x="13" y="6" width="22" height="36" rx="4" fill="#E76F51"/>
+<rect x="17" y="10" width="14" height="8" rx="2" fill="#FAEDCD"/>
+<circle cx="20" cy="25" r="1.6" fill="#2A2A2A" stroke="none"/>
+<circle cx="28" cy="25" r="1.6" fill="#2A2A2A" stroke="none"/>
+<circle cx="20" cy="31" r="1.6" fill="#2A2A2A" stroke="none"/>
+<circle cx="28" cy="31" r="1.6" fill="#2A2A2A" stroke="none"/>
+<circle cx="20" cy="37" r="1.6" fill="#2A2A2A" stroke="none"/>
+<circle cx="28" cy="37" r="1.6" fill="#2A2A2A" stroke="none"/>
+'''),
+    'palette': S('''
+<path d="M25 6 C 15 6 7 13 7 22 C 7 32 15 40 25 40 C 29 40 31 37 29 34 C 27 31 30 28 34 28 L 37 28 C 41 28 42 25 41 22 C 40 12 34 6 25 6 Z" fill="#FAEDCD"/>
+<circle cx="16" cy="16" r="3.2" fill="#E76F51" stroke="none"/>
+<circle cx="26" cy="12" r="3.2" fill="#E9C46A" stroke="none"/>
+<circle cx="33" cy="18" r="3.2" fill="#2A9D8F" stroke="none"/>
+<circle cx="14" cy="27" r="3.2" fill="#F4A6A4" stroke="none"/>
+'''),
+    'newspaper': S('''
+<rect x="8" y="10" width="32" height="28" rx="3" fill="#FAEDCD"/>
+<rect x="8" y="10" width="32" height="8" fill="#E76F51"/>
+<rect x="12" y="22" width="11" height="12" rx="1" fill="none" stroke="#2A2A2A" stroke-width="2.5"/>
+<path d="M27 23 L36 23" stroke="#2A2A2A" stroke-width="2.5" fill="none"/>
+<path d="M27 28 L36 28" stroke="#2A2A2A" stroke-width="2.5" fill="none"/>
+<path d="M27 33 L36 33" stroke="#2A2A2A" stroke-width="2.5" fill="none"/>
+<path d="M12 26 L23 26" stroke="#2A2A2A" stroke-width="2.5" fill="none"/>
+'''),
+    'bolt': S('''
+<path d="M27 5 L11 26 L21 26 L18 43 L37 20 L26 20 Z" fill="#E76F51" stroke="none"/>
+'''),
+    'wifi-off': S('''
+<path d="M9 21 A 19 19 0 0 1 39 21" stroke="#2A9D8F" stroke-width="4" fill="none"/>
+<path d="M15 28 A 11.5 11.5 0 0 1 33 28" stroke="#E76F51" stroke-width="4" fill="none"/>
+<circle cx="24" cy="35" r="4" fill="#E9C46A"/>
+<path d="M8 40 L40 8" stroke="#2A2A2A" stroke-width="4" fill="none"/>
+'''),
 }
 
 

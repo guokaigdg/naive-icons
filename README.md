@@ -198,11 +198,11 @@ const map: Record<IconId, () => Promise<unknown>> = {
 ```
 
 Importing the package as a namespace (`import * as icons`) also lets you look icons up by name,
-but it pulls all 178 icons into the bundle and zeroes out tree-shaking. `iconNames` lets you
+but it pulls all 201 icons into the bundle and zeroes out tree-shaking. `iconNames` lets you
 build a lookup that only loads the icons you actually reach for.
 
 To draw an icon of your own in the same style, use the `createIcon` factory. It produces the
-exact same root node, accessibility attributes and stroke scaling as the 178 built-in icons:
+exact same root node, accessibility attributes and stroke scaling as the 201 built-in icons:
 
 ```tsx
 import { createIcon } from 'naive-icons';

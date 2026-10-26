@@ -191,11 +191,11 @@ const map: Record<IconId, () => Promise<unknown>> = {
 };
 ```
 
-用 `import * as icons` 也能按名字取，但会把全部 178 枚都打进包，tree-shaking 直接归零。
+用 `import * as icons` 也能按名字取，但会把全部 201 枚都打进包，tree-shaking 直接归零。
 `iconNames` 让你搭一张只加载真正用得到的图标的查找表。
 
 想自己画一个同样风格的图标，用 `createIcon` 工厂。它产出的根节点、无障碍属性和描边缩放
-与内置的 178 枚完全一致：
+与内置的 201 枚完全一致：
 
 ```tsx
 import { createIcon } from 'naive-icons';

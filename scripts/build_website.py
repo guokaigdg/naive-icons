@@ -130,6 +130,10 @@ ICON_CATEGORY = {
     'underline': 'interface', 'scissors': 'action', 'power': 'action', 'clipboard': 'objects',
     'battery': 'objects', 'rss': 'media', 'folder-plus': 'media', 'folder-minus': 'media',
     'user-minus': 'interface', 'truck': 'transport',
+    # 2026-10 第二批：圆形容器 / 对角箭头 / 媒体 / 符号
+    'arrow-up-left': 'navigation',     'arrow-down-left': 'navigation',     'arrow-down-right': 'navigation',     'arrow-up-circle': 'navigation',     'arrow-down-circle': 'navigation',     'arrow-left-circle': 'navigation',     'arrow-right-circle': 'navigation',     'map-pin': 'navigation',     'plus-circle': 'action',     'minus-circle': 'action',     'play-circle': 'action',     'pause-circle': 'action',     'stop-circle': 'action',             'radio': 'objects',     'shopping-cart': 'objects',             'tv': 'media', 
+    # 2026-10 第三批：界面 / 日常物品 / 媒体 / 通信 / 天气
+        'sparkles': 'interface',     'user-circle': 'interface',     'calculator': 'objects',             'palette': 'objects',     'newspaper': 'media',             'bolt': 'communication',     'wifi-off': 'communication',             
 }
 
 # ---------------------------------------------------------------- 中文名
@@ -199,6 +203,10 @@ ZH_NAMES = {
     'underline': '下划线', 'scissors': '剪刀', 'power': '电源', 'clipboard': '剪贴板',
     'battery': '电池', 'rss': '订阅', 'folder-plus': '新建文件夹', 'folder-minus': '删除文件夹',
     'user-minus': '移除成员', 'truck': '卡车',
+    # 2026-10 第二批：圆形容器 / 对角箭头 / 媒体 / 符号
+    'arrow-up-left': '左上箭头',     'arrow-down-left': '左下箭头',     'arrow-down-right': '右下箭头',     'arrow-up-circle': '向上圆圈',     'arrow-down-circle': '向下圆圈',     'arrow-left-circle': '向左圆圈',     'arrow-right-circle': '向右圆圈',     'map-pin': '地图标记',     'plus-circle': '加号圆圈',     'minus-circle': '减号圆圈',     'play-circle': '播放圆圈',     'pause-circle': '暂停圆圈',     'stop-circle': '停止圆圈',             'radio': '收音机',     'shopping-cart': '购物推车',             'tv': '电视', 
+    # 2026-10 第三批：界面 / 日常物品 / 媒体 / 通信 / 天气
+        'sparkles': '星光',     'user-circle': '圆形用户',     'calculator': '计算器',             'palette': '调色板',     'newspaper': '报纸',             'bolt': '闪电',     'wifi-off': '无线关闭',             
 }
 
 

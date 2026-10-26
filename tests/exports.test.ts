@@ -11,7 +11,7 @@ const ids = Object.keys(pkg).filter((k) => k.endsWith('Icon') && k !== 'createIc
  */
 describe('包入口的导出', () => {
   it('导出全部图标组件', () => {
-    expect(ids.length).toBe(178);
+    expect(ids.length).toBe(201);
   });
 
   it('导出 NAIVE_PALETTE', () => {
@@ -35,7 +35,7 @@ describe('包入口的导出', () => {
  */
 describe('iconNames', () => {
   it('长度与图标总数一致', () => {
-    expect(pkg.iconNames.length).toBe(178);
+    expect(pkg.iconNames.length).toBe(201);
   });
 
   it('与 svg/ 目录一一对应', async () => {

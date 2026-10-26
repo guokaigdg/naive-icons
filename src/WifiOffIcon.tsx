@@ -1,0 +1,33 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const WifiOffIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M9 21 A 19 19 0 0 1 39 21" stroke="#2A9D8F" strokeWidth={sw(4)} fill="none"/>
+<path d="M15 28 A 11.5 11.5 0 0 1 33 28" stroke="#E76F51" strokeWidth={sw(4)} fill="none"/>
+<circle cx="24" cy="35" r="4" fill="#E9C46A"/>
+<path d="M8 40 L40 8" stroke="#2A2A2A" strokeWidth={sw(4)} fill="none"/>
+
+    </svg>
+  );
+});
+
+WifiOffIcon.displayName = 'WifiOffIcon';
+
+export default WifiOffIcon;

@@ -1,11 +1,11 @@
 ---
 name: naive-icons
-description: 为界面挑选并生成手绘 naive folk art 风格 SVG 图标，178 枚，每枚都有 React 组件与独立 SVG 源文件。当用户要「找个图标」「加个图标」「这个界面该用哪个图标」「图标选型」，要手绘风 / naive / 民间插画风图标，要批量生成图标组件，或要查本库设计规范与色板时使用。Use when choosing or searching icons for a UI, or generating naive folk-art style SVG / React icon components. 触发词：图标、icon、图标库、找图、手绘风、naive、民俗风、插画风。
+description: 为界面挑选并生成手绘 naive folk art 风格 SVG 图标，201 枚，每枚都有 React 组件与独立 SVG 源文件。当用户要「找个图标」「加个图标」「这个界面该用哪个图标」「图标选型」，要手绘风 / naive / 民间插画风图标，要批量生成图标组件，或要查本库设计规范与色板时使用。Use when choosing or searching icons for a UI, or generating naive folk-art style SVG / React icon components. 触发词：图标、icon、图标库、找图、手绘风、naive、民俗风、插画风。
 ---
 
 # Naive Icons
 
-手绘 naive folk art 风格的 React + TypeScript SVG 图标库。178 枚，零运行时依赖，
+手绘 naive folk art 风格的 React + TypeScript SVG 图标库。201 枚，零运行时依赖，
 MIT 协议，npm 包名 `naive-icons`。
 
 ```bash
@@ -27,7 +27,7 @@ npm install naive-icons
 | 场景 | 为什么不适合 |
 |---|---|
 | 金融 / 风控 / 医疗 / 法务 | 手绘稚拙感与这些场景要求的严肃可信直接冲突 |
-| 政企后台、数据密集型表格 | 178 枚的覆盖面撑不起复杂 B 端图标需求，且彩色描边在密集列表里会跳 |
+| 政企后台、数据密集型表格 | 201 枚的覆盖面撑不起复杂 B 端图标需求，且彩色描边在密集列表里会跳 |
 | 已有成熟 icon 体系的项目 | 混用两套图标库比统一用一套更糟 |
 | 需要线性极简 / 3D / 拟物 | 风格完全不在一个方向 |
 
@@ -60,7 +60,7 @@ python3 scripts/search.py --list-categories
 中英文都能用，接受完整句子而非关键词。输出按相关度排序，带命中理由：
 
 ```
-「购物车结算」→ 2 个候选（共 178 枚）
+「购物车结算」→ 2 个候选（共 201 枚）
 
 1. cart               购物车      objects        CartIcon                 98.0
    命中: 购物车、购物
@@ -68,7 +68,7 @@ python3 scripts/search.py --list-categories
    命中: 购物
 ```
 
-**不要把 178 枚全读进上下文**——脚本就是为此存在的。检索不到时把 `catalog.md` 翻给用户看。
+**不要把 201 枚全读进上下文**——脚本就是为此存在的。检索不到时把 `catalog.md` 翻给用户看。
 
 ### 2) 挑
 
@@ -130,7 +130,7 @@ python3 <仓库根>/scripts/build_skill_assets.py    # skill 的 catalog.md 与 
 
 | 约束 | 值 |
 |---|---|
-| 画布 | `viewBox="0 0 48 48"`，根节点 178 枚逐字节一致，不要改 |
+| 画布 | `viewBox="0 0 48 48"`，根节点 201 枚逐字节一致，不要改 |
 | 描边 | `#2A2A2A`，宽 `3.5`，`round` 线帽线角 |
 | 边距 | 主体距边缘 ≥3 单位，**按描边外缘算**（中心线要留到 4.75） |
 | 色板 | 只用 ink/navy/orange/yellow/pink/green/teal/brown/cream/white 十色 |
@@ -150,15 +150,15 @@ python3 <仓库根>/scripts/build_skill_assets.py    # skill 的 catalog.md 与 
 
 | 文件 | 内容 | 什么时候读 |
 |---|---|---|
-| `reference/catalog.md` | 全部 178 枚：id、中文名、组件名、什么时候用 | 检索脚本没命中，或要给用户列选项 |
+| `reference/catalog.md` | 全部 201 枚：id、中文名、组件名、什么时候用 | 检索脚本没命中，或要给用户列选项 |
 | `reference/design-spec.md` | 完整设计规范、构图公式、继承规则、尺寸可辨性 | 画新图标、改现有图标 |
 | `reference/patterns.md` | React/SVG 用法、属性默认值、尺寸选择、无障碍、深色模式、避坑表 | 写调用代码 |
 | `scripts/icons.json` | 全部 SVG 源码 | 不要直接读，由 `emit.py` 取用 |
 
 ## 五、事实速查
 
-- 版本 1.7.0，178 枚，11 个分类。分类计数：界面基础 41、操作 24、日常物品 25、导航方位 17、
-  动物 14、自然天气 14、文件与媒体 16、食物饮品 11、交通工具 8、通信 6、表情 2。
+- 版本 1.7.0，201 枚，11 个分类。分类计数：界面基础 43、操作 29、日常物品 29、导航方位 25、
+  动物 14、自然天气 14、文件与媒体 18、食物饮品 11、交通工具 8、通信 8、表情 2。
 - 组件名 = id 各段首字母大写 + `Icon`：`user-plus` → `UserPlusIcon`。
 - 属性默认：`size=24`、`color=#2A2A2A`、`strokeWidth=3.5`、`fill=none`。
   `strokeWidth` 是相对 3.5 基准的**缩放系数**而非绝对宽度，传 7 即整体描边加倍且层次保持；
@@ -168,8 +168,8 @@ python3 <仓库根>/scripts/build_skill_assets.py    # skill 的 catalog.md 与 
 - 按需引入用具名导入即可，打包器会 tree-shaking（只导入 1 个约 1 KB）。
   也可以走子路径绕过顶层入口：`import { HomeIcon } from 'naive-icons/icons/HomeIcon'`。
   `naive-icons/src/*` **不可用**（`files` 不含 `src`）。
-- 需要「按名字动态取图标」时用 `iconNames`（178 个 kebab id 的运行时数组）与类型 `IconId`。
-  **不要用 `import * as icons`**——那会把全部 178 枚打进包，tree-shaking 直接归零。
+- 需要「按名字动态取图标」时用 `iconNames`（201 个 kebab id 的运行时数组）与类型 `IconId`。
+  **不要用 `import * as icons`**——那会把全部 201 枚打进包，tree-shaking 直接归零。
 - 自建图标用 `createIcon(name, body)` 工厂：根节点、无障碍属性、描边缩放与内置图标完全一致。
   `body` 可以是普通节点，也可以是接收 `sw(designed)` 的函数——把设计时的描边宽度交给 `sw()`，
   整体加粗时层次才不会散。

@@ -19,9 +19,8 @@ export const ArrowUpRightIcon = forwardRef<SVGSVGElement, IconProps>((props, ref
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<path d="M13 35 L33 15" stroke="#E76F51" strokeWidth={sw(4.5)} fill="none"/>
-<path d="M34 24 L34 12 L22 12" stroke="#E76F51" strokeWidth={sw(4.5)} fill="none"/>
-<circle cx="13" cy="35" r="3" fill="#2A9D8F"/>
+<path d="M10.56 37.44 L26.83 21.17" stroke="#2A2A2A" strokeWidth={sw(4)} fill="none"/>
+<path d="M36.73 11.27 L33.19 27.54 L20.46 14.81 Z" fill="#E76F51"/>
 
     </svg>
   );
@@ -30,4 +29,3 @@ export const ArrowUpRightIcon = forwardRef<SVGSVGElement, IconProps>((props, ref
 ArrowUpRightIcon.displayName = 'ArrowUpRightIcon';
 
 export default ArrowUpRightIcon;
-
