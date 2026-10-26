@@ -2,6 +2,39 @@
 
 本文件记录 Naive Icons 的每个版本变更。版本号遵循语义化版本规范（SemVer）。
 
+## 1.8.0
+
+新增
+
+- **23 枚图标**（178 → **201**）：
+  - 导航方位 8 枚 —— `arrow-up-left` 左上箭头、`arrow-down-left` 左下箭头、
+    `arrow-down-right` 右下箭头、`arrow-up-circle` 向上圆圈、`arrow-down-circle` 向下圆圈、
+    `arrow-left-circle` 向左圆圈、`arrow-right-circle` 向右圆圈、`map-pin` 地图标记
+  - 操作 5 枚 —— `plus-circle` 加号圆圈、`minus-circle` 减号圆圈、`play-circle` 播放圆圈、
+    `pause-circle` 暂停圆圈、`stop-circle` 停止圆圈
+  - 日常物品 4 枚 —— `calculator` 计算器、`palette` 调色板、`radio` 收音机、
+    `shopping-cart` 购物推车
+  - 界面基础 2 枚 —— `user-circle` 圆形用户、`sparkles` 星光
+  - 文件与媒体 2 枚 —— `newspaper` 报纸、`tv` 电视
+  - 通信 2 枚 —— `bolt` 闪电、`wifi-off` 无线关闭
+- 圆形容器家族沿用库内 `check-circle` / `x-circle` 的既有惯例：墨色描边圆 r=17 + 彩色符号，
+  所以 7 枚圆圈图标与库内已有反馈类图标是同一套视觉语言
+- `map-pin` 与 `shopping-cart` 刻意跟库内 `location` / `cart` 区分开——前者是「折页地图上插着
+  气泡针」，后者是「装满商品的购物车」，避免库里出现两个几乎一样的图标
+
+重绘
+
+- **`arrow-up-right` 右上箭头** —— 原版是「橙色斜杆 + 转角头 + 青点」的**回信箭头**造型，
+  与库里 `arrow-up` / `arrow-down` / `arrow-left` / `arrow-right` 的「墨杆 + 橙三角」
+  是完全不同的两套语言；同一个「右上方向」在别的库里都是直箭头。
+  改为墨杆 + 橙三角的直箭头，凑成 **8 枚对称方向箭头族**（4 正交 + 4 对角）。
+  ⚠️ 造型有变，用过这枚图标的地方需要确认一下视觉效果
+
+其他
+
+- 开发依赖 `vitest` 升到 5.0.5，CI 的 Node 从 20 提到 22（vitest 5 要求 Node ≥ 22.12）
+- 文档、注释与 skill 资产里的图标总数同步到 201
+
 ## 1.7.0
 
 新增
