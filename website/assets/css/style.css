@@ -528,6 +528,26 @@ svg {
   margin-bottom: var(--s5);
 }
 
+/* hero 里的两行安装命令（React / Vue 3） */
+.cmd-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+}
+
+.cmd__tag {
+  flex-shrink: 0;
+  margin-right: 2px;
+  padding: 2px 8px;
+  border-radius: var(--r-xs);
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--code-text);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 .cmd {
   display: inline-flex;
   align-items: center;

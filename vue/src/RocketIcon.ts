@@ -1,0 +1,37 @@
+import { defineComponent, h, type VNode } from 'vue';
+import { iconPropDefs } from './types';
+import { normalizeIconProps } from './iconProps';
+
+export const RocketIcon = defineComponent({
+  name: 'RocketIcon',
+  inheritAttrs: false,
+  props: iconPropDefs,
+  setup(props, { attrs }) {
+    return () => {
+      const children: VNode[] = [];
+      if (props.title) children.push(h('title', null, props.title));
+      children.push(h('path', { d: 'M18 32 L24 42.5 L30 32 Z', fill: '#E76F51' }));
+      children.push(h('path', { d: 'M24 6 C 16 6 14 16 14 25 L 14 34 L 34 34 L 34 25 C 34 16 32 6 24 6 Z', fill: '#FAEDCD' }));
+      children.push(h('path', { d: 'M14 28 L8 34 L8 40 L14 36 Z', fill: '#E76F51' }));
+      children.push(h('path', { d: 'M34 28 L40 34 L40 40 L34 36 Z', fill: '#E76F51' }));
+      children.push(h('circle', { cx: '24', cy: '20', r: '5', fill: '#2A9D8F' }));
+      const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
+      return h(
+        'svg',
+        {
+          viewBox: '0 0 48 48',
+          xmlns: 'http://www.w3.org/2000/svg',
+          fill: 'none',
+          'stroke-linecap': 'round',
+          'stroke-linejoin': 'round',
+          role: props.title ? 'img' : undefined,
+          'aria-hidden': labelled ? undefined : true,
+          ...normalizeIconProps({ ...props, ...attrs }),
+        },
+        children,
+      );
+    };
+  },
+});
+
+export default RocketIcon;

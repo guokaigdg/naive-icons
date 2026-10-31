@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Naive Icons — 手绘风格的 React SVG 图标库</title>
-<meta name="description" content="Naive Icons 是一套手绘 naive folk art 风格的 SVG 图标库。135 个原创图标，48×48 画布、3.5 粗描边、复古调色板，为 React 与 TypeScript 打造，MIT 协议。">
+<title>Naive Icons — 手绘风格的 React &amp; Vue SVG 图标库</title>
+<meta name="description" content="Naive Icons 是一套手绘 naive folk art 风格的 SVG 图标库。201 个原创图标，48×48 画布、3.5 粗描边、复古调色板，为 React 与 Vue 3 打造，MIT 协议。">
 <meta name="author" content="Naive Icons">
 <meta name="theme-color" content="#fbf6ea">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Naive Icons — 手绘风格的 React SVG 图标库">
-<meta property="og:description" content="134 个手绘风格原创 SVG 图标，统一 48×48 画布与 3.5 粗描边，为 React 与 TypeScript 打造。">
+<meta property="og:title" content="Naive Icons — 手绘风格的 React &amp; Vue SVG 图标库">
+<meta property="og:description" content="201 个手绘风格原创 SVG 图标，统一 48×48 画布与 3.5 粗描边，为 React 与 Vue 3 打造。">
 <meta property="og:site_name" content="Naive Icons">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Naive Icons — 手绘风格的 React SVG 图标库">
-<meta name="twitter:description" content="134 个手绘风格原创 SVG 图标，为 React 与 TypeScript 打造。">
+<meta name="twitter:title" content="Naive Icons — 手绘风格的 React &amp; Vue SVG 图标库">
+<meta name="twitter:description" content="201 个手绘风格原创 SVG 图标，为 React 与 Vue 3 打造。">
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -92,14 +92,26 @@
           <a class="btn btn--line" href="#usage">查看文档</a>
         </div>
 
-        <div class="cmd">
-          <span class="cmd__sign" aria-hidden="true">$</span>
-          <code>npm install naive-icons</code>
-          <button type="button" data-copy="npm install naive-icons" data-copy-label="安装命令">复制</button>
+        <div class="cmd-row">
+          <div class="cmd">
+            <span class="cmd__tag">React</span>
+            <code>npm install naive-icons</code>
+            <button type="button" data-copy="npm install naive-icons" data-copy-label="安装命令">复制</button>
+          </div>
+          <div class="cmd">
+            <span class="cmd__tag">Vue 3</span>
+            <code>npm install naive-icons-vue</code>
+            <button type="button" data-copy="npm install naive-icons-vue" data-copy-label="安装命令">复制</button>
+          </div>
+          <div class="cmd">
+            <span class="cmd__tag">AI Skill</span>
+            <code>npx skills add guokaigdg/naive-icons</code>
+            <button type="button" data-copy="npx skills add guokaigdg/naive-icons" data-copy-label="安装命令">复制</button>
+          </div>
         </div>
 
         <dl class="stats">
-          <div><dt data-count="135">135</dt><dd>原创图标</dd></div>
+          <div><dt data-count="201">201</dt><dd>原创图标</dd></div>
           <div><dt>48×48</dt><dd>统一画布</dd></div>
           <div><dt>10 色</dt><dd>默认调色板</dd></div>
           <div><dt>0 KB</dt><dd>运行时依赖</dd></div>
@@ -117,7 +129,7 @@
         <p class="eyebrow">Icon Explorer</p>
         <h2 class="sec__title">全部图标</h2>
         <p class="sec__lead">
-          搜索、按分类筛选，实时调整尺寸与描边颜色。点击任意图标查看 React 用法、复制代码或下载 SVG。
+          搜索、按分类筛选，实时调整尺寸与描边颜色。点击任意图标查看 React / Vue 用法、复制代码或下载 SVG。
         </p>
       </header>
 
@@ -174,14 +186,15 @@
         <p class="eyebrow">Getting Started</p>
         <h2 class="sec__title">使用方式</h2>
         <p class="sec__lead">
-          按需引入 React 组件，或直接使用标准 SVG 源文件。每个图标都继承原生 SVG 属性，
-          可自由传入 className、onClick 与内联样式。
+          按需引入 React 或 Vue 3 组件，或直接使用标准 SVG 源文件。每个图标都继承原生 SVG 属性，
+          可自由传入 className / class、onClick 与内联样式。
         </p>
       </header>
 
       <div class="codetabs" role="tablist" aria-label="使用示例">
         <button type="button" role="tab" id="ct-install" aria-controls="cp-install" data-code="install" aria-selected="true">安装</button>
         <button type="button" role="tab" id="ct-react" aria-controls="cp-react" data-code="react" aria-selected="false">React</button>
+        <button type="button" role="tab" id="ct-vue" aria-controls="cp-vue" data-code="vue" aria-selected="false">Vue 3</button>
         <button type="button" role="tab" id="ct-svg" aria-controls="cp-svg" data-code="svg" aria-selected="false">SVG</button>
         <button type="button" role="tab" id="ct-types" aria-controls="cp-types" data-code="types" aria-selected="false">TypeScript</button>
       </div>
@@ -191,14 +204,18 @@
           <span>终端</span>
           <button class="copy" type="button" data-copy-target="code-install">复制</button>
         </div>
-        <pre class="code" id="code-install"><span class="c"># npm</span>
+        <pre class="code" id="code-install"><span class="c"># React 16.8+</span>
 <span class="k">npm install</span> naive-icons
-
-<span class="c"># yarn</span>
 <span class="k">yarn add</span> naive-icons
+<span class="k">pnpm add</span> naive-icons
 
-<span class="c"># pnpm</span>
-<span class="k">pnpm add</span> naive-icons</pre>
+<span class="c"># Vue 3.4+</span>
+<span class="k">npm install</span> naive-icons-vue
+<span class="k">yarn add</span> naive-icons-vue
+<span class="k">pnpm add</span> naive-icons-vue
+
+<span class="c"># AI 编码助手（Claude Code / Cursor / Codex）装一份 skill</span>
+<span class="k">npx skills add</span> guokaigdg/naive-icons</pre>
       </div>
 
       <div class="codepane" id="cp-react" role="tabpanel" aria-labelledby="ct-react" hidden>
@@ -217,6 +234,25 @@
     <span class="t">&lt;/nav&gt;</span>
   );
 }</pre>
+      </div>
+
+      <div class="codepane" id="cp-vue" role="tabpanel" aria-labelledby="ct-vue" hidden>
+        <div class="codepane__bar">
+          <span>Vue 3 组件</span>
+          <button class="copy" type="button" data-copy-target="code-vue">复制</button>
+        </div>
+        <pre class="code" id="code-vue"><span class="c">&lt;!-- App.vue --&gt;</span>
+<span class="k">&lt;script setup</span> <span class="k">lang</span>=<span class="s">"ts"</span><span class="k">&gt;</span>
+<span class="k">import</span> { HomeIcon, HeartIcon, PenguinIcon } <span class="k">from</span> <span class="s">'naive-icons-vue'</span>;
+<span class="k">&lt;/script&gt;</span>
+
+<span class="k">&lt;template&gt;</span>
+  <span class="t">&lt;nav&gt;</span>
+    <span class="t">&lt;HomeIcon</span> <span class="k">:size</span>=<span class="s">"24"</span> <span class="t">/&gt;</span>
+    <span class="t">&lt;HeartIcon</span> <span class="k">:size</span>=<span class="s">"24"</span> <span class="k">color</span>=<span class="s">"#E76F51"</span> <span class="t">/&gt;</span>
+    <span class="t">&lt;PenguinIcon</span> <span class="k">:size</span>=<span class="s">"48"</span> <span class="k">:stroke-width</span>=<span class="s">"7"</span> <span class="t">/&gt;</span>
+  <span class="t">&lt;/nav&gt;</span>
+<span class="k">&lt;/template&gt;</span></pre>
       </div>
 
       <div class="codepane" id="cp-svg" role="tabpanel" aria-labelledby="ct-svg" hidden>
@@ -241,10 +277,11 @@
           <button class="copy" type="button" data-copy-target="code-types">复制</button>
         </div>
         <pre class="code" id="code-types"><span class="k">import type</span> { IconProps, IconName, NAIVE_PALETTE } <span class="k">from</span> <span class="s">'naive-icons'</span>;
+<span class="c">// Vue 3 用户从 'naive-icons-vue' 导入同名类型</span>
 
 <span class="k">interface</span> <span class="t">IconProps</span> <span class="k">extends</span> <span class="t">SVGProps</span>&lt;<span class="t">SVGSVGElement</span>&gt; {
   <span class="k">size</span>?: <span class="t">number</span> | <span class="t">string</span>;        <span class="c">// 默认 24</span>
-  <span class="k">color</span>?: <span class="t">string</span>;                <span class="c">// 默认 currentColor</span>
+  <span class="k">color</span>?: <span class="t">string</span>;                <span class="c">// 默认墨色 #2A2A2A</span>
   <span class="k">strokeWidth</span>?: <span class="t">number</span> | <span class="t">string</span>; <span class="c">// 默认 3.5</span>
   <span class="k">fill</span>?: <span class="t">string</span>;                 <span class="c">// 默认 none</span>
   <span class="k">title</span>?: <span class="t">string</span>;                <span class="c">// 无障碍标题</span>
@@ -259,7 +296,7 @@
           </thead>
           <tbody>
             <tr><td><code>size</code></td><td><code>number | string</code></td><td><code>24</code></td><td>图标尺寸，宽高相等</td></tr>
-            <tr><td><code>color</code></td><td><code>string</code></td><td><code>currentColor</code></td><td>描边颜色，可跟随文字色</td></tr>
+            <tr><td><code>color</code></td><td><code>string</code></td><td><code>#2A2A2A</code></td><td>描边颜色，默认墨色；传 <code>currentColor</code> 可跟随文字色</td></tr>
             <tr><td><code>strokeWidth</code></td><td><code>number | string</code></td><td><code>3.5</code></td><td>按 48×48 画布比例缩放</td></tr>
             <tr><td><code>fill</code></td><td><code>string</code></td><td><code>none</code></td><td>填充色</td></tr>
             <tr><td><code>title</code></td><td><code>string</code></td><td>—</td><td>无障碍标题</td></tr>
@@ -339,7 +376,7 @@
           </span>
           <span class="brand__name">NAIVE ICONS</span>
         </a>
-        <p>手绘 naive folk art 风格的 SVG 图标库，为 React 与 TypeScript 打造。全部图标为 AI 生成的原创作品。</p>
+        <p>手绘 naive folk art 风格的 SVG 图标库，为 React 与 Vue 3 打造。全部图标为 AI 生成的原创作品。</p>
       </div>
 
       <nav class="footer__col" aria-label="产品">
@@ -384,6 +421,7 @@
 
       <div class="tabs" role="tablist" aria-label="代码格式">
         <button type="button" role="tab" data-tab="react" aria-selected="true">React</button>
+        <button type="button" role="tab" data-tab="vue" aria-selected="false">Vue 3</button>
         <button type="button" role="tab" data-tab="import" aria-selected="false">引入</button>
         <button type="button" role="tab" data-tab="svg" aria-selected="false">SVG</button>
       </div>

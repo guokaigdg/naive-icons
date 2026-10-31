@@ -17,6 +17,7 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-264653?style=flat-square" alt="license: MIT"></a>
   <br/>
   <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React">
+  <img src="https://img.shields.io/badge/Vue-42b883?style=flat-square&logo=vuedotjs&logoColor=white" alt="Vue">
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
   <img src="https://img.shields.io/badge/SVG-FFB13B?style=flat-square&logoColor=black" alt="SVG">
   <a href="https://hub.xerj.org/contributors/guokaigdg"><img src="https://hub.xerj.org/contributors/guokaigdg/badge.svg" alt="Contributors"></a>
@@ -40,6 +41,7 @@
 - `createIcon`——图标工厂，自建图标能拿到与内置图标完全一致的根节点、无障碍与描边缩放
 - 支持 currentColor，传入后图标跟随文字颜色
 - 官方 Agent Skill：一条命令装到 AI 编码助手，按语义帮你挑图标并生成代码
+- 另有 Vue 3 版本 `naive-icons-vue`：同样的 201 枚图标与同样的图形，只是组件 API 换成了 Vue 那套
 
 ## AI Agent Skill
 
@@ -63,6 +65,17 @@ Skill 自带完整图标目录、设计规范和用法，以及全部 SVG 源码
 
 ## 安装
 
+本库有两个包，卖的是同一套 201 枚图标。按你的框架挑一个装：
+
+| 框架 | 包名 | 需要 |
+| --- | --- | --- |
+| React | `naive-icons` | React 16.8+（含 18 与 19） |
+| Vue 3 | `naive-icons-vue` | Vue 3.4+ |
+
+两个包**永远同版本发布**，升级时一起升最省心。
+
+### React
+
 ```bash
 npm install naive-icons
 ```
@@ -75,9 +88,40 @@ yarn add naive-icons
 pnpm add naive-icons
 ```
 
-Naive Icons 只依赖 React，支持 React 16.8 及以上版本（含 React 18 与 19）。
+```tsx
+import { HomeIcon } from 'naive-icons';
+```
+
+### Vue 3
+
+```bash
+npm install naive-icons-vue
+```
+
+```bash
+yarn add naive-icons-vue
+```
+
+```bash
+pnpm add naive-icons-vue
+```
+
+```vue
+<script setup lang="ts">
+import { HomeIcon } from 'naive-icons-vue';
+</script>
+
+<template>
+  <HomeIcon :size="24" color="#E76F51" />
+</template>
+```
+
+完整 API 见 [`vue/README.zh-CN.md`](./vue/README.zh-CN.md)。两个包都由同一份 `svg/` 生成，
+图形永远不会走偏。
 
 ## 快速开始
+
+下面用 React 举例。Vue 3 的写法见 [`vue/README.zh-CN.md`](./vue/README.zh-CN.md)。
 
 ```tsx
 import { HomeIcon, HeartIcon, PenguinIcon } from 'naive-icons';
@@ -136,6 +180,9 @@ Naive Icons 的每个组件都继承原生 `SVGProps<SVGSVGElement>`，可以直
 | fill | string | none | 填充色。**只对没有自带 fill 的图元生效**——本库图标的色块是画上去的，传 `fill` 改不了它们 |
 | title | string | — | 无障碍标题，渲染为 SVG title 节点 |
 | width / height | number \| string | 跟随 size | 单独指定宽或高，**优先级高于 size**，没传的那一边回落到 size |
+
+> Vue 3 版的属性名与默认值完全一致，只是模板里要写成 kebab-case（`:stroke-width="7"`），
+> 拿 DOM 节点用 `ref.value.$el`。详见 [`vue/README.zh-CN.md`](./vue/README.zh-CN.md)。
 
 > `fill` 那一行值得单独说一句：naive 风格靠的就是实心色块，730 个图元里 489 个硬编码了自己的
 > `fill`，所以根节点的 `fill` 对它们无效。这不是 bug，是风格本身——要换配色请用 `color`

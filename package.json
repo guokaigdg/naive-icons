@@ -50,7 +50,9 @@
     "prepublishOnly": "npm run build",
     "website": "python3 -m http.server 8080 --directory website",
     "icons:data": "python3 scripts/build_website.py",
-    "icons:add": "python3 scripts/generate_icons_add.py && python3 scripts/build_website.py"
+    "icons:add": "python3 scripts/generate_icons_add.py && python3 scripts/build_website.py",
+    "icons:vue": "python3 scripts/generate_vue.py",
+    "icons:vue:check": "python3 scripts/generate_vue.py --check"
   },
   "keywords": [
     "icons",

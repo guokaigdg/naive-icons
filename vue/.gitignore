@@ -1,0 +1,4 @@
+# 发版前由 npm run assets:copy 从仓库根拷入，不入仓
+# （否则 201 个 svg 会在 git 里出现两份）
+svg/
+LICENSE

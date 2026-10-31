@@ -26,6 +26,7 @@
   var view = [];        // 当前列表（供弹窗左右切换）
   var current = null;   // 弹窗中正在查看的图标
   var currentTab = 'react';
+  var lastFramework = 'react';  // 「引入」标签跟随最近选中的框架标签
 
   /* ------------------------------------------------------------ utilities */
   function $(sel, root) {
@@ -315,23 +316,31 @@
     },
     {
       q: '图标支持哪些 React 版本？',
-      a: '组件只使用了最基础的 JSX 与 SVG 属性，没有 Hooks、没有运行时依赖，支持 React 16.8 及以上版本，包括 React 18 与 19，同时兼容 Next.js、Remix 等服务端渲染框架。',
+      a: 'React 版组件只使用了最基础的 JSX 与 SVG 属性，没有 Hooks、没有运行时依赖，支持 React 16.8 及以上版本，包括 React 18 与 19，同时兼容 Next.js、Remix 等服务端渲染框架。',
+    },
+    {
+      q: '有 Vue 3 版本吗？',
+      a: '有，npm 包叫 naive-icons-vue，需要 Vue 3.4 及以上。它和 React 版是同一套 201 枚图标，图形与无障碍行为逐字节一致，只有组件 API 按 Vue 惯例来：用 h() 渲染函数、模板里数值属性写成 :size="24"、拿 DOM 节点用 ref.value.$el。',
+    },
+    {
+      q: '两个包要一起升级吗？',
+      a: '建议一起升，但不是必须。两个包永远同版本发布，版本号始终一致，npm update 一次两个都会跟上。Vue 版是独立包，不装 React 也能单独用。',
     },
     {
       q: '如何让图标跟随文字颜色变化？',
-      a: 'color 属性的默认值就是 currentColor，只要不显式传入 color，图标会自动继承父元素的文字颜色。也可以直接传入 className 或用 CSS 控制。',
+      a: 'color 的默认值是墨色 #2A2A2A，不会自动继承父元素的文字颜色——想跟随就得显式传 color="currentColor"（Vue 模板里写法相同）。也可以直接用 class 或 CSS 控制。',
     },
     {
       q: '可以只引入用到的几个图标吗？',
-      a: '可以。包内提供 ESM 与 CJS 双格式产物，代码分割友好 —— import { HomeIcon } from "naive-icons" 之后，打包工具只会把你实际用到的组件打进产物。也可以直接复制 svg/ 目录中的源文件使用。',
+      a: '可以。两个包都提供 ESM 与 CJS 双格式产物并标记了 sideEffects: false，import { HomeIcon } from "naive-icons"（或 "naive-icons-vue"）之后，打包工具只会把你实际用到的组件打进产物；也可以走子路径直接引单枚图标，或者复制 svg/ 目录里的源文件。',
     },
     {
       q: '能修改图标的颜色或描边粗细吗？',
-      a: '可以。color 控制描边颜色，strokeWidth 控制描边粗细，fill 控制填充。图标内部的扁平填充块是设计的一部分，默认保留；把 fill 设为 none 即可得到纯线稿版本。',
+      a: '可以。color 控制描边颜色，strokeWidth 控制描边粗细，fill 控制填充；Vue 模板里写成 :stroke-width="7"。图标内部的扁平填充块是设计的一部分，默认保留；把 fill 设为 none 即可得到纯线稿版本。',
     },
     {
       q: '项目不是 React，还能用吗？',
-      a: '完全可以。svg/ 目录下是 125 个标准 SVG 1.1 文件，可直接用 img 引用、内联到 HTML、制作 SVG sprite 或转成 Icon Font。',
+      a: '当然可以。Vue 3 直接用 naive-icons-vue；其他框架（Angular、Svelte、原生页面）可以用 svg/ 目录下的 201 个标准 SVG 文件，img 引用、内联到 HTML、制作 SVG sprite 或转成 Icon Font 都行。',
     },
   ];
 
@@ -590,8 +599,13 @@
     if (tab === 'react') {
       return '<' + icon.comp + ' size={24} color="' + state.color + '" />';
     }
+    if (tab === 'vue') {
+      // Vue 模板里数值型 prop 要绑成 :size="24"，静态量才是 size="24"
+      return '<' + icon.comp + ' :size="24" color="' + state.color + '" />';
+    }
     if (tab === 'import') {
-      return "import { " + icon.comp + " } from 'naive-icons';";
+      var pkg = lastFramework === 'vue' ? 'naive-icons-vue' : 'naive-icons';
+      return "import { " + icon.comp + " } from '" + pkg + "';";
     }
     return recolor(icon.svg, state.color);
   }
@@ -601,6 +615,7 @@
     if (!icon) return;
     current = icon;
     currentTab = 'react';
+    lastFramework = 'react';
 
     var modal = $('#modal');
     $('#modalPreview').innerHTML = recolor(icon.svg, state.color);
@@ -654,6 +669,8 @@
     $$('.tabs button').forEach(function (btn) {
       btn.addEventListener('click', function () {
         currentTab = btn.getAttribute('data-tab');
+        // 「引入」标签按最近选中的框架给包名，免得 Vue 用户复制到 React 的包
+        if (currentTab === 'react' || currentTab === 'vue') lastFramework = currentTab;
         $$('.tabs button').forEach(function (b) {
           b.setAttribute('aria-selected', String(b === btn));
         });

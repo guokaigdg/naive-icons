@@ -1,0 +1,44 @@
+import { defineComponent, h, type VNode } from 'vue';
+import { iconPropDefs } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const CatIcon = defineComponent({
+  name: 'CatIcon',
+  inheritAttrs: false,
+  props: iconPropDefs,
+  setup(props, { attrs }) {
+    return () => {
+      const sw = scaledStroke(props.strokeWidth);
+      const children: VNode[] = [];
+      if (props.title) children.push(h('title', null, props.title));
+      children.push(h('path', { d: 'M10.19 9.39 L11.24 18.06 L22.68 18.06 Z', fill: '#264653' }));
+      children.push(h('path', { d: 'M37.81 9.39 L25.32 18.06 L36.76 18.06 Z', fill: '#264653' }));
+      children.push(h('circle', { cx: '24', cy: '26.64', r: '13.20', fill: '#264653' }));
+      children.push(h('circle', { cx: '17.84', cy: '24.44', r: '2.64', fill: '#FFFFFF', stroke: 'none' }));
+      children.push(h('circle', { cx: '30.16', cy: '24.44', r: '2.64', fill: '#FFFFFF', stroke: 'none' }));
+      children.push(h('circle', { cx: '17.84', cy: '24.44', r: '1.14', fill: '#2A2A2A', stroke: 'none' }));
+      children.push(h('circle', { cx: '30.16', cy: '24.44', r: '1.14', fill: '#2A2A2A', stroke: 'none' }));
+      children.push(h('path', { d: 'M22.06 29.72 L25.94 29.72 L24.00 32.36 Z', fill: '#F4A6A4' }));
+      children.push(h('ellipse', { cx: '24', cy: '35.88', rx: '7.92', ry: '3.08', fill: '#FFFFFF', stroke: 'none' }));
+      children.push(h('path', { d: 'M20.48 33.24 Q 24 35.44 27.52 33.24', fill: 'none' }));
+      children.push(h('path', { d: 'M15.20 30.16 L9.04 28.84 M15.20 32.80 L9.48 33.68 M32.80 30.16 L38.96 28.84 M32.80 32.80 L38.52 33.68', 'stroke-width': sw(1.58), fill: 'none' }));
+      const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
+      return h(
+        'svg',
+        {
+          viewBox: '0 0 48 48',
+          xmlns: 'http://www.w3.org/2000/svg',
+          fill: 'none',
+          'stroke-linecap': 'round',
+          'stroke-linejoin': 'round',
+          role: props.title ? 'img' : undefined,
+          'aria-hidden': labelled ? undefined : true,
+          ...normalizeIconProps({ ...props, ...attrs }),
+        },
+        children,
+      );
+    };
+  },
+});
+
+export default CatIcon;

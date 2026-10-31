@@ -1,0 +1,83 @@
+{
+  "name": "naive-icons-vue",
+  "version": "1.8.0",
+  "description": "Naive Icons — 手绘 naive folk art 风格的 SVG 图标库，为 Vue 3 打造",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./svg/*": "./svg/*",
+    "./package.json": "./package.json",
+    "./icons/*": {
+      "import": {
+        "types": "./dist/*.d.mts",
+        "default": "./dist/*.mjs"
+      },
+      "require": {
+        "types": "./dist/*.d.ts",
+        "default": "./dist/*.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "svg",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE",
+    "!dist/**/*.map"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "assets:copy": "node scripts/copy-assets.mjs",
+    "prepack": "npm run build && npm run assets:copy"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "icons",
+    "icon",
+    "svg",
+    "naive",
+    "folk-art",
+    "hand-drawn",
+    "illustration",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guokaigdg/naive-icons.git"
+  },
+  "homepage": "https://guokaigdg.github.io/naive-icons/",
+  "bugs": {
+    "url": "https://github.com/guokaigdg/naive-icons/issues"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "vitest": "^5.0.5",
+    "vue": "^3.5.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

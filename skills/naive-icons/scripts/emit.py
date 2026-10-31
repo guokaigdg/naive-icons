@@ -17,6 +17,7 @@ icons.json 缺失时才退回按目录找 svg/：
     python3 emit.py refresh --format svg                # 原始 SVG 文件
     python3 emit.py bell --format html --color white    # 静态 HTML
     python3 emit.py trash --format json                 # 给 agent 消费
+    python3 emit.py home --format vue                   # Vue 3 组件（render 函数）
     python3 emit.py a b c --out src/icons --format tsx  # 批量落盘
 """
 import argparse
@@ -264,17 +265,145 @@ def render_html(icon_id, body, size=24, color=None):
     )
 
 
+# ------------------------------------------------------------------ Vue 3
+
+# Vue 的 h() 直接 setAttribute，属性名保持 SVG 原样（kebab-case）即可，
+# 不像 JSX 那样要转 camelCase —— 这是 Vue 版比 React 版简单的地方。
+_JS_IDENT_RE = re.compile(r'^[A-Za-z_$][A-Za-z0-9_$]*$')
+_SVG_TAG_RE = re.compile(r'<(/?)([a-zA-Z][-a-zA-Z0-9]*)((?:\s+[^\s=]+\s*=\s*"[^"]*")*)\s*(/?)>')
+_SVG_ATTR_RE = re.compile(r'([a-zA-Z_:][-a-zA-Z0-9_:.]*)\s*=\s*"([^"]*)"')
+
+
+def parse_svg_body(body):
+    """把 SVG body 解析成节点树。
+
+    不能按行切标签：库里有 21 行把多个元素写在一行（`<path/><path/>`），
+    还有 `<g>` 嵌套组（map-pin / snowflake / scooter / unlink / link）。
+    所以得真正扫一遍标签再按栈还原层级。
+    """
+    root = []
+    stack = [root]
+    for m in _SVG_TAG_RE.finditer('\n'.join(body)):
+        closing, tag, attrs, selfclose = m.groups()
+        if closing:
+            if len(stack) > 1:
+                stack.pop()
+            continue
+        children = []
+        stack[-1].append({'tag': tag, 'attrs': attrs, 'children': children})
+        if not selfclose:
+            stack.append(children)
+    return root
+
+
+def walk_svg_nodes(nodes):
+    for n in nodes:
+        yield n
+        yield from walk_svg_nodes(n['children'])
+
+
+def js_str(val):
+    """JS 单引号字符串；值里的单引号与反斜杠要转义。"""
+    return "'" + val.replace('\\', '\\\\').replace("'", "\\'") + "'"
+
+
+def to_vue_props(attrs):
+    """把一段 SVG 属性串转成 h() 的 props 对象字面量内容（逗号分隔）。"""
+    parts = []
+    for name, val in _SVG_ATTR_RE.findall(attrs):
+        if name == 'stroke-width':
+            # 内层描边宽度要跟着整体缩放
+            parts.append("'stroke-width': sw(%s)" % val)
+            continue
+        key = name if _JS_IDENT_RE.match(name) else "'%s'" % name
+        parts.append('%s: %s' % (key, js_str(val)))
+    return ', '.join(parts)
+
+
+def vue_expr(node):
+    """把一个节点转成 h() 调用的表达式文本（不含缩进）。"""
+    props = to_vue_props(node['attrs'])
+    children = node['children']
+    if not children:
+        return "h('%s', { %s })" % (node['tag'], props)
+    inner = ',\n'.join('  ' + vue_expr(c) for c in children)
+    return "h('%s', { %s }, [\n%s,\n])" % (node['tag'], props, inner)
+
+
+def vue_push(node, indent):
+    """一行 children.push(...)；有子节点时展开成多行。"""
+    pad = ' ' * indent
+    expr = vue_expr(node)
+    if '\n' in expr:
+        inner = '\n'.join(pad + '  ' + l for l in expr.split('\n'))
+        return '%schildren.push(\n%s,\n%s);' % (pad, inner, pad)
+    return '%schildren.push(%s);' % (pad, expr)
+
+
+VUE_TEMPLATE = """import {{ defineComponent, h, type VNode }} from 'vue';
+import {{ iconPropDefs }} from './types';
+import {{ normalizeIconProps{sw_import} }} from './iconProps';
+
+export const {comp} = defineComponent({{
+  name: '{comp}',
+  inheritAttrs: false,
+  props: iconPropDefs,
+  setup(props, {{ attrs }}) {{
+    return () => {{
+{sw_decl}      const children: VNode[] = [];
+      if (props.title) children.push(h('title', null, props.title));
+{children}
+      const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
+      return h(
+        'svg',
+        {{
+          viewBox: '0 0 48 48',
+          xmlns: 'http://www.w3.org/2000/svg',
+          fill: 'none',
+          'stroke-linecap': 'round',
+          'stroke-linejoin': 'round',
+          role: props.title ? 'img' : undefined,
+          'aria-hidden': labelled ? undefined : true,
+          ...normalizeIconProps({{ ...props, ...attrs }}),
+        }},
+        children,
+      );
+    }};
+  }},
+}});
+
+export default {comp};
+"""
+
+
+def render_vue(icon_id, body):
+    """Vue 3 组件（render 函数写法，不需要编译 SFC）。
+
+    与 React 版逐属性对齐：根节点、无障碍属性、描边缩放都走同一套逻辑，
+    只有属性名保持 kebab-case（Vue 直接 setAttribute，不需要 to_jsx_attrs）。
+    """
+    comp = component_name(icon_id)
+    nodes = parse_svg_body(body)
+    needs_sw = any('stroke-width' in n['attrs'] for n in walk_svg_nodes(nodes))
+    sw_decl = '      const sw = scaledStroke(props.strokeWidth);\n' if needs_sw else ''
+    sw_import = ', scaledStroke' if needs_sw else ''
+    children = '\n'.join(vue_push(n, 6) for n in nodes)
+    return VUE_TEMPLATE.format(comp=comp, children=children,
+                                sw_decl=sw_decl, sw_import=sw_import)
+
+
 def main():
     ap = argparse.ArgumentParser(
         description='naive-icons 代码输出',
         epilog='例：python3 emit.py users --format jsx --size 20')
     ap.add_argument('icons', nargs='+', help='一个或多个图标 id（如 users user-plus）')
     ap.add_argument('--format', '-f', default='tsx',
-                    choices=['tsx', 'jsx', 'svg', 'html', 'json'], help='输出格式，默认 tsx')
+                    choices=['tsx', 'jsx', 'svg', 'html', 'json', 'vue'],
+                    help='输出格式，默认 tsx')
     ap.add_argument('--size', type=int, help='写死尺寸（jsx/html 有效）')
     ap.add_argument('--color', help='覆盖墨色，如 "#333333" 或 "currentColor"')
     ap.add_argument('--stroke-width', type=float, help='覆盖描边宽度')
-    ap.add_argument('--out', '-o', help='输出目录（tsx 批量落盘时用）')
+    ap.add_argument('--out', '-o', help='输出目录（tsx / vue 批量落盘时用）')
     ap.add_argument('--svg-dir', help='显式指定 svg 源目录（icons.json 缺失时的兜底）')
     args = ap.parse_args()
 
@@ -309,12 +438,15 @@ def main():
                               'svg': render_svg(root, body, args.size, args.color,
                                                 args.stroke_width)},
                              ensure_ascii=False, indent=2)
+        elif args.format == 'vue':
+            out = render_vue(icon_id, body)
         else:
             out = render_tsx(icon_id, body)
 
-        if args.out and args.format == 'tsx':
+        if args.out and args.format in ('tsx', 'vue'):
             os.makedirs(args.out, exist_ok=True)
-            path = os.path.join(args.out, component_name(icon_id) + '.tsx')
+            ext = '.tsx' if args.format == 'tsx' else '.ts'
+            path = os.path.join(args.out, component_name(icon_id) + ext)
             with open(path, 'w', encoding='utf-8') as f:
                 f.write(out)
             print(f'写入 {path}')

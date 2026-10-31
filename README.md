@@ -17,6 +17,7 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-264653?style=flat-square" alt="license: MIT"></a>
   <br/>
   <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React">
+  <img src="https://img.shields.io/badge/Vue-42b883?style=flat-square&logo=vuedotjs&logoColor=white" alt="Vue">
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
   <img src="https://img.shields.io/badge/SVG-FFB13B?style=flat-square&logoColor=black" alt="SVG">
   <a href="https://hub.xerj.org/contributors/guokaigdg"><img src="https://hub.xerj.org/contributors/guokaigdg/badge.svg" alt="Contributors"></a>
@@ -40,6 +41,7 @@ Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a r
 - `createIcon` — a factory that gives your own icons the same root node, a11y and stroke scaling as the built-ins
 - Supports `currentColor` to follow the surrounding text color
 - Official Agent Skill: one command installs it into your AI coding agent, which can then pick icons by meaning and emit ready-to-paste code
+- A Vue 3 port lives in `naive-icons-vue`: the same 201 icons and the same geometry, with Vue's component API
 
 ## AI Agent Skill
 
@@ -66,6 +68,17 @@ Re-run the same command after upgrading the library to update it.
 
 ## Installation
 
+Two packages ship the same 201 icons. Pick the one that matches your framework:
+
+| Framework | Package | Requires |
+| --- | --- | --- |
+| React | `naive-icons` | React 16.8+ (including 18 and 19) |
+| Vue 3 | `naive-icons-vue` | Vue 3.4+ |
+
+Both are always published under the same version number, so you can upgrade them together.
+
+### React
+
 ```bash
 npm install naive-icons
 ```
@@ -78,9 +91,40 @@ yarn add naive-icons
 pnpm add naive-icons
 ```
 
-Naive Icons only depends on React and supports React 16.8 and above (including React 18 and 19).
+```tsx
+import { HomeIcon } from 'naive-icons';
+```
+
+### Vue 3
+
+```bash
+npm install naive-icons-vue
+```
+
+```bash
+yarn add naive-icons-vue
+```
+
+```bash
+pnpm add naive-icons-vue
+```
+
+```vue
+<script setup lang="ts">
+import { HomeIcon } from 'naive-icons-vue';
+</script>
+
+<template>
+  <HomeIcon :size="24" color="#E76F51" />
+</template>
+```
+
+See [`vue/README.md`](./vue/README.md) for the full Vue API. Both packages are generated from
+the same `svg/` sources, so they can never drift apart.
 
 ## Quick Start
+
+The examples below use React. See [`vue/README.md`](./vue/README.md) for the Vue 3 equivalents.
 
 ```tsx
 import { HomeIcon, HeartIcon, PenguinIcon } from 'naive-icons';
@@ -146,6 +190,10 @@ Every Naive Icon component extends the native `SVGProps<SVGSVGElement>`, so you 
 > itself, not a bug — to recolour, switch the stroke with `color`, or pick from the ten colours in
 > `NAIVE_PALETTE`.
 | width / height | number \| string | follows size | Set width or height individually; takes **precedence over `size`**, and the side you omit falls back to `size` |
+
+> The Vue 3 package has exactly the same prop names and defaults — in templates they are
+> written kebab-case (`:stroke-width="7"`), and you reach the DOM node via `ref.value.$el`.
+> See [`vue/README.md`](./vue/README.md).
 
 ```typescript
 import type { IconProps } from 'naive-icons';

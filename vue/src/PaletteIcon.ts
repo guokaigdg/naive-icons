@@ -1,0 +1,37 @@
+import { defineComponent, h, type VNode } from 'vue';
+import { iconPropDefs } from './types';
+import { normalizeIconProps } from './iconProps';
+
+export const PaletteIcon = defineComponent({
+  name: 'PaletteIcon',
+  inheritAttrs: false,
+  props: iconPropDefs,
+  setup(props, { attrs }) {
+    return () => {
+      const children: VNode[] = [];
+      if (props.title) children.push(h('title', null, props.title));
+      children.push(h('path', { d: 'M25 6 C 15 6 7 13 7 22 C 7 32 15 40 25 40 C 29 40 31 37 29 34 C 27 31 30 28 34 28 L 37 28 C 41 28 42 25 41 22 C 40 12 34 6 25 6 Z', fill: '#FAEDCD' }));
+      children.push(h('circle', { cx: '16', cy: '16', r: '3.2', fill: '#E76F51', stroke: 'none' }));
+      children.push(h('circle', { cx: '26', cy: '12', r: '3.2', fill: '#E9C46A', stroke: 'none' }));
+      children.push(h('circle', { cx: '33', cy: '18', r: '3.2', fill: '#2A9D8F', stroke: 'none' }));
+      children.push(h('circle', { cx: '14', cy: '27', r: '3.2', fill: '#F4A6A4', stroke: 'none' }));
+      const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
+      return h(
+        'svg',
+        {
+          viewBox: '0 0 48 48',
+          xmlns: 'http://www.w3.org/2000/svg',
+          fill: 'none',
+          'stroke-linecap': 'round',
+          'stroke-linejoin': 'round',
+          role: props.title ? 'img' : undefined,
+          'aria-hidden': labelled ? undefined : true,
+          ...normalizeIconProps({ ...props, ...attrs }),
+        },
+        children,
+      );
+    };
+  },
+});
+
+export default PaletteIcon;

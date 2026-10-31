@@ -2,6 +2,25 @@
 
 本文件记录 Naive Icons 的每个版本变更。版本号遵循语义化版本规范（SemVer）。
 
+## 未发布
+
+新增
+
+- **Vue 3 版本 `naive-icons-vue`** —— 同样 201 枚图标、同样逐字节相同的图形与
+  无障碍行为，组件 API 换成 Vue 那套。仓库里在 `vue/` 下独立成包，与 `naive-icons` 并存
+  - 组件由 `scripts/generate_vue.py` 从 `svg/` 生成，与 React 版同源，图形不会走偏；
+    `vue/tests/svg-parity.test.ts` 逐属性比对 201 枚组件与 `svg/` 源文件
+  - `emit.py` 新增 `--format vue`，AI 助手能直接吐出 Vue 代码
+  - 框架无关的描边归一逻辑（`resolveStrokeWidth` / `scaledStroke` / `safeDimension`）
+    抽到 `core/`，React 版与 Vue 版共用同一份实现，描边缩放规则不会漂移
+  - 单枚图标 minify 后约 **1.4 KB**（React 版 1.25 KB），tree-shaking 同样生效
+  - API 与 React 版对齐：`size` / `color` / `strokeWidth` / `fill` / `title`，
+    另有 `iconNames`、`createIcon`、`NAIVE_PALETTE`；
+    拿 DOM 节点用 `ref.value.$el`（React 版是 `forwardRef` 直接给节点）
+  - **两个包同版本发布**：`naive-icons-vue` 首发即 `1.8.0`，与 `naive-icons` 对齐。
+    `tests/version-sync.test.ts` 会断言两者版本一致，发版漏改一个 CI 就红
+  - ⚠️ `naive-icons-vue` 尚未发布到 npm
+
 ## 1.8.0
 
 新增

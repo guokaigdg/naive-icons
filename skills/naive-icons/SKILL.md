@@ -44,7 +44,7 @@ npm install naive-icons
 ```
 1. 检索候选      search.py "<自然语言描述>"
 2. 挑图标        看「什么时候用」+ patterns.md 第 9 节避坑
-3. 出代码        emit.py <id> --format tsx|jsx|svg|html|json
+3. 出代码        emit.py <id> --format tsx|jsx|vue|svg|html|json
 4. 自查          16px 可辨？ 无障碍对？ 深色模式可见？
 ```
 
@@ -88,10 +88,11 @@ python3 scripts/emit.py lock --format jsx --size 20         # 内联 JSX
 python3 scripts/emit.py refresh --format svg                # 原始 SVG
 python3 scripts/emit.py bell --format html --color white    # 静态 HTML
 python3 scripts/emit.py star --format json                  # 结构化输出
+python3 scripts/emit.py home --format vue                   # Vue 3 组件
 python3 scripts/emit.py users --out src/icons --format tsx  # 批量落盘
 ```
 
-项目不是 React 就用 `--format svg` 或 `--format html`。
+项目不是 React 就用 `--format vue`（Vue 3）、`--format svg` 或 `--format html`。
 
 > 本 skill 自带 `scripts/icons.json`（全部 SVG 源码），所以 `emit.py` 开箱即用，
 > 不需要用户项目里装了本库。只有在 `icons.json` 缺失时才需要 `--svg-dir` 指定。
@@ -112,6 +113,7 @@ python3 scripts/emit.py users --out src/icons --format tsx  # 批量落盘
 ```
 <仓库根>/svg/<id>.svg                    SVG 源
 <仓库根>/src/<Name>Icon.tsx              React 组件
+<仓库根>/vue/src/<Name>Icon.ts           Vue 3 组件
 <仓库根>/scripts/generate_icons_add.py   NEW_ICONS 里的同名条目
 ```
 
@@ -120,6 +122,7 @@ python3 scripts/emit.py users --out src/icons --format tsx  # 批量落盘
 ```bash
 python3 <仓库根>/scripts/build_website.py        # 官网
 python3 <仓库根>/scripts/build_skill_assets.py    # skill 的 catalog.md 与 icons.json
+python3 <仓库根>/scripts/generate_vue.py         # vue/src 的 201 枚组件
 ```
 
 > 注意路径：`scripts/search.py` 和 `scripts/emit.py` 是**本 skill 自带的**，
