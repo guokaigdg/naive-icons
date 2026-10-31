@@ -2,7 +2,7 @@
 
 本文件记录 Naive Icons 的每个版本变更。版本号遵循语义化版本规范（SemVer）。
 
-## 未发布
+## 1.9.0
 
 新增
 
@@ -17,9 +17,16 @@
   - API 与 React 版对齐：`size` / `color` / `strokeWidth` / `fill` / `title`，
     另有 `iconNames`、`createIcon`、`NAIVE_PALETTE`；
     拿 DOM 节点用 `ref.value.$el`（React 版是 `forwardRef` 直接给节点）
-  - **两个包同版本发布**：`naive-icons-vue` 首发即 `1.8.0`，与 `naive-icons` 对齐。
-    `tests/version-sync.test.ts` 会断言两者版本一致，发版漏改一个 CI 就红
-  - ⚠️ `naive-icons-vue` 尚未发布到 npm
+  - **两个包同版本发布**：自本版起 `naive-icons` 与 `naive-icons-vue` 版本号始终一致。
+    `tests/version-sync.test.ts` 会断言两者版本相同，发版漏改一个 CI 就红
+
+其他
+
+- React 侧无功能变化。`core/` 重构后 `dist/` 产物与 1.8.0 **逐字节一致**，
+  本版仅为与 Vue 版对齐版本号
+- 官网补上 Vue 3 安装与用法、双框架安装命令、`npx skills add` 命令，
+  FAQ 增补两条 Vue 条目，并修正两处过期数字（图标数、`color` 默认值）
+- README 安装章节改为按 React / Vue 分流，两种包管理器命令各列全
 
 ## 1.8.0
 
