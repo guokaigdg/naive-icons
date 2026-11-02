@@ -22,10 +22,10 @@ export const DogIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <ellipse cx="10.56" cy="18.24" rx="5.76" ry="9.6" fill="#8B5E3C"/>
 <ellipse cx="37.44" cy="18.24" rx="5.76" ry="9.6" fill="#8B5E3C"/>
 <circle cx="24" cy="25.92" r="15.36" fill="#8B5E3C"/>
-<circle cx="18.24" cy="24" r="2.4" fill="#FFFFFF"/>
-<circle cx="29.76" cy="24" r="2.4" fill="#FFFFFF"/>
-<circle cx="18.24" cy="24.96" r="1.25" fill="#2A2A2A"/>
-<circle cx="29.76" cy="24.96" r="1.25" fill="#2A2A2A"/>
+<circle cx="18.24" cy="24" r="2.4" fill="#FFFFFF" stroke="none"/>
+<circle cx="29.76" cy="24" r="2.4" fill="#FFFFFF" stroke="none"/>
+<circle cx="18.24" cy="24.96" r="1.25" fill="#2A2A2A" stroke="none"/>
+<circle cx="29.76" cy="24.96" r="1.25" fill="#2A2A2A" stroke="none"/>
 <ellipse cx="24" cy="31.68" rx="3.84" ry="2.88" fill="#2A2A2A"/>
 
     </svg>

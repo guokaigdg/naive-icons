@@ -28,9 +28,9 @@ export const TrainIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <circle cx="13.7" cy="38.99" r="3.75" fill="#E9C46A"/>
 <circle cx="24" cy="38.99" r="3.75" fill="#E9C46A"/>
 <circle cx="34.3" cy="38.99" r="3.75" fill="#E9C46A"/>
-<circle cx="13.7" cy="38.99" r="1.4" fill="#2A2A2A"/>
-<circle cx="24" cy="38.99" r="1.4" fill="#2A2A2A"/>
-<circle cx="34.3" cy="38.99" r="1.4" fill="#2A2A2A"/>
+<circle cx="13.7" cy="38.99" r="1.4" fill="#2A2A2A" stroke="none"/>
+<circle cx="24" cy="38.99" r="1.4" fill="#2A2A2A" stroke="none"/>
+<circle cx="34.3" cy="38.99" r="1.4" fill="#2A2A2A" stroke="none"/>
 
     </svg>
   );

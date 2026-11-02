@@ -19,14 +19,16 @@ export const RabbitIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     >
       {props.title ? <title>{props.title}</title> : null}
 
-<ellipse cx="17.6" cy="13.03" rx="3.66" ry="8.23" fill="#FAEDCD"/>
-<ellipse cx="30.4" cy="13.03" rx="3.66" ry="8.23" fill="#FAEDCD"/>
-<ellipse cx="17.6" cy="13.94" rx="1.65" ry="5.03" fill="#F4A6A4"/>
-<ellipse cx="30.4" cy="13.94" rx="1.65" ry="5.03" fill="#F4A6A4"/>
+<ellipse cx="17.6" cy="13.03" rx="5.9" ry="10" fill="#2A2A2A" stroke="none"/>
+<ellipse cx="30.4" cy="13.03" rx="5.9" ry="10" fill="#2A2A2A" stroke="none"/>
+<ellipse cx="17.6" cy="13.03" rx="3.3" ry="7.9" fill="#FAEDCD" stroke="none"/>
+<ellipse cx="30.4" cy="13.03" rx="3.3" ry="7.9" fill="#FAEDCD" stroke="none"/>
+<ellipse cx="17.6" cy="13.94" rx="1.5" ry="4.7" fill="#F4A6A4" stroke="none"/>
+<ellipse cx="30.4" cy="13.94" rx="1.5" ry="4.7" fill="#F4A6A4" stroke="none"/>
 <circle cx="24" cy="30.4" r="11.89" fill="#FAEDCD"/>
 <circle cx="19.43" cy="28.57" r="1.46" fill="#2A2A2A"/>
 <circle cx="28.57" cy="28.57" r="1.46" fill="#2A2A2A"/>
-<path d="M22.17 32.23 L25.83 32.23 L24 34.51 Z" fill="#F4A6A4"/>
+<path d="M22.17 32.23 L25.83 32.23 L24 34.51 Z" fill="#F4A6A4" stroke="none"/>
 <path d="M24 34.51 L24 35.89" stroke="#2A2A2A" strokeWidth={sw(1.8)}/>
 <path d="M20.34 37.71 Q 24 40 27.66 37.71" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.8)}/>
 <path d="M12.11 30.4 L6.63 28.57" stroke="#2A2A2A" strokeWidth={sw(1.5)}/>

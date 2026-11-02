@@ -16,7 +16,7 @@ const ARC_SAMPLES = 48;
 
 type Pt = [number, number];
 
-function parsePath(d: string): { cmd: string; args: number[] }[] {
+export function parsePath(d: string): { cmd: string; args: number[] }[] {
   const out: { cmd: string; args: number[] }[] = [];
   const re = /([MmLlHhVvCcSsQqTtAaZz])|(-?\d*\.?\d+(?:[eE][-+]?\d+)?)/g;
   let pending: { cmd: string; args: number[] } | null = null;
@@ -49,7 +49,7 @@ function parsePath(d: string): { cmd: string; args: number[] }[] {
   return out;
 }
 
-function arcPoints(
+export function arcPoints(
   x1: number, y1: number, rx: number, ry: number, phiDeg: number,
   largeArc: number, sweep: number, x2: number, y2: number,
 ): Pt[] {

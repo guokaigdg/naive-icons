@@ -18,9 +18,9 @@ export const BicycleIcon = defineComponent({
       children.push(h('path', { d: 'M26 33 L 35 33 L 31 21', stroke: '#2A2A2A', 'stroke-width': sw(3), fill: 'none' }));
       children.push(h('path', { d: 'M31 21 L 33 14 L 38 14', stroke: '#2A2A2A', 'stroke-width': sw(3), fill: 'none' }));
       children.push(h('path', { d: 'M20 21 L 19 15 L 24 15', stroke: '#2A2A2A', 'stroke-width': sw(3), fill: 'none' }));
-      children.push(h('circle', { cx: '26', cy: '33', r: '2.5', fill: '#E76F51' }));
-      children.push(h('circle', { cx: '13', cy: '33', r: '2', fill: '#2A9D8F' }));
-      children.push(h('circle', { cx: '35', cy: '33', r: '2', fill: '#2A9D8F' }));
+      children.push(h('circle', { cx: '26', cy: '33', r: '2.5', fill: '#E76F51', stroke: 'none' }));
+      children.push(h('circle', { cx: '13', cy: '33', r: '2', fill: '#2A9D8F', stroke: 'none' }));
+      children.push(h('circle', { cx: '35', cy: '33', r: '2', fill: '#2A9D8F', stroke: 'none' }));
       const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
       return h(
         'svg',

@@ -19,9 +19,9 @@ export const TrainIcon = defineComponent({
       children.push(h('circle', { cx: '13.7', cy: '38.99', r: '3.75', fill: '#E9C46A' }));
       children.push(h('circle', { cx: '24', cy: '38.99', r: '3.75', fill: '#E9C46A' }));
       children.push(h('circle', { cx: '34.3', cy: '38.99', r: '3.75', fill: '#E9C46A' }));
-      children.push(h('circle', { cx: '13.7', cy: '38.99', r: '1.4', fill: '#2A2A2A' }));
-      children.push(h('circle', { cx: '24', cy: '38.99', r: '1.4', fill: '#2A2A2A' }));
-      children.push(h('circle', { cx: '34.3', cy: '38.99', r: '1.4', fill: '#2A2A2A' }));
+      children.push(h('circle', { cx: '13.7', cy: '38.99', r: '1.4', fill: '#2A2A2A', stroke: 'none' }));
+      children.push(h('circle', { cx: '24', cy: '38.99', r: '1.4', fill: '#2A2A2A', stroke: 'none' }));
+      children.push(h('circle', { cx: '34.3', cy: '38.99', r: '1.4', fill: '#2A2A2A', stroke: 'none' }));
       const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
       return h(
         'svg',

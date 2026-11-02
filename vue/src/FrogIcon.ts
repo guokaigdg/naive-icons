@@ -13,14 +13,14 @@ export const FrogIcon = defineComponent({
       if (props.title) children.push(h('title', null, props.title));
       children.push(h('circle', { cx: '14', cy: '14', r: '6.5', fill: '#588157' }));
       children.push(h('circle', { cx: '34', cy: '14', r: '6.5', fill: '#588157' }));
-      children.push(h('circle', { cx: '14', cy: '14', r: '3.5', fill: '#FFFFFF' }));
-      children.push(h('circle', { cx: '34', cy: '14', r: '3.5', fill: '#FFFFFF' }));
-      children.push(h('circle', { cx: '14', cy: '15', r: '1.8', fill: '#2A2A2A' }));
-      children.push(h('circle', { cx: '34', cy: '15', r: '1.8', fill: '#2A2A2A' }));
+      children.push(h('circle', { cx: '14', cy: '14', r: '3.5', fill: '#FFFFFF', stroke: 'none' }));
+      children.push(h('circle', { cx: '34', cy: '14', r: '3.5', fill: '#FFFFFF', stroke: 'none' }));
+      children.push(h('circle', { cx: '14', cy: '15', r: '1.8', fill: '#2A2A2A', stroke: 'none' }));
+      children.push(h('circle', { cx: '34', cy: '15', r: '1.8', fill: '#2A2A2A', stroke: 'none' }));
       children.push(h('ellipse', { cx: '24', cy: '29', rx: '16', ry: '12', fill: '#588157' }));
       children.push(h('path', { d: 'M13 29 Q 24 39 35 29', stroke: '#2A2A2A', fill: 'none', 'stroke-width': sw(2.5) }));
-      children.push(h('circle', { cx: '11', cy: '33', r: '2', fill: '#F4A6A4' }));
-      children.push(h('circle', { cx: '37', cy: '33', r: '2', fill: '#F4A6A4' }));
+      children.push(h('circle', { cx: '11', cy: '33', r: '2', fill: '#F4A6A4', stroke: 'none' }));
+      children.push(h('circle', { cx: '37', cy: '33', r: '2', fill: '#F4A6A4', stroke: 'none' }));
       const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
       return h(
         'svg',

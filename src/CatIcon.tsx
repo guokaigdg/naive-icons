@@ -26,7 +26,7 @@ export const CatIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <circle cx="30.16" cy="24.44" r="2.64" fill="#FFFFFF" stroke="none"/>
 <circle cx="17.84" cy="24.44" r="1.14" fill="#2A2A2A" stroke="none"/>
 <circle cx="30.16" cy="24.44" r="1.14" fill="#2A2A2A" stroke="none"/>
-<path d="M22.06 29.72 L25.94 29.72 L24.00 32.36 Z" fill="#F4A6A4"/>
+<path d="M22.06 29.72 L25.94 29.72 L24.00 32.36 Z" fill="#F4A6A4" stroke="none"/>
 <ellipse cx="24" cy="35.88" rx="7.92" ry="3.08" fill="#FFFFFF" stroke="none"/>
 <path d="M20.48 33.24 Q 24 35.44 27.52 33.24" fill="none"/>
 <path d="M15.20 30.16 L9.04 28.84 M15.20 32.80 L9.48 33.68 M32.80 30.16 L38.96 28.84 M32.80 32.80 L38.52 33.68" strokeWidth={sw(1.58)} fill="none"/>

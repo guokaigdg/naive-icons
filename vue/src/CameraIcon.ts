@@ -14,7 +14,7 @@ export const CameraIcon = defineComponent({
       children.push(h('path', { d: 'M18 16 L20 10 L28 10 L30 16', fill: '#264653' }));
       children.push(h('circle', { cx: '24', cy: '28', r: '8', fill: '#FAEDCD' }));
       children.push(h('circle', { cx: '24', cy: '28', r: '4', fill: '#E76F51' }));
-      children.push(h('rect', { x: '34', y: '19', width: '4', height: '3', fill: '#E9C46A' }));
+      children.push(h('rect', { x: '34', y: '19', width: '4', height: '3', fill: '#E9C46A', stroke: 'none' }));
       const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
       return h(
         'svg',

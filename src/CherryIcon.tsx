@@ -21,11 +21,12 @@ export const CherryIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 
 <path d="M15 27 C 15 17 22 11 29 7" stroke="#8B5E3C" strokeWidth={sw(2.5)} fill="none"/>
 <path d="M33 29 C 33 20 32 12 29 7" stroke="#8B5E3C" strokeWidth={sw(2.5)} fill="none"/>
-<ellipse cx="27" cy="7" rx="5" ry="2.5" transform="rotate(-15 27 7)" fill="#588157"/>
+<ellipse cx="27" cy="7" rx="5" ry="2.5" transform="rotate(-15 27 7)" fill="#2A2A2A" stroke="none"/>
+<ellipse cx="27" cy="7" rx="3.9" ry="1.4" transform="rotate(-15 27 7)" fill="#588157" stroke="none"/>
 <circle cx="14" cy="33" r="8" fill="#E76F51"/>
 <circle cx="33" cy="35" r="8" fill="#E76F51"/>
-<circle cx="11" cy="30" r="1.8" fill="#FFFFFF"/>
-<circle cx="30" cy="32" r="1.8" fill="#FFFFFF"/>
+<circle cx="11" cy="30" r="2" fill="#FFFFFF" stroke="none"/>
+<circle cx="30" cy="32" r="2" fill="#FFFFFF" stroke="none"/>
 
     </svg>
   );
@@ -34,4 +35,3 @@ export const CherryIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 CherryIcon.displayName = 'CherryIcon';
 
 export default CherryIcon;
-

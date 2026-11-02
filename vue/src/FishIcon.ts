@@ -12,8 +12,9 @@ export const FishIcon = defineComponent({
       if (props.title) children.push(h('title', null, props.title));
       children.push(h('path', { d: 'M6 24 C 8 14 22 10 30 14 C 38 18 38 30 30 34 C 22 38 8 34 6 24 Z', fill: '#2A9D8F' }));
       children.push(h('path', { d: 'M30 24 L42 14 L42 34 Z', fill: '#E76F51' }));
-      children.push(h('circle', { cx: '14', cy: '22', r: '2', fill: '#FFFFFF' }));
-      children.push(h('circle', { cx: '14', cy: '22', r: '1', fill: '#2A2A2A' }));
+      children.push(h('circle', { cx: '14', cy: '22', r: '4.1', fill: '#2A2A2A', stroke: 'none' }));
+      children.push(h('circle', { cx: '14', cy: '22', r: '1.9', fill: '#FFFFFF', stroke: 'none' }));
+      children.push(h('circle', { cx: '14', cy: '22', r: '1.05', fill: '#2A2A2A', stroke: 'none' }));
       const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
       return h(
         'svg',

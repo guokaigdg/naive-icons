@@ -20,7 +20,7 @@ export const InboxIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       {props.title ? <title>{props.title}</title> : null}
 
 <path d="M5 19 L5 41 L43 41 L43 19 L29 19 L26 28 L22 28 L19 19 Z" fill="#2A9D8F" stroke="#2A2A2A" strokeWidth={sw(3.5)} strokeLinejoin="round"/>
-<rect x="17" y="33" width="14" height="4" rx="2" fill="#FAEDCD"/>
+<rect x="17" y="32.25" width="14" height="5.5" rx="2" fill="#FAEDCD"/>
 
     </svg>
   );
@@ -29,4 +29,3 @@ export const InboxIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 InboxIcon.displayName = 'InboxIcon';
 
 export default InboxIcon;
-

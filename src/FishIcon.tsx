@@ -21,8 +21,9 @@ export const FishIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 
 <path d="M6 24 C 8 14 22 10 30 14 C 38 18 38 30 30 34 C 22 38 8 34 6 24 Z" fill="#2A9D8F"/>
 <path d="M30 24 L42 14 L42 34 Z" fill="#E76F51"/>
-<circle cx="14" cy="22" r="2" fill="#FFFFFF"/>
-<circle cx="14" cy="22" r="1" fill="#2A2A2A"/>
+<circle cx="14" cy="22" r="4.1" fill="#2A2A2A" stroke="none"/>
+<circle cx="14" cy="22" r="1.9" fill="#FFFFFF" stroke="none"/>
+<circle cx="14" cy="22" r="1.05" fill="#2A2A2A" stroke="none"/>
 
     </svg>
   );
@@ -31,4 +32,3 @@ export const FishIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 FishIcon.displayName = 'FishIcon';
 
 export default FishIcon;
-

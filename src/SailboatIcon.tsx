@@ -24,7 +24,7 @@ export const SailboatIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) =>
 <path d="M24 4.85 L 24 29.75" stroke="#2A2A2A" strokeWidth={sw(3)}/>
 <path d="M7.72 31.66 L 40.28 31.66 L 35.49 39.32 L 12.51 39.32 Z" fill="#8B5E3C"/>
 <path d="M4.85 43.15 C 8.68 41.24 10.59 45.07 14.42 43.15 C 18.25 41.24 20.17 45.07 24 43.15 C 27.83 41.24 29.75 45.07 33.58 43.15 C 37.41 41.24 39.32 45.07 43.15 43.15" stroke="#2A9D8F" strokeWidth={sw(2.5)} fill="none"/>
-<circle cx="29.75" cy="17.3" r="1.53" fill="#E76F51"/>
+<circle cx="29.75" cy="17.3" r="1.53" fill="#E76F51" stroke="none"/>
 
     </svg>
   );

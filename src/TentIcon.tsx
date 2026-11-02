@@ -22,7 +22,8 @@ export const TentIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <path d="M5 37 L24 11 L43 37 Z" fill="#E76F51"/>
 <path d="M24 21 L32.5 37 L15.5 37 Z" fill="#FAEDCD"/>
 <path d="M24 11 L24 6" stroke="#2A2A2A" strokeWidth={sw(2)}/>
-<path d="M24 6 L31 8.5 L24 11 Z" fill="#E9C46A"/>
+<path d="M22.2 3.4 L33.8 8.6 L22.2 13.8 Z" fill="#2A2A2A" stroke="none"/>
+<path d="M24 6 L31 8.5 L24 11 Z" fill="#E9C46A" stroke="none"/>
 
     </svg>
   );
@@ -31,4 +32,3 @@ export const TentIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 TentIcon.displayName = 'TentIcon';
 
 export default TentIcon;
-

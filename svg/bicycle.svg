@@ -6,7 +6,7 @@
 <path d="M26 33 L 35 33 L 31 21" stroke="#2A2A2A" stroke-width="3" fill="none"/>
 <path d="M31 21 L 33 14 L 38 14" stroke="#2A2A2A" stroke-width="3" fill="none"/>
 <path d="M20 21 L 19 15 L 24 15" stroke="#2A2A2A" stroke-width="3" fill="none"/>
-<circle cx="26" cy="33" r="2.5" fill="#E76F51"/>
-<circle cx="13" cy="33" r="2" fill="#2A9D8F"/>
-<circle cx="35" cy="33" r="2" fill="#2A9D8F"/>
+<circle cx="26" cy="33" r="2.5" fill="#E76F51" stroke="none"/>
+<circle cx="13" cy="33" r="2" fill="#2A9D8F" stroke="none"/>
+<circle cx="35" cy="33" r="2" fill="#2A9D8F" stroke="none"/>
 </svg>

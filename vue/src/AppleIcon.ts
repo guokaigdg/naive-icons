@@ -12,7 +12,7 @@ export const AppleIcon = defineComponent({
       if (props.title) children.push(h('title', null, props.title));
       children.push(h('path', { d: 'M24 14 C 14 12 6 22 10 32 C 12 38 18 42 24 38 C 30 42 36 38 38 32 C 42 22 34 12 24 14 Z', fill: '#E76F51' }));
       children.push(h('path', { d: 'M24 14 C 24 8 28 4 32 6', stroke: '#2A2A2A', fill: 'none' }));
-      children.push(h('path', { d: 'M28 8 C 32 6 36 10 34 12', fill: '#588157' }));
+      children.push(h('path', { d: 'M28 8 C 32 6 36 10 34 12', fill: '#588157', stroke: 'none' }));
       children.push(h('circle', { cx: '20', cy: '26', r: '1.5', fill: '#2A2A2A' }));
       children.push(h('circle', { cx: '28', cy: '26', r: '1.5', fill: '#2A2A2A' }));
       const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);

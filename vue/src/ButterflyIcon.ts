@@ -15,8 +15,8 @@ export const ButterflyIcon = defineComponent({
       children.push(h('ellipse', { cx: '33.7', cy: '17.21', rx: '7.76', ry: '5.82', transform: 'rotate(25 33.7 17.21)', fill: '#F4A6A4' }));
       children.push(h('ellipse', { cx: '15.27', cy: '31.76', rx: '6.31', ry: '4.85', transform: 'rotate(20 15.27 31.76)', fill: '#E76F51' }));
       children.push(h('ellipse', { cx: '32.73', cy: '31.76', rx: '6.31', ry: '4.85', transform: 'rotate(-20 32.73 31.76)', fill: '#E76F51' }));
-      children.push(h('circle', { cx: '13.33', cy: '16.24', r: '1.75', fill: '#FFFFFF' }));
-      children.push(h('circle', { cx: '34.67', cy: '16.24', r: '1.75', fill: '#FFFFFF' }));
+      children.push(h('circle', { cx: '13.33', cy: '16.24', r: '2', fill: '#FFFFFF', stroke: 'none' }));
+      children.push(h('circle', { cx: '34.67', cy: '16.24', r: '2', fill: '#FFFFFF', stroke: 'none' }));
       children.push(h('circle', { cx: '24', cy: '11.39', r: '2.91', fill: '#264653' }));
       children.push(h('rect', { x: '21.57', y: '13.33', width: '4.85', height: '23.29', rx: '2.43', fill: '#264653' }));
       children.push(h('path', { d: 'M21.09 8.47 C 18.18 4.59 15.27 4.59 13.33 6.53', stroke: '#2A2A2A', fill: 'none', 'stroke-width': sw(1.8) }));

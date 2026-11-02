@@ -21,7 +21,7 @@ export const FlagIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 
 <path d="M13.28 7.03 L 13.28 40.97" stroke="#2A2A2A" strokeWidth={sw(3.5)}/>
 <path d="M13.28 9.71 C 19.53 6.14 25.79 13.28 32.04 9.71 L 32.04 22.21 C 25.79 25.79 19.53 18.64 13.28 22.21 Z" fill="#E76F51"/>
-<circle cx="13.28" cy="7.03" r="2.23" fill="#E9C46A"/>
+<circle cx="13.28" cy="7.03" r="2.23" fill="#E9C46A" stroke="none"/>
 
     </svg>
   );

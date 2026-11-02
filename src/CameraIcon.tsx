@@ -23,7 +23,7 @@ export const CameraIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <path d="M18 16 L20 10 L28 10 L30 16" fill="#264653"/>
 <circle cx="24" cy="28" r="8" fill="#FAEDCD"/>
 <circle cx="24" cy="28" r="4" fill="#E76F51"/>
-<rect x="34" y="19" width="4" height="3" fill="#E9C46A"/>
+<rect x="34" y="19" width="4" height="3" fill="#E9C46A" stroke="none"/>
 
     </svg>
   );
@@ -32,4 +32,3 @@ export const CameraIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 CameraIcon.displayName = 'CameraIcon';
 
 export default CameraIcon;
-

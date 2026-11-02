@@ -26,11 +26,11 @@ export const OwlIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 <circle cx="29.54" cy="22.15" r="5.54" fill="#FFFFFF"/>
 <circle cx="18.46" cy="23.08" r="2.31" fill="#2A2A2A"/>
 <circle cx="29.54" cy="23.08" r="2.31" fill="#2A2A2A"/>
-<path d="M21.69 27.69 L26.31 27.69 L24 31.38 Z" fill="#E9C46A"/>
+<path d="M21.69 27.69 L26.31 27.69 L24 31.38 Z" fill="#E9C46A" stroke="none"/>
 <path d="M17.54 36 Q 20.31 37.85 23.08 36" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.8)}/>
 <path d="M24.92 36 Q 27.69 37.85 30.46 36" stroke="#2A2A2A" fill="none" strokeWidth={sw(1.8)}/>
-<ellipse cx="18.46" cy="41.54" rx="3.23" ry="1.66" fill="#E9C46A"/>
-<ellipse cx="29.54" cy="41.54" rx="3.23" ry="1.66" fill="#E9C46A"/>
+<ellipse cx="18.46" cy="41.54" rx="3.6" ry="2" fill="#E9C46A" stroke="none"/>
+<ellipse cx="29.54" cy="41.54" rx="3.6" ry="2" fill="#E9C46A" stroke="none"/>
 
     </svg>
   );

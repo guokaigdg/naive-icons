@@ -16,11 +16,11 @@ export const PenguinIcon = defineComponent({
       children.push(h('circle', { cx: '28.57', cy: '19.43', r: '2.29', fill: '#FFFFFF' }));
       children.push(h('circle', { cx: '19.43', cy: '20.34', r: '1.19', fill: '#2A2A2A' }));
       children.push(h('circle', { cx: '28.57', cy: '20.34', r: '1.19', fill: '#2A2A2A' }));
-      children.push(h('path', { d: 'M21.26 23.09 L26.74 23.09 L24 26.29 Z', fill: '#E76F51' }));
+      children.push(h('path', { d: 'M21.26 23.09 L26.74 23.09 L24 26.29 Z', fill: '#E76F51', stroke: 'none' }));
       children.push(h('path', { d: 'M12.11 25.83 C 8.46 29.49 9.37 34.97 13.03 36.8', fill: 'none', stroke: '#2A2A2A' }));
       children.push(h('path', { d: 'M35.89 25.83 C 39.54 29.49 38.63 34.97 34.97 36.8', fill: 'none', stroke: '#2A2A2A' }));
-      children.push(h('ellipse', { cx: '18.51', cy: '41.37', rx: '4.11', ry: '1.83', fill: '#E76F51' }));
-      children.push(h('ellipse', { cx: '29.49', cy: '41.37', rx: '4.11', ry: '1.83', fill: '#E76F51' }));
+      children.push(h('ellipse', { cx: '18.51', cy: '41.37', rx: '4.4', ry: '2.1', fill: '#E76F51', stroke: 'none' }));
+      children.push(h('ellipse', { cx: '29.49', cy: '41.37', rx: '4.4', ry: '2.1', fill: '#E76F51', stroke: 'none' }));
       const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
       return h(
         'svg',
