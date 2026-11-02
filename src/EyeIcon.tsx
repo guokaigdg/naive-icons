@@ -31,4 +31,3 @@ export const EyeIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 EyeIcon.displayName = 'EyeIcon';
 
 export default EyeIcon;
-

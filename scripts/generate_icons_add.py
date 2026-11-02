@@ -882,6 +882,14 @@ NEW_ICONS = {
 <circle cx="24" cy="35" r="4" fill="#E9C46A"/>
 <path d="M8 40 L40 8" stroke="#2A2A2A" stroke-width="4" fill="none"/>
 '''),
+
+    'no-data': S('''
+<path d="M11 17 L11 37 L37 37 L37 17 Z" fill="#8B5E3C" stroke="none"/>
+<path d="M14 17 L34 17 L31 25 L17 25 Z" fill="#264653" stroke="none"/>
+<path d="M11 17 L11 37 L37 37 L37 17" stroke="#2A2A2A" stroke-width="3.5" fill="none"/>
+<path d="M14 17 L34 17" stroke="#2A2A2A" stroke-width="3.5" fill="none"/>
+<path d="M21 25 L27 25 L27 37 L21 37 Z" fill="#E76F51" stroke="none"/>
+'''),
 }
 
 

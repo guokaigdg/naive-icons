@@ -32,7 +32,7 @@ CATEGORIES = {
     'transport': '交通工具', 'emoji': '表情',
 }
 
-# ── 201 枚图标：id -> (中文名, 分类) ──────────────────────────────────
+# ── 202 枚图标：id -> (中文名, 分类) ──────────────────────────────────
 ICONS = {
     'airplane': ('飞机', 'transport'), 'alert-circle': ('提示', 'interface'),
     'alert-triangle': ('警告', 'interface'), 'anchor': ('锚', 'navigation'),
@@ -95,6 +95,7 @@ ICONS = {
     'mic': ('麦克风', 'media'),
     'minus': ('减号', 'action'), 'monitor': ('显示器', 'objects'),
     'moon': ('月亮', 'nature'),
+    'no-data': ('暂无数据', 'interface'),
     'more-vertical': ('更多(竖)', 'interface'), 'mountain': ('山峰', 'nature'),
     'mushroom': ('蘑菇', 'nature'), 'mouse': ('鼠标', 'objects'),
     'music': ('音乐', 'media'),
@@ -392,6 +393,11 @@ SYNONYMS = {
     '配送': ['truck'], 'truck': ['truck'],
     # 2026-10 第二批：圆形容器 / 对角箭头 / 媒体 / 符号
     "左上": ["arrow-up-left"],     "左上箭头": ["arrow-up-left"],     "up-left": ["arrow-up-left"],     "左下": ["arrow-down-left"],     "左下箭头": ["arrow-down-left"],     "down-left": ["arrow-down-left"],     "右下": ["arrow-down-right"],     "右下箭头": ["arrow-down-right"],     "down-right": ["arrow-down-right"],     "向上圆圈": ["arrow-up-circle"],     "向下圆圈": ["arrow-down-circle"],     "向左圆圈": ["arrow-left-circle"],     "向右圆圈": ["arrow-right-circle"],     "加号圆圈": ["plus-circle"],     "减号圆圈": ["minus-circle"],     "播放圆圈": ["play-circle"],     "暂停圆圈": ["pause-circle"],     "停止圆圈": ["stop-circle"],     "收音机": ["radio"],     "电台": ["radio"],     "radio": ["radio"],     "购物推车": ["shopping-cart"],     "shopping-cart": ["shopping-cart"],     "电视": ["tv"],     "电视机": ["tv"],     "tv": ["tv"],     "地图标记": ["map-pin"],     "图钉": ["map-pin"],     "map-pin": ["map-pin"], 
+    # 2026-11：空状态
+    '暂无数据': ['no-data'], '无数据': ['no-data'], '没有数据': ['no-data'],
+    '空状态': ['no-data'], '空列表': ['no-data'], '空盒子': ['no-data'],
+    'nodata': ['no-data'], 'no data': ['no-data'], 'no-data': ['no-data'],
+    'empty': ['no-data'], 'empty state': ['no-data'],
     # 2026-10 第三批：界面 / 日常物品 / 媒体 / 通信 / 天气
     "sparkles": ["sparkles"],     "星光": ["sparkles"],     "魔法": ["sparkles"],     "闪亮": ["sparkles"],     "user-circle": ["user-circle"],     "圆形用户": ["user-circle"],     "个人中心": ["user-circle"],     "calculator": ["calculator"],     "计算器": ["calculator"],     "palette": ["palette"],     "调色板": ["palette"],     "配色": ["palette"],     "newspaper": ["newspaper"],     "报纸": ["newspaper"],     "报刊": ["newspaper"],     "新闻": ["newspaper"],     "bolt": ["bolt"],     "闪电": ["bolt"],     "电力": ["bolt"],     "wifi-off": ["wifi-off"],     "无线关闭": ["wifi-off"],     "无信号": ["wifi-off"],     }
 

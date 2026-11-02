@@ -12,7 +12,7 @@
  * };
  * ```
  *
- * 直接 `import * as icons` 也能按名字取，但会把全部 201 枚打进包里，
+ * 直接 `import * as icons` 也能按名字取，但会把全部 202 枚打进包里，
  * tree-shaking 归零；用这个数组配动态 import 才能只拉用到的几枚。
  */
 export const iconNames = [
@@ -142,6 +142,7 @@ export const iconNames = [
   'mushroom',
   'music',
   'newspaper',
+  'no-data',
   'owl',
   'paintbrush',
   'palette',

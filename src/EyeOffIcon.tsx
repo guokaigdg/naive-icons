@@ -31,4 +31,3 @@ export const EyeOffIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 EyeOffIcon.displayName = 'EyeOffIcon';
 
 export default EyeOffIcon;
-

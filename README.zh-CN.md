@@ -41,7 +41,7 @@
 - `createIcon`——图标工厂，自建图标能拿到与内置图标完全一致的根节点、无障碍与描边缩放
 - 支持 currentColor，传入后图标跟随文字颜色
 - 官方 Agent Skill：一条命令装到 AI 编码助手，按语义帮你挑图标并生成代码
-- 另有 Vue 3 版本 `naive-icons-vue`：同样的 201 枚图标与同样的图形，只是组件 API 换成了 Vue 那套
+- 另有 Vue 3 版本 `naive-icons-vue`：同样的 202 枚图标与同样的图形，只是组件 API 换成了 Vue 那套
 
 ## AI Agent Skill
 
@@ -65,7 +65,7 @@ Skill 自带完整图标目录、设计规范和用法，以及全部 SVG 源码
 
 ## 安装
 
-本库有两个包，卖的是同一套 201 枚图标。按你的框架挑一个装：
+本库有两个包，卖的是同一套 202 枚图标。按你的框架挑一个装：
 
 | 框架 | 包名 | 需要 |
 | --- | --- | --- |
@@ -238,11 +238,11 @@ const map: Record<IconId, () => Promise<unknown>> = {
 };
 ```
 
-用 `import * as icons` 也能按名字取，但会把全部 201 枚都打进包，tree-shaking 直接归零。
+用 `import * as icons` 也能按名字取，但会把全部 202 枚都打进包，tree-shaking 直接归零。
 `iconNames` 让你搭一张只加载真正用得到的图标的查找表。
 
 想自己画一个同样风格的图标，用 `createIcon` 工厂。它产出的根节点、无障碍属性和描边缩放
-与内置的 201 枚完全一致：
+与内置的 202 枚完全一致：
 
 ```tsx
 import { createIcon } from 'naive-icons';

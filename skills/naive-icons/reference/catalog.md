@@ -6,7 +6,7 @@
 
 组件名规则：连字符分段首字母大写 + `Icon`，如 `user-plus` → `UserPlusIcon`。
 
-## 界面基础（43 枚）
+## 界面基础（44 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -37,6 +37,7 @@
 | `list` | 列表 | `ListIcon` | 视图、展示方式、列表、清单、list |
 | `menu` | 菜单 | `MenuIcon` | 拖拽、把手、菜单、汉堡、menu |
 | `more-vertical` | 更多(竖) | `MoreVerticalIcon` | 更多、竖排、更多操作、操作菜单、more、kebab |
+| `no-data` | 暂无数据 | `NoDataIcon` | 暂无数据、无数据、没有数据、空状态、空列表、空盒子、nodata |
 | `search` | 搜索 | `SearchIcon` | 搜索、查找、放大镜、search |
 | `settings` | 设置 | `SettingsIcon` | 管理员、设置、配置、齿轮、偏好、admin、settings |
 | `shield` | 安全 | `ShieldIcon` | 登录、权限、管理员、隐私、安全、认证、login |

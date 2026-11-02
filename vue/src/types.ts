@@ -8,7 +8,7 @@ export type IconProps = IconBaseProps;
  * 所有图标共用的运行时 props 定义。
  *
  * 放在共享模块里，每枚图标只写 `props: iconPropDefs`，避免把同一段声明
- * 重复进 201 个文件——实测这一项就占掉每枚图标约 100 B。
+ * 重复进 202 个文件——实测这一项就占掉每枚图标约 100 B。
  */
 export const iconPropDefs = {
   size: { type: [Number, String] as PropType<number | string>, default: undefined },

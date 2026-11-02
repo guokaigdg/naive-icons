@@ -2,7 +2,7 @@
  * 所有内置图标的 id（kebab-case），运行时数组。
  *
  * IconId 只是纯类型，编译后不存在；需要「按名字动态取图标」时用这个数组，
- * 配合动态 import 别把 201 枚全打进包：
+ * 配合动态 import 别把 202 枚全打进包：
  *
  * import { iconNames } from 'naive-icons-vue';
  *
@@ -135,6 +135,7 @@ export const iconNames = [
   'mushroom',
   'music',
   'newspaper',
+  'no-data',
   'owl',
   'paintbrush',
   'palette',
@@ -343,6 +344,7 @@ export type IconName =
   | 'MushroomIcon'
   | 'MusicIcon'
   | 'NewspaperIcon'
+  | 'NoDataIcon'
   | 'OwlIcon'
   | 'PaintbrushIcon'
   | 'PaletteIcon'

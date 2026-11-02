@@ -134,6 +134,8 @@ ICON_CATEGORY = {
     'arrow-up-left': 'navigation',     'arrow-down-left': 'navigation',     'arrow-down-right': 'navigation',     'arrow-up-circle': 'navigation',     'arrow-down-circle': 'navigation',     'arrow-left-circle': 'navigation',     'arrow-right-circle': 'navigation',     'map-pin': 'navigation',     'plus-circle': 'action',     'minus-circle': 'action',     'play-circle': 'action',     'pause-circle': 'action',     'stop-circle': 'action',             'radio': 'objects',     'shopping-cart': 'objects',             'tv': 'media', 
     # 2026-10 第三批：界面 / 日常物品 / 媒体 / 通信 / 天气
         'sparkles': 'interface',     'user-circle': 'interface',     'calculator': 'objects',             'palette': 'objects',     'newspaper': 'media',             'bolt': 'communication',     'wifi-off': 'communication',             
+    # 2026-11：空状态
+    'no-data': 'interface',
 }
 
 # ---------------------------------------------------------------- 中文名
@@ -207,6 +209,8 @@ ZH_NAMES = {
     'arrow-up-left': '左上箭头',     'arrow-down-left': '左下箭头',     'arrow-down-right': '右下箭头',     'arrow-up-circle': '向上圆圈',     'arrow-down-circle': '向下圆圈',     'arrow-left-circle': '向左圆圈',     'arrow-right-circle': '向右圆圈',     'map-pin': '地图标记',     'plus-circle': '加号圆圈',     'minus-circle': '减号圆圈',     'play-circle': '播放圆圈',     'pause-circle': '暂停圆圈',     'stop-circle': '停止圆圈',             'radio': '收音机',     'shopping-cart': '购物推车',             'tv': '电视', 
     # 2026-10 第三批：界面 / 日常物品 / 媒体 / 通信 / 天气
         'sparkles': '星光',     'user-circle': '圆形用户',     'calculator': '计算器',             'palette': '调色板',     'newspaper': '报纸',             'bolt': '闪电',     'wifi-off': '无线关闭',             
+    # 2026-11：空状态
+    'no-data': '暂无数据',
 }
 
 

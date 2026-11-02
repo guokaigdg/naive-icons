@@ -23,12 +23,12 @@ Every icon is built on a 48×48 grid with a 3.5 stroke, round line caps and a re
 and keeps the deliberate wobble of a hand-drawn illustration. Some even have a pair of dot eyes
 and a smile, so your interface feels a little more human.
 
-This is the Vue 3 port of [Naive Icons](https://github.com/guokaigdg/naive-icons). Same 201
+This is the Vue 3 port of [Naive Icons](https://github.com/guokaigdg/naive-icons). Same 202
 icons, same geometry, same accessibility behaviour — only the component API differs.
 
 ## Features
 
-- 201 icons across 11 categories, drawn in one consistent style
+- 202 icons across 11 categories, drawn in one consistent style
 - One component per icon, rendered as a Vue 3 render function (no SFC compilation needed)
 - Full TypeScript types: `IconProps`, `IconName`, `IconId`, `IconComponent`, `PaletteColor`, `NAIVE_PALETTE`
 - Tree-shaking that actually works — a single icon is ~1.4 KB minified
@@ -46,7 +46,7 @@ npm install naive-icons-vue
 Vue 3.4+ is a peer dependency; the package has no other runtime dependencies.
 
 This package is always released in lockstep with `naive-icons` (the React version) — same
-version number, same 201 icons, so you can upgrade both together.
+version number, same 202 icons, so you can upgrade both together.
 
 ## Quick Start
 
@@ -155,11 +155,11 @@ const map: Record<IconId, () => Promise<unknown>> = {
 ```
 
 Importing the package as a namespace (`import * as icons`) also lets you look icons up by name,
-but it pulls all 201 icons into the bundle and zeroes out tree-shaking. `iconNames` lets you
+but it pulls all 202 icons into the bundle and zeroes out tree-shaking. `iconNames` lets you
 build a lookup that only loads the icons you actually reach for.
 
 To draw an icon of your own in the same style, use the `createIcon` factory. It produces the
-exact same root node, accessibility attributes and stroke scaling as the 201 built-in icons:
+exact same root node, accessibility attributes and stroke scaling as the 202 built-in icons:
 
 ```ts
 import { createIcon, h } from 'naive-icons-vue';
@@ -201,7 +201,7 @@ The icons are byte-identical and the rendering rules are shared, but the compone
 | Attribute names | JSX needs camelCase (`strokeWidth`) | native kebab-case passes through |
 | `class` on an SVG | React 18 warns about it | no warning |
 
-Both packages ship the same 201 icons, the same geometry and the same accessibility behaviour.
+Both packages ship the same 202 icons, the same geometry and the same accessibility behaviour.
 
 ## Using the SVG Directly
 
