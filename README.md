@@ -337,4 +337,6 @@ All icons are original works, free to use in personal and commercial projects wi
 
 ## Sponsor
 
-If this project has been helpful, consider treating the developer's cat to a can of food — after all, there's a cat supervising the code behind every icon. <a href="https://guokaigdg.github.io/home/payment.html">Feed the cat a can</a>
+- The easiest way to support is to give it a star and share it. If you have ideas or suggestions about the project, feel free to open an [Issue](https://github.com/guokaigdg/naive-icons/issues) or submit a PR.
+
+- If this project has been helpful to you, you could also treat the developer's cat to a can of food — after all, there's a cat supervising the code behind every icon. <a href="https://guokaigdg.github.io/home/payment.html">Feed the cat a can</a>

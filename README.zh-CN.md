@@ -326,4 +326,6 @@ MIT License。详见 [LICENSE](./LICENSE)。
 
 ## 赞助
 
-如果这个项目对你有帮助，不妨请开发者的猫吃个罐罐——毕竟每个图标背后都有一只猫在监督代码。<a href="https://guokaigdg.github.io/home/payment.html">请猫吃个罐罐</a>
+- 支持这个项目最简单的方式就是点个 Star 并分享出去。如果你有想法或建议，欢迎提 [Issue](https://github.com/guokaigdg/naive-icons/issues) 或提交 PR。
+
+- 如果这个项目对你有帮助，也不妨请开发者的猫吃个罐罐——毕竟每个图标背后都有一只猫在监督代码。<a href="https://guokaigdg.github.io/home/payment.html">请猫吃个罐罐</a>
