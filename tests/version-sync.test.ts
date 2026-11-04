@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 /**
  * 两个 npm 包必须同版本发布。
  *
- * naive-icons 与 naive-icons-vue 卖的是同一套 202 枚图标，版本号代表的是
+ * naive-icons 与 naive-icons-vue 卖的是同一套 245 枚图标，版本号代表的是
  * 「这套图标 + 这套 API」的版本。两个包的版本一旦错开，用户 npm update 其中
  * 一个就会拿到跟另一个不一致的图标集，排查起来极其痛苦，所以在这里钉住。
  *

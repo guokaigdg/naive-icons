@@ -136,6 +136,8 @@ ICON_CATEGORY = {
         'sparkles': 'interface',     'user-circle': 'interface',     'calculator': 'objects',             'palette': 'objects',     'newspaper': 'media',             'bolt': 'communication',     'wifi-off': 'communication',             
     # 2026-11：空状态
     'no-data': 'interface',
+    # 2026-11 第二批：50 枚新图标
+'clipboard-check': 'interface', 'user-check': 'interface', 'login': 'interface', 'logout': 'interface', 'sidebar': 'interface', 'bell-ring': 'interface', 'at-sign': 'communication', 'phone-off': 'communication', 'megaphone': 'communication', 'signal': 'communication', 'bluetooth': 'communication', 'paste': 'action', 'scan': 'action', 'crop': 'action', 'qr-code': 'objects', 'archive': 'media', 'table': 'media', 'folder-open': 'media', 'cloud-upload': 'media', 'cloud-download': 'media', 'presentation': 'media', 'bar-chart': 'media', 'pie-chart': 'media', 'trending-up': 'media', 'terminal': 'media', 'database': 'objects', 'server': 'objects', 'briefcase': 'objects', 'wallet': 'objects', 'watch': 'objects', 'hourglass': 'objects', 'ticket': 'objects', 'wind': 'nature', 'rain': 'nature', 'seedling': 'nature', 'acorn': 'nature', 'cow': 'animals', 'crab': 'animals', 'jellyfish': 'animals', 'bread': 'food', 'egg': 'food', 'cookie': 'food', 'carrot': 'food',
 }
 
 # ---------------------------------------------------------------- 中文名
@@ -211,6 +213,8 @@ ZH_NAMES = {
         'sparkles': '星光',     'user-circle': '圆形用户',     'calculator': '计算器',             'palette': '调色板',     'newspaper': '报纸',             'bolt': '闪电',     'wifi-off': '无线关闭',             
     # 2026-11：空状态
     'no-data': '暂无数据',
+    # 2026-11 第二批：50 枚新图标
+'clipboard-check': '任务完成', 'user-check': '用户认证', 'login': '登录', 'logout': '退出登录', 'sidebar': '侧边栏', 'bell-ring': '响铃提醒', 'at-sign': '提及', 'phone-off': '挂断电话', 'megaphone': '广播', 'signal': '信号', 'bluetooth': '蓝牙', 'paste': '粘贴', 'scan': '扫码', 'crop': '裁剪', 'qr-code': '二维码', 'archive': '归档', 'table': '表格', 'folder-open': '打开文件夹', 'cloud-upload': '云上传', 'cloud-download': '云下载', 'presentation': '演示文稿', 'bar-chart': '柱状图', 'pie-chart': '饼图', 'trending-up': '上升趋势', 'terminal': '终端', 'database': '数据库', 'server': '服务器', 'briefcase': '公文包', 'wallet': '钱包', 'watch': '手表', 'hourglass': '沙漏', 'ticket': '门票', 'wind': '风', 'rain': '下雨', 'seedling': '幼苗', 'acorn': '橡果', 'cow': '奶牛', 'crab': '螃蟹', 'jellyfish': '水母', 'bread': '面包', 'egg': '鸡蛋', 'cookie': '曲奇', 'carrot': '胡萝卜',
 }
 
 

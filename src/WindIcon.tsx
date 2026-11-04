@@ -1,0 +1,33 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const WindIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M6 15 C 13 9 21 10 26 15 C 31 20 37 20 42 15" stroke="#2A9D8F" strokeWidth={sw(4)} fill="none"/>
+<path d="M9 25 C 15 20 23 20 29 24" stroke="#2A9D8F" strokeWidth={sw(4)} fill="none"/>
+<path d="M11 35 C 17 30 25 30 31 34 C 35 37 39 37 42 34" stroke="#2A9D8F" strokeWidth={sw(4)} fill="none"/>
+<circle cx="14" cy="25" r="2.2" fill="#E9C46A" stroke="none"/>
+
+    </svg>
+  );
+});
+
+WindIcon.displayName = 'WindIcon';
+
+export default WindIcon;

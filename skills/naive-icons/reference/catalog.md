@@ -6,7 +6,7 @@
 
 组件名规则：连字符分段首字母大写 + `Icon`，如 `user-plus` → `UserPlusIcon`。
 
-## 界面基础（44 枚）
+## 界面基础（50 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -14,15 +14,17 @@
 | `alert-triangle` | 警告 | `AlertTriangleIcon` | 警告、危险、warning |
 | `badge-check` | 认证 | `BadgeCheckIcon` | 认证、验证、实名、verify |
 | `ban` | 禁止 | `BanIcon` | 禁止、屏蔽、ban |
-| `bell` | 铃铛 | `BellIcon` | 警报、通知、提醒、铃铛、alert、bell |
+| `bell` | 铃铛 | `BellIcon` | 警报、通知、提醒、铃铛、广播、alert、bell |
 | `bell-off` | 免打扰 | `BellOffIcon` | 免打扰、静音提醒、belloff |
+| `bell-ring` | 响铃提醒 | `BellRingIcon` | — |
 | `bold` | 加粗 | `BoldIcon` | 加粗、粗体、bold |
 | `bookmark` | 书签 | `BookmarkIcon` | 书签、收藏夹、收藏、bookmark、favorite |
 | `bulb` | 灯泡 | `BulbIcon` | 灵感、创意、想法、灯泡、灯、idea、bulb |
 | `calendar` | 日历 | `CalendarIcon` | 日历、日程、预约、schedule、agenda、events |
 | `check-circle` | 成功 | `CheckCircleIcon` | 验证、确认、确定、完成、成功、完成度、进度 |
 | `check-square` | 复选框 | `CheckSquareIcon` | 复选框、多选、未选中、checkbox |
-| `clock` | 时钟 | `ClockIcon` | 稍后、历史、最近 |
+| `clipboard-check` | 任务完成 | `ClipboardCheckIcon` | — |
+| `clock` | 时钟 | `ClockIcon` | 稍后、历史、最近、历史记录、手表、沙漏 |
 | `ellipsis` | 更多 | `EllipsisIcon` | 更多、更多操作、more |
 | `external-link` | 外链 | `ExternalLinkIcon` | 链接、外链、站外、新窗口、退出、externallink |
 | `eye` | 眼睛 | `EyeIcon` | 无障碍、可访问性、password |
@@ -34,40 +36,46 @@
 | `info` | 信息 | `InfoIcon` | 信息、详情、说明、无障碍、info |
 | `italic` | 斜体 | `ItalicIcon` | 斜体、倾斜、italic |
 | `link` | 链接 | `LinkIcon` | 链接、网址、link |
-| `list` | 列表 | `ListIcon` | 视图、展示方式、列表、清单、list |
-| `menu` | 菜单 | `MenuIcon` | 拖拽、把手、菜单、汉堡、menu |
+| `list` | 列表 | `ListIcon` | 视图、展示方式、列表、清单、表格、list |
+| `login` | 登录 | `LoginIcon` | 登录、登陆、登入、login、signin |
+| `logout` | 退出登录 | `LogoutIcon` | — |
+| `menu` | 菜单 | `MenuIcon` | 拖拽、把手、菜单、汉堡、侧边栏、menu |
 | `more-vertical` | 更多(竖) | `MoreVerticalIcon` | 更多、竖排、更多操作、操作菜单、more、kebab |
 | `no-data` | 暂无数据 | `NoDataIcon` | 暂无数据、无数据、没有数据、空状态、空列表、空盒子、nodata |
 | `search` | 搜索 | `SearchIcon` | 搜索、查找、放大镜、search |
 | `settings` | 设置 | `SettingsIcon` | 管理员、设置、配置、齿轮、偏好、admin、settings |
-| `shield` | 安全 | `ShieldIcon` | 登录、权限、管理员、隐私、安全、认证、login |
+| `shield` | 安全 | `ShieldIcon` | 登录、权限、管理员、隐私、安全、认证、permission |
+| `sidebar` | 侧边栏 | `SidebarIcon` | 侧边栏、sidebar |
 | `sliders` | 调节 | `SlidersIcon` | 调节、微调、参数、tune、adjust |
 | `sparkles` | 星光 | `SparklesIcon` | 星光、魔法、闪亮、sparkles |
 | `spinner` | 加载 | `SpinnerIcon` | 加载、等待、转圈、加载中、请稍候、转圈圈、进度 |
 | `star` | 星星 | `StarIcon` | 收藏、评分、五星、推荐、新品、favorite、star |
-| `tag` | 标签 | `TagIcon` | 标签、标记、新建标签、标签页、价格、tag |
+| `tag` | 标签 | `TagIcon` | 标签、标记、新建标签、标签页、价格、门票、tag |
 | `underline` | 下划线 | `UnderlineIcon` | 下划线、underline |
 | `unlink` | 取消链接 | `UnlinkIcon` | 取消链接、断开、unlink |
 | `user` | 用户 | `UserIcon` | 登录、账户、帐号、账号、用户、联系人、我的 |
+| `user-check` | 用户认证 | `UserCheckIcon` | — |
 | `user-circle` | 圆形用户 | `UserCircleIcon` | 个人中心、圆形用户、user-circle |
 | `user-minus` | 移除成员 | `UserMinusIcon` | 移除成员、删除用户、user-minus |
 | `user-plus` | 添加成员 | `UserPlusIcon` | 注册、成员、团队、邀请、加好友、添加成员、新增 |
 | `users` | 多人 | `UsersIcon` | 账户、帐号、账号、用户、成员、团队、联系人 |
 | `x-circle` | 错误 | `XCircleIcon` | 关闭、取消、错误、失败、cancel、error |
 
-## 操作（29 枚）
+## 操作（32 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
 | `check` | 勾选 | `CheckIcon` | 确认、确定、完成、勾选、打勾、选中、ok |
 | `close` | 关闭 | `CloseIcon` | 删除、关闭、关掉、取消、退出、remove、close |
-| `copy` | 复制 | `CopyIcon` | 复制、拷贝、标签页、copy、duplicate |
-| `download` | 下载 | `DownloadIcon` | 下载、导出、download |
+| `copy` | 复制 | `CopyIcon` | 复制、拷贝、标签页、粘贴、copy、duplicate |
+| `crop` | 裁剪 | `CropIcon` | 裁剪、crop |
+| `download` | 下载 | `DownloadIcon` | 下载、导出、云下载、download |
 | `edit` | 编辑 | `EditIcon` | 编辑、修改、新建、撰写、edit、create、write |
 | `filter` | 筛选 | `FilterIcon` | 筛选、过滤、filter |
 | `maximize` | 全屏 | `MaximizeIcon` | 全屏、最大化、展开、fullscreen、maximize |
 | `minus` | 减号 | `MinusIcon` | 减、minus |
 | `minus-circle` | 减号圆圈 | `MinusCircleIcon` | 减号圆圈 |
+| `paste` | 粘贴 | `PasteIcon` | 粘贴、paste |
 | `pause` | 暂停 | `PauseIcon` | 暂停、pause |
 | `pause-circle` | 暂停圆圈 | `PauseCircleIcon` | 暂停圆圈 |
 | `play` | 播放 | `PlayIcon` | 播放、下一个、play、prev |
@@ -78,6 +86,7 @@
 | `redo` | 重做 | `RedoIcon` | 重做、redo |
 | `refresh` | 刷新 | `RefreshIcon` | 刷新、重新加载、同步、历史、refresh、reload |
 | `save` | 保存 | `SaveIcon` | 保存、存、下载、save |
+| `scan` | 扫码 | `ScanIcon` | 二维码、扫码、扫描、scan |
 | `scissors` | 剪刀 | `ScissorsIcon` | 剪切、剪刀、裁剪、scissors |
 | `share` | 分享 | `ShareIcon` | 分享、转发、share |
 | `sort` | 排序 | `SortIcon` | 排序、sort |
@@ -85,20 +94,25 @@
 | `stop-circle` | 停止圆圈 | `StopCircleIcon` | 停止圆圈 |
 | `trash` | 垃圾桶 | `TrashIcon` | 删除、垃圾桶、清理、delete、remove |
 | `undo` | 撤销 | `UndoIcon` | 撤销、回退、undo |
-| `upload` | 上传 | `UploadIcon` | 上传、导入、upload |
+| `upload` | 上传 | `UploadIcon` | 上传、导入、云上传、upload |
 | `zoom-in` | 放大 | `ZoomInIcon` | 放大、放大镜、zoomin |
 | `zoom-out` | 缩小 | `ZoomOutIcon` | 缩小、zoomout |
 
-## 文件与媒体（18 枚）
+## 文件与媒体（28 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
+| `archive` | 归档 | `ArchiveIcon` | 归档、archive |
+| `bar-chart` | 柱状图 | `BarChartIcon` | 趋势、柱状图、饼图、图表、chart |
 | `book` | 书本 | `BookIcon` | 文档、书本、阅读、book |
 | `camera` | 相机 | `CameraIcon` | 照片、相机、拍照、camera、photo |
-| `code` | 代码 | `CodeIcon` | 代码、开发、编程、源码、code |
+| `cloud-download` | 云下载 | `CloudDownloadIcon` | 云下载、clouddownload |
+| `cloud-upload` | 云上传 | `CloudUploadIcon` | 云上传、cloudupload |
+| `code` | 代码 | `CodeIcon` | 代码、开发、编程、源码、终端、命令行、code |
 | `file` | 文件 | `FileIcon` | 文件、文档、file |
-| `folder` | 文件夹 | `FolderIcon` | 文件夹、目录、folder |
+| `folder` | 文件夹 | `FolderIcon` | 文件夹、目录、归档、打开文件夹、公文包、folder |
 | `folder-minus` | 删除文件夹 | `FolderMinusIcon` | 删除文件夹、folder-minus |
+| `folder-open` | 打开文件夹 | `FolderOpenIcon` | 打开文件夹 |
 | `folder-plus` | 新建文件夹 | `FolderPlusIcon` | 新建文件夹、folder-plus |
 | `headphones` | 耳机 | `HeadphonesIcon` | 耳机、headphones |
 | `image` | 图片 | `ImageIcon` | 图片、照片、图像、image |
@@ -106,7 +120,12 @@
 | `music` | 音乐 | `MusicIcon` | 音乐、歌曲、音频、music、audio |
 | `newspaper` | 报纸 | `NewspaperIcon` | 报纸、报刊、新闻、newspaper |
 | `paperclip` | 附件 | `PaperclipIcon` | 附件、attach、paperclip |
+| `pie-chart` | 饼图 | `PieChartIcon` | 饼图、图表、chart |
+| `presentation` | 演示文稿 | `PresentationIcon` | 演示、幻灯片、presentation |
 | `rss` | 订阅 | `RssIcon` | 订阅、rss、feed |
+| `table` | 表格 | `TableIcon` | 表格、table |
+| `terminal` | 终端 | `TerminalIcon` | 终端、命令行、terminal |
+| `trending-up` | 上升趋势 | `TrendingUpIcon` | 趋势、上升、柱状图、图表 |
 | `tv` | 电视 | `TvIcon` | 电视、电视机、tv |
 | `video` | 视频 | `VideoIcon` | 视频、影片、video |
 | `volume` | 音量 | `VolumeIcon` | 音量、声音大小、sound、volume |
@@ -126,11 +145,11 @@
 | `arrow-left-circle` | 向左圆圈 | `ArrowLeftCircleIcon` | 向左圆圈 |
 | `arrow-right` | 右 | `ArrowRightIcon` | 前进、右、箭头、forward、right、arrow |
 | `arrow-right-circle` | 向右圆圈 | `ArrowRightCircleIcon` | 向右圆圈 |
-| `arrow-up` | 上 | `ArrowUpIcon` | 向上、箭头、上升、up、arrow |
+| `arrow-up` | 上 | `ArrowUpIcon` | 向上、箭头、up、arrow |
 | `arrow-up-circle` | 向上圆圈 | `ArrowUpCircleIcon` | 向上圆圈 |
 | `arrow-up-down` | 上下双箭头 | `ArrowUpDownIcon` | 上下双箭头、双向箭头、上下切换、arrow-up-down |
 | `arrow-up-left` | 左上箭头 | `ArrowUpLeftIcon` | 左上、左上箭头、up-left |
-| `arrow-up-right` | 右上箭头 | `ArrowUpRightIcon` | 右上、趋势 |
+| `arrow-up-right` | 右上箭头 | `ArrowUpRightIcon` | 右上 |
 | `chevron-down` | 向下 | `ChevronDownIcon` | 展开、向下、down |
 | `chevron-left` | 向左 | `ChevronLeftIcon` | 返回、左、prev、back、left |
 | `chevron-right` | 向右 | `ChevronRightIcon` | 下一个、前进、右、forward、right |
@@ -142,39 +161,48 @@
 | `map` | 地图 | `MapIcon` | 地图、旅行、出行、map、travel |
 | `map-pin` | 地图标记 | `MapPinIcon` | 地图标记、图钉、map-pin |
 
-## 通信（8 枚）
+## 通信（13 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
+| `at-sign` | 提及 | `AtSignIcon` | 提及、at |
+| `bluetooth` | 蓝牙 | `BluetoothIcon` | 蓝牙、bluetooth |
 | `bolt` | 闪电 | `BoltIcon` | 闪电、电力、bolt |
-| `chat` | 对话 | `ChatIcon` | 回复、对话、聊天、消息、私信、reply、chat |
+| `chat` | 对话 | `ChatIcon` | 回复、对话、聊天、消息、私信、提及、reply |
 | `inbox` | 收件箱 | `InboxIcon` | 收件箱、未读、inbox |
 | `mail` | 邮件 | `MailIcon` | 邮件、邮箱、信封、mail、email |
-| `phone` | 电话 | `PhoneIcon` | 电话、拨号、通话、phone、call |
+| `megaphone` | 广播 | `MegaphoneIcon` | 广播、播报、megaphone |
+| `phone` | 电话 | `PhoneIcon` | 电话、拨号、通话、挂断、phone、call |
+| `phone-off` | 挂断电话 | `PhoneOffIcon` | 挂断、挂断电话、phoneoff |
 | `send` | 发送 | `SendIcon` | 发送、发出、提交、分享、回复、send、reply |
-| `wifi` | 无线网 | `WifiIcon` | 无线、网络、wifi、network |
+| `signal` | 信号 | `SignalIcon` | 信号、移动信号、signal |
+| `wifi` | 无线网 | `WifiIcon` | 无线、网络、信号、wifi、network |
 | `wifi-off` | 无线关闭 | `WifiOffIcon` | 无线关闭、无信号、wifi-off |
 
-## 自然天气（14 枚）
+## 自然天气（18 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
+| `acorn` | 橡果 | `AcornIcon` | 种子、橡果、acorn |
 | `cactus` | 仙人掌 | `CactusIcon` | 仙人掌、cactus |
-| `cloud` | 云朵 | `CloudIcon` | 云、多云、下雨、天气、cloud、rain、weather |
+| `cloud` | 云朵 | `CloudIcon` | 云、多云、下雨、雨、天气、服务器、云上传 |
 | `flame` | 火焰 | `FlameIcon` | 火焰、火、热、热门、flame、fire |
 | `flower` | 花朵 | `FlowerIcon` | 花、花朵、鲜花、flower |
-| `leaf` | 叶子 | `LeafIcon` | 自然、叶子、环保、绿色、leaf |
+| `leaf` | 叶子 | `LeafIcon` | 自然、叶子、环保、绿色、幼苗、leaf |
 | `moon` | 月亮 | `MoonIcon` | 月亮、夜晚、深夜、天气、主题、深色模式、主题切换 |
 | `mountain` | 山峰 | `MountainIcon` | 山、山峰、爬山、mountain |
 | `mushroom` | 蘑菇 | `MushroomIcon` | 蘑菇、mushroom |
+| `rain` | 下雨 | `RainIcon` | 下雨、雨、rain |
 | `rainbow` | 彩虹 | `RainbowIcon` | 彩虹、天气、rainbow |
+| `seedling` | 幼苗 | `SeedlingIcon` | 幼苗、种子、橡果、seedling |
 | `snowflake` | 雪花 | `SnowflakeIcon` | 下雪、雪、冬天、天气、snow、snowflake、weather |
 | `sun` | 太阳 | `SunIcon` | 太阳、晴天、白天、天气、主题、浅色模式、主题切换 |
 | `tent` | 帐篷 | `TentIcon` | 帐篷、露营、户外、tent |
-| `tree` | 大树 | `TreeIcon` | 树、森林、自然、tree |
-| `umbrella` | 雨伞 | `UmbrellaIcon` | 下雨、雨、雨伞、天气、rain、umbrella、weather |
+| `tree` | 大树 | `TreeIcon` | 树、森林、自然、幼苗、tree |
+| `umbrella` | 雨伞 | `UmbrellaIcon` | 下雨、雨伞、天气、umbrella、weather |
+| `wind` | 风 | `WindIcon` | 风、wind |
 
-## 动物（14 枚）
+## 动物（17 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -183,65 +211,80 @@
 | `bird` | 小鸟 | `BirdIcon` | 鸟、bird |
 | `butterfly` | 蝴蝶 | `ButterflyIcon` | 蝴蝶、butterfly |
 | `cat` | 小猫 | `CatIcon` | 猫、宠物、cat、pet |
+| `cow` | 奶牛 | `CowIcon` | 奶牛、牛、cow |
+| `crab` | 螃蟹 | `CrabIcon` | 螃蟹、crab |
 | `dog` | 小狗 | `DogIcon` | 狗、宠物、dog、pet |
 | `fish` | 小鱼 | `FishIcon` | 鱼、fish |
 | `fox` | 狐狸 | `FoxIcon` | 狐狸、fox |
 | `frog` | 青蛙 | `FrogIcon` | 青蛙、frog |
+| `jellyfish` | 水母 | `JellyfishIcon` | 水母、jellyfish |
 | `ladybug` | 瓢虫 | `LadybugIcon` | 瓢虫、ladybug |
 | `owl` | 猫头鹰 | `OwlIcon` | 猫头鹰、owl |
 | `penguin` | 企鹅 | `PenguinIcon` | 企鹅、penguin |
 | `rabbit` | 兔子 | `RabbitIcon` | 兔子、rabbit |
 | `snail` | 蜗牛 | `SnailIcon` | 蜗牛、snail |
 
-## 食物饮品（11 枚）
+## 食物饮品（15 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
 | `apple` | 苹果 | `AppleIcon` | 食物、吃、苹果、apple |
+| `bread` | 面包 | `BreadIcon` | 面包、bread |
 | `cake` | 蛋糕 | `CakeIcon` | 食物、吃、蛋糕、food、cake |
+| `carrot` | 胡萝卜 | `CarrotIcon` | 胡萝卜、carrot |
 | `cherry` | 樱桃 | `CherryIcon` | 樱桃、cherry |
 | `coffee` | 咖啡 | `CoffeeIcon` | 咖啡、coffee |
 | `coffee-cup` | 咖啡杯 | `CoffeeCupIcon` | 咖啡、coffee |
+| `cookie` | 曲奇 | `CookieIcon` | 曲奇、饼干、cookie |
 | `donut` | 甜甜圈 | `DonutIcon` | 食物、吃、甜甜圈、food、donut |
+| `egg` | 鸡蛋 | `EggIcon` | 鸡蛋、egg |
 | `icecream` | 冰淇淋 | `IcecreamIcon` | 冰淇淋、甜品、icecream |
 | `lemon` | 柠檬 | `LemonIcon` | 柠檬、lemon |
 | `strawberry` | 草莓 | `StrawberryIcon` | 草莓、strawberry |
 | `water-cup` | 水杯 | `WaterCupIcon` | 杯子、水、喝水、water |
 | `watermelon` | 西瓜 | `WatermelonIcon` | 西瓜、watermelon |
 
-## 日常物品（29 枚）
+## 日常物品（37 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
 | `balloon` | 气球 | `BalloonIcon` | 气球、balloon |
 | `basketball` | 篮球 | `BasketballIcon` | 篮球、投篮、hoops、ball |
 | `battery` | 电池 | `BatteryIcon` | 电池、电量、battery |
+| `briefcase` | 公文包 | `BriefcaseIcon` | 公文包、briefcase |
 | `calculator` | 计算器 | `CalculatorIcon` | 计算器、calculator |
 | `candle` | 蜡烛 | `CandleIcon` | 蜡烛、candle |
 | `cart` | 购物车 | `CartIcon` | 购物车、加购、购物篮、购物、商城、cart、shopping |
 | `charger` | 充电头 | `ChargerIcon` | 充电头、充电器、插头、电源适配器、快充、充电、charger |
 | `clipboard` | 剪贴板 | `ClipboardIcon` | 剪贴板、粘贴、clipboard |
 | `credit-card` | 信用卡 | `CreditCardIcon` | 支付、付款、收银、结算、卡、信用卡、银行卡 |
+| `database` | 数据库 | `DatabaseIcon` | 数据库、服务器、database |
 | `dumbbell` | 哑铃 | `DumbbellIcon` | 健身、运动、举铁、dumbbell |
 | `gift` | 礼物 | `GiftIcon` | 礼物、礼品、送礼、免费、新品、gift |
 | `globe` | 地球仪 | `GlobeIcon` | 地球、全球、国际、语言、globe |
 | `google-chrome` | Chrome | `GoogleChromeIcon` | 浏览器、chrome |
+| `hourglass` | 沙漏 | `HourglassIcon` | 沙漏、hourglass |
 | `key` | 钥匙 | `KeyIcon` | 登录、登陆、注册、权限、认证、密码、钥匙 |
 | `keyboard` | 键盘 | `KeyboardIcon` | 键盘、键鼠、快捷键、打字、输入设备、keyboard |
 | `lamp` | 台灯 | `LampIcon` | 台灯、灯、lamp |
 | `lock` | 锁 | `LockIcon` | 登录、登陆、权限、隐私、安全、密码、锁 |
 | `lock-open` | 解锁 | `LockOpenIcon` | 解锁、unlock |
-| `monitor` | 显示器 | `MonitorIcon` | 显示器、屏幕、大屏、副屏、显示设备、monitor、screen |
+| `monitor` | 显示器 | `MonitorIcon` | 显示器、屏幕、大屏、副屏、显示设备、演示、monitor |
 | `mouse` | 鼠标 | `MouseIcon` | 键鼠、鼠标、点击、指针、滚轮、点击设备、mouse |
 | `paintbrush` | 画笔 | `PaintbrushIcon` | 画笔、绘画、涂鸦、paint、paintbrush |
 | `palette` | 调色板 | `PaletteIcon` | 调色板、配色、palette |
 | `pencil` | 铅笔 | `PencilIcon` | 编辑、修改、新建、撰写、绘画、铅笔、edit |
 | `printer` | 打印机 | `PrinterIcon` | 打印、打印机、printer |
+| `qr-code` | 二维码 | `QrCodeIcon` | 二维码、扫码、扫描、qrcode |
 | `radio` | 收音机 | `RadioIcon` | 收音机、电台、radio |
+| `server` | 服务器 | `ServerIcon` | 数据库、服务器、server |
 | `shopping-bag` | 购物袋 | `ShoppingBagIcon` | 购物、商城、购物袋、shopping、bag |
 | `shopping-cart` | 购物推车 | `ShoppingCartIcon` | 购物推车、shopping-cart |
 | `thermometer` | 温度计 | `ThermometerIcon` | 温度、气温、thermometer |
+| `ticket` | 门票 | `TicketIcon` | 门票、ticket |
 | `trophy` | 奖杯 | `TrophyIcon` | 奖杯、冠军、获奖、推荐、trophy |
+| `wallet` | 钱包 | `WalletIcon` | 钱包、wallet |
+| `watch` | 手表 | `WatchIcon` | 手表、watch |
 
 ## 交通工具（8 枚）
 

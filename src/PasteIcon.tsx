@@ -1,0 +1,35 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const PasteIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<rect x="7" y="9" width="34" height="32" rx="4" fill="#264653"/>
+<rect x="16" y="5" width="12" height="8" rx="2.5" fill="#E9C46A"/>
+<rect x="17" y="16" width="20" height="18" rx="2" fill="#FAEDCD" stroke="none"/>
+<path d="M21 21 L33 21" stroke="#2A2A2A" strokeWidth={sw(2)}/>
+<path d="M21 26 L33 26" stroke="#2A2A2A" strokeWidth={sw(2)}/>
+<path d="M21 31 L28 31" stroke="#2A2A2A" strokeWidth={sw(2)}/>
+
+    </svg>
+  );
+});
+
+PasteIcon.displayName = 'PasteIcon';
+
+export default PasteIcon;

@@ -12,9 +12,6 @@ export const UserIcon = defineComponent({
       if (props.title) children.push(h('title', null, props.title));
       children.push(h('circle', { cx: '24', cy: '16', r: '8.5', fill: '#E76F51' }));
       children.push(h('path', { d: 'M7 43 C 7 33 14 29 24 29 C 34 29 41 33 41 43', fill: '#2A9D8F' }));
-      children.push(h('circle', { cx: '21', cy: '16', r: '1.6', fill: '#2A2A2A' }));
-      children.push(h('circle', { cx: '27', cy: '16', r: '1.6', fill: '#2A2A2A' }));
-      children.push(h('path', { d: 'M20.5 20 Q 24 23 27.5 20', stroke: '#2A2A2A', fill: 'none' }));
       const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
       return h(
         'svg',

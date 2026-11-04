@@ -1,0 +1,36 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const CowIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M15 19 C 15 13 19 11 24 11 C 29 11 33 13 33 19 C 36 25 36 34 32 39 C 29 42 19 42 16 39 C 12 34 12 25 15 19 Z" fill="#FAEDCD"/>
+<path d="M15 17 C 11 15 8 11 9 8 C 13 8 16 11 16 15 Z" fill="#FAEDCD"/>
+<path d="M33 17 C 37 15 40 11 39 8 C 35 8 32 11 32 15 Z" fill="#FAEDCD"/>
+<ellipse cx="24" cy="33" rx="5" ry="3.6" fill="#F4A6A4" stroke="none"/>
+<circle cx="19" cy="22" r="1.8" fill="#2A2A2A" stroke="none"/>
+<circle cx="29" cy="22" r="1.8" fill="#2A2A2A" stroke="none"/>
+<circle cx="29" cy="31" r="3" fill="#2A2A2A" stroke="none"/>
+
+    </svg>
+  );
+});
+
+CowIcon.displayName = 'CowIcon';
+
+export default CowIcon;

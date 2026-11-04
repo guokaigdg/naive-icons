@@ -19,8 +19,8 @@ function jsxBody(file: string): string {
 }
 
 describe('TSX 里的 SVG 属性名', () => {
-  it('202 个组件都存在', () => {
-    expect(files.length).toBe(202);
+  it('245 个组件都存在', () => {
+    expect(files.length).toBe(245);
   });
 
   it('JSX 体内不含 kebab-case 属性', () => {

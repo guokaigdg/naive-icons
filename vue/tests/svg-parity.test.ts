@@ -7,7 +7,7 @@ import * as icons from '../src';
 import { iconNames } from '../src';
 
 /**
- * 图形保真测试：202 枚组件渲染出来的图形，必须与 svg/ 里的源文件逐属性一致。
+ * 图形保真测试：245 枚组件渲染出来的图形，必须与 svg/ 里的源文件逐属性一致。
  *
  * 这是 Vue 版最强的一条约束——仓库里 svg/ 是唯一事实来源，React 组件、Vue 组件、
  * 官网、skill 目录表全都由它生成。Vue 组件一旦与 svg/ 对不上（比如转换时把某个
@@ -82,7 +82,7 @@ async function renderComponent(name: string): Promise<string> {
 
 describe('图形保真：Vue 组件 vs svg/ 源文件', () => {
   it('库内图标数量与 iconNames 一致', () => {
-    expect(iconNames.length).toBe(202);
+    expect(iconNames.length).toBe(245);
   });
 
   it.each(iconNames.map((id) => [id, componentName(id)] as const))(

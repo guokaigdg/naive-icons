@@ -3,7 +3,7 @@ import { normalizeIconProps, scaledStroke } from './iconProps';
 import { iconPropDefs } from './types';
 
 /**
- * naive 根节点属性。202 枚内置组件逐字节一致，这里把它固化成一份常量，
+ * naive 根节点属性。245 枚内置组件逐字节一致，这里把它固化成一份常量，
  * 供 createIcon 使用 —— 自建图标不用再手抄这段样板，也就不会抄错。
  */
 export const NAIVE_ROOT = {
@@ -29,7 +29,7 @@ function toDisplayName(name: string): string {
 /**
  * 用 naive 风格造一个图标组件。
  *
- * 根节点、无障碍属性、描边缩放全部与内置 202 枚一致；内层描边宽度用 body
+ * 根节点、无障碍属性、描边缩放全部与内置 245 枚一致；内层描边宽度用 body
  * 收到的 sw() 换算，这样 `<MyIcon :strokeWidth="7" />` 整体加粗、层次保持。
  *
  * ```ts

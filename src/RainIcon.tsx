@@ -1,0 +1,35 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const RainIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M13 22 C 7 22 5 15 11 13 C 11 7 19 5 23 9 C 27 3 37 7 35 15 C 41 15 41 22 35 22 Z" fill="#FAEDCD"/>
+<path d="M16 28 L14 34" stroke="#2A9D8F" strokeWidth={sw(3)} fill="none"/>
+<path d="M24 28 L22 34" stroke="#2A9D8F" strokeWidth={sw(3)} fill="none"/>
+<path d="M32 28 L30 34" stroke="#2A9D8F" strokeWidth={sw(3)} fill="none"/>
+<path d="M20 37 L18 42" stroke="#2A9D8F" strokeWidth={sw(3)} fill="none"/>
+<path d="M28 37 L26 42" stroke="#2A9D8F" strokeWidth={sw(3)} fill="none"/>
+
+    </svg>
+  );
+});
+
+RainIcon.displayName = 'RainIcon';
+
+export default RainIcon;

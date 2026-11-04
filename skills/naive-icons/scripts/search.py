@@ -32,7 +32,7 @@ CATEGORIES = {
     'transport': '交通工具', 'emoji': '表情',
 }
 
-# ── 202 枚图标：id -> (中文名, 分类) ──────────────────────────────────
+# ── 245 枚图标：id -> (中文名, 分类) ──────────────────────────────────
 ICONS = {
     'airplane': ('飞机', 'transport'), 'alert-circle': ('提示', 'interface'),
     'alert-triangle': ('警告', 'interface'), 'anchor': ('锚', 'navigation'),
@@ -139,15 +139,19 @@ ICONS = {
     # 2026-10 第二批
     'arrow-up-left': ('左上箭头', 'navigation'),     'arrow-down-left': ('左下箭头', 'navigation'),     'arrow-down-right': ('右下箭头', 'navigation'),     'arrow-up-circle': ('向上圆圈', 'navigation'),     'arrow-down-circle': ('向下圆圈', 'navigation'),     'arrow-left-circle': ('向左圆圈', 'navigation'),     'arrow-right-circle': ('向右圆圈', 'navigation'),     'map-pin': ('地图标记', 'navigation'),     'plus-circle': ('加号圆圈', 'action'),     'minus-circle': ('减号圆圈', 'action'),     'play-circle': ('播放圆圈', 'action'),     'pause-circle': ('暂停圆圈', 'action'),     'stop-circle': ('停止圆圈', 'action'),     'radio': ('收音机', 'objects'),     'shopping-cart': ('购物推车', 'objects'),     'tv': ('电视', 'media'), 
     # 2026-10 第三批
-    'sparkles': ('星光', 'interface'),     'user-circle': ('圆形用户', 'interface'),     'calculator': ('计算器', 'objects'),     'palette': ('调色板', 'objects'),     'newspaper': ('报纸', 'media'),     'bolt': ('闪电', 'communication'),     'wifi-off': ('无线关闭', 'communication'),     }
+    'sparkles': ('星光', 'interface'),     'user-circle': ('圆形用户', 'interface'),     'calculator': ('计算器', 'objects'),     'palette': ('调色板', 'objects'),     'newspaper': ('报纸', 'media'),     'bolt': ('闪电', 'communication'),     'wifi-off': ('无线关闭', 'communication'),
+    # 2026-11 第二批：50 枚新图标
+'clipboard-check': ('任务完成', 'interface'), 'user-check': ('用户认证', 'interface'), 'login': ('登录', 'interface'), 'logout': ('退出登录', 'interface'), 'sidebar': ('侧边栏', 'interface'), 'bell-ring': ('响铃提醒', 'interface'), 'at-sign': ('提及', 'communication'), 'phone-off': ('挂断电话', 'communication'), 'megaphone': ('广播', 'communication'), 'signal': ('信号', 'communication'), 'bluetooth': ('蓝牙', 'communication'), 'paste': ('粘贴', 'action'), 'scan': ('扫码', 'action'), 'crop': ('裁剪', 'action'), 'qr-code': ('二维码', 'objects'), 'archive': ('归档', 'media'), 'table': ('表格', 'media'), 'folder-open': ('打开文件夹', 'media'), 'cloud-upload': ('云上传', 'media'), 'cloud-download': ('云下载', 'media'), 'presentation': ('演示文稿', 'media'), 'bar-chart': ('柱状图', 'media'), 'pie-chart': ('饼图', 'media'), 'trending-up': ('上升趋势', 'media'), 'terminal': ('终端', 'media'), 'database': ('数据库', 'objects'), 'server': ('服务器', 'objects'), 'briefcase': ('公文包', 'objects'), 'wallet': ('钱包', 'objects'), 'watch': ('手表', 'objects'), 'hourglass': ('沙漏', 'objects'), 'ticket': ('门票', 'objects'), 'wind': ('风', 'nature'), 'rain': ('下雨', 'nature'), 'seedling': ('幼苗', 'nature'), 'acorn': ('橡果', 'nature'), 'cow': ('奶牛', 'animals'), 'crab': ('螃蟹', 'animals'), 'jellyfish': ('水母', 'animals'), 'bread': ('面包', 'food'), 'egg': ('鸡蛋', 'food'), 'cookie': ('曲奇', 'food'), 'carrot': ('胡萝卜', 'food'),
+}
 
 # ── 同义词 / 意图映射：关键词 -> 候选图标 ──────────────────────────────
 # 按 UI 意图组织，而不是按字母表。左边可写中文、英文或常见缩写，
 # 检索时用子串包含匹配，越长的关键词权重越高。
 SYNONYMS = {
     # 账号与身份
-    '登录': ['lock', 'key', 'user', 'shield'], '登陆': ['lock', 'key'],
-    'login': ['lock', 'key', 'user', 'shield'], 'signin': ['lock', 'key', 'user'],
+    '登录': ['login', 'lock', 'key', 'user', 'shield'], '登陆': ['login', 'lock', 'key'],
+    'login': ['login', 'lock', 'key', 'user'], 'signin': ['login', 'lock', 'key', 'user'],
+    '登入': ['login'],
     '注册': ['user-plus', 'key'], 'register': ['user-plus', 'key'],
     'signup': ['user-plus', 'key'],
     '账户': ['user', 'users'], '帐号': ['user', 'users'], '账号': ['user', 'users'],
@@ -399,7 +403,51 @@ SYNONYMS = {
     'nodata': ['no-data'], 'no data': ['no-data'], 'no-data': ['no-data'],
     'empty': ['no-data'], 'empty state': ['no-data'],
     # 2026-10 第三批：界面 / 日常物品 / 媒体 / 通信 / 天气
-    "sparkles": ["sparkles"],     "星光": ["sparkles"],     "魔法": ["sparkles"],     "闪亮": ["sparkles"],     "user-circle": ["user-circle"],     "圆形用户": ["user-circle"],     "个人中心": ["user-circle"],     "calculator": ["calculator"],     "计算器": ["calculator"],     "palette": ["palette"],     "调色板": ["palette"],     "配色": ["palette"],     "newspaper": ["newspaper"],     "报纸": ["newspaper"],     "报刊": ["newspaper"],     "新闻": ["newspaper"],     "bolt": ["bolt"],     "闪电": ["bolt"],     "电力": ["bolt"],     "wifi-off": ["wifi-off"],     "无线关闭": ["wifi-off"],     "无信号": ["wifi-off"],     }
+    "sparkles": ["sparkles"],     "星光": ["sparkles"],     "魔法": ["sparkles"],     "闪亮": ["sparkles"],     "user-circle": ["user-circle"],     "圆形用户": ["user-circle"],     "个人中心": ["user-circle"],     "calculator": ["calculator"],     "计算器": ["calculator"],     "palette": ["palette"],     "调色板": ["palette"],     "配色": ["palette"],     "newspaper": ["newspaper"],     "报纸": ["newspaper"],     "报刊": ["newspaper"],     "新闻": ["newspaper"],     "bolt": ["bolt"],     "闪电": ["bolt"],     "电力": ["bolt"],     "wifi-off": ["wifi-off"],     "无线关闭": ["wifi-off"],     "无信号": ["wifi-off"],
+
+    # 2026-11 第二批新增图标的检索词
+    # 2026-11 第二批新增图标的检索词
+    '历史': ['clock', 'refresh'], '历史记录': ['clock'],
+    '归档': ['archive', 'folder'], 'archive': ['archive'],
+    '粘贴': ['paste', 'copy', 'clipboard'], 'paste': ['paste'],
+    '二维码': ['qr-code', 'scan'], 'qrcode': ['qr-code'],
+    '扫码': ['scan', 'qr-code'], '扫描': ['scan', 'qr-code'], 'scan': ['scan'],
+    '裁剪': ['crop', 'scissors'], 'crop': ['crop'],
+    '侧边栏': ['sidebar', 'menu'], 'sidebar': ['sidebar'],
+    '提及': ['at-sign', 'chat'], 'at': ['at-sign'],
+    '挂断': ['phone-off', 'phone'], '挂断电话': ['phone-off'],
+    'phoneoff': ['phone-off'],
+    '广播': ['megaphone', 'bell'], '播报': ['megaphone'], 'megaphone': ['megaphone'],
+    '信号': ['signal', 'wifi'], '移动信号': ['signal'], 'signal': ['signal'],
+    '蓝牙': ['bluetooth'], 'bluetooth': ['bluetooth'],
+    '数据库': ['database', 'server'], 'database': ['database'],
+    '服务器': ['server', 'database', 'cloud'], 'server': ['server'],
+    '表格': ['table', 'grid', 'list'], 'table': ['table'],
+    '打开文件夹': ['folder-open', 'folder'],
+    '云上传': ['cloud-upload', 'upload', 'cloud'], '云下载': ['cloud-download', 'download', 'cloud'],
+    'cloudupload': ['cloud-upload'], 'clouddownload': ['cloud-download'],
+    '演示': ['presentation', 'monitor'], '幻灯片': ['presentation'], 'presentation': ['presentation'],
+    '柱状图': ['bar-chart', 'trending-up'], '饼图': ['pie-chart', 'bar-chart'],
+    '图表': ['bar-chart', 'pie-chart', 'trending-up'], 'chart': ['bar-chart', 'pie-chart'],
+    '趋势': ['trending-up', 'bar-chart'], '上升': ['trending-up'],
+    '终端': ['terminal', 'code'], '命令行': ['terminal', 'code'], 'terminal': ['terminal'],
+    '风': ['wind', 'cloud'], 'wind': ['wind'],
+    '下雨': ['rain', 'cloud', 'umbrella'], '雨': ['rain', 'cloud'], 'rain': ['rain'],
+    '幼苗': ['seedling', 'leaf', 'tree'], '种子': ['seedling', 'acorn'], 'seedling': ['seedling'],
+    '橡果': ['acorn', 'seedling'], 'acorn': ['acorn'],
+    '奶牛': ['cow'], '牛': ['cow'], 'cow': ['cow'],
+    '螃蟹': ['crab'], 'crab': ['crab'],
+    '水母': ['jellyfish'], 'jellyfish': ['jellyfish'],
+    '面包': ['bread'], 'bread': ['bread'],
+    '鸡蛋': ['egg'], 'egg': ['egg'],
+    '曲奇': ['cookie'], '饼干': ['cookie'], 'cookie': ['cookie'],
+    '胡萝卜': ['carrot'], 'carrot': ['carrot'],
+    '公文包': ['briefcase', 'folder'], 'briefcase': ['briefcase'],
+    '钱包': ['wallet', 'credit-card'], 'wallet': ['wallet'],
+    '手表': ['watch', 'clock'], 'watch': ['watch'],
+    '沙漏': ['hourglass', 'clock', 'spinner'], 'hourglass': ['hourglass'],
+    '门票': ['ticket', 'tag'], 'ticket': ['ticket'],
+}
 
 # ── 检索 ──────────────────────────────────────────────────────────────
 W_EXACT_ID = 100      # 查询里直接出现完整 id

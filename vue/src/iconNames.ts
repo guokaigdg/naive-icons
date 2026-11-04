@@ -9,11 +9,13 @@
  * const map = { 'arrow-up-down': () => import('naive-icons-vue/icons/ArrowUpDownIcon').then(m => m.ArrowUpDownIcon) };
  */
 export const iconNames = [
+  'acorn',
   'airplane',
   'alert-circle',
   'alert-triangle',
   'anchor',
   'apple',
+  'archive',
   'arrow-down',
   'arrow-down-circle',
   'arrow-down-left',
@@ -28,21 +30,27 @@ export const iconNames = [
   'arrow-up-down',
   'arrow-up-left',
   'arrow-up-right',
+  'at-sign',
   'badge-check',
   'balloon',
   'ban',
+  'bar-chart',
   'basketball',
   'battery',
   'bear',
   'bee',
   'bell',
   'bell-off',
+  'bell-ring',
   'bicycle',
   'bird',
+  'bluetooth',
   'bold',
   'bolt',
   'book',
   'bookmark',
+  'bread',
+  'briefcase',
   'bulb',
   'butterfly',
   'cactus',
@@ -52,6 +60,7 @@ export const iconNames = [
   'camera',
   'candle',
   'car',
+  'carrot',
   'cart',
   'cat',
   'charger',
@@ -65,20 +74,29 @@ export const iconNames = [
   'chevron-right',
   'chevron-up',
   'clipboard',
+  'clipboard-check',
   'clock',
   'close',
   'cloud',
+  'cloud-download',
+  'cloud-upload',
   'code',
   'coffee',
   'coffee-cup',
   'compass',
+  'cookie',
   'copy',
+  'cow',
+  'crab',
   'credit-card',
+  'crop',
+  'database',
   'dog',
   'donut',
   'download',
   'dumbbell',
   'edit',
+  'egg',
   'ellipsis',
   'external-link',
   'eye',
@@ -91,6 +109,7 @@ export const iconNames = [
   'flower',
   'folder',
   'folder-minus',
+  'folder-open',
   'folder-plus',
   'fox',
   'frog',
@@ -102,11 +121,13 @@ export const iconNames = [
   'heart',
   'help-circle',
   'home',
+  'hourglass',
   'icecream',
   'image',
   'inbox',
   'info',
   'italic',
+  'jellyfish',
   'key',
   'keyboard',
   'ladybug',
@@ -118,11 +139,14 @@ export const iconNames = [
   'location',
   'lock',
   'lock-open',
+  'login',
+  'logout',
   'magnet',
   'mail',
   'map',
   'map-pin',
   'maximize',
+  'megaphone',
   'menu',
   'mic',
   'minus',
@@ -140,19 +164,25 @@ export const iconNames = [
   'paintbrush',
   'palette',
   'paperclip',
+  'paste',
   'pause',
   'pause-circle',
   'pencil',
   'penguin',
   'phone',
+  'phone-off',
+  'pie-chart',
   'play',
   'play-circle',
   'plus',
   'plus-circle',
   'power',
+  'presentation',
   'printer',
+  'qr-code',
   'rabbit',
   'radio',
+  'rain',
   'rainbow',
   'redo',
   'refresh',
@@ -160,15 +190,20 @@ export const iconNames = [
   'rss',
   'sailboat',
   'save',
+  'scan',
   'scissors',
   'scooter',
   'search',
+  'seedling',
   'send',
+  'server',
   'settings',
   'share',
   'shield',
   'shopping-bag',
   'shopping-cart',
+  'sidebar',
+  'signal',
   'sliders',
   'smile',
   'snail',
@@ -181,13 +216,17 @@ export const iconNames = [
   'stop-circle',
   'strawberry',
   'sun',
+  'table',
   'tag',
   'tent',
+  'terminal',
   'thermometer',
   'thumbs-up',
+  'ticket',
   'train',
   'trash',
   'tree',
+  'trending-up',
   'trophy',
   'truck',
   'tv',
@@ -197,6 +236,7 @@ export const iconNames = [
   'unlink',
   'upload',
   'user',
+  'user-check',
   'user-circle',
   'user-minus',
   'user-plus',
@@ -204,10 +244,13 @@ export const iconNames = [
   'video',
   'volume',
   'volume-x',
+  'wallet',
+  'watch',
   'water-cup',
   'watermelon',
   'wifi',
   'wifi-off',
+  'wind',
   'x-circle',
   'zoom-in',
   'zoom-out',
@@ -218,11 +261,13 @@ export type IconId = (typeof iconNames)[number];
 
 /** 所有内置图标的组件名类型 */
 export type IconName =
+  | 'AcornIcon'
   | 'AirplaneIcon'
   | 'AlertCircleIcon'
   | 'AlertTriangleIcon'
   | 'AnchorIcon'
   | 'AppleIcon'
+  | 'ArchiveIcon'
   | 'ArrowDownCircleIcon'
   | 'ArrowDownIcon'
   | 'ArrowDownLeftIcon'
@@ -237,21 +282,27 @@ export type IconName =
   | 'ArrowUpIcon'
   | 'ArrowUpLeftIcon'
   | 'ArrowUpRightIcon'
+  | 'AtSignIcon'
   | 'BadgeCheckIcon'
   | 'BalloonIcon'
   | 'BanIcon'
+  | 'BarChartIcon'
   | 'BasketballIcon'
   | 'BatteryIcon'
   | 'BearIcon'
   | 'BeeIcon'
   | 'BellIcon'
   | 'BellOffIcon'
+  | 'BellRingIcon'
   | 'BicycleIcon'
   | 'BirdIcon'
+  | 'BluetoothIcon'
   | 'BoldIcon'
   | 'BoltIcon'
   | 'BookIcon'
   | 'BookmarkIcon'
+  | 'BreadIcon'
+  | 'BriefcaseIcon'
   | 'BulbIcon'
   | 'ButterflyIcon'
   | 'CactusIcon'
@@ -261,6 +312,7 @@ export type IconName =
   | 'CameraIcon'
   | 'CandleIcon'
   | 'CarIcon'
+  | 'CarrotIcon'
   | 'CartIcon'
   | 'CatIcon'
   | 'ChargerIcon'
@@ -273,21 +325,30 @@ export type IconName =
   | 'ChevronLeftIcon'
   | 'ChevronRightIcon'
   | 'ChevronUpIcon'
+  | 'ClipboardCheckIcon'
   | 'ClipboardIcon'
   | 'ClockIcon'
   | 'CloseIcon'
+  | 'CloudDownloadIcon'
   | 'CloudIcon'
+  | 'CloudUploadIcon'
   | 'CodeIcon'
   | 'CoffeeCupIcon'
   | 'CoffeeIcon'
   | 'CompassIcon'
+  | 'CookieIcon'
   | 'CopyIcon'
+  | 'CowIcon'
+  | 'CrabIcon'
   | 'CreditCardIcon'
+  | 'CropIcon'
+  | 'DatabaseIcon'
   | 'DogIcon'
   | 'DonutIcon'
   | 'DownloadIcon'
   | 'DumbbellIcon'
   | 'EditIcon'
+  | 'EggIcon'
   | 'EllipsisIcon'
   | 'ExternalLinkIcon'
   | 'EyeIcon'
@@ -300,6 +361,7 @@ export type IconName =
   | 'FlowerIcon'
   | 'FolderIcon'
   | 'FolderMinusIcon'
+  | 'FolderOpenIcon'
   | 'FolderPlusIcon'
   | 'FoxIcon'
   | 'FrogIcon'
@@ -311,11 +373,13 @@ export type IconName =
   | 'HeartIcon'
   | 'HelpCircleIcon'
   | 'HomeIcon'
+  | 'HourglassIcon'
   | 'IcecreamIcon'
   | 'ImageIcon'
   | 'InboxIcon'
   | 'InfoIcon'
   | 'ItalicIcon'
+  | 'JellyfishIcon'
   | 'KeyIcon'
   | 'KeyboardIcon'
   | 'LadybugIcon'
@@ -327,11 +391,14 @@ export type IconName =
   | 'LocationIcon'
   | 'LockIcon'
   | 'LockOpenIcon'
+  | 'LoginIcon'
+  | 'LogoutIcon'
   | 'MagnetIcon'
   | 'MailIcon'
   | 'MapIcon'
   | 'MapPinIcon'
   | 'MaximizeIcon'
+  | 'MegaphoneIcon'
   | 'MenuIcon'
   | 'MicIcon'
   | 'MinusCircleIcon'
@@ -349,19 +416,25 @@ export type IconName =
   | 'PaintbrushIcon'
   | 'PaletteIcon'
   | 'PaperclipIcon'
+  | 'PasteIcon'
   | 'PauseCircleIcon'
   | 'PauseIcon'
   | 'PencilIcon'
   | 'PenguinIcon'
   | 'PhoneIcon'
+  | 'PhoneOffIcon'
+  | 'PieChartIcon'
   | 'PlayCircleIcon'
   | 'PlayIcon'
   | 'PlusCircleIcon'
   | 'PlusIcon'
   | 'PowerIcon'
+  | 'PresentationIcon'
   | 'PrinterIcon'
+  | 'QrCodeIcon'
   | 'RabbitIcon'
   | 'RadioIcon'
+  | 'RainIcon'
   | 'RainbowIcon'
   | 'RedoIcon'
   | 'RefreshIcon'
@@ -369,15 +442,20 @@ export type IconName =
   | 'RssIcon'
   | 'SailboatIcon'
   | 'SaveIcon'
+  | 'ScanIcon'
   | 'ScissorsIcon'
   | 'ScooterIcon'
   | 'SearchIcon'
+  | 'SeedlingIcon'
   | 'SendIcon'
+  | 'ServerIcon'
   | 'SettingsIcon'
   | 'ShareIcon'
   | 'ShieldIcon'
   | 'ShoppingBagIcon'
   | 'ShoppingCartIcon'
+  | 'SidebarIcon'
+  | 'SignalIcon'
   | 'SlidersIcon'
   | 'SmileIcon'
   | 'SnailIcon'
@@ -390,13 +468,17 @@ export type IconName =
   | 'StopIcon'
   | 'StrawberryIcon'
   | 'SunIcon'
+  | 'TableIcon'
   | 'TagIcon'
   | 'TentIcon'
+  | 'TerminalIcon'
   | 'ThermometerIcon'
   | 'ThumbsUpIcon'
+  | 'TicketIcon'
   | 'TrainIcon'
   | 'TrashIcon'
   | 'TreeIcon'
+  | 'TrendingUpIcon'
   | 'TrophyIcon'
   | 'TruckIcon'
   | 'TvIcon'
@@ -405,6 +487,7 @@ export type IconName =
   | 'UndoIcon'
   | 'UnlinkIcon'
   | 'UploadIcon'
+  | 'UserCheckIcon'
   | 'UserCircleIcon'
   | 'UserIcon'
   | 'UserMinusIcon'
@@ -413,10 +496,13 @@ export type IconName =
   | 'VideoIcon'
   | 'VolumeIcon'
   | 'VolumeXIcon'
+  | 'WalletIcon'
+  | 'WatchIcon'
   | 'WaterCupIcon'
   | 'WatermelonIcon'
   | 'WifiIcon'
   | 'WifiOffIcon'
+  | 'WindIcon'
   | 'XCircleIcon'
   | 'ZoomInIcon'
   | 'ZoomOutIcon'

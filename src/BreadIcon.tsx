@@ -1,0 +1,33 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const BreadIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M8 32 C 8 22 15 18 24 18 C 33 18 40 22 40 32 L 40 34 C 40 40 8 40 8 34 Z" fill="#E9C46A"/>
+<path d="M16 24 C 18 28 16 32 18 36" stroke="#8B5E3C" strokeWidth={sw(2.5)} fill="none"/>
+<path d="M24 22 C 26 27 24 32 26 38" stroke="#8B5E3C" strokeWidth={sw(2.5)} fill="none"/>
+<path d="M32 24 C 34 28 32 32 34 36" stroke="#8B5E3C" strokeWidth={sw(2.5)} fill="none"/>
+
+    </svg>
+  );
+});
+
+BreadIcon.displayName = 'BreadIcon';
+
+export default BreadIcon;
