@@ -232,3 +232,9 @@ python3 scripts/generate_vue.py --check  # 只校验是否最新（CI 用这个�
 ## 许可证
 
 MIT © [guokaigdg](https://github.com/guokaigdg)
+
+## 赞助
+
+- 支持这个项目最简单的方式就是点个 Star 并分享出去。如果你有想法或建议，欢迎提 [Issue](https://github.com/guokaigdg/naive-icons/issues) 或提交 PR。
+
+- 如果这个项目对你有帮助，也不妨请开发者的猫吃个罐罐——毕竟每个图标背后都有一只猫在监督代码。<a href="https://guokaigdg.github.io/home/payment.html">请猫吃个罐罐</a>
