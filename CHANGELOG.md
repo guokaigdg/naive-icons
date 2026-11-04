@@ -2,6 +2,33 @@
 
 本文件记录 Naive Icons 的每个版本变更。版本号遵循语义化版本规范（SemVer）。
 
+## 1.12.0
+
+新增
+
+- **43 枚图标**（202 → **245**）—— 补齐日常最常用、库里却没有的那一批：
+  - 界面与操作：`clipboard-check`、`user-check`、`login` / `logout`、`paste`、`scan`、
+    `qr-code`、`archive`、`crop`、`sidebar`、`bell-ring`
+  - 通信：`at-sign`、`phone-off`、`megaphone`、`signal`、`bluetooth`
+  - 文件与数据：`database`、`server`、`table`、`folder-open`、`cloud-upload` /
+    `cloud-download`、`presentation`、`bar-chart`、`pie-chart`、`trending-up`、`terminal`
+  - 自然天气：`wind`、`rain`、`seedling`、`acorn`
+  - 动物：`cow`、`crab`、`jellyfish`
+  - 食物：`bread`、`egg`、`cookie`、`carrot`
+  - 日常物品：`briefcase`、`wallet`、`watch`、`hourglass`、`ticket`
+
+  全部按既有规范手绘：48 画布、根节点逐字节一致、10 色白名单、
+  主体描边外缘距边 ≥ 3 单位、小色块显式 `stroke="none"`。
+  `login` / `logout` 互为镜像对称，与 `lock` / `lock-open` 同一套对称约定。
+
+更新
+
+- **人像类图标去掉黑色眼睛** —— `user` / `user-plus` / `user-minus` / `users` 原本圆脸上
+  有一对黑眼睛加微笑，与本批新增的 `user-check`（无五官）不是一套画风。
+  现在这四枚都改成无五官，头像只剩一枚实心圆，16px 下也不再糊成两个黑点；
+  `user-circle` 本来就无五官，现在整族统一。
+  （`bear` / `cat` / `frog` / `smile` 这类动物与 emoji 不动——那里五官就是主体细节）
+
 ## 1.11.1
 
 修复
