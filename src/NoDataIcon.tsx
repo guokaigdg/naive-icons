@@ -20,11 +20,11 @@ export const NoDataIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       {props.title ? <title>{props.title}</title> : null}
 
 <path d="M8 13 L8 39 L40 39 L40 13 Z" fill="#8B5E3C" stroke="none"/>
-<path d="M11 13 L37 13 L33 22 L15 22 Z" fill="#FAEDCD" stroke="none"/>
-<path d="M13.2 18 L34.8 18 L33 22 L15 22 Z" fill="#264653" stroke="none"/>
-<path d="M20 22 L28 22 L28 39 L20 39 Z" fill="#E76F51" stroke="none"/>
-<path d="M11 13 L37 13 L33 22 L15 22 Z" stroke="#2A2A2A" strokeWidth={sw(3)} strokeLinejoin="round" fill="none"/>
+<path d="M11 13 L37 13 L33 22 L15 22 Z" fill="#264653" stroke="#2A2A2A" strokeWidth={sw(3)} strokeLinejoin="round"/>
 <path d="M8 13 L8 39 L40 39 L40 13" stroke="#2A2A2A" strokeWidth={sw(3.5)} fill="none"/>
+<rect x="14" y="26" width="20" height="10" rx="2" fill="#FAEDCD" stroke="none"/>
+<circle cx="20" cy="31" r="1.6" fill="#2A2A2A" stroke="none"/>
+<circle cx="28" cy="31" r="1.6" fill="#2A2A2A" stroke="none"/>
 
     </svg>
   );
