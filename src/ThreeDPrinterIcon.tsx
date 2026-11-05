@@ -1,0 +1,35 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const ThreeDPrinterIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M8 40 H40" strokeWidth={sw(3)}/>
+<path d="M14 40 V10 H34 V40" fill="none"/>
+<path d="M14 18 H34" strokeWidth={sw(3)}/>
+<rect x="20" y="18" width="8" height="7" rx="1" fill="#E76F51"/>
+<path d="M24 25 V31"/>
+<path d="M16 40 L19 33 H29 L32 40 Z" fill="#2A9D8F"/>
+
+    </svg>
+  );
+});
+
+ThreeDPrinterIcon.displayName = 'ThreeDPrinterIcon';
+
+export default ThreeDPrinterIcon;

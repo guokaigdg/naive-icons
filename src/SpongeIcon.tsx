@@ -1,0 +1,34 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const SpongeIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<rect x="8" y="15" width="32" height="20" rx="8" fill="#E9C46A"/>
+<circle cx="16" cy="22" r="2.5" fill="#8B5E3C" stroke="none"/>
+<circle cx="24" cy="28" r="2" fill="#8B5E3C" stroke="none"/>
+<circle cx="32" cy="21" r="2.5" fill="#8B5E3C" stroke="none"/>
+<circle cx="20" cy="32" r="1.8" fill="#8B5E3C" stroke="none"/>
+
+    </svg>
+  );
+});
+
+SpongeIcon.displayName = 'SpongeIcon';
+
+export default SpongeIcon;

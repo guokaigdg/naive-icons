@@ -1,0 +1,37 @@
+import { defineComponent, h, type VNode } from 'vue';
+import { iconPropDefs } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const VolleyballIcon = defineComponent({
+  name: 'VolleyballIcon',
+  inheritAttrs: false,
+  props: iconPropDefs,
+  setup(props, { attrs }) {
+    return () => {
+      const sw = scaledStroke(props.strokeWidth);
+      const children: VNode[] = [];
+      if (props.title) children.push(h('title', null, props.title));
+      children.push(h('circle', { cx: '24', cy: '24', r: '17', fill: '#FAEDCD' }));
+      children.push(h('path', { d: 'M24 7 C18 17 18 31 24 41', stroke: '#264653', 'stroke-width': sw(2.5), fill: 'none' }));
+      children.push(h('path', { d: 'M8 17 C18 20 30 20 40 17', stroke: '#264653', 'stroke-width': sw(2.5), fill: 'none' }));
+      children.push(h('path', { d: 'M8 31 C18 28 30 28 40 31', stroke: '#264653', 'stroke-width': sw(2.5), fill: 'none' }));
+      const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
+      return h(
+        'svg',
+        {
+          viewBox: '0 0 48 48',
+          xmlns: 'http://www.w3.org/2000/svg',
+          fill: 'none',
+          'stroke-linecap': 'round',
+          'stroke-linejoin': 'round',
+          role: props.title ? 'img' : undefined,
+          'aria-hidden': labelled ? undefined : true,
+          ...normalizeIconProps({ ...props, ...attrs }),
+        },
+        children,
+      );
+    };
+  },
+});
+
+export default VolleyballIcon;

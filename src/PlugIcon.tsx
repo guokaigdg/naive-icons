@@ -1,0 +1,34 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const PlugIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M14 18 L34 18 L34 30 C 34 36 29 40 24 40 C 19 40 14 36 14 30 Z" fill="#264653"/>
+<rect x="17" y="8" width="4" height="10" rx="2" fill="#E76F51"/>
+<rect x="27" y="8" width="4" height="10" rx="2" fill="#E76F51"/>
+<path d="M24 40 L24 42" stroke="#2A2A2A" strokeWidth={sw(3)} fill="none"/>
+<path d="M19 25 L29 25" stroke="#FAEDCD" strokeWidth={sw(2.5)} fill="none"/>
+
+    </svg>
+  );
+});
+
+PlugIcon.displayName = 'PlugIcon';
+
+export default PlugIcon;

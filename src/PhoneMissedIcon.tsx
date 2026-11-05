@@ -1,0 +1,32 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const PhoneMissedIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M9 17 L14 17 L17 24 L13 27 C15 32 19 36 24 38 L27 33 L34 36 L34 40 C34 42 32 42 30 42 C17 42 6 31 6 18 C6 16 7 17 9 17 Z" fill="#588157"/>
+<circle cx="37" cy="11.5" r="5.5" fill="#E76F51"/>
+<path d="M34.5 9 L39.5 14 M39.5 9 L34.5 14" stroke="#FFFFFF" strokeWidth={sw(2)} fill="none"/>
+
+    </svg>
+  );
+});
+
+PhoneMissedIcon.displayName = 'PhoneMissedIcon';
+
+export default PhoneMissedIcon;

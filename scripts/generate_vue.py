@@ -3,7 +3,7 @@
 生成 naive-icons-vue 包的源码。源永远是 svg/。
 
 产出（都不要手改）：
-  vue/src/<Name>Icon.ts   202 枚 Vue 3 组件
+  vue/src/<Name>Icon.ts   663 枚 Vue 3 组件
   vue/src/index.ts         barrel
   vue/src/iconNames.ts     运行时 id 列表
 
@@ -57,7 +57,7 @@ def build_index(ids):
     lines.append('export { normalizeIconProps, scaledStroke, resolveStrokeWidth } from \'./iconProps\';')
     lines.append('')
     lines.append('// 运行时图标名列表 + 自建图标工厂。')
-    lines.append('// iconNames 让「按名字动态取图标」不再需要 import * as（那会把 202 枚全打进包）；')
+    lines.append('// iconNames 让「按名字动态取图标」不再需要 import * as（那会把 663 枚全打进包）；')
     lines.append('// createIcon 让自建图标复用与内置图标一致的根节点、无障碍与描边缩放逻辑。')
     lines.append('export { iconNames } from \'./iconNames\';')
     lines.append('export type { IconId, IconName } from \'./iconNames\';')
@@ -72,7 +72,7 @@ def build_icon_names(ids):
         ' * 所有内置图标的 id（kebab-case），运行时数组。',
         ' *',
         ' * IconId 只是纯类型，编译后不存在；需要「按名字动态取图标」时用这个数组，',
-        ' * 配合动态 import 别把 202 枚全打进包：',
+        ' * 配合动态 import 别把 663 枚全打进包：',
         ' *',
         " * import { iconNames } from 'naive-icons-vue';",
         ' *',

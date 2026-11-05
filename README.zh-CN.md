@@ -33,7 +33,7 @@
 
 ## 特性
 
-- 图标覆盖界面、操作、媒体、导航、动物、食物等 11 个分类
+- 图标覆盖界面、操作、媒体、导航、通信、自然、动物、食物、金融、日常物品、办公、设备硬件、建筑场所、工具、健康医疗、运动、交通、表情等 18 个分类
 - 每个图标同时提供 SVG 源文件与 React TSX 组件
 - 完整 TypeScript 类型：IconProps、IconName、IconComponent、PaletteColor、NAIVE_PALETTE
 - 导出 `scaledStroke` / `resolveStrokeWidth` / `normalizeIconProps`，需要自建图标时用得上
@@ -41,7 +41,7 @@
 - `createIcon`——图标工厂，自建图标能拿到与内置图标完全一致的根节点、无障碍与描边缩放
 - 支持 currentColor，传入后图标跟随文字颜色
 - 官方 Agent Skill：一条命令装到 AI 编码助手，按语义帮你挑图标并生成代码
-- 另有 Vue 3 版本 `naive-icons-vue`：同样的 245 枚图标与同样的图形，只是组件 API 换成了 Vue 那套
+- 另有 Vue 3 版本 `naive-icons-vue`：同样的 663 枚图标与同样的图形，只是组件 API 换成了 Vue 那套
 
 ## AI Agent Skill
 
@@ -65,7 +65,7 @@ Skill 自带完整图标目录、设计规范和用法，以及全部 SVG 源码
 
 ## 安装
 
-本库有两个包，卖的是同一套 245 枚图标。按你的框架挑一个装：
+本库有两个包，卖的是同一套 663 枚图标。按你的框架挑一个装：
 
 | 框架 | 包名 | 需要 |
 | --- | --- | --- |
@@ -184,7 +184,7 @@ Naive Icons 的每个组件都继承原生 `SVGProps<SVGSVGElement>`，可以直
 > Vue 3 版的属性名与默认值完全一致，只是模板里要写成 kebab-case（`:stroke-width="7"`），
 > 拿 DOM 节点用 `ref.value.$el`。详见 [`vue/README.zh-CN.md`](./vue/README.zh-CN.md)。
 
-> `fill` 那一行值得单独说一句：naive 风格靠的就是实心色块，730 个图元里 489 个硬编码了自己的
+> `fill` 那一行值得单独说一句：naive 风格靠的就是实心色块，3170 个图元里 1987 个硬编码了自己的
 > `fill`，所以根节点的 `fill` 对它们无效。这不是 bug，是风格本身——要换配色请用 `color`
 > 换描边，或直接取 `NAIVE_PALETTE` 里已有的十色。
 
@@ -238,11 +238,11 @@ const map: Record<IconId, () => Promise<unknown>> = {
 };
 ```
 
-用 `import * as icons` 也能按名字取，但会把全部 245 枚都打进包，tree-shaking 直接归零。
+用 `import * as icons` 也能按名字取，但会把全部 663 枚都打进包，tree-shaking 直接归零。
 `iconNames` 让你搭一张只加载真正用得到的图标的查找表。
 
 想自己画一个同样风格的图标，用 `createIcon` 工厂。它产出的根节点、无障碍属性和描边缩放
-与内置的 245 枚完全一致：
+与内置的 663 枚完全一致：
 
 ```tsx
 import { createIcon } from 'naive-icons';

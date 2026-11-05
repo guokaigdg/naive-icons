@@ -1,0 +1,33 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const GraduationCapIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M24 8 L42 16 L24 24 L6 16 Z" fill="#264653"/>
+<path d="M13 20 V30 C13 34 19 37 24 37 C29 37 35 34 35 30 V20" fill="#264653"/>
+<path d="M41 16 V27" stroke="#E9C46A" strokeWidth={sw(3)}/>
+<circle cx="41" cy="30" r="3" fill="#E9C46A" stroke="none"/>
+
+    </svg>
+  );
+});
+
+GraduationCapIcon.displayName = 'GraduationCapIcon';
+
+export default GraduationCapIcon;

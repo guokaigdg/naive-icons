@@ -1,0 +1,35 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const ElephantIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<circle cx="24" cy="21" r="10" fill="#264653"/>
+<path d="M15 18 C8 16 6 24 12 28 C14 26 15 22 15 18 Z" fill="#2A9D8F"/>
+<path d="M33 18 C40 16 42 24 36 28 C34 26 33 22 33 18 Z" fill="#2A9D8F"/>
+<path d="M24 30 C24 36 22 40 28 41 C31 41 32 39 32 37" stroke="#264653" strokeWidth={sw(5)} fill="none"/>
+<circle cx="20" cy="21" r="1.4" fill="#FFFFFF" stroke="none"/>
+<circle cx="28" cy="21" r="1.4" fill="#FFFFFF" stroke="none"/>
+
+    </svg>
+  );
+});
+
+ElephantIcon.displayName = 'ElephantIcon';
+
+export default ElephantIcon;

@@ -1,0 +1,34 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const RouterIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<rect x="8" y="26" width="32" height="14" rx="3" fill="#264653"/>
+<path d="M14 26 L10 12 M34 26 L38 12" stroke="#2A2A2A" fill="none"/>
+<circle cx="16" cy="33" r="2" fill="#E9C46A" stroke="none"/>
+<circle cx="24" cy="33" r="2" fill="#2A9D8F" stroke="none"/>
+<circle cx="32" cy="33" r="2" fill="#E76F51" stroke="none"/>
+
+    </svg>
+  );
+});
+
+RouterIcon.displayName = 'RouterIcon';
+
+export default RouterIcon;

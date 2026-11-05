@@ -3,13 +3,13 @@
 本库的设计语言是**手绘 naive folk art（稚拙民间画）**：笨拙、温暖、有手作感，刻意保留不完美。
 它不是「把线性图标加个圆角」——判断一张图是否属于本库，看的是气质，不是形状规整度。
 
-本文档的每条规则都对照仓库内 245 枚现有图标核过。
+本文档的每条规则都对照仓库内 663 枚现有图标核过。
 
 ---
 
 ## 1. 画布与根节点
 
-所有图标共用同一根节点，245 枚**逐字节一致**：
+所有图标共用同一根节点，663 枚**逐字节一致**：
 
 ```xml
 <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -56,7 +56,7 @@
 
 ## 4. 构图公式
 
-245 枚里绝大多数遵循同一套三段式，这也是本库最容易被 AI 画错的地方：
+663 枚里绝大多数遵循同一套三段式，这也是本库最容易被 AI 画错的地方：
 
 ```
 主形体  = 一块大实心色（占视觉 60%+）
@@ -70,11 +70,11 @@
 头像只是一枚实心圆，不画眼睛也不画微笑，16px 下才不会糊成两个黑点。
 要画表情的场合留给动物与 emoji（`bear` / `cat` / `frog` / `smile` 那一类），那里五官就是主体细节。
 
-**不要**画成纯线条图标。245 枚里只有 **24 枚**没有实心填充，且都是「线条即语义」的类型——
+**不要**画成纯线条图标。663 枚里只有 **53 枚**没有实心填充，且都是「线条即语义」的类型——
 方向与结构符号（`chevron-*`、`menu`、`link` / `unlink`、`paperclip`），
 以及本来就是圈套符号的（`check-circle`、`x-circle`、`spinner`、`zoom-in` / `zoom-out`、`code`、
 `check-square`、`external-link`、`plus-circle` / `minus-circle` / `play-circle` / `pause-circle` /
-`stop-circle`），再加上「形本身就是线」的 `bluetooth`。
+`stop-circle`），再加上「形本身就是线」的一批（`bluetooth`、`hanger`、`arrow-left-right` 那一类）。
 
 反直觉的一点：**`arrow-*` 四枚是有实心填充的**，因为箭头本质是「可被点击的色块」，
 纯线条在 16px 下会太细。所以判断标准不是「方向符号就该线条化」，而是
@@ -108,7 +108,7 @@
 
 ## 6. 禁用项
 
-245 枚全量扫描确认，以下一律不使用：
+663 枚全量扫描确认，以下一律不使用：
 
 | 禁用 | 扫描结果 |
 |---|---|
@@ -123,8 +123,8 @@
 
 ## 7. 允许 `transform`
 
-10 枚在用：`bee`、`butterfly`、`cherry`、`donut`、`lemon`、`link`、`music`、`scooter`、
-`snowflake`、`unlink`。
+16 枚在用：`badminton`、`bee`、`butterfly`、`cherry`、`donut`、`lemon`、`link`、`map-pin`、
+`marker`、`music`、`pill`、`scooter`、`snowboard`、`snowflake`、`unlink`、`utility-knife`。
 
 用途只有两种：**旋转/镜像复用已有图形**、**沿圆周排布重复元素**。
 

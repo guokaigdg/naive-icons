@@ -1,0 +1,34 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const SatelliteIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<rect x="18" y="18" width="12" height="12" rx="2" fill="#264653"/>
+<rect x="6" y="22" width="10" height="4" fill="#2A9D8F"/>
+<rect x="32" y="22" width="10" height="4" fill="#2A9D8F"/>
+<path d="M24 18 L24 12" stroke="#264653" strokeWidth={sw(2.5)} fill="none"/>
+<path d="M20 8 C22 6 26 6 28 8" stroke="#E76F51" strokeWidth={sw(2)} fill="none"/>
+
+    </svg>
+  );
+});
+
+SatelliteIcon.displayName = 'SatelliteIcon';
+
+export default SatelliteIcon;

@@ -24,11 +24,11 @@
 让界面多一点点人情味。
 
 这是 [Naive Icons](https://github.com/guokaigdg/naive-icons) 的 Vue 3 版本。
-同样 245 枚图标，同样的图形，同样的无障碍行为——只有组件 API 换了。
+同样 663 枚图标，同样的图形，同样的无障碍行为——只有组件 API 换了。
 
 ## 特性
 
-- 覆盖界面、操作、媒体、导航、动物、食物等 11 个分类，风格统一
+- 覆盖界面、操作、媒体、导航、通信、自然、动物、食物、日常物品、设备硬件、建筑场所、工具、健康医疗、交通、表情等 18 个分类，风格统一
 - 一枚图标一个组件，用 render 函数实现（不需要编译 SFC）
 - 完整 TypeScript 类型：IconProps、IconName、IconId、IconComponent、PaletteColor、NAIVE_PALETTE
 - tree-shaking 真的生效——单枚图标 minify 后约 1.4 KB
@@ -45,7 +45,7 @@ npm install naive-icons-vue
 
 Vue 3.4+ 是 peer dependency，本包没有其它运行时依赖。
 
-本包与 `naive-icons`（React 版）**永远同版本发布**，两个包提供的是同一套 245 枚图标，
+本包与 `naive-icons`（React 版）**永远同版本发布**，两个包提供的是同一套 663 枚图标，
 升级时一起升就行。
 
 ## 快速开始
@@ -151,11 +151,11 @@ const map: Record<IconId, () => Promise<unknown>> = {
 };
 ```
 
-用命名空间引入整个包（`import * as icons`）也能按名字取图标，但那会把 245 枚全打进包，
+用命名空间引入整个包（`import * as icons`）也能按名字取图标，但那会把 663 枚全打进包，
 tree-shaking 直接归零。`iconNames` 让你只加载真正会用到的那些。
 
 想自己画一枚同风格的图标，用 `createIcon` 工厂。它产出的根节点、无障碍属性与描边缩放
-与内置 245 枚完全一致：
+与内置 663 枚完全一致：
 
 ```ts
 import { createIcon, h } from 'naive-icons-vue';
@@ -196,7 +196,7 @@ NAIVE_PALETTE.orange; // '#E76F51'
 | 属性名 | JSX 要写 camelCase（`strokeWidth`） | 原生 kebab-case 透传 |
 | SVG 上的 `class` | React 18 会告警 | 不告警 |
 
-两个包提供同样的 245 枚图标、同样的图形、同样的无障碍行为。
+两个包提供同样的 663 枚图标、同样的图形、同样的无障碍行为。
 
 ## 直接使用 SVG
 

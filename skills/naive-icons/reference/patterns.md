@@ -1,6 +1,6 @@
 # naive-icons 用法模式
 
-本文档只写**经过源码核实**的行为。库版本 1.8.0，共 245 枚图标。
+本文档只写**经过源码核实**的行为。库版本 1.12.0，共 663 枚图标。
 
 ---
 
@@ -29,8 +29,8 @@ export function Example() {
 ```
 
 按需引入用具名导入即可。包是 ESM + `sideEffects: false`，打包器会做 tree-shaking，
-`dist/index.mjs` 单文件全量约 175 KB；摇掉未用组件后单个 SVG 源文件在 **245–1039 字节**
-之间（中位 402、平均 460）。
+`dist/index.mjs` 单文件全量约 42 KB；摇掉未用组件后单个 SVG 源文件在 **210–1331 字节**
+之间（中位 438、平均 464）。
 
 > ⚠️ **不要**写 `import HomeIcon from 'naive-icons/src/HomeIcon'`。`package.json` 的 `files`
 > 不含 `src`，且 `exports` 也没有 `./src/*`，这条路径对 npm 用户不可用（仓库 README 里有这个
@@ -85,7 +85,7 @@ export function Example() {
 
 ## 5. 非 React 项目
 
-`svg/` 下 245 个文件都是自包含 SVG，无外部引用。
+`svg/` 下 663 个文件都是自包含 SVG，无外部引用。
 
 ```html
 <img src="node_modules/naive-icons/svg/home.svg" width="24" height="24" alt="首页" />

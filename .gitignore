@@ -39,3 +39,7 @@ __pycache__/
 
 # 字体源文件（子集化脚本按需下载，不入仓）
 scripts/fonts-src/
+
+# 工具临时产物（IDE 分享包 / 截图缓存），不要进仓库
+.trae-html-share-packages/
+.screenshots/
