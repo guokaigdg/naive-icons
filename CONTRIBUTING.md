@@ -28,7 +28,7 @@
    该脚本会先校验 `svg/`、`ICON_CATEGORY`、`ZH_NAMES` 三者数量一致，再重建两个产物。
    想在 CI 里只做校验（不写文件）就用 `--check`，内容过期时返回非零。
 
-6. 重新生成 Vue 包的组件。`vue/src/` 下的 245 枚组件同样是从 `svg/` 生成的，
+6. 重新生成 Vue 包的组件。`vue/src/` 下的 663 枚组件同样是从 `svg/` 生成的，
    忘了重跑的话 CI 的 `icons:vue:check` 会失败：
 
    ```bash
@@ -137,6 +137,10 @@ fix(icons): correct bicycle chain path
 docs(icons): clarify strokeWidth semantics
 chore(release): 1.5.3
 ```
+
+> 由 AI 协助产出的改动，**提交前需要维护者明确确认**（见 `AGENTS.md`）：先把完整的
+> commit message 与文件清单贴出来，得到确认后再执行；`push` / 打 tag / `npm publish`
+> / 建 GitHub Release 各自单独确认。
 
 ## 版权
 
