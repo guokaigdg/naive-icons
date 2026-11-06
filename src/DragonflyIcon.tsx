@@ -1,0 +1,33 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const DragonflyIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M24 15 C18 11 10 10 7 14 C10 19 18 21 24 23 C30 21 38 19 41 14 C38 10 30 11 24 15 Z" fill="#2A9D8F"/>
+<path d="M24 25 C18 23 10 24 8 28 C12 32 19 31 24 29 C29 31 36 32 40 28 C38 24 30 23 24 25 Z" fill="#FAEDCD"/>
+<path d="M24 12 L24 38" stroke="#264653" strokeWidth={sw(3.5)} fill="none"/>
+<circle cx="24" cy="11" r="2.5" fill="#264653"/>
+
+    </svg>
+  );
+});
+
+DragonflyIcon.displayName = 'DragonflyIcon';
+
+export default DragonflyIcon;

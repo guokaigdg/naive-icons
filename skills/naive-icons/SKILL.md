@@ -1,11 +1,11 @@
 ---
 name: naive-icons
-description: 为界面挑选并生成手绘 naive folk art 风格 SVG 图标，663 枚，每枚都有 React 组件与独立 SVG 源文件。当用户要「找个图标」「加个图标」「这个界面该用哪个图标」「图标选型」，要手绘风 / naive / 民间插画风图标，要批量生成图标组件，或要查本库设计规范与色板时使用。Use when choosing or searching icons for a UI, or generating naive folk-art style SVG / React icon components. 触发词：图标、icon、图标库、找图、手绘风、naive、民俗风、插画风。
+description: 为界面挑选并生成手绘 naive folk art 风格 SVG 图标，709 枚，每枚都有 React 组件与独立 SVG 源文件。当用户要「找个图标」「加个图标」「这个界面该用哪个图标」「图标选型」，要手绘风 / naive / 民间插画风图标，要批量生成图标组件，或要查本库设计规范与色板时使用。Use when choosing or searching icons for a UI, or generating naive folk-art style SVG / React icon components. 触发词：图标、icon、图标库、找图、手绘风、naive、民俗风、插画风。
 ---
 
 # Naive Icons
 
-手绘 naive folk art 风格的 React + TypeScript SVG 图标库。663 枚，零运行时依赖，
+手绘 naive folk art 风格的 React + TypeScript SVG 图标库。709 枚，零运行时依赖，
 MIT 协议，npm 包名 `naive-icons`。
 
 ```bash
@@ -27,7 +27,7 @@ npm install naive-icons
 | 场景 | 为什么不适合 |
 |---|---|
 | 金融 / 风控 / 医疗 / 法务 | 手绘稚拙感与这些场景要求的严肃可信直接冲突 |
-| 政企后台、数据密集型表格 | 663 枚的覆盖面撑不起复杂 B 端图标需求，且彩色描边在密集列表里会跳 |
+| 政企后台、数据密集型表格 | 709 枚的覆盖面撑不起复杂 B 端图标需求，且彩色描边在密集列表里会跳 |
 | 已有成熟 icon 体系的项目 | 混用两套图标库比统一用一套更糟 |
 | 需要线性极简 / 3D / 拟物 | 风格完全不在一个方向 |
 
@@ -60,7 +60,7 @@ python3 scripts/search.py --list-categories
 中英文都能用，接受完整句子而非关键词。输出按相关度排序，带命中理由：
 
 ```
-「购物车结算」→ 2 个候选（共 663 枚）
+「购物车结算」→ 2 个候选（共 709 枚）
 
 1. cart               购物车      objects        CartIcon                 98.0
    命中: 购物车、购物
@@ -68,7 +68,7 @@ python3 scripts/search.py --list-categories
    命中: 购物
 ```
 
-**不要把 663 枚全读进上下文**——脚本就是为此存在的。检索不到时把 `catalog.md` 翻给用户看。
+**不要把 709 枚全读进上下文**——脚本就是为此存在的。检索不到时把 `catalog.md` 翻给用户看。
 
 ### 2) 挑
 
@@ -122,7 +122,7 @@ python3 scripts/emit.py users --out src/icons --format tsx  # 批量落盘
 ```bash
 python3 <仓库根>/scripts/build_website.py        # 官网
 python3 <仓库根>/scripts/build_skill_assets.py    # skill 的 catalog.md 与 icons.json
-python3 <仓库根>/scripts/generate_vue.py         # vue/src 的 663 枚组件
+python3 <仓库根>/scripts/generate_vue.py         # vue/src 的 709 枚组件
 ```
 
 > 注意路径：`scripts/search.py` 和 `scripts/emit.py` 是**本 skill 自带的**，
@@ -133,7 +133,7 @@ python3 <仓库根>/scripts/generate_vue.py         # vue/src 的 663 枚组件
 
 | 约束 | 值 |
 |---|---|
-| 画布 | `viewBox="0 0 48 48"`，根节点 663 枚逐字节一致，不要改 |
+| 画布 | `viewBox="0 0 48 48"`，根节点 709 枚逐字节一致，不要改 |
 | 描边 | `#2A2A2A`，宽 `3.5`，`round` 线帽线角 |
 | 边距 | 主体距边缘 ≥3 单位，**按描边外缘算**（中心线要留到 4.75） |
 | 色板 | 只用 ink/navy/orange/yellow/pink/green/teal/brown/cream/white 十色 |
@@ -153,16 +153,16 @@ python3 <仓库根>/scripts/generate_vue.py         # vue/src 的 663 枚组件
 
 | 文件 | 内容 | 什么时候读 |
 |---|---|---|
-| `reference/catalog.md` | 全部 663 枚：id、中文名、组件名、什么时候用 | 检索脚本没命中，或要给用户列选项 |
+| `reference/catalog.md` | 全部 709 枚：id、中文名、组件名、什么时候用 | 检索脚本没命中，或要给用户列选项 |
 | `reference/design-spec.md` | 完整设计规范、构图公式、继承规则、尺寸可辨性 | 画新图标、改现有图标 |
 | `reference/patterns.md` | React/SVG 用法、属性默认值、尺寸选择、无障碍、深色模式、避坑表 | 写调用代码 |
 | `scripts/icons.json` | 全部 SVG 源码 | 不要直接读，由 `emit.py` 取用 |
 
 ## 五、事实速查
 
-- 663 枚，18 个分类。分类计数：界面基础 68、操作 48、文件与媒体 61、导航方位 37、通信 30、自然天气 39、
-  动物 33、食物饮品 43、金融 21、日常物品 72、办公 20、设备硬件 34、
-  建筑场所 39、工具 22、健康医疗 31、运动 26、交通工具 34、表情 27。
+- 709 枚，18 个分类。分类计数：界面基础 70、操作 46、文件与媒体 58、导航方位 38、通信 32、自然天气 28、
+  动物 37、食物饮品 50、金融 22、日常物品 74、办公 21、设备硬件 40、
+  建筑场所 39、工具 23、健康医疗 33、运动 30、交通工具 38、表情 30。
 - 组件名 = id 各段首字母大写 + `Icon`：`user-plus` → `UserPlusIcon`。
 - 属性默认：`size=24`、`color=#2A2A2A`、`strokeWidth=3.5`、`fill=none`。
   `strokeWidth` 是相对 3.5 基准的**缩放系数**而非绝对宽度，传 7 即整体描边加倍且层次保持；
@@ -172,8 +172,8 @@ python3 <仓库根>/scripts/generate_vue.py         # vue/src 的 663 枚组件
 - 按需引入用具名导入即可，打包器会 tree-shaking（只导入 1 个约 1 KB）。
   也可以走子路径绕过顶层入口：`import { HomeIcon } from 'naive-icons/icons/HomeIcon'`。
   `naive-icons/src/*` **不可用**（`files` 不含 `src`）。
-- 需要「按名字动态取图标」时用 `iconNames`（663 个 kebab id 的运行时数组）与类型 `IconId`。
-  **不要用 `import * as icons`**——那会把全部 663 枚打进包，tree-shaking 直接归零。
+- 需要「按名字动态取图标」时用 `iconNames`（709 个 kebab id 的运行时数组）与类型 `IconId`。
+  **不要用 `import * as icons`**——那会把全部 709 枚打进包，tree-shaking 直接归零。
 - 自建图标用 `createIcon(name, body)` 工厂：根节点、无障碍属性、描边缩放与内置图标完全一致。
   `body` 可以是普通节点，也可以是接收 `sw(designed)` 的函数——把设计时的描边宽度交给 `sw()`，
   整体加粗时层次才不会散。

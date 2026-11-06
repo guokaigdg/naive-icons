@@ -8,7 +8,7 @@ import { describe, expect, it } from 'vitest';
  * tree-shaking 回归测试。
  *
  * 与 React 版（仓库根 tests/bundle-size.test.ts）同一个道理：只把 index.ts 当单一
- * 入口，打包器无法证明顶层语句无副作用，整个模块必须保留，663 个图标全进包。
+ * 入口，打包器无法证明顶层语句无副作用，整个模块必须保留，709 个图标全进包。
  * `sideEffects: false` 只允许跳过「整个模块」，管不到模块内部的顶层语句。
  * 现在每个图标各自成为入口 + splitting，只导入一个图标实测约 1.4 KB。
  */
@@ -41,7 +41,7 @@ describe('tree-shaking', () => {
     expect(iconsLeft).toBe(1);
   });
 
-  it('体积随导入数量线性增长，不随库的 663 枚总量增长', () => {
+  it('体积随导入数量线性增长，不随库的 709 枚总量增长', () => {
     const one = bundle(['HomeIcon']).bytes;
     const many = bundle([
       'HomeIcon', 'UsersIcon', 'LockIcon', 'HeartIcon', 'SearchIcon', 'BellIcon',

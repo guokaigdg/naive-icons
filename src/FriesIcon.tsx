@@ -1,0 +1,32 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const FriesIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M14 22 L34 22 L31 42 L17 42 Z" fill="#E76F51"/>
+<path d="M17 22 L15 11 M23 22 L21 7 M29 22 L28 9 M33 22 L34 13" stroke="#E9C46A" strokeWidth={sw(4)} fill="none"/>
+<path d="M15 27 L33 27" stroke="#FAEDCD" strokeWidth={sw(2.5)} fill="none"/>
+
+    </svg>
+  );
+});
+
+FriesIcon.displayName = 'FriesIcon';
+
+export default FriesIcon;

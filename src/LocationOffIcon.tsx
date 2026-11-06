@@ -1,0 +1,32 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const LocationOffIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M24 40 C24 40 36 30 36 20 C36 13 30 8 24 8 C18 8 12 13 12 20 C12 30 24 40 24 40 Z" fill="#2A9D8F"/>
+<circle cx="24" cy="20" r="4.5" fill="#FAEDCD" stroke="none"/>
+<path d="M11 9 L37 37" stroke="#E76F51" strokeWidth={sw(3.5)} fill="none"/>
+
+    </svg>
+  );
+});
+
+LocationOffIcon.displayName = 'LocationOffIcon';
+
+export default LocationOffIcon;

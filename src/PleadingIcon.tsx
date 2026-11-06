@@ -1,0 +1,38 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const PleadingIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<circle cx="24" cy="24" r="16" fill="#F4A6A4"/>
+<ellipse cx="17" cy="22" rx="4.6" ry="5.2" fill="#FFFFFF" stroke="none"/>
+<ellipse cx="31" cy="22" rx="4.6" ry="5.2" fill="#FFFFFF" stroke="none"/>
+<circle cx="17" cy="22.5" r="2.2" fill="#2A2A2A" stroke="none"/>
+<circle cx="31" cy="22.5" r="2.2" fill="#2A2A2A" stroke="none"/>
+<circle cx="18.2" cy="21.2" r="0.9" fill="#FFFFFF" stroke="none"/>
+<circle cx="32.2" cy="21.2" r="0.9" fill="#FFFFFF" stroke="none"/>
+<path d="M12 15 C14 12.5 18 12.5 20 14 M28 14 C30 12.5 34 12.5 36 15" stroke="#2A2A2A" strokeWidth={sw(2.5)} fill="none"/>
+<path d="M21 33 C23 31.5 25 31.5 27 33" stroke="#2A2A2A" strokeWidth={sw(2.5)} fill="none"/>
+
+    </svg>
+  );
+});
+
+PleadingIcon.displayName = 'PleadingIcon';
+
+export default PleadingIcon;
