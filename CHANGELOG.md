@@ -2,6 +2,33 @@
 
 本文件记录 Naive Icons 的每个版本变更。版本号遵循语义化版本规范（SemVer）。
 
+## 1.15.0
+
+新增
+
+- **14 枚图标**（709 → **723**）—— 逐枚筛选后保留的一批：
+  - 日常物品 4（`aquarium` `binoculars` `boot` `sunglasses`）
+  - 运动 2（`boxing` `jump-rope`）、工具 2（`corkscrew` `plunger`）
+  - 动物 1（`crocodile`）、食物饮品 1（`steak`）、自然天气 1（`sunrise`）
+  - 文件与媒体 1（`earbuds`）、办公 1（`signature`）、建筑场所 1（`market`）
+  - 全部按既有规范手绘：48 画布、根节点逐字节一致、10 色白名单、
+    描边外缘距边 ≥ 3 单位、小色块显式 `stroke="none"`
+- **React 侧图形保真测试** —— `tests/svg-parity.test.ts`（724 例）：
+  723 枚 React 组件渲染出的图形，必须与 `svg/` 里的源文件逐属性一致。
+  Vue 侧早有同名测试，React 侧此前没有，这正是下面那个 bug 能发布出去的原因。
+
+修复
+
+- **`eye` / `eye-off` 的 React 组件与 `svg/` 源文件失同步** —— 这两枚在 v1.13.0
+  重绘时只更新了 `svg/` 与 Vue 组件，React 组件是手工改的、没重新生成，
+  于是 **React 用户与 Vue 用户拿到的画面不一样**（React 版还是旧造型，
+  且圆点缺 `stroke="none"`、描边会吃光）。现已从 `svg/` 重新生成。
+
+变更
+
+- **`archery` 重绘为拉弓待射** —— 弓弦拉成「<」形、箭搭在弦上朝左、箭尖不再探出弓背
+- **`aquarium` 缸顶切平** —— 深蓝横线即缸口，去掉原先高出水线的圆顶肩部
+
 ## 1.14.0
 
 新增
