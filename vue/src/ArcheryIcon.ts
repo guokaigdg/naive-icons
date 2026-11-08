@@ -11,11 +11,11 @@ export const ArcheryIcon = defineComponent({
       const sw = scaledStroke(props.strokeWidth);
       const children: VNode[] = [];
       if (props.title) children.push(h('title', null, props.title));
-      children.push(h('path', { d: 'M14 9 C6 19 6 29 14 39', stroke: '#8B5E3C', 'stroke-width': sw(3.5), fill: 'none' }));
-      children.push(h('path', { d: 'M14 9 L14 39', stroke: '#2A2A2A', 'stroke-width': sw(2), fill: 'none' }));
-      children.push(h('path', { d: 'M14 24 L40 24', stroke: '#264653', 'stroke-width': sw(3), fill: 'none' }));
-      children.push(h('path', { d: 'M34 19 L40 24 L34 29', stroke: '#264653', 'stroke-width': sw(3), fill: 'none' }));
-      children.push(h('path', { d: 'M18 20 L18 24 M18 24 L18 28', stroke: '#E76F51', 'stroke-width': sw(3), fill: 'none' }));
+      children.push(h('path', { d: 'M26 8 C16 17 16 31 26 40', stroke: '#8B5E3C', 'stroke-width': sw(3.5), fill: 'none' }));
+      children.push(h('path', { d: 'M26 8 L42 24 L26 40', stroke: '#2A2A2A', 'stroke-width': sw(2), fill: 'none' }));
+      children.push(h('path', { d: 'M8 24 L42 24', stroke: '#264653', 'stroke-width': sw(3), fill: 'none' }));
+      children.push(h('path', { d: 'M15 17 L8 24 L15 31', stroke: '#264653', 'stroke-width': sw(3), fill: 'none' }));
+      children.push(h('path', { d: 'M37 24 L42 24', stroke: '#E76F51', 'stroke-width': sw(4), fill: 'none' }));
       const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
       return h(
         'svg',

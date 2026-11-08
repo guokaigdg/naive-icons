@@ -566,7 +566,22 @@ ICON_CATEGORY = {
     'walkie-talkie': 'devices',
     'whisk': 'tools',
     'confused': 'emoji',
-}
+    # 新增批次
+    'aquarium': 'objects', 
+    'binoculars': 'objects', 
+    'boot': 'objects', 
+    'boxing': 'sports', 
+    'corkscrew': 'tools', 
+    'crocodile': 'animals', 
+    'earbuds': 'media', 
+    'jump-rope': 'sports', 
+    'market': 'places', 
+    'plunger': 'tools', 
+    'signature': 'office', 
+    'steak': 'food', 
+    'sunglasses': 'objects', 
+    'sunrise': 'nature', 
+    }
 
 # ---------------------------------------------------------------- 中文名
 ZH_NAMES = {
@@ -1060,7 +1075,22 @@ ZH_NAMES = {
     'walkie-talkie': '对讲机',
     'whisk': '打蛋器',
     'confused': '困惑',
-}
+    # 新增批次
+    'aquarium': '鱼缸', 
+    'binoculars': '望远镜', 
+    'boot': '靴子', 
+    'boxing': '拳击手套', 
+    'corkscrew': '开瓶器', 
+    'crocodile': '鳄鱼', 
+    'earbuds': '无线耳机', 
+    'jump-rope': '跳绳', 
+    'market': '集市', 
+    'plunger': '马桶搋子', 
+    'signature': '签名', 
+    'steak': '牛排', 
+    'sunglasses': '墨镜', 
+    'sunrise': '日出', 
+    }
 
 
 def to_pascal(name: str) -> str:

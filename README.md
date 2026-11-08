@@ -42,7 +42,7 @@ Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a r
 - `createIcon` — a factory that gives your own icons the same root node, a11y and stroke scaling as the built-ins
 - Supports `currentColor` to follow the surrounding text color
 - Official Agent Skill: one command installs it into your AI coding agent, which can then pick icons by meaning and emit ready-to-paste code
-- A Vue 3 port lives in `naive-icons-vue`: the same 709 icons and the same geometry, with Vue's component API
+- A Vue 3 port lives in `naive-icons-vue`: the same 723 icons and the same geometry, with Vue's component API
 
 ## AI Agent Skill
 
@@ -69,7 +69,7 @@ Re-run the same command after upgrading the library to update it.
 
 ## Installation
 
-Two packages ship the same 709 icons. Pick the one that matches your framework:
+Two packages ship the same 723 icons. Pick the one that matches your framework:
 
 | Framework | Package | Requires |
 | --- | --- | --- |
@@ -247,11 +247,11 @@ const map: Record<IconId, () => Promise<unknown>> = {
 ```
 
 Importing the package as a namespace (`import * as icons`) also lets you look icons up by name,
-but it pulls all 709 icons into the bundle and zeroes out tree-shaking. `iconNames` lets you
+but it pulls all 723 icons into the bundle and zeroes out tree-shaking. `iconNames` lets you
 build a lookup that only loads the icons you actually reach for.
 
 To draw an icon of your own in the same style, use the `createIcon` factory. It produces the
-exact same root node, accessibility attributes and stroke scaling as the 709 built-in icons:
+exact same root node, accessibility attributes and stroke scaling as the 723 built-in icons:
 
 ```tsx
 import { createIcon } from 'naive-icons';

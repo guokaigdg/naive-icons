@@ -12,7 +12,7 @@
  * };
  * ```
  *
- * 直接 `import * as icons` 也能按名字取，但会把全部 709 枚打进包里，
+ * 直接 `import * as icons` 也能按名字取，但会把全部 723 枚打进包里，
  * tree-shaking 归零；用这个数组配动态 import 才能只拉用到的几枚。
  */
 export const iconNames = [
@@ -32,6 +32,7 @@ export const iconNames = [
   'anvil',
   'apartment',
   'apple',
+  'aquarium',
   'archery',
   'archive',
   'arrow-down',
@@ -85,6 +86,7 @@ export const iconNames = [
   'bell-ring',
   'bicycle',
   'binder',
+  'binoculars',
   'bird',
   'blanket',
   'blender',
@@ -96,7 +98,9 @@ export const iconNames = [
   'book',
   'book-open',
   'bookmark',
+  'boot',
   'bowling',
+  'boxing',
   'boxing-glove',
   'braces',
   'brain',
@@ -174,6 +178,7 @@ export const iconNames = [
   'cookie',
   'cool',
   'copy',
+  'corkscrew',
   'cotton-swab',
   'courthouse',
   'cow',
@@ -181,6 +186,7 @@ export const iconNames = [
   'crab',
   'crane',
   'credit-card',
+  'crocodile',
   'crop',
   'crosshair',
   'crown',
@@ -214,6 +220,7 @@ export const iconNames = [
   'dumbbell',
   'dumpling',
   'ear',
+  'earbuds',
   'eclipse',
   'edit',
   'egg',
@@ -327,6 +334,7 @@ export const iconNames = [
   'jellyfish',
   'joystick',
   'juice',
+  'jump-rope',
   'kanban',
   'kettle',
   'kettlebell',
@@ -379,6 +387,7 @@ export const iconNames = [
   'map',
   'map-pin',
   'marker',
+  'market',
   'maximize',
   'medal',
   'medical-glove',
@@ -476,6 +485,7 @@ export const iconNames = [
   'pleading',
   'pliers',
   'plug',
+  'plunger',
   'plus',
   'plus-circle',
   'podium',
@@ -564,6 +574,7 @@ export const iconNames = [
   'shy',
   'sidebar',
   'signal',
+  'signature',
   'signpost',
   'sink',
   'siren',
@@ -599,6 +610,7 @@ export const iconNames = [
   'stapler',
   'star',
   'starfish',
+  'steak',
   'stethoscope',
   'sticky-note',
   'stop',
@@ -611,6 +623,8 @@ export const iconNames = [
   'subway',
   'suitcase',
   'sun',
+  'sunglasses',
+  'sunrise',
   'surfboard',
   'surprised',
   'swan',

@@ -27,7 +27,7 @@ CATEGORIES = {
     'devices': '设备硬件', 'places': '建筑场所', 'tools': '工具', 'office': '办公',
     'health': '健康医疗', 'sports': '运动', 'transport': '交通工具', 'emoji': '表情'
 }
-# ── 709 枚图标：id -> (中文名, 分类) ──────────────────────────────────
+# ── 723 枚图标：id -> (中文名, 分类) ──────────────────────────────────
 ICONS = {
     'airplane': ('飞机', 'transport'), 'alert-circle': ('提示', 'interface'),
     'alert-triangle': ('警告', 'interface'), 'anchor': ('锚', 'navigation'),
@@ -569,7 +569,22 @@ ICONS = {
     'waffle': ('华夫饼', 'food'),
     'walkie-talkie': ('对讲机', 'devices'),
     'whisk': ('打蛋器', 'tools'),
-    'confused': ('困惑', 'emoji')
+    'confused': ('困惑', 'emoji'),
+    # 新增批次
+    'aquarium': ('鱼缸', 'objects'), 
+    'binoculars': ('望远镜', 'objects'), 
+    'boot': ('靴子', 'objects'), 
+    'boxing': ('拳击手套', 'sports'), 
+    'corkscrew': ('开瓶器', 'tools'), 
+    'crocodile': ('鳄鱼', 'animals'), 
+    'earbuds': ('无线耳机', 'media'), 
+    'jump-rope': ('跳绳', 'sports'), 
+    'market': ('集市', 'places'), 
+    'plunger': ('马桶搋子', 'tools'), 
+    'signature': ('签名', 'office'), 
+    'steak': ('牛排', 'food'), 
+    'sunglasses': ('墨镜', 'objects'), 
+    'sunrise': ('日出', 'nature')
 }
 # ── 同义词 / 意图映射：关键词 -> 候选图标 ──────────────────────────────
 # 按 UI 意图组织，而不是按字母表。左边可写中文、英文或常见缩写，
@@ -904,7 +919,7 @@ SYNONYMS = {
     '关闭视频': ['video-off'], '视频关闭': ['video-off'], 'videooff': ['videooff', 'video-off'], '晴天': ['sun'], 'cloudsun': ['cloudsun'],
     '下雪': ['snowflake'], '雪': ['snowflake'], 'cloudsnow': ['cloudsnow'],
     '雷雨': ['cloud-lightning', 'bolt'], '雷电': ['cloud-lightning', 'bolt'], 'cloudlightning': ['cloudlightning', 'cloud-lightning'],
-    '水滴': ['droplet', 'rain'], '水': ['droplet', 'water-cup'], 'droplet': ['droplet'], '日出': ['sun'], '龙卷风': ['wind'], '章鱼': ['octopus'], 'octopus': ['octopus'],
+    '水滴': ['droplet', 'rain'], '水': ['droplet', 'water-cup'], 'droplet': ['droplet'], '日出': ['sun', 'sunrise'], '龙卷风': ['wind'], '章鱼': ['octopus'], 'octopus': ['octopus'],
     '小猪': ['pig'], '猪': ['pig'], 'pig': ['pig'],'绵羊': ['sheep'], '羊': ['sheep'], 'sheep': ['sheep'],
     '小鸡': ['chicken'], '鸡': ['chicken'], 'chicken': ['chicken'], '葡萄': ['grape'], 'grape': ['grape'], '牛油果': ['avocado'], 'avocado': ['avocado'],
     '番茄': ['tomato'], '西红柿': ['tomato'], 'tomato': ['tomato'],
@@ -1145,7 +1160,7 @@ SYNONYMS = {
     '亲吻': ['kiss'],
     'kiss': ['kiss'],
     '酷': ['cool'],
-    '墨镜': ['cool'],
+    '墨镜': ['cool', 'sunglasses'],
     'cool': ['cool'],
     '思考': ['thinking'],
     '想一想': ['thinking'],
@@ -1235,7 +1250,7 @@ SYNONYMS = {
     '长颈鹿': ['giraffe', 'animal'],
     '老虎': ['animal'],
     '熊猫': ['animal'],
-    '鳄鱼': ['animal'],
+    '鳄鱼': ['animal', 'crocodile'],
     '鲨鱼': ['fish'],
     '松鼠': ['animal'],
     '蝙蝠': ['bat', 'animal'],
@@ -1456,7 +1471,7 @@ SYNONYMS = {
     '蜻蜓': ['dragonfly'],
     '鸭子': ['duck'],
     '老鹰': ['hawk'],
-    '无线耳机': ['airpods'], '煎蛋': ['fried-egg'],
+    '无线耳机': ['airpods', 'earbuds'], '煎蛋': ['fried-egg'],
     '薯条': ['fries'], '山羊': ['goat'], '病床': ['hospital-bed'],
     '证件': ['id-card', 'identity'],
     '身份证': ['id-card'],
@@ -1464,20 +1479,34 @@ SYNONYMS = {
     '手柄': ['joystick'], '壶铃': ['kettlebell'], '考拉': ['koala'],
     '定位关闭': ['location-off'],
     '关闭定位': ['location-off'], '行李': ['luggage'],
-    '离线邮件': ['mail-minus'], '集市': ['bazaar'],
+    '离线邮件': ['mail-minus'], '集市': ['bazaar', 'market'],
     '流星': ['shooting-star'], '氧气': ['oxygen-tank'],
     '包裹': ['parcel'], '爪印': ['paw-print'], '扑克': ['playing-cards', 'cards'],
     '恳求': ['pleading', 'please'], '明信片': ['postcard'], '剃须': ['shave'], '橄榄球': ['rugby'], '平衡车': ['segway'],
     '安全警告': ['shield-alert'],
     '害羞': ['shy', 'blush'],
-    '签名': ['sign'],
+    '签名': ['sign', 'signature'],
     '警报': ['siren', 'alert'],
     '雪橇': ['sledge'],
     '智能手表': ['smartwatch'], '海星': ['starfish'],
     '秒表': ['stopwatch'], '天鹅': ['swan'], '吐舌': ['tongue-out'], '路锥': ['traffic-cone', 'cone'],
     '三脚架': ['tripod'], '遥控器': ['tv-remote', 'remote'],
     '华夫饼': ['waffle'],
-    '对讲机': ['walkie-talkie'], '打蛋器': ['whisk'], '派对': ['party', 'balloon']
+    '对讲机': ['walkie-talkie'], '打蛋器': ['whisk'], '派对': ['party', 'balloon'],
+    # 新增批次,
+    '鱼缸': ['aquarium'], 
+    'aquarium': ['aquarium'], '望远镜': ['binoculars'], 
+    'binoculars': ['binoculars'], 
+    '靴子': ['boot'], 
+    'boot': ['boot'], 
+    '拳击手套': ['boxing'], 
+    'boxing': ['boxing'], '开瓶器': ['corkscrew'], 
+    'corkscrew': ['corkscrew'], 'crocodile': ['crocodile'], 'earbuds': ['earbuds'], '跳绳': ['jump-rope'], 
+    'jump-rope': ['jump-rope'], 'market': ['market'], '马桶搋子': ['plunger'], 
+    'plunger': ['plunger'], 'signature': ['signature'], '牛排': ['steak'], 
+    'steak': ['steak'], 
+    'sunglasses': ['sunglasses'], 
+    'sunrise': ['sunrise']
 }
 # ── 检索 ──────────────────────────────────────────────────────────────
 W_EXACT_ID = 100      # 查询里直接出现完整 id

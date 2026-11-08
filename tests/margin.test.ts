@@ -20,7 +20,7 @@ const files = readdirSync('svg').filter((f) => f.endsWith('.svg'));
 
 describe('SVG 的描边外缘边距', () => {
   it('svg 数量与库一致', () => {
-    expect(files.length).toBe(709);
+    expect(files.length).toBe(723);
   });
 
   it(`每枚图标的四边边距都不小于 ${MIN_MARGIN} 单位`, () => {

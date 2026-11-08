@@ -2,7 +2,7 @@
  * 所有内置图标的 id（kebab-case），运行时数组。
  *
  * IconId 只是纯类型，编译后不存在；需要「按名字动态取图标」时用这个数组，
- * 配合动态 import 别把 709 枚全打进包：
+ * 配合动态 import 别把 723 枚全打进包：
  *
  * import { iconNames } from 'naive-icons-vue';
  *
@@ -25,6 +25,7 @@ export const iconNames = [
   'anvil',
   'apartment',
   'apple',
+  'aquarium',
   'archery',
   'archive',
   'arrow-down',
@@ -78,6 +79,7 @@ export const iconNames = [
   'bell-ring',
   'bicycle',
   'binder',
+  'binoculars',
   'bird',
   'blanket',
   'blender',
@@ -89,7 +91,9 @@ export const iconNames = [
   'book',
   'book-open',
   'bookmark',
+  'boot',
   'bowling',
+  'boxing',
   'boxing-glove',
   'braces',
   'brain',
@@ -167,6 +171,7 @@ export const iconNames = [
   'cookie',
   'cool',
   'copy',
+  'corkscrew',
   'cotton-swab',
   'courthouse',
   'cow',
@@ -174,6 +179,7 @@ export const iconNames = [
   'crab',
   'crane',
   'credit-card',
+  'crocodile',
   'crop',
   'crosshair',
   'crown',
@@ -207,6 +213,7 @@ export const iconNames = [
   'dumbbell',
   'dumpling',
   'ear',
+  'earbuds',
   'eclipse',
   'edit',
   'egg',
@@ -320,6 +327,7 @@ export const iconNames = [
   'jellyfish',
   'joystick',
   'juice',
+  'jump-rope',
   'kanban',
   'kettle',
   'kettlebell',
@@ -372,6 +380,7 @@ export const iconNames = [
   'map',
   'map-pin',
   'marker',
+  'market',
   'maximize',
   'medal',
   'medical-glove',
@@ -469,6 +478,7 @@ export const iconNames = [
   'pleading',
   'pliers',
   'plug',
+  'plunger',
   'plus',
   'plus-circle',
   'podium',
@@ -557,6 +567,7 @@ export const iconNames = [
   'shy',
   'sidebar',
   'signal',
+  'signature',
   'signpost',
   'sink',
   'siren',
@@ -592,6 +603,7 @@ export const iconNames = [
   'stapler',
   'star',
   'starfish',
+  'steak',
   'stethoscope',
   'sticky-note',
   'stop',
@@ -604,6 +616,8 @@ export const iconNames = [
   'subway',
   'suitcase',
   'sun',
+  'sunglasses',
+  'sunrise',
   'surfboard',
   'surprised',
   'swan',
@@ -741,6 +755,7 @@ export type IconName =
   | 'AnvilIcon'
   | 'ApartmentIcon'
   | 'AppleIcon'
+  | 'AquariumIcon'
   | 'ArcheryIcon'
   | 'ArchiveIcon'
   | 'ArrowDownCircleIcon'
@@ -794,6 +809,7 @@ export type IconName =
   | 'BellRingIcon'
   | 'BicycleIcon'
   | 'BinderIcon'
+  | 'BinocularsIcon'
   | 'BirdIcon'
   | 'BlanketIcon'
   | 'BlenderIcon'
@@ -805,8 +821,10 @@ export type IconName =
   | 'BookIcon'
   | 'BookOpenIcon'
   | 'BookmarkIcon'
+  | 'BootIcon'
   | 'BowlingIcon'
   | 'BoxingGloveIcon'
+  | 'BoxingIcon'
   | 'BracesIcon'
   | 'BrainIcon'
   | 'BreadIcon'
@@ -883,6 +901,7 @@ export type IconName =
   | 'CookieIcon'
   | 'CoolIcon'
   | 'CopyIcon'
+  | 'CorkscrewIcon'
   | 'CottonSwabIcon'
   | 'CourthouseIcon'
   | 'CowIcon'
@@ -890,6 +909,7 @@ export type IconName =
   | 'CrabIcon'
   | 'CraneIcon'
   | 'CreditCardIcon'
+  | 'CrocodileIcon'
   | 'CropIcon'
   | 'CrosshairIcon'
   | 'CrownIcon'
@@ -923,6 +943,7 @@ export type IconName =
   | 'DumbbellIcon'
   | 'DumplingIcon'
   | 'EarIcon'
+  | 'EarbudsIcon'
   | 'EclipseIcon'
   | 'EditIcon'
   | 'EggIcon'
@@ -1036,6 +1057,7 @@ export type IconName =
   | 'JellyfishIcon'
   | 'JoystickIcon'
   | 'JuiceIcon'
+  | 'JumpRopeIcon'
   | 'KanbanIcon'
   | 'KettleIcon'
   | 'KettlebellIcon'
@@ -1088,6 +1110,7 @@ export type IconName =
   | 'MapIcon'
   | 'MapPinIcon'
   | 'MarkerIcon'
+  | 'MarketIcon'
   | 'MaximizeIcon'
   | 'MedalIcon'
   | 'MedicalGloveIcon'
@@ -1185,6 +1208,7 @@ export type IconName =
   | 'PleadingIcon'
   | 'PliersIcon'
   | 'PlugIcon'
+  | 'PlungerIcon'
   | 'PlusCircleIcon'
   | 'PlusIcon'
   | 'PodiumIcon'
@@ -1273,6 +1297,7 @@ export type IconName =
   | 'ShyIcon'
   | 'SidebarIcon'
   | 'SignalIcon'
+  | 'SignatureIcon'
   | 'SignpostIcon'
   | 'SinkIcon'
   | 'SirenIcon'
@@ -1308,6 +1333,7 @@ export type IconName =
   | 'StaplerIcon'
   | 'StarIcon'
   | 'StarfishIcon'
+  | 'SteakIcon'
   | 'StethoscopeIcon'
   | 'StickyNoteIcon'
   | 'StopCircleIcon'
@@ -1320,6 +1346,8 @@ export type IconName =
   | 'SubwayIcon'
   | 'SuitcaseIcon'
   | 'SunIcon'
+  | 'SunglassesIcon'
+  | 'SunriseIcon'
   | 'SurfboardIcon'
   | 'SurprisedIcon'
   | 'SwanIcon'

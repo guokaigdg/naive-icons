@@ -1,0 +1,44 @@
+import { defineComponent, h, type VNode } from 'vue';
+import { iconPropDefs } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const AquariumIcon = defineComponent({
+  name: 'AquariumIcon',
+  inheritAttrs: false,
+  props: iconPropDefs,
+  setup(props, { attrs }) {
+    return () => {
+      const sw = scaledStroke(props.strokeWidth);
+      const children: VNode[] = [];
+      if (props.title) children.push(h('title', null, props.title));
+      children.push(h('path', { d: 'M8 13 L40 13 L40 34 C40 37 37 39 33 39 L15 39 C11 39 8 37 8 34 Z', fill: '#FAEDCD' }));
+      children.push(h('path', { d: 'M10 22 C14 24 20 22 24 23 C28 24 34 22 38 21 L38 34 C38 36 36 37 33 37 L15 37 C12 37 10 36 10 34 Z', fill: '#2A9D8F', stroke: 'none' }));
+      children.push(h('path', { d: 'M10 22 C14 24 20 22 24 23 C28 24 34 22 38 21', stroke: '#264653', 'stroke-width': sw(2), fill: 'none' }));
+      children.push(h('path', { d: 'M12 37 C16 34 32 34 36 37 Z', fill: '#E9C46A', stroke: 'none' }));
+      children.push(h('path', { d: 'M13 36 C12 30 14 25 18 27 C16 31 16 34 16 36 Z', fill: '#588157', stroke: 'none' }));
+      children.push(h('path', { d: 'M17 36 C18 30 21 27 23 29 C21 32 20 35 20 36 Z', fill: '#588157', stroke: 'none' }));
+      children.push(h('path', { d: 'M19 28 C20 25 25 24 28 27 C30 25 32 24 33 25 C32 27 32 29 33 30 C31 29 29 28 28 28 C25 31 21 31 19 28 Z', fill: '#E76F51' }));
+      children.push(h('circle', { cx: '26', cy: '27', r: '1.2', fill: '#FAEDCD', stroke: 'none' }));
+      children.push(h('circle', { cx: '34', cy: '18', r: '1.5', fill: '#2A9D8F', stroke: 'none' }));
+      children.push(h('circle', { cx: '36', cy: '15', r: '1.2', fill: '#2A9D8F', stroke: 'none' }));
+      children.push(h('path', { d: 'M8 13 L40 13', stroke: '#264653', 'stroke-width': sw(2.5), fill: 'none' }));
+      const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
+      return h(
+        'svg',
+        {
+          viewBox: '0 0 48 48',
+          xmlns: 'http://www.w3.org/2000/svg',
+          fill: 'none',
+          'stroke-linecap': 'round',
+          'stroke-linejoin': 'round',
+          role: props.title ? 'img' : undefined,
+          'aria-hidden': labelled ? undefined : true,
+          ...normalizeIconProps({ ...props, ...attrs }),
+        },
+        children,
+      );
+    };
+  },
+});
+
+export default AquariumIcon;

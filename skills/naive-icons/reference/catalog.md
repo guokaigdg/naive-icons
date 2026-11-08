@@ -132,7 +132,7 @@
 | `zoom-in` | 放大 | `ZoomInIcon` | 放大、放大镜、zoomin |
 | `zoom-out` | 缩小 | `ZoomOutIcon` | 缩小、zoomout |
 
-## 文件与媒体（58 枚）
+## 文件与媒体（59 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -148,6 +148,7 @@
 | `cloud-download` | 云下载 | `CloudDownloadIcon` | 云下载、clouddownload |
 | `cloud-upload` | 云上传 | `CloudUploadIcon` | 云上传、cloudupload |
 | `code` | 代码 | `CodeIcon` | 代码、开发、编程、源码、终端、命令行、花括号 |
+| `earbuds` | 无线耳机 | `EarbudsIcon` | 无线耳机、earbuds |
 | `fast-forward` | 快进 | `FastForwardIcon` | 下一段 |
 | `file` | 文件 | `FileIcon` | 文件、文档、文本文件、file |
 | `file-audio` | 音频文件 | `FileAudioIcon` | — |
@@ -275,7 +276,7 @@
 | `wifi` | 无线网 | `WifiIcon` | 无线、网络、信号、wifi、network |
 | `wifi-off` | 无线关闭 | `WifiOffIcon` | 无线关闭、无信号、wifi-off |
 
-## 自然天气（28 枚）
+## 自然天气（29 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -302,13 +303,14 @@
 | `seedling` | 幼苗 | `SeedlingIcon` | 幼苗、种子、橡果、seedling |
 | `snowflake` | 雪花 | `SnowflakeIcon` | 下雪、雪、冬天、天气、暴雪、冰川、snow |
 | `sun` | 太阳 | `SunIcon` | 太阳、晴天、白天、天气、主题、浅色模式、主题切换 |
+| `sunrise` | 日出 | `SunriseIcon` | 日出、sunrise |
 | `tent` | 帐篷 | `TentIcon` | 帐篷、露营、户外、房车、tent |
 | `tree` | 大树 | `TreeIcon` | 树、森林、自然、幼苗、公园、tree |
 | `umbrella` | 雨伞 | `UmbrellaIcon` | 下雨、雨伞、天气、umbrella、weather |
 | `volcano` | 火山 | `VolcanoIcon` | 火山 |
 | `wind` | 风 | `WindIcon` | 风、龙卷风、沙尘、吹风机、wind |
 
-## 动物（37 枚）
+## 动物（38 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -321,6 +323,7 @@
 | `chicken` | 小鸡 | `ChickenIcon` | 小鸡、鸡、chicken |
 | `cow` | 奶牛 | `CowIcon` | 奶牛、牛、cow |
 | `crab` | 螃蟹 | `CrabIcon` | 螃蟹、crab |
+| `crocodile` | 鳄鱼 | `CrocodileIcon` | 鳄鱼、crocodile |
 | `dog` | 小狗 | `DogIcon` | 狗、宠物、dog、pet |
 | `dragonfly` | 蜻蜓 | `DragonflyIcon` | 蜻蜓 |
 | `duck` | 鸭子 | `DuckIcon` | 鸭子 |
@@ -350,7 +353,7 @@
 | `starfish` | 海星 | `StarfishIcon` | 海星 |
 | `swan` | 天鹅 | `SwanIcon` | 天鹅 |
 
-## 食物饮品（50 枚）
+## 食物饮品（51 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -397,6 +400,7 @@
 | `sandwich` | 三明治 | `SandwichIcon` | 三明治 |
 | `soup` | 汤 | `SoupIcon` | 汤、火锅、soup |
 | `spoon` | 勺子 | `SpoonIcon` | 叉子、勺子、筷子 |
+| `steak` | 牛排 | `SteakIcon` | 牛排、steak |
 | `strawberry` | 草莓 | `StrawberryIcon` | 草莓、strawberry |
 | `tea` | 茶 | `TeaIcon` | 茶、喝茶、tea |
 | `tomato` | 番茄 | `TomatoIcon` | 番茄、西红柿、tomato |
@@ -432,10 +436,11 @@
 | `safe` | 保险箱 | `SafeIcon` | 存钱、保险 |
 | `tax` | 税费 | `TaxIcon` | — |
 
-## 日常物品（74 枚）
+## 日常物品（78 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
+| `aquarium` | 鱼缸 | `AquariumIcon` | 鱼缸、aquarium |
 | `baby-bottle` | 奶瓶 | `BabyBottleIcon` | — |
 | `backpack` | 背包 | `BackpackIcon` | 背包、书包、行李箱、backpack |
 | `balloon` | 气球 | `BalloonIcon` | 气球、热气球、派对、balloon |
@@ -445,7 +450,9 @@
 | `bathtub` | 浴缸 | `BathtubIcon` | 浴缸 |
 | `battery` | 电池 | `BatteryIcon` | 电池、电量、battery |
 | `bed` | 床 | `BedIcon` | 床、卧室、枕头、毯子、bed |
+| `binoculars` | 望远镜 | `BinocularsIcon` | 望远镜、binoculars |
 | `blanket` | 毯子 | `BlanketIcon` | 毯子 |
+| `boot` | 靴子 | `BootIcon` | 靴子、boot |
 | `briefcase` | 公文包 | `BriefcaseIcon` | 公文包、背包、行李箱、briefcase |
 | `bucket` | 水桶 | `BucketIcon` | 拖把、水桶 |
 | `calculator` | 计算器 | `CalculatorIcon` | 计算器、calculator |
@@ -502,6 +509,7 @@
 | `sofa` | 沙发 | `SofaIcon` | 沙发、sofa |
 | `sponge` | 海绵 | `SpongeIcon` | 海绵 |
 | `suitcase` | 行李箱 | `SuitcaseIcon` | 行李箱 |
+| `sunglasses` | 墨镜 | `SunglassesIcon` | 墨镜、sunglasses |
 | `thermometer` | 温度计 | `ThermometerIcon` | 温度、气温、thermometer |
 | `ticket` | 门票 | `TicketIcon` | 门票、ticket |
 | `toilet` | 马桶 | `ToiletIcon` | 马桶 |
@@ -511,7 +519,7 @@
 | `watch` | 手表 | `WatchIcon` | 手表、watch |
 | `window` | 窗户 | `WindowIcon` | 窗 |
 
-## 办公（21 枚）
+## 办公（22 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -531,6 +539,7 @@
 | `rubber-stamp` | 印章 | `RubberStampIcon` | 印章 |
 | `scanner` | 扫描仪 | `ScannerIcon` | 复印 |
 | `shredder` | 碎纸机 | `ShredderIcon` | 碎纸 |
+| `signature` | 签名 | `SignatureIcon` | 签名、signature |
 | `stapler` | 订书机 | `StaplerIcon` | 办公用品、办公、订书 |
 | `sticky-note` | 便利贴 | `StickyNoteIcon` | 办公用品、便签 |
 | `timesheet` | 工时表 | `TimesheetIcon` | 报表、考勤 |
@@ -582,7 +591,7 @@
 | `water-heater` | 热水器 | `WaterHeaterIcon` | 热水器 |
 | `webcam` | 摄像头 | `WebcamIcon` | 摄像头、webcam |
 
-## 建筑场所（39 枚）
+## 建筑场所（40 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -606,6 +615,7 @@
 | `hotel` | 酒店 | `HotelIcon` | 酒店、宾馆、hotel |
 | `library` | 图书馆 | `LibraryIcon` | 图书馆、library |
 | `lighthouse` | 灯塔 | `LighthouseIcon` | 灯塔 |
+| `market` | 集市 | `MarketIcon` | 集市、market |
 | `mosque` | 清真寺 | `MosqueIcon` | 清真寺 |
 | `museum` | 博物馆 | `MuseumIcon` | 博物馆 |
 | `park` | 公园 | `ParkIcon` | 公园、游乐场 |
@@ -626,7 +636,7 @@
 | `warehouse` | 仓库 | `WarehouseIcon` | 仓库、谷仓、warehouse |
 | `zoo` | 动物园 | `ZooIcon` | 动物园 |
 
-## 工具（23 枚）
+## 工具（25 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -634,6 +644,7 @@
 | `axe` | 斧头 | `AxeIcon` | 斧头、斧子、axe |
 | `chisel` | 凿子 | `ChiselIcon` | 凿子 |
 | `clamp` | 夹具 | `ClampIcon` | 夹具 |
+| `corkscrew` | 开瓶器 | `CorkscrewIcon` | 开瓶器、corkscrew |
 | `drill` | 电钻 | `DrillIcon` | 电钻、钻、风镐、drill |
 | `flashlight` | 手电筒 | `FlashlightIcon` | 手电筒、电筒、flashlight |
 | `hammer` | 锤子 | `HammerIcon` | 锤子、凿子、铁砧、hammer |
@@ -643,6 +654,7 @@
 | `paint-roller` | 滚筒刷 | `PaintRollerIcon` | 滚筒刷、刷子、paintroller |
 | `pickaxe` | 镐 | `PickaxeIcon` | 镐 |
 | `pliers` | 钳子 | `PliersIcon` | 钳子、夹具、pliers |
+| `plunger` | 马桶搋子 | `PlungerIcon` | 马桶搋子、plunger |
 | `ruler` | 尺子 | `RulerIcon` | 尺子、测量、卷尺、水平尺、ruler |
 | `saw` | 锯子 | `SawIcon` | 锯、锯子、saw |
 | `screwdriver` | 螺丝刀 | `ScrewdriverIcon` | 螺丝刀、screwdriver |
@@ -692,7 +704,7 @@
 | `wheelchair` | 轮椅 | `WheelchairIcon` | 轮椅、拐杖、助行器、wheelchair |
 | `x-ray` | X 光片 | `XRayIcon` | x光 |
 
-## 运动（30 枚）
+## 运动（32 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -700,11 +712,13 @@
 | `badminton` | 羽毛球 | `BadmintonIcon` | 羽毛球 |
 | `baseball` | 棒球 | `BaseballIcon` | 棒球 |
 | `bowling` | 保龄球 | `BowlingIcon` | 保龄球 |
+| `boxing` | 拳击手套 | `BoxingIcon` | 拳击手套、boxing |
 | `boxing-glove` | 拳击手套 | `BoxingGloveIcon` | 拳击 |
 | `darts` | 飞镖 | `DartsIcon` | 飞镖 |
 | `fishing` | 钓鱼 | `FishingIcon` | 钓鱼 |
 | `golf` | 高尔夫 | `GolfIcon` | 高尔夫 |
 | `hiking` | 徒步 | `HikingIcon` | 徒步 |
+| `jump-rope` | 跳绳 | `JumpRopeIcon` | 跳绳、jump-rope |
 | `kettlebell` | 壶铃 | `KettlebellIcon` | 壶铃 |
 | `medal` | 奖牌 | `MedalIcon` | 奖牌、比赛、score |
 | `playing-cards` | 扑克牌 | `PlayingCardsIcon` | 扑克 |
