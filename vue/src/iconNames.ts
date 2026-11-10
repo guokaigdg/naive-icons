@@ -2,7 +2,7 @@
  * 所有内置图标的 id（kebab-case），运行时数组。
  *
  * IconId 只是纯类型，编译后不存在；需要「按名字动态取图标」时用这个数组，
- * 配合动态 import 别把 723 枚全打进包：
+ * 配合动态 import 别把 731 枚 枚全打进包：
  *
  * import { iconNames } from 'naive-icons-vue';
  *
@@ -56,6 +56,7 @@ export const iconNames = [
   'badminton',
   'balloon',
   'ban',
+  'banana',
   'bandage',
   'bank',
   'banknote',
@@ -94,15 +95,16 @@ export const iconNames = [
   'boot',
   'bowling',
   'boxing',
-  'boxing-glove',
   'braces',
   'brain',
   'bread',
+  'bridge',
   'briefcase',
   'broccoli',
   'bubble-tea',
   'bucket',
   'budget',
+  'bug',
   'building',
   'bulb',
   'burger',
@@ -172,6 +174,7 @@ export const iconNames = [
   'cool',
   'copy',
   'corkscrew',
+  'corn',
   'cotton-swab',
   'courthouse',
   'cow',
@@ -230,6 +233,7 @@ export const iconNames = [
   'factory',
   'fan',
   'fast-forward',
+  'feather',
   'fence',
   'ferry',
   'file',
@@ -444,6 +448,7 @@ export const iconNames = [
   'pause',
   'pause-circle',
   'paw-print',
+  'peach',
   'peacock',
   'pear',
   'pedestrian-crossing',
@@ -493,6 +498,7 @@ export const iconNames = [
   'printer',
   'projector',
   'pulse-oximeter',
+  'pumpkin',
   'qr-code',
   'quote',
   'rabbit',
@@ -669,6 +675,7 @@ export const iconNames = [
   'tunnel',
   'turn-left',
   'turn-right',
+  'turtle',
   'tv',
   'tv-remote',
   'u-turn',
@@ -712,6 +719,7 @@ export const iconNames = [
   'watermelon',
   'waypoint',
   'webcam',
+  'whale',
   'wheelchair',
   'whisk',
   'whistle',
@@ -786,6 +794,7 @@ export type IconName =
   | 'BadmintonIcon'
   | 'BalloonIcon'
   | 'BanIcon'
+  | 'BananaIcon'
   | 'BandageIcon'
   | 'BankIcon'
   | 'BanknoteIcon'
@@ -823,16 +832,17 @@ export type IconName =
   | 'BookmarkIcon'
   | 'BootIcon'
   | 'BowlingIcon'
-  | 'BoxingGloveIcon'
   | 'BoxingIcon'
   | 'BracesIcon'
   | 'BrainIcon'
   | 'BreadIcon'
+  | 'BridgeIcon'
   | 'BriefcaseIcon'
   | 'BroccoliIcon'
   | 'BubbleTeaIcon'
   | 'BucketIcon'
   | 'BudgetIcon'
+  | 'BugIcon'
   | 'BuildingIcon'
   | 'BulbIcon'
   | 'BurgerIcon'
@@ -902,6 +912,7 @@ export type IconName =
   | 'CoolIcon'
   | 'CopyIcon'
   | 'CorkscrewIcon'
+  | 'CornIcon'
   | 'CottonSwabIcon'
   | 'CourthouseIcon'
   | 'CowIcon'
@@ -960,6 +971,7 @@ export type IconName =
   | 'FactoryIcon'
   | 'FanIcon'
   | 'FastForwardIcon'
+  | 'FeatherIcon'
   | 'FenceIcon'
   | 'FerryIcon'
   | 'FileAudioIcon'
@@ -1174,6 +1186,7 @@ export type IconName =
   | 'PauseCircleIcon'
   | 'PauseIcon'
   | 'PawPrintIcon'
+  | 'PeachIcon'
   | 'PeacockIcon'
   | 'PearIcon'
   | 'PedestrianCrossingIcon'
@@ -1223,6 +1236,7 @@ export type IconName =
   | 'PrinterIcon'
   | 'ProjectorIcon'
   | 'PulseOximeterIcon'
+  | 'PumpkinIcon'
   | 'QrCodeIcon'
   | 'QuoteIcon'
   | 'RabbitIcon'
@@ -1399,6 +1413,7 @@ export type IconName =
   | 'TunnelIcon'
   | 'TurnLeftIcon'
   | 'TurnRightIcon'
+  | 'TurtleIcon'
   | 'TvIcon'
   | 'TvRemoteIcon'
   | 'UTurnIcon'
@@ -1442,6 +1457,7 @@ export type IconName =
   | 'WatermelonIcon'
   | 'WaypointIcon'
   | 'WebcamIcon'
+  | 'WhaleIcon'
   | 'WheelchairIcon'
   | 'WhiskIcon'
   | 'WhistleIcon'

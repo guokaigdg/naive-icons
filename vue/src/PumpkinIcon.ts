@@ -1,0 +1,38 @@
+import { defineComponent, h, type VNode } from 'vue';
+import { iconPropDefs } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const PumpkinIcon = defineComponent({
+  name: 'PumpkinIcon',
+  inheritAttrs: false,
+  props: iconPropDefs,
+  setup(props, { attrs }) {
+    return () => {
+      const sw = scaledStroke(props.strokeWidth);
+      const children: VNode[] = [];
+      if (props.title) children.push(h('title', null, props.title));
+      children.push(h('path', { d: 'M 7.5 28 C 7.5 23 10 19 14 18 C 16 17.5 17.5 18.5 19 20 C 20.5 17.5 22 16.5 24 16.5 C 26 16.5 27.5 17.5 29 20 C 30.5 18.5 32 17.5 34 18 C 38 19 40.5 23 40.5 28 C 40.5 33 38 37 34 38 C 32 38.5 30.5 37.5 29 36 C 27.5 38 26 39 24 39 C 22 39 20.5 38 19 36 C 17.5 37.5 16 38.5 14 38 C 10 37 7.5 33 7.5 28 Z', fill: '#E76F51' }));
+      children.push(h('path', { d: 'M 19 20.5 C 17.5 25 17.5 31 19 35.5', stroke: '#2A2A2A', 'stroke-width': sw(2), fill: 'none' }));
+      children.push(h('path', { d: 'M 29 20.5 C 30.5 25 30.5 31 29 35.5', stroke: '#2A2A2A', 'stroke-width': sw(2), fill: 'none' }));
+      children.push(h('path', { d: 'M 22.5 16.5 C 22 12.5 22.5 9.5 24 8 C 25.5 9.5 26 12.5 25.5 16.5 Z', fill: '#8B5E3C', 'stroke-width': sw(2) }));
+      children.push(h('path', { d: 'M 25.5 10.5 C 29 9.5 31.5 7.5 32.5 5.5', stroke: '#588157', 'stroke-width': sw(2), fill: 'none' }));
+      const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
+      return h(
+        'svg',
+        {
+          viewBox: '0 0 48 48',
+          xmlns: 'http://www.w3.org/2000/svg',
+          fill: 'none',
+          'stroke-linecap': 'round',
+          'stroke-linejoin': 'round',
+          role: props.title ? 'img' : undefined,
+          'aria-hidden': labelled ? undefined : true,
+          ...normalizeIconProps({ ...props, ...attrs }),
+        },
+        children,
+      );
+    };
+  },
+});
+
+export default PumpkinIcon;

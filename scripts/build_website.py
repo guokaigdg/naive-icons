@@ -290,7 +290,6 @@ ICON_CATEGORY = {
     'tennis': 'sports',
     'volleyball': 'sports',
     'golf': 'sports',
-    'boxing-glove': 'sports',
     'ski': 'sports',
     'snowboard': 'sports',
     'surfboard': 'sports',
@@ -581,6 +580,10 @@ ICON_CATEGORY = {
     'steak': 'food', 
     'sunglasses': 'objects', 
     'sunrise': 'nature', 
+    # 2026-11 第四批：10 枚
+    'banana': 'food', 'corn': 'food', 'pumpkin': 'food', 'peach': 'food',
+    'whale': 'animals', 'turtle': 'animals', 'bug': 'animals',
+    'feather': 'objects', 'bridge': 'places',
     }
 
 # ---------------------------------------------------------------- 中文名
@@ -799,7 +802,6 @@ ZH_NAMES = {
     'tennis': '网球',
     'volleyball': '排球',
     'golf': '高尔夫',
-    'boxing-glove': '拳击手套',
     'ski': '滑雪板',
     'snowboard': '单板滑雪',
     'surfboard': '冲浪板',
@@ -1090,6 +1092,10 @@ ZH_NAMES = {
     'steak': '牛排', 
     'sunglasses': '墨镜', 
     'sunrise': '日出', 
+    # 2026-11 第四批：10 枚
+    'banana': '香蕉', 'corn': '玉米', 'pumpkin': '南瓜', 'peach': '桃子',
+    'whale': '鲸鱼', 'turtle': '海龟', 'bug': '虫子', 'feather': '羽毛',
+    'bridge': '桥',
     }
 
 

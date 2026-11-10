@@ -12,7 +12,7 @@
  * };
  * ```
  *
- * 直接 `import * as icons` 也能按名字取，但会把全部 723 枚打进包里，
+ * 直接 `import * as icons` 也能按名字取，但会把全部 731 枚 枚打进包里，
  * tree-shaking 归零；用这个数组配动态 import 才能只拉用到的几枚。
  */
 export const iconNames = [
@@ -63,6 +63,7 @@ export const iconNames = [
   'badminton',
   'balloon',
   'ban',
+  'banana',
   'bandage',
   'bank',
   'banknote',
@@ -101,15 +102,16 @@ export const iconNames = [
   'boot',
   'bowling',
   'boxing',
-  'boxing-glove',
   'braces',
   'brain',
   'bread',
+  'bridge',
   'briefcase',
   'broccoli',
   'bubble-tea',
   'bucket',
   'budget',
+  'bug',
   'building',
   'bulb',
   'burger',
@@ -179,6 +181,7 @@ export const iconNames = [
   'cool',
   'copy',
   'corkscrew',
+  'corn',
   'cotton-swab',
   'courthouse',
   'cow',
@@ -237,6 +240,7 @@ export const iconNames = [
   'factory',
   'fan',
   'fast-forward',
+  'feather',
   'fence',
   'ferry',
   'file',
@@ -452,6 +456,7 @@ export const iconNames = [
   'pause-circle',
   'paw-print',
   'peacock',
+  'peach',
   'pear',
   'pedestrian-crossing',
   'pen-holder',
@@ -500,6 +505,7 @@ export const iconNames = [
   'printer',
   'projector',
   'pulse-oximeter',
+  'pumpkin',
   'qr-code',
   'quote',
   'rabbit',
@@ -676,6 +682,7 @@ export const iconNames = [
   'tunnel',
   'turn-left',
   'turn-right',
+  'turtle',
   'tv',
   'tv-remote',
   'u-turn',
@@ -719,6 +726,7 @@ export const iconNames = [
   'watermelon',
   'waypoint',
   'webcam',
+  'whale',
   'wheelchair',
   'whisk',
   'whistle',

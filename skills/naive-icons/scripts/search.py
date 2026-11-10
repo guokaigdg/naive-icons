@@ -27,7 +27,7 @@ CATEGORIES = {
     'devices': '设备硬件', 'places': '建筑场所', 'tools': '工具', 'office': '办公',
     'health': '健康医疗', 'sports': '运动', 'transport': '交通工具', 'emoji': '表情'
 }
-# ── 723 枚图标：id -> (中文名, 分类) ──────────────────────────────────
+# ── 731 枚 枚图标：id -> (中文名, 分类) ──────────────────────────────────
 ICONS = {
     'airplane': ('飞机', 'transport'), 'alert-circle': ('提示', 'interface'),
     'alert-triangle': ('警告', 'interface'), 'anchor': ('锚', 'navigation'),
@@ -295,7 +295,6 @@ ICONS = {
     'tennis': ('网球', 'sports'),
     'volleyball': ('排球', 'sports'),
     'golf': ('高尔夫', 'sports'),
-    'boxing-glove': ('拳击手套', 'sports'),
     'ski': ('滑雪板', 'sports'),
     'snowboard': ('单板滑雪', 'sports'),
     'surfboard': ('冲浪板', 'sports'),
@@ -584,7 +583,16 @@ ICONS = {
     'signature': ('签名', 'office'), 
     'steak': ('牛排', 'food'), 
     'sunglasses': ('墨镜', 'objects'), 
-    'sunrise': ('日出', 'nature')
+    'sunrise': ('日出', 'nature'),
+    'banana': ('香蕉', 'food'), 
+    'bridge': ('桥', 'places'), 
+    'bug': ('虫子', 'animals'), 
+    'corn': ('玉米', 'food'), 
+    'feather': ('羽毛', 'objects'), 
+    'peach': ('桃子', 'food'), 
+    'pumpkin': ('南瓜', 'food'), 
+    'turtle': ('海龟', 'animals'), 
+    'whale': ('鲸鱼', 'animals')
 }
 # ── 同义词 / 意图映射：关键词 -> 候选图标 ──────────────────────────────
 # 按 UI 意图组织，而不是按字母表。左边可写中文、英文或常见缩写，
@@ -1207,7 +1215,7 @@ SYNONYMS = {
     '网球': ['tennis', 'scoreboard'],
     '排球': ['volleyball', 'scoreboard'],
     '高尔夫': ['golf', 'scoreboard'],
-    '拳击': ['boxing-glove', 'gym'],
+    '拳击': ['gym'],
     '滑雪': ['ski', 'snowboard', 'mountain'],
     '单板': ['snowboard', 'ski'],
     '冲浪': ['surfboard'],
@@ -1283,7 +1291,6 @@ SYNONYMS = {
     '枕头': ['pillow', 'bed'],
     '毯子': ['blanket', 'bed', 'pillow'],
     '衣架': ['hanger', 'shirt'],
-    '扫帚': ['trash'],
     '拖把': ['bucket'],
     '水桶': ['bucket', 'droplet'],
     '肥皂': ['soap', 'droplet'],
@@ -1506,7 +1513,17 @@ SYNONYMS = {
     'plunger': ['plunger'], 'signature': ['signature'], '牛排': ['steak'], 
     'steak': ['steak'], 
     'sunglasses': ['sunglasses'], 
-    'sunrise': ['sunrise']
+    'sunrise': ['sunrise'],
+    # 2026-11 第四批：10 枚
+    '香蕉': ['banana'], 'banana': ['banana'],
+    '玉米': ['corn'], 'corn': ['corn'],
+    '南瓜': ['pumpkin'], 'pumpkin': ['pumpkin'],
+    '桃子': ['peach'], '桃': ['peach'], 'peach': ['peach'],
+    '鲸鱼': ['whale'], '鲸': ['whale'], 'whale': ['whale'],
+    '海龟': ['turtle'], '乌龟': ['turtle'], 'turtle': ['turtle'],
+    '虫子': ['bug'], 'bug': ['bug'], '调试': ['bug'], 'debug': ['bug', 'terminal'],
+    '羽毛': ['feather'], 'feather': ['feather'],
+    '桥': ['bridge'], '大桥': ['bridge'], 'bridge': ['bridge']
 }
 # ── 检索 ──────────────────────────────────────────────────────────────
 W_EXACT_ID = 100      # 查询里直接出现完整 id

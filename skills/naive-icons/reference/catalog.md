@@ -126,7 +126,7 @@
 | `stop-circle` | 停止圆圈 | `StopCircleIcon` | 停止圆圈 |
 | `strikethrough` | 删除线 | `StrikethroughIcon` | 删除线 |
 | `text-align` | 文本对齐 | `TextAlignIcon` | 缩进、对齐、换行 |
-| `trash` | 垃圾桶 | `TrashIcon` | 删除、垃圾桶、清理、碎纸、扫帚、delete、remove |
+| `trash` | 垃圾桶 | `TrashIcon` | 删除、垃圾桶、清理、碎纸、delete、remove |
 | `undo` | 撤销 | `UndoIcon` | 撤销、回退、undo |
 | `upload` | 上传 | `UploadIcon` | 上传、导入、云上传、upload |
 | `zoom-in` | 放大 | `ZoomInIcon` | 放大、放大镜、zoomin |
@@ -187,7 +187,7 @@
 | `skip-back` | 上一段 | `SkipBackIcon` | 上一段 |
 | `skip-forward` | 下一段 | `SkipForwardIcon` | 下一段 |
 | `table` | 表格 | `TableIcon` | 表格、table |
-| `terminal` | 终端 | `TerminalIcon` | 终端、命令行、terminal |
+| `terminal` | 终端 | `TerminalIcon` | 终端、命令行、terminal、debug |
 | `trending-up` | 上升趋势 | `TrendingUpIcon` | 趋势、上升、柱状图、图表 |
 | `tv` | 电视 | `TvIcon` | 电视、电视机、投屏、tv |
 | `video` | 视频 | `VideoIcon` | 视频、影片、胶片、电影、video |
@@ -231,7 +231,7 @@
 | `map-pin` | 地图标记 | `MapPinIcon` | 定位、地图标记、图钉、途经、map-pin |
 | `milestone` | 里程碑 | `MilestoneIcon` | 里程碑 |
 | `navigation` | 导航箭头 | `NavigationIcon` | 导航、卫星、GPS、navigation |
-| `route` | 路线 | `RouteIcon` | 路线、路径、环岛、桥、左转、右转、掉头 |
+| `route` | 路线 | `RouteIcon` | 路线、路径、环岛、左转、右转、掉头、途经 |
 | `satellite` | 卫星 | `SatelliteIcon` | 卫星、行星 |
 | `signpost` | 路标 | `SignpostIcon` | 路标、指示牌、里程碑、signpost |
 | `turn-left` | 左转 | `TurnLeftIcon` | 左转 |
@@ -310,7 +310,7 @@
 | `volcano` | 火山 | `VolcanoIcon` | 火山 |
 | `wind` | 风 | `WindIcon` | 风、龙卷风、沙尘、吹风机、wind |
 
-## 动物（38 枚）
+## 动物（41 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -318,6 +318,7 @@
 | `bear` | 小熊 | `BearIcon` | 熊、bear |
 | `bee` | 蜜蜂 | `BeeIcon` | 蜜蜂、蜂蜜、蜂巢、bee |
 | `bird` | 小鸟 | `BirdIcon` | 鸟、孔雀、鹦鹉、bird |
+| `bug` | 虫子 | `BugIcon` | 虫子、调试、bug、debug |
 | `butterfly` | 蝴蝶 | `ButterflyIcon` | 蝴蝶、butterfly |
 | `cat` | 小猫 | `CatIcon` | 猫、宠物、cat、pet |
 | `chicken` | 小鸡 | `ChickenIcon` | 小鸡、鸡、chicken |
@@ -352,14 +353,17 @@
 | `spider` | 蜘蛛 | `SpiderIcon` | 蜘蛛 |
 | `starfish` | 海星 | `StarfishIcon` | 海星 |
 | `swan` | 天鹅 | `SwanIcon` | 天鹅 |
+| `turtle` | 海龟 | `TurtleIcon` | 海龟、乌龟、turtle |
+| `whale` | 鲸鱼 | `WhaleIcon` | 鲸鱼、鲸、whale |
 
-## 食物饮品（51 枚）
+## 食物饮品（55 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
 | `apple` | 苹果 | `AppleIcon` | 食物、吃、苹果、apple |
 | `avocado` | 牛油果 | `AvocadoIcon` | 牛油果、avocado |
 | `bacon` | 培根 | `BaconIcon` | — |
+| `banana` | 香蕉 | `BananaIcon` | 香蕉、banana |
 | `beer` | 啤酒 | `BeerIcon` | 啤酒、红酒、鸡尾酒、beer |
 | `bread` | 面包 | `BreadIcon` | 面包、三明治、热狗、烘焙、烤面包、包子、可颂 |
 | `broccoli` | 西兰花 | `BroccoliIcon` | — |
@@ -375,6 +379,7 @@
 | `coffee` | 咖啡 | `CoffeeIcon` | 咖啡、咖啡机、coffee |
 | `coffee-cup` | 咖啡杯 | `CoffeeCupIcon` | 咖啡、牛奶、coffee |
 | `cookie` | 曲奇 | `CookieIcon` | 曲奇、饼干、cookie |
+| `corn` | 玉米 | `CornIcon` | 玉米、corn |
 | `cupcake` | 纸杯蛋糕 | `CupcakeIcon` | 纸杯蛋糕 |
 | `donut` | 甜甜圈 | `DonutIcon` | 食物、吃、甜甜圈、food、donut |
 | `dumpling` | 饺子 | `DumplingIcon` | 饺子 |
@@ -391,10 +396,12 @@
 | `lollipop` | 棒棒糖 | `LollipopIcon` | 糖果 |
 | `milk` | 牛奶 | `MilkIcon` | 牛奶 |
 | `noodle` | 面条 | `NoodleIcon` | 面条、拉面、noodle |
+| `peach` | 桃子 | `PeachIcon` | 桃子、桃、peach |
 | `pear` | 梨 | `PearIcon` | — |
 | `pie` | 派 | `PieIcon` | — |
 | `pizza` | 披萨 | `PizzaIcon` | 披萨、pizza |
 | `popcorn` | 爆米花 | `PopcornIcon` | 爆米花 |
+| `pumpkin` | 南瓜 | `PumpkinIcon` | 南瓜、pumpkin |
 | `rice` | 米饭 | `RiceIcon` | 米饭、饭、电饭煲、rice |
 | `salad` | 沙拉 | `SaladIcon` | 沙拉、salad |
 | `sandwich` | 三明治 | `SandwichIcon` | 三明治 |
@@ -436,7 +443,7 @@
 | `safe` | 保险箱 | `SafeIcon` | 存钱、保险 |
 | `tax` | 税费 | `TaxIcon` | — |
 
-## 日常物品（78 枚）
+## 日常物品（79 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -468,6 +475,7 @@
 | `door` | 门 | `DoorIcon` | 门 |
 | `dumbbell` | 哑铃 | `DumbbellIcon` | 健身、运动、举铁、健身房、dumbbell |
 | `fan` | 风扇 | `FanIcon` | 风扇、fan |
+| `feather` | 羽毛 | `FeatherIcon` | 羽毛、feather |
 | `fence` | 栅栏 | `FenceIcon` | 栅栏、道闸 |
 | `fire-extinguisher` | 灭火器 | `FireExtinguisherIcon` | 灭火器 |
 | `gift` | 礼物 | `GiftIcon` | 礼物、礼品、送礼、免费、新品、gift |
@@ -591,7 +599,7 @@
 | `water-heater` | 热水器 | `WaterHeaterIcon` | 热水器 |
 | `webcam` | 摄像头 | `WebcamIcon` | 摄像头、webcam |
 
-## 建筑场所（40 枚）
+## 建筑场所（41 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -600,6 +608,7 @@
 | `bank` | 银行 | `BankIcon` | 银行、法院、博物馆、bank |
 | `barber` | 理发店 | `BarberIcon` | 理发 |
 | `barn` | 谷仓 | `BarnIcon` | 谷仓 |
+| `bridge` | 桥 | `BridgeIcon` | 桥、大桥、bridge |
 | `building` | 楼房 | `BuildingIcon` | 楼房、大楼、建筑、公寓、城堡、building |
 | `cafe` | 咖啡馆 | `CafeIcon` | 咖啡馆、cafe |
 | `castle` | 城堡 | `CastleIcon` | 城堡 |
@@ -704,7 +713,7 @@
 | `wheelchair` | 轮椅 | `WheelchairIcon` | 轮椅、拐杖、助行器、wheelchair |
 | `x-ray` | X 光片 | `XRayIcon` | x光 |
 
-## 运动（32 枚）
+## 运动（31 枚）
 
 | id | 中文名 | 组件名 | 什么时候用 |
 |---|---|---|---|
@@ -713,7 +722,6 @@
 | `baseball` | 棒球 | `BaseballIcon` | 棒球 |
 | `bowling` | 保龄球 | `BowlingIcon` | 保龄球 |
 | `boxing` | 拳击手套 | `BoxingIcon` | 拳击手套、boxing |
-| `boxing-glove` | 拳击手套 | `BoxingGloveIcon` | 拳击 |
 | `darts` | 飞镖 | `DartsIcon` | 飞镖 |
 | `fishing` | 钓鱼 | `FishingIcon` | 钓鱼 |
 | `golf` | 高尔夫 | `GolfIcon` | 高尔夫 |

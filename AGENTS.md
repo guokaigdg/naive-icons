@@ -13,7 +13,7 @@ Naive Icons — 手绘 naive folk art 风格的 SVG 图标库，同一套图形�
 
 ## Project layout
 
-- `svg/` — 723 枚图标的 SVG 源，**唯一事实来源**
+- `svg/` — 731 枚 枚图标的 SVG 源，**唯一事实来源**
 - `src/` — React 组件（由 `svg/` 生成，勿手改）
 - `vue/` — Vue 3 包（`vue/src` 组件、`vue/svg` 为发布时重拷的副本）
 - `skills/` — skill 包：`scripts/icons.json`、检索脚本 `search.py`、目录 `catalog.md`

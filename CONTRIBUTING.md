@@ -28,7 +28,7 @@
    该脚本会先校验 `svg/`、`ICON_CATEGORY`、`ZH_NAMES` 三者数量一致，再重建两个产物。
    想在 CI 里只做校验（不写文件）就用 `--check`，内容过期时返回非零。
 
-6. 重新生成 Vue 包的组件。`vue/src/` 下的 723 枚组件同样是从 `svg/` 生成的，
+6. 重新生成 Vue 包的组件。`vue/src/` 下的 731 枚 枚组件同样是从 `svg/` 生成的，
    忘了重跑的话 CI 的 `icons:vue:check` 会失败：
 
    ```bash
