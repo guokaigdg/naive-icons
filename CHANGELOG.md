@@ -2,6 +2,31 @@
 
 本文件记录 Naive Icons 的每个版本变更。版本号遵循语义化版本规范（SemVer）。
 
+## 1.16.0
+
+新增
+
+- **9 枚图标**（723 → **731**）：
+  - 食物饮品 4：`banana`（香蕉）`corn`（玉米）`peach`（桃子）`pumpkin`（南瓜）
+  - 动物 3：`bug`（虫子）`turtle`（海龟）`whale`（鲸鱼）
+  - 日常物品 1：`feather`（羽毛）· 建筑场所 1：`bridge`（桥）
+  - 全部按既有规范手绘：48 画布、根节点逐字节一致、10 色白名单、
+    描边外缘距边 ≥ 3 单位、小色块显式 `stroke="none"`
+
+移除
+
+- **`boxing-glove`** —— 与 `boxing` 同名同义（中文名都是「拳击手套」、分类都是 `sports`），
+  画面也几乎一样。保留重绘过的 `boxing`，移除 `boxing-glove`。
+  升级时若引用了 `BoxingGloveIcon`，改用 `BoxingIcon`。
+
+修复
+
+- **文档计数全量同步到 731** —— 上一次扩充时只同步了一部分文件，全库混着 722 / 723 / 731
+  三个数（README ×2、vue/README ×2、SKILL.md、design-spec.md、patterns.md、tsup.config ×2、
+  createIcon ×2、iconNames ×2、types、website/index.html、多个测试基线）。现已全部统一。
+- **`design-spec.md` 的纯线条数量更正为 50 枚** —— 此前写的 51 枚不准，
+  实测 v1.15.0 与本版的纯线条图标集合完全一致（50 枚，无增减）。
+
 ## 1.15.0
 
 新增
