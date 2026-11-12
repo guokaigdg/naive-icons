@@ -2,6 +2,28 @@
 
 本文件记录 Naive Icons 的每个版本变更。版本号遵循语义化版本规范（SemVer）。
 
+## 1.16.1
+
+修复
+
+- **`naive-icons-vue` 的 CJS 入口此前完全无法加载** —— 包里写了 `"type": "module"`，
+  但 CJS 产物叫 `dist/index.js`，Node 按 ESM 解析，`require('naive-icons-vue')` 直接抛
+  `require is not defined in ES module scope`。现移除该字段，产物结构与 React 版 `naive-icons`
+  完全一致（`.mjs` + `.d.mts` / `.js` + `.d.ts`），`require` 与 `import` 都正常。
+- **ESM 消费方此前拿不到任何类型** —— `exports` 的 `import.types` 指向 `./dist/index.d.mts`，
+  而打包实际只产出 `.d.ts` / `.d.cts`，`.d.mts` 一个都没发。在 `moduleResolution: bundler /
+  node16` 下 TypeScript 报「找不到模块的类型声明」，图标导入全部退化成 `any`。
+  现随上面的字段修正一并恢复，`naive-icons-vue` 的 731 枚图标全部带真实类型。
+
+文档
+
+- **修掉 52 处重复词** —— `731 icons icons` / `731 枚 枚` / `731 个 个`。根因是
+  `scripts/generate_vue.py` 里硬编码了 `731 枚 枚`，改为按实际图标数动态生成。
+- **官网 FAQ 的两处陈旧数字** —— `663 枚图标` 与 `663 个标准 SVG 文件` 均更正为 731。
+- **React 版 README 补上 `IconId`** —— 该类型一直有导出，只是 Features 清单里漏了。
+- **Vue 版 README 说明「两个包都没有通用 `<Icon name>` 组件」** —— React 没有，Vue 也就没有；
+  每枚图标独立组件、具名导入，需要运行时按名查用 `iconNames` + 动态 import。
+
 ## 1.16.0
 
 新增
