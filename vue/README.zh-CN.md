@@ -24,7 +24,7 @@
 让界面多一点点人情味。
 
 这是 [Naive Icons](https://github.com/guokaigdg/naive-icons) 的 Vue 3 版本。
-同样 731 枚 枚图标，同样的图形，同样的无障碍行为——只有组件 API 换了。
+同样 731 枚图标，同样的图形，同样的无障碍行为——只有组件 API 换了。
 
 ## 特性
 
@@ -45,7 +45,7 @@ npm install naive-icons-vue
 
 Vue 3.4+ 是 peer dependency，本包没有其它运行时依赖。
 
-本包与 `naive-icons`（React 版）**永远同版本发布**，两个包提供的是同一套 731 枚 枚图标，
+本包与 `naive-icons`（React 版）**永远同版本发布**，两个包提供的是同一套 731 枚图标，
 升级时一起升就行。
 
 ## 快速开始
@@ -151,11 +151,11 @@ const map: Record<IconId, () => Promise<unknown>> = {
 };
 ```
 
-用命名空间引入整个包（`import * as icons`）也能按名字取图标，但那会把 731 枚 枚全打进包，
+用命名空间引入整个包（`import * as icons`）也能按名字取图标，但那会把 731 枚全打进包，
 tree-shaking 直接归零。`iconNames` 让你只加载真正会用到的那些。
 
 想自己画一枚同风格的图标，用 `createIcon` 工厂。它产出的根节点、无障碍属性与描边缩放
-与内置 731 枚 枚完全一致：
+与内置 731 枚完全一致：
 
 ```ts
 import { createIcon, h } from 'naive-icons-vue';
@@ -196,7 +196,11 @@ NAIVE_PALETTE.orange; // '#E76F51'
 | 属性名 | JSX 要写 camelCase（`strokeWidth`） | 原生 kebab-case 透传 |
 | SVG 上的 `class` | React 18 会告警 | 不告警 |
 
-两个包提供同样的 731 枚 枚图标、同样的图形、同样的无障碍行为。
+两个包提供同样的 731 枚图标、同样的图形、同样的无障碍行为。
+
+两个包**都没有**通用的 `<Icon name="…">` 组件——React 没有，Vue 也就没有。
+每枚图标都是独立组件、按名字具名导入；需要运行时按名字查图标，用上面的
+`iconNames` + 动态 import。
 
 ## 直接使用 SVG
 

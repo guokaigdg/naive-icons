@@ -320,7 +320,7 @@
     },
     {
       q: '有 Vue 3 版本吗？',
-      a: '有，npm 包叫 naive-icons-vue，需要 Vue 3.4 及以上。它和 React 版是同一套 663 枚图标，图形与无障碍行为逐字节一致，只有组件 API 按 Vue 惯例来：用 h() 渲染函数、模板里数值属性写成 :size="24"、拿 DOM 节点用 ref.value.$el。',
+      a: '有，npm 包叫 naive-icons-vue，需要 Vue 3.4 及以上。它和 React 版是同一套 731 枚图标，图形与无障碍行为逐字节一致，只有组件 API 按 Vue 惯例来：用 h() 渲染函数、模板里数值属性写成 :size="24"、拿 DOM 节点用 ref.value.$el。',
     },
     {
       q: '两个包要一起升级吗？',
@@ -340,7 +340,7 @@
     },
     {
       q: '项目不是 React，还能用吗？',
-      a: '当然可以。Vue 3 直接用 naive-icons-vue；其他框架（Angular、Svelte、原生页面）可以用 svg/ 目录下的 663 个标准 SVG 文件，img 引用、内联到 HTML、制作 SVG sprite 或转成 Icon Font 都行。',
+      a: '当然可以。Vue 3 直接用 naive-icons-vue；其他框架（Angular、Svelte、原生页面）可以用 svg/ 目录下的 731 个标准 SVG 文件，img 引用、内联到 HTML、制作 SVG sprite 或转成 Icon Font 都行。',
     },
   ];
 

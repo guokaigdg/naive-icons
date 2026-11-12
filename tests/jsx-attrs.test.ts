@@ -19,7 +19,7 @@ function jsxBody(file: string): string {
 }
 
 describe('TSX 里的 SVG 属性名', () => {
-  it('731 个 个组件都存在', () => {
+  it('731 个组件都存在', () => {
     expect(files.length).toBe(731);
   });
 

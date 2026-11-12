@@ -27,7 +27,7 @@ CATEGORIES = {
     'devices': '设备硬件', 'places': '建筑场所', 'tools': '工具', 'office': '办公',
     'health': '健康医疗', 'sports': '运动', 'transport': '交通工具', 'emoji': '表情'
 }
-# ── 731 枚 枚图标：id -> (中文名, 分类) ──────────────────────────────────
+# ── 731 枚图标：id -> (中文名, 分类) ──────────────────────────────────
 ICONS = {
     'airplane': ('飞机', 'transport'), 'alert-circle': ('提示', 'interface'),
     'alert-triangle': ('警告', 'interface'), 'anchor': ('锚', 'navigation'),

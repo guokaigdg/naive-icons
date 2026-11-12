@@ -36,13 +36,13 @@ Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a r
 - Icons spanning 18 categories: interface, actions, media, navigation, communication, nature,
   animals, food, finance, objects, office, devices, places, tools, health, sports, transport and emoji
 - Every icon ships as both an SVG source file and a React TSX component
-- Full TypeScript types: IconProps, IconName, IconComponent, PaletteColor, NAIVE_PALETTE
+- Full TypeScript types: IconProps, IconId, IconName, IconComponent, PaletteColor, NAIVE_PALETTE
 - Exports `scaledStroke` / `resolveStrokeWidth` / `normalizeIconProps` for building your own icons
 - `iconNames` — the runtime list of all icon ids, for lookups by name without giving up tree-shaking
 - `createIcon` — a factory that gives your own icons the same root node, a11y and stroke scaling as the built-ins
 - Supports `currentColor` to follow the surrounding text color
 - Official Agent Skill: one command installs it into your AI coding agent, which can then pick icons by meaning and emit ready-to-paste code
-- A Vue 3 port lives in `naive-icons-vue`: the same 731 icons icons and the same geometry, with Vue's component API
+- A Vue 3 port lives in `naive-icons-vue`: the same 731 icons and the same geometry, with Vue's component API
 
 ## AI Agent Skill
 
@@ -69,7 +69,7 @@ Re-run the same command after upgrading the library to update it.
 
 ## Installation
 
-Two packages ship the same 731 icons icons. Pick the one that matches your framework:
+Two packages ship the same 731 icons. Pick the one that matches your framework:
 
 | Framework | Package | Requires |
 | --- | --- | --- |
@@ -247,7 +247,7 @@ const map: Record<IconId, () => Promise<unknown>> = {
 ```
 
 Importing the package as a namespace (`import * as icons`) also lets you look icons up by name,
-but it pulls all 731 icons icons into the bundle and zeroes out tree-shaking. `iconNames` lets you
+but it pulls all 731 icons into the bundle and zeroes out tree-shaking. `iconNames` lets you
 build a lookup that only loads the icons you actually reach for.
 
 To draw an icon of your own in the same style, use the `createIcon` factory. It produces the

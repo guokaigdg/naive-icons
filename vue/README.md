@@ -28,7 +28,7 @@ icons, same geometry, same accessibility behaviour — only the component API di
 
 ## Features
 
-- 731 icons icons across 18 categories, drawn in one consistent style
+- 731 icons across 18 categories, drawn in one consistent style
 - One component per icon, rendered as a Vue 3 render function (no SFC compilation needed)
 - Full TypeScript types: `IconProps`, `IconName`, `IconId`, `IconComponent`, `PaletteColor`, `NAIVE_PALETTE`
 - Tree-shaking that actually works — a single icon is ~1.4 KB minified
@@ -46,7 +46,7 @@ npm install naive-icons-vue
 Vue 3.4+ is a peer dependency; the package has no other runtime dependencies.
 
 This package is always released in lockstep with `naive-icons` (the React version) — same
-version number, same 731 icons icons, so you can upgrade both together.
+version number, same 731 icons, so you can upgrade both together.
 
 ## Quick Start
 
@@ -155,7 +155,7 @@ const map: Record<IconId, () => Promise<unknown>> = {
 ```
 
 Importing the package as a namespace (`import * as icons`) also lets you look icons up by name,
-but it pulls all 731 icons icons into the bundle and zeroes out tree-shaking. `iconNames` lets you
+but it pulls all 731 icons into the bundle and zeroes out tree-shaking. `iconNames` lets you
 build a lookup that only loads the icons you actually reach for.
 
 To draw an icon of your own in the same style, use the `createIcon` factory. It produces the
@@ -201,7 +201,11 @@ The icons are byte-identical and the rendering rules are shared, but the compone
 | Attribute names | JSX needs camelCase (`strokeWidth`) | native kebab-case passes through |
 | `class` on an SVG | React 18 warns about it | no warning |
 
-Both packages ship the same 731 icons icons, the same geometry and the same accessibility behaviour.
+Both packages ship the same 731 icons, the same geometry and the same accessibility behaviour.
+
+There is **no generic `<Icon name="…">` component in either package** — React has none, so Vue does not
+either. Each icon is its own component and is imported by name; for a runtime lookup by name, use
+`iconNames` plus a dynamic import (see above).
 
 ## Using the SVG Directly
 
