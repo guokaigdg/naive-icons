@@ -125,16 +125,15 @@ python3 scripts/generate_vue.py --check
 - 9 枚 id 无重复、无丢失（总数 731）；
 - 文件末尾无换行、`</svg>` 独占末行。
 
-## 7. 预览页
+## 7. 图标浏览器
 
-用 `python3 ~/.naive-icons-work/gen_preview.py --base <上一个发布 tag>` 生成
-`website/preview-new-icons.html`（单文件自包含、无外链 CSS/JS/字体）。
+官网 `website/index.html` 自带图标浏览器，不再单独维护预览页（`website/` 下只留
+`index.html` 一个页面）。
 
-- 页面按分类分组，显示每组数量与总数；
-- 16 / 24 / 48 / 72 四档切换；
-- 搜索支持 id / 中文名 / React 组件名，实时显示命中数；
-- 点卡片复制 React 引入代码（`navigator.clipboard` + `execCommand` 兜底）；
-- 「本次改动」区自动列出相对基准 tag 被重绘的图标（`--base` 决定基准）。
+- 按分类分组，显示每组数量与总数，分类由 `scripts/build_website.py` 生成；
+- 搜索支持 id / 中文名 / 组件名，实时显示命中数；
+- 点图标打开详情弹窗，可复制引入代码、下载 SVG（`navigator.clipboard` + `execCommand` 兜底）；
+- 图标数据来自 `website/assets/js/icons.js`，同样由 `scripts/build_website.py` 生成。
 
 ## 8. 附交付图
 
