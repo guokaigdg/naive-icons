@@ -1,0 +1,36 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const RamIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<rect x="5" y="15" width="38" height="17" rx="2" fill="#264653"/>
+<rect x="9" y="20" width="6.5" height="8" rx="1" fill="#FAEDCD"/>
+<rect x="18" y="20" width="6.5" height="8" rx="1" fill="#FAEDCD"/>
+<rect x="27" y="20" width="6.5" height="8" rx="1" fill="#FAEDCD"/>
+<rect x="36" y="20" width="6.5" height="8" rx="1" fill="#FAEDCD"/>
+<rect x="7" y="32" width="34" height="4.5" rx="1" fill="#E9C46A" strokeWidth={sw(2)}/>
+<path d="M23.5 32 V36.5" stroke="#264653" strokeWidth={sw(2.2)} fill="none"/>
+
+    </svg>
+  );
+});
+
+RamIcon.displayName = 'RamIcon';
+
+export default RamIcon;

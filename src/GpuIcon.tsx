@@ -1,0 +1,36 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const GpuIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<rect x="5" y="14" width="5.5" height="24" rx="2.5" fill="#E9C46A"/>
+<rect x="9" y="15.5" width="34" height="19" rx="2" fill="#264653"/>
+<circle cx="18.5" cy="25" r="6.8" fill="#FAEDCD"/>
+<circle cx="18.5" cy="25" r="2.2" fill="#264653" stroke="none"/>
+<path d="M18.5 25 V19.3 M18.5 25 L23.4 27.8 M18.5 25 L13.6 27.8" stroke="#264653" strokeWidth={sw(1.5)} fill="none"/>
+<path d="M27.5 19 V31 M31.5 19 V31 M35.5 19 V31 M39.5 19 V31" stroke="#FAEDCD" strokeWidth={sw(1.6)} fill="none"/>
+<rect x="11" y="34.5" width="26" height="4" rx="1.5" fill="#E9C46A" strokeWidth={sw(2)}/>
+
+    </svg>
+  );
+});
+
+GpuIcon.displayName = 'GpuIcon';
+
+export default GpuIcon;

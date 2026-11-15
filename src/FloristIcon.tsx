@@ -1,0 +1,36 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const FloristIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<rect x="9" y="18" width="30" height="23" rx="2" fill="#FAEDCD"/>
+<path d="M24 18 L24 15" stroke="#588157" strokeWidth={sw(2.6)} fill="none"/>
+<path d="M17 16 C 17 9 21 5.5 24 9 C 27 5.5 31 9 31 16 Z" fill="#F4A6A4"/>
+<rect x="12" y="23" width="11" height="9" fill="#264653"/>
+<circle cx="15.5" cy="27.5" r="1.8" fill="#E9C46A" stroke="none"/>
+<circle cx="20" cy="27.5" r="1.8" fill="#F4A6A4" stroke="none"/>
+<rect x="28" y="27" width="8" height="14" fill="#2A9D8F"/>
+
+    </svg>
+  );
+});
+
+FloristIcon.displayName = 'FloristIcon';
+
+export default FloristIcon;

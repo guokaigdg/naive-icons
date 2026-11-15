@@ -1,0 +1,34 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const MedicalRecordIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<rect x="9" y="6" width="30" height="36" rx="4" fill="#264653"/>
+<rect x="18" y="5" width="12" height="6" rx="2" fill="#E9C46A"/>
+<rect x="13" y="13" width="22" height="25" rx="2" fill="#FAEDCD"/>
+<path d="M24 17 V25 M20 21 H28" stroke="#2A9D8F" strokeWidth={sw(3)} fill="none"/>
+<path d="M17 29.5 H31 M17 33 H27" stroke="#264653" strokeWidth={sw(1.8)} fill="none"/>
+
+    </svg>
+  );
+});
+
+MedicalRecordIcon.displayName = 'MedicalRecordIcon';
+
+export default MedicalRecordIcon;

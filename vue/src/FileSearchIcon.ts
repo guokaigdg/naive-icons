@@ -1,0 +1,37 @@
+import { defineComponent, h, type VNode } from 'vue';
+import { iconPropDefs } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const FileSearchIcon = defineComponent({
+  name: 'FileSearchIcon',
+  inheritAttrs: false,
+  props: iconPropDefs,
+  setup(props, { attrs }) {
+    return () => {
+      const sw = scaledStroke(props.strokeWidth);
+      const children: VNode[] = [];
+      if (props.title) children.push(h('title', null, props.title));
+      children.push(h('path', { d: 'M12 6 L12 42 L36 42 L36 18 L24 6 Z', fill: '#FAEDCD' }));
+      children.push(h('path', { d: 'M24 6 L24 18 L36 18', fill: '#F4A6A4' }));
+      children.push(h('circle', { cx: '27', cy: '30', r: '6.5', fill: '#FFFFFF', stroke: '#2A9D8F', 'stroke-width': sw(3) }));
+      children.push(h('path', { d: 'M32 35 L38 41', stroke: '#2A9D8F', 'stroke-width': sw(3.5) }));
+      const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
+      return h(
+        'svg',
+        {
+          viewBox: '0 0 48 48',
+          xmlns: 'http://www.w3.org/2000/svg',
+          fill: 'none',
+          'stroke-linecap': 'round',
+          'stroke-linejoin': 'round',
+          role: props.title ? 'img' : undefined,
+          'aria-hidden': labelled ? undefined : true,
+          ...normalizeIconProps({ ...props, ...attrs }),
+        },
+        children,
+      );
+    };
+  },
+});
+
+export default FileSearchIcon;

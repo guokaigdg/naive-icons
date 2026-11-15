@@ -1,0 +1,35 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const BloodPressureIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<rect x="5" y="27" width="26" height="14" rx="7" fill="#264653"/>
+<path d="M9 31 H20" stroke="#FAEDCD" strokeWidth={sw(2)} fill="none"/>
+<circle cx="33" cy="17" r="9" fill="#FAEDCD"/>
+<path d="M33 10.5 V12.5 M33 21.5 V23.5 M26.5 17 H28.5 M37.5 17 H39.5" stroke="#264653" strokeWidth={sw(1.6)} fill="none"/>
+<path d="M33 17 L37.5 13.5" stroke="#E76F51" strokeWidth={sw(2.2)} fill="none"/>
+<path d="M23 27 C 26 24 28.5 23 30.5 23" stroke="#264653" strokeWidth={sw(2.6)} fill="none"/>
+
+    </svg>
+  );
+});
+
+BloodPressureIcon.displayName = 'BloodPressureIcon';
+
+export default BloodPressureIcon;

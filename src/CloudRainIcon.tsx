@@ -1,0 +1,33 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const CloudRainIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M11 29 C 5.5 29 5.5 21 11.5 20 C 12 14.5 19 11.8 23 15.5 C 26.4 10 35.8 13.2 34.4 20 C 40 20.5 40 29 34.2 29 Z" fill="#FAEDCD"/>
+<path d="M15 31 C 15 31 19 35.5 19 38 C 19 40.2 17.2 42 15 42 C 12.8 42 11 40.2 11 38 C 11 35.5 15 31 15 31 Z" fill="#2A9D8F"/>
+<path d="M24 30 C 24 30 28 34.5 28 37 C 28 39.2 26.2 41 24 41 C 21.8 41 20 39.2 20 37 C 20 34.5 24 30 24 30 Z" fill="#2A9D8F"/>
+<path d="M33 31 C 33 31 37 35.5 37 38 C 37 40.2 35.2 42 33 42 C 30.8 42 29 40.2 29 38 C 29 35.5 33 31 33 31 Z" fill="#2A9D8F"/>
+
+    </svg>
+  );
+});
+
+CloudRainIcon.displayName = 'CloudRainIcon';
+
+export default CloudRainIcon;

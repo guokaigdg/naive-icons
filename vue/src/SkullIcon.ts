@@ -1,0 +1,38 @@
+import { defineComponent, h, type VNode } from 'vue';
+import { iconPropDefs } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const SkullIcon = defineComponent({
+  name: 'SkullIcon',
+  inheritAttrs: false,
+  props: iconPropDefs,
+  setup(props, { attrs }) {
+    return () => {
+      const sw = scaledStroke(props.strokeWidth);
+      const children: VNode[] = [];
+      if (props.title) children.push(h('title', null, props.title));
+      children.push(h('path', { d: 'M12 22 C 12 14 17 8 24 8 C 31 8 36 14 36 22 C 36 27 34 30 31 32 L31 36 C 31 38.5 29 39.5 24 39.5 C 19 39.5 17 38.5 17 36 L17 32 C 14 30 12 27 12 22 Z', fill: '#FFFFFF' }));
+      children.push(h('circle', { cx: '19', cy: '21', r: '3.2', fill: '#2A2A2A', stroke: 'none' }));
+      children.push(h('circle', { cx: '29', cy: '21', r: '3.2', fill: '#2A2A2A', stroke: 'none' }));
+      children.push(h('path', { d: 'M24 26 L26 30.5 H22 Z', fill: '#2A2A2A', stroke: 'none' }));
+      children.push(h('path', { d: 'M20 33.5 V38.5 M24 33.5 V38.5 M28 33.5 V38.5', stroke: '#2A2A2A', 'stroke-width': sw(2), fill: 'none' }));
+      const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
+      return h(
+        'svg',
+        {
+          viewBox: '0 0 48 48',
+          xmlns: 'http://www.w3.org/2000/svg',
+          fill: 'none',
+          'stroke-linecap': 'round',
+          'stroke-linejoin': 'round',
+          role: props.title ? 'img' : undefined,
+          'aria-hidden': labelled ? undefined : true,
+          ...normalizeIconProps({ ...props, ...attrs }),
+        },
+        children,
+      );
+    };
+  },
+});
+
+export default SkullIcon;

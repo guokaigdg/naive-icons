@@ -1,0 +1,35 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const WaterTowerIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M11 14 L24 5.2 L37 14 Z" fill="#E76F51"/>
+<rect x="13" y="14" width="22" height="10" fill="#2A9D8F"/>
+<path d="M13 24 H35 L31.5 29 H16.5 Z" fill="#2A9D8F"/>
+<path d="M17.5 29 L13.5 41 M30.5 29 L34.5 41" strokeWidth={sw(3)} fill="none"/>
+<path d="M17 31.5 L34 40 M31 31.5 L14 40" strokeWidth={sw(2.2)} fill="none"/>
+<rect x="14.2" y="17" width="19.6" height="2.8" fill="#FAEDCD" stroke="none"/>
+
+    </svg>
+  );
+});
+
+WaterTowerIcon.displayName = 'WaterTowerIcon';
+
+export default WaterTowerIcon;

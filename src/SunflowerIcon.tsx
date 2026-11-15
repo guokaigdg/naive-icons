@@ -1,0 +1,47 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const SunflowerIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<circle cx="24" cy="23" r="7.5" fill="#8B5E3C"/>
+<ellipse cx="36.00" cy="23.00" rx="3.4" ry="5.6" transform="rotate(90 36.00 23.00)" fill="#E9C46A" strokeWidth={sw(2.4)}/>
+<ellipse cx="33.71" cy="30.05" rx="3.4" ry="5.6" transform="rotate(126 33.71 30.05)" fill="#E9C46A" strokeWidth={sw(2.4)}/>
+<ellipse cx="27.71" cy="34.41" rx="3.4" ry="5.6" transform="rotate(162 27.71 34.41)" fill="#E9C46A" strokeWidth={sw(2.4)}/>
+<ellipse cx="20.29" cy="34.41" rx="3.4" ry="5.6" transform="rotate(198 20.29 34.41)" fill="#E9C46A" strokeWidth={sw(2.4)}/>
+<ellipse cx="14.29" cy="30.05" rx="3.4" ry="5.6" transform="rotate(234 14.29 30.05)" fill="#E9C46A" strokeWidth={sw(2.4)}/>
+<ellipse cx="12.00" cy="23.00" rx="3.4" ry="5.6" transform="rotate(270 12.00 23.00)" fill="#E9C46A" strokeWidth={sw(2.4)}/>
+<ellipse cx="14.29" cy="15.95" rx="3.4" ry="5.6" transform="rotate(306 14.29 15.95)" fill="#E9C46A" strokeWidth={sw(2.4)}/>
+<ellipse cx="20.29" cy="11.59" rx="3.4" ry="5.6" transform="rotate(342 20.29 11.59)" fill="#E9C46A" strokeWidth={sw(2.4)}/>
+<ellipse cx="27.71" cy="11.59" rx="3.4" ry="5.6" transform="rotate(378 27.71 11.59)" fill="#E9C46A" strokeWidth={sw(2.4)}/>
+<ellipse cx="33.71" cy="15.95" rx="3.4" ry="5.6" transform="rotate(414 33.71 15.95)" fill="#E9C46A" strokeWidth={sw(2.4)}/>
+<circle cx="24" cy="23" r="1.2" fill="#FAEDCD" stroke="none"/>
+<circle cx="20.8" cy="20.4" r="1.2" fill="#FAEDCD" stroke="none"/>
+<circle cx="27.2" cy="20.4" r="1.2" fill="#FAEDCD" stroke="none"/>
+<circle cx="20.8" cy="25.6" r="1.2" fill="#FAEDCD" stroke="none"/>
+<circle cx="27.2" cy="25.6" r="1.2" fill="#FAEDCD" stroke="none"/>
+<circle cx="24" cy="26.6" r="1.2" fill="#FAEDCD" stroke="none"/>
+<circle cx="24" cy="19.4" r="1.2" fill="#FAEDCD" stroke="none"/>
+
+    </svg>
+  );
+});
+
+SunflowerIcon.displayName = 'SunflowerIcon';
+
+export default SunflowerIcon;

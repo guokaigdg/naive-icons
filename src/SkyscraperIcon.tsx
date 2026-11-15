@@ -1,0 +1,42 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const SkyscraperIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<rect x="18" y="7.5" width="12" height="6" rx="1.5" fill="#E76F51"/>
+<path d="M24 7.5 L24 4.8" stroke="#2A2A2A" strokeWidth={sw(2.6)} fill="none"/>
+<rect x="14" y="12" width="20" height="29" rx="2" fill="#264653"/>
+<rect x="16.5" y="15.5" width="3.8" height="3.8" fill="#FAEDCD" stroke="none"/>
+<rect x="22.1" y="15.5" width="3.8" height="3.8" fill="#FAEDCD" stroke="none"/>
+<rect x="27.7" y="15.5" width="3.8" height="3.8" fill="#FAEDCD" stroke="none"/>
+<rect x="16.5" y="22" width="3.8" height="3.8" fill="#FAEDCD" stroke="none"/>
+<rect x="22.1" y="22" width="3.8" height="3.8" fill="#FAEDCD" stroke="none"/>
+<rect x="27.7" y="22" width="3.8" height="3.8" fill="#FAEDCD" stroke="none"/>
+<rect x="16.5" y="28.5" width="3.8" height="3.8" fill="#FAEDCD" stroke="none"/>
+<rect x="22.1" y="28.5" width="3.8" height="3.8" fill="#FAEDCD" stroke="none"/>
+<rect x="27.7" y="28.5" width="3.8" height="3.8" fill="#FAEDCD" stroke="none"/>
+<rect x="22.1" y="35" width="3.8" height="4.5" fill="#E9C46A" stroke="none"/>
+
+    </svg>
+  );
+});
+
+SkyscraperIcon.displayName = 'SkyscraperIcon';
+
+export default SkyscraperIcon;

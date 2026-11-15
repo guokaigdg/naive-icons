@@ -1,0 +1,39 @@
+import { defineComponent, h, type VNode } from 'vue';
+import { iconPropDefs } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const CloverIcon = defineComponent({
+  name: 'CloverIcon',
+  inheritAttrs: false,
+  props: iconPropDefs,
+  setup(props, { attrs }) {
+    return () => {
+      const sw = scaledStroke(props.strokeWidth);
+      const children: VNode[] = [];
+      if (props.title) children.push(h('title', null, props.title));
+      children.push(h('path', { d: 'M24 22 C 24 31 22.5 37 20 41', stroke: '#588157', 'stroke-width': sw(3.2), fill: 'none' }));
+      children.push(h('path', { d: 'M24 22 C 19.28 17.87 12.79 16.69 11.61 12.56 C 10.31 8.51 16.33 6.66 19.87 10.2 C 21.64 12.03 23.29 14.33 24 16.1 C 24.71 14.33 26.36 12.03 28.13 10.2 C 31.67 6.66 37.69 8.51 36.39 12.56 C 35.21 16.69 28.72 17.87 24 22 Z', fill: '#588157' }));
+      children.push(h('path', { d: 'M24 22 C 19.28 17.87 12.79 16.69 11.61 12.56 C 10.31 8.51 16.33 6.66 19.87 10.2 C 21.64 12.03 23.29 14.33 24 16.1 C 24.71 14.33 26.36 12.03 28.13 10.2 C 31.67 6.66 37.69 8.51 36.39 12.56 C 35.21 16.69 28.72 17.87 24 22 Z', transform: 'rotate(90 24 22)', fill: '#588157' }));
+      children.push(h('path', { d: 'M24 22 C 19.28 17.87 12.79 16.69 11.61 12.56 C 10.31 8.51 16.33 6.66 19.87 10.2 C 21.64 12.03 23.29 14.33 24 16.1 C 24.71 14.33 26.36 12.03 28.13 10.2 C 31.67 6.66 37.69 8.51 36.39 12.56 C 35.21 16.69 28.72 17.87 24 22 Z', transform: 'rotate(180 24 22)', fill: '#2A9D8F' }));
+      children.push(h('path', { d: 'M24 22 C 19.28 17.87 12.79 16.69 11.61 12.56 C 10.31 8.51 16.33 6.66 19.87 10.2 C 21.64 12.03 23.29 14.33 24 16.1 C 24.71 14.33 26.36 12.03 28.13 10.2 C 31.67 6.66 37.69 8.51 36.39 12.56 C 35.21 16.69 28.72 17.87 24 22 Z', transform: 'rotate(270 24 22)', fill: '#2A9D8F' }));
+      children.push(h('circle', { cx: '24', cy: '22', r: '2', fill: '#E9C46A', stroke: 'none' }));
+      const labelled = Boolean(props.title || attrs['aria-label'] || attrs.role);
+      return h(
+        'svg',
+        {
+          viewBox: '0 0 48 48',
+          xmlns: 'http://www.w3.org/2000/svg',
+          fill: 'none',
+          'stroke-linecap': 'round',
+          'stroke-linejoin': 'round',
+          role: props.title ? 'img' : undefined,
+          'aria-hidden': labelled ? undefined : true,
+          ...normalizeIconProps({ ...props, ...attrs }),
+        },
+        children,
+      );
+    };
+  },
+});
+
+export default CloverIcon;

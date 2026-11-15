@@ -3,7 +3,7 @@
 生成 naive-icons-vue 包的源码。源永远是 svg/。
 
 产出（都不要手改）：
-  vue/src/<Name>Icon.ts   731 枚 Vue 3 组件
+  vue/src/<Name>Icon.ts   921 枚 Vue 3 组件
   vue/src/index.ts         barrel
   vue/src/iconNames.ts     运行时 id 列表
 

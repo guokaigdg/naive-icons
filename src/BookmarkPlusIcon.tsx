@@ -1,0 +1,31 @@
+import { forwardRef } from 'react';
+import type { IconProps } from './types';
+import { normalizeIconProps, scaledStroke } from './iconProps';
+
+export const BookmarkPlusIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+  const labelled = Boolean(props.title || props['aria-label'] || props.role);
+  const sw = scaledStroke(props.strokeWidth);
+  return (
+    <svg
+      ref={ref}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role={props.title ? 'img' : undefined}
+      aria-hidden={labelled ? undefined : true}
+      {...normalizeIconProps(props)}
+    >
+      {props.title ? <title>{props.title}</title> : null}
+
+<path d="M12 6 L36 6 L36 42 L24 32 L12 42 Z" fill="#264653"/>
+<path d="M24 14 L24 26 M18 20 L30 20" stroke="#FAEDCD" strokeWidth={sw(4)} fill="none"/>
+
+    </svg>
+  );
+});
+
+BookmarkPlusIcon.displayName = 'BookmarkPlusIcon';
+
+export default BookmarkPlusIcon;
