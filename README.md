@@ -20,54 +20,39 @@
   <img src="https://img.shields.io/badge/Vue-42b883?style=flat-square&logo=vuedotjs&logoColor=white" alt="Vue">
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
   <a href="https://hub.xerj.org/contributors/guokaigdg"><img src="https://hub.xerj.org/contributors/guokaigdg/badge.svg" alt="Contributors"></a>
-  <a href="https://repolode.com/en/repo/guokaigdg/naive-icons"><img src="https://repolode.com/badge/guokaigdg/naive-icons" alt="Featured on Repolode"></a>
 </p>
 
 <p align="center">
-  <b>🤖 AI Agent Skill</b> — install it into Claude Code, Cursor, Codex and friends,<br/>
-  and they can pick icons by meaning, emit ready-to-paste code, and know the design rules.<br/>
-  <code>npx skills add guokaigdg/naive-icons</code> &nbsp;·&nbsp; <a href="#ai-agent-skill">See details &rarr;</a>
+  <b>🤖 AI Agent Skill</b> — <code>npx skills add guokaigdg/naive-icons</code> &nbsp;·&nbsp; <a href="#ai-agent-skill">See details &rarr;</a>
 </p>
 
-Each icon is drawn on a 48x48 grid with a 3.5 stroke, rounded line caps, and a retro palette — keeping the charming clumsiness and warmth of hand-drawn illustration. Some icons even feature a pair of dot eyes and a little smile, adding a touch of humanity to your interface.
+<h2>
+    <img src="./svg/sparkles.svg" width="18" alt="" />
+    Features
+</h2>
 
-## Features
+- 921 icons across 18 categories — interface, actions, nature, animals, food, transport, emoji and more
+- Every icon ships as both an SVG file and a React TSX component
+- Full TypeScript types plus helpers: `scaledStroke`, `createIcon`, `iconNames` and more
+- Tree-shakeable imports, `currentColor` support, and a11y titles built in
+- Official Agent Skill: one command lets your AI agent pick icons by meaning and emit code
 
-- Icons spanning 18 categories: interface, actions, media, navigation, communication, nature,
-  animals, food, finance, objects, office, devices, places, tools, health, sports, transport and emoji
-- Every icon ships as both an SVG source file and a React TSX component
-- Full TypeScript types: IconProps, IconId, IconName, IconComponent, PaletteColor, NAIVE_PALETTE
-- Exports `scaledStroke` / `resolveStrokeWidth` / `normalizeIconProps` for building your own icons
-- `iconNames` — the runtime list of all icon ids, for lookups by name without giving up tree-shaking
-- `createIcon` — a factory that gives your own icons the same root node, a11y and stroke scaling as the built-ins
-- Supports `currentColor` to follow the surrounding text color
-- Official Agent Skill: one command installs it into your AI coding agent, which can then pick icons by meaning and emit ready-to-paste code
-- A Vue 3 port lives in `naive-icons-vue`: the same 921 icons and the same geometry, with Vue's component API
+<h2 id="ai-agent-skill">
+    <img src="./svg/robot.svg" width="18" alt="" />
+    AI Agent Skill
+</h2>
 
-## AI Agent Skill
-
-Install it into your AI coding agent (Claude Code, Cursor, Codex, …) and it can pick icons by
-meaning, emit ready-to-paste code, and know this library's design rules.
+One command adds icon-picking and code generation to your AI coding agent. No package install
+needed — **start a new session** and ask, e.g. "Give this login page a set of naive icons".
 
 ```bash
 npx skills add guokaigdg/naive-icons
 ```
 
-You do not need to install the package first. **Start a new session** afterwards,
-then just ask:
-
-- "Give this login page a set of naive icons"
-- "Find an icon that means 'already read'"
-
-The skill bundles the full icon catalog, the design spec, usage patterns and every SVG source
-file, so the agent can generate code even when the package isn't installed in your project.
-Re-run the same command after upgrading the library to update it.
-
-> Installing the skill and using the components are separate things. You only need
-> `npm install naive-icons` from the Installation section below when you actually want to
-> `import { HomeIcon } from 'naive-icons'` in your own code.
-
-## Installation
+<h2>
+    <img src="./svg/download.svg" width="18" alt="" />
+    Installation
+</h2>
 
 Two packages ship the same 921 icons. Pick the one that matches your framework:
 
@@ -76,20 +61,10 @@ Two packages ship the same 921 icons. Pick the one that matches your framework:
 | React | `naive-icons` | React 16.8+ (including 18 and 19) |
 | Vue 3 | `naive-icons-vue` | Vue 3.4+ |
 
-Both are always published under the same version number, so you can upgrade them together.
-
 ### React
 
 ```bash
-npm install naive-icons
-```
-
-```bash
-yarn add naive-icons
-```
-
-```bash
-pnpm add naive-icons
+npm install naive-icons    # or: yarn add / pnpm add
 ```
 
 ```tsx
@@ -99,15 +74,7 @@ import { HomeIcon } from 'naive-icons';
 ### Vue 3
 
 ```bash
-npm install naive-icons-vue
-```
-
-```bash
-yarn add naive-icons-vue
-```
-
-```bash
-pnpm add naive-icons-vue
+npm install naive-icons-vue    # or: yarn add / pnpm add
 ```
 
 ```vue
@@ -120,12 +87,12 @@ import { HomeIcon } from 'naive-icons-vue';
 </template>
 ```
 
-See [`vue/README.md`](./vue/README.md) for the full Vue API. Both packages are generated from
-the same `svg/` sources, so they can never drift apart.
+Vue API: [`vue/README.md`](./vue/README.md).
 
-## Quick Start
-
-The examples below use React. See [`vue/README.md`](./vue/README.md) for the Vue 3 equivalents.
+<h2>
+    <img src="./svg/rocket.svg" width="18" alt="" />
+    Quick Start
+</h2>
 
 ```tsx
 import { HomeIcon, HeartIcon, PenguinIcon } from 'naive-icons';
@@ -141,25 +108,20 @@ export function Example() {
 }
 ```
 
-Tree-shaking works out of the box: the package is ESM and sets `sideEffects: false`, so a
-named import pulls in only the icons you actually use:
+ESM + `sideEffects: false` means named imports pull in only the icons you use:
 
 ```tsx
 import { HomeIcon, SearchIcon } from 'naive-icons';
 ```
 
-Or import a single icon straight from a subpath, bypassing the entry entirely:
+Or import a single icon from a subpath, skipping the entry:
 
 ```tsx
 import { HomeIcon } from 'naive-icons/icons/HomeIcon';
 ```
 
-Both forms produce the same bundle size (~0.9 KB minified for a single icon). The repo has a
-`tests/bundle-size.test.ts` guarding that number, so a build change that breaks tree-shaking
-fails the test suite.
-
-To follow the parent text color, pass `currentColor` explicitly — the default is ink `#2A2A2A`
-and is **not** inherited automatically:
+Pass `currentColor` to follow the parent text color — the default `#2A2A2A` is **not**
+inherited:
 
 ```tsx
 <span style={{ color: '#264653' }}>
@@ -174,9 +136,13 @@ Add an accessibility title:
 <HomeIcon size={24} title="Back to home" />
 ```
 
-## Component Props
+<h2>
+    <img src="./svg/sliders.svg" width="18" alt="" />
+    Component Props
+</h2>
 
-Every Naive Icon component extends the native `SVGProps<SVGSVGElement>`, so you can pass any SVG attribute directly, such as `className`, `onClick`, or `style`.
+Every component extends native `SVGProps<SVGSVGElement>` — pass any SVG attribute
+(`className`, `onClick`, `style`, …).
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -185,40 +151,27 @@ Every Naive Icon component extends the native `SVGProps<SVGSVGElement>`, so you 
 | strokeWidth | number \| string | 3.5 | Stroke width, as a **scale factor relative to the 3.5 baseline**. Passing 7 doubles every stroke while preserving the thickness hierarchy |
 | fill | string | none | Fill color. **Only affects primitives that don't set their own `fill`** — this library paints its colour blocks in, so a root `fill` won't override them |
 | title | string | — | Accessibility title, rendered as an SVG title node |
+| width / height | number \| string | follows size | Set width or height; **takes precedence over `size`**, the omitted side falls back to `size` |
 
-> The `fill` row deserves a note: the naive look depends on solid colour blocks, so 1987 of the 3170
-> primitives hard-code their own `fill` and a root `fill` has no effect on them. That is the style
-> itself, not a bug — to recolour, switch the stroke with `color`, or pick from the ten colours in
-> `NAIVE_PALETTE`.
-| width / height | number \| string | follows size | Set width or height individually; takes **precedence over `size`**, and the side you omit falls back to `size` |
+> The `fill` row: naive style relies on solid colour blocks — 1987 of 3170 primitives hard-code
+> their own `fill`, so a root `fill` has no effect. Recolour via `color` or `NAIVE_PALETTE`.
 
-> The Vue 3 package has exactly the same prop names and defaults — in templates they are
-> written kebab-case (`:stroke-width="7"`), and you reach the DOM node via `ref.value.$el`.
-> See [`vue/README.md`](./vue/README.md).
+> Vue 3 uses the same props and defaults in kebab-case (`:stroke-width="7"`); reach the DOM
+> node via `ref.value.$el`. See [`vue/README.md`](./vue/README.md).
 
-```typescript
-import type { IconProps } from 'naive-icons';
 
-interface IconProps extends SVGProps<SVGSVGElement> {
-  size?: number | string | null;
-  color?: string;
-  strokeWidth?: number | string;
-  fill?: string;
-  title?: string;
-}
+<h2>
+    <img src="./svg/code.svg" width="18" alt="" />
+    Using the SVG Directly
+</h2>
 
-// also exports scaledStroke / resolveStrokeWidth / normalizeIconProps
-```
-
-## Using the SVG Directly
-
-If your project isn't React, you can use the source files in the `svg/` directory. Every SVG is self-contained with no external references.
+Not using React? Use the self-contained SVGs in `svg/` — no external references.
 
 ```html
 <img src="naive-icons/svg/home.svg" width="24" height="24" alt="Home" />
 ```
 
-To follow the surrounding text color when inlining, replace `stroke="#2A2A2A"` with `stroke="currentColor"`:
+To match the surrounding text color, swap `stroke="#2A2A2A"` for `stroke="currentColor"`:
 
 ```html
 <svg viewBox="0 0 48 48" width="24" height="24" fill="none"
@@ -228,12 +181,14 @@ To follow the surrounding text color when inlining, replace `stroke="#2A2A2A"` w
 </svg>
 ```
 
-You can also build an SVG sprite or icon font — the source files are simple enough to work with.
 
-## Dynamic Icons & Custom Icons
+<h2>
+    <img src="./svg/layers.svg" width="18" alt="" />
+    Dynamic Icons & Custom Icons
+</h2>
 
-`IconName` is a type only — it disappears at compile time. When you have to look an icon up by
-name at runtime (a theme picker, an icon field coming from a CMS), use `iconNames`:
+`IconName` is type-only. For runtime lookup by name (theme pickers, CMS icon fields),
+use `iconNames`:
 
 ```tsx
 import { iconNames } from 'naive-icons';
@@ -246,12 +201,11 @@ const map: Record<IconId, () => Promise<unknown>> = {
 };
 ```
 
-Importing the package as a namespace (`import * as icons`) also lets you look icons up by name,
-but it pulls all 921 icons into the bundle and zeroes out tree-shaking. `iconNames` lets you
-build a lookup that only loads the icons you actually reach for.
+`import * as icons` also allows name lookup, but bundles all 921 icons and kills
+tree-shaking. `iconNames` lets you load only what you use.
 
-To draw an icon of your own in the same style, use the `createIcon` factory. It produces the
-exact same root node, accessibility attributes and stroke scaling as the 921 built-in icons:
+For your own icons in the same style, use `createIcon` — identical root node, a11y
+attributes and stroke scaling:
 
 ```tsx
 import { createIcon } from 'naive-icons';
@@ -266,14 +220,15 @@ const MyIcon = createIcon('my-icon', (sw) => (
 <MyIcon size={24} strokeWidth={7} title="My icon" />;
 ```
 
-The body can be a plain node, or a function that receives `sw(designed)`. Pass the designed
-stroke width through `sw()` and the whole icon thickens together when you set `strokeWidth` —
-otherwise the outer frame scales while the inner details stay at 3.5.
+The body is a node or a function taking `sw(designed)`. Wrap design widths in `sw()` so
+`strokeWidth` thickens everything together — otherwise only the frame scales.
 
-The display name is derived from the id: `my-icon` becomes `MyIcon`, `arrow-up-down` becomes
-`ArrowUpDownIcon`.
+Names derive from the id: `my-icon` → `MyIcon`, `arrow-up-down` → `ArrowUpDownIcon`.
 
-## Palette
+<h2>
+    <img src="./svg/palette.svg" width="18" alt="" />
+    Palette
+</h2>
 
 ```typescript
 import { NAIVE_PALETTE } from 'naive-icons';
@@ -292,51 +247,36 @@ import { NAIVE_PALETTE } from 'naive-icons';
 | cream | #FAEDCD | Light background |
 | white | #FFFFFF | Cut-out shapes on solid fills |
 
-## Design Principles
-
-Naive Icons follows four fixed rules. They should be respected when adding new icons.
-
-1. **Grid & bleed**: All graphics are drawn on a 48x48 canvas, keeping at least 3 units between the main body and the canvas edge.
-2. **Stroke**: A unified 3.5 width with round caps and joins, and no dashed lines.
-3. **Color**: The 10 palette colors set the default tone; other solid colors are allowed when genuinely needed (e.g. brand colors) — no gradients, shadows, or semi-transparent overlays.
-4. **Personality**: Slight asymmetry is welcome; encourage dot eyes and a smile on living subjects to keep the hand-drawn clumsiness.
-
-## Local Development
+<h2>
+    <img src="./svg/terminal.svg" width="18" alt="" />
+    Local Development
+</h2>
 
 ```bash
 git clone https://github.com/guokaigdg/naive-icons.git
 cd naive-icons
 npm install
+npm run dev        # watch build
+npm run typecheck
+npm run website    # browse icons at localhost:8080
 ```
 
-Common scripts:
+Open [`website/index.html`](./website/index.html) to browse, search and preview every icon
+without building.
 
-```bash
-npm run build        # Build dist with tsup (ESM + CJS + type declarations)
-npm run dev          # Watch mode build
-npm run typecheck    # Type check
-npm run website      # Preview the site locally (Python static server, port 8080)
-npm run icons:build  # Regenerate SVG and TSX from script definitions
-npm run icons:add    # Incrementally add icons without overwriting existing files
-```
-
-`prepublishOnly` runs the build automatically on publish, so there is no need to run `npm run build` manually.
-
-The build output is `dist/index.mjs` (ESM), `dist/index.js` (CJS), and `dist/index.d.ts` / `dist/index.d.mts` (type declarations). The `exports` field in `package.json` points to the correct file for each `import` / `require` condition. React is declared as external and is not bundled.
-
-The website is a fully static site (no build step, no dependencies). You can open `website/index.html` directly: browse all icons, filter by category, search, adjust size and stroke color live, switch between light/dark/grid preview backgrounds, and click any icon to view React usage, copy code, or download the SVG. It supports light/dark themes (follows the system, with manual toggle remembered) and lets you navigate between icons with arrow keys in the modal.
-
-## Browser Support
-
-Naive Icons outputs standard SVG 1.1 and supports all modern browsers (the last two major versions of Chrome, Firefox, Safari, and Edge). The React components contain no browser-specific APIs and can be safely used in server-side rendering environments.
-
-## License
+<h2>
+    <img src="./svg/shield.svg" width="18" alt="" />
+    License
+</h2>
 
 MIT License. See [LICENSE](./LICENSE).
 
 All icons are original works, free to use in personal and commercial projects without attribution.
 
-## Sponsor
+<h2>
+    <img src="./svg/heart.svg" width="18" alt="" />
+    Sponsor
+</h2>
 
 - The easiest way to support is to give it a star and share it. If you have ideas or suggestions about the project, feel free to open an [Issue](https://github.com/guokaigdg/naive-icons/issues) or submit a PR.
 
