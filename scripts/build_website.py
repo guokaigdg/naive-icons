@@ -36,6 +36,8 @@ CATEGORIES = [
     ('sports', '运动'),
     ('transport', '交通工具'),
     ('emoji', '表情'),
+    ('ai', 'AI 智能'),
+    ('dev', '开发部署'),
 ]
 
 CATEGORY_MAP = {}
@@ -698,6 +700,21 @@ ICON_CATEGORY = {
     'clown': 'emoji', 'dizzy': 'emoji', 'sick': 'emoji',
     'coins': 'finance', 'bitcoin': 'finance',
     'coupon': 'finance', 'stock-ticker': 'finance',
+    'ai-agent': 'ai',
+    'breakpoint': 'dev',
+    'cache': 'dev',
+    'cli': 'dev',
+    'code-review': 'dev',
+    'component': 'dev',
+    'config': 'dev',
+    'container': 'dev',
+    'context': 'ai',
+    'generate': 'ai',
+    'llm': 'ai',
+    'localhost': 'dev',
+    'prompt': 'ai',
+    'queue': 'dev',
+    'voice-prompt': 'ai',
     }
 
 # ---------------------------------------------------------------- 中文名
@@ -1365,6 +1382,21 @@ ZH_NAMES = {
     'bitcoin': '比特币',
     'coupon': '优惠券',
     'stock-ticker': '行情走势',
+    'ai-agent': 'AI 智能体',
+    'breakpoint': '断点',
+    'cache': '缓存',
+    'cli': '命令行',
+    'code-review': '代码审查',
+    'component': '组件',
+    'config': '配置',
+    'container': '容器',
+    'context': '上下文',
+    'generate': '生成',
+    'llm': '大语言模型',
+    'localhost': '本地服务',
+    'prompt': '提示词',
+    'queue': '队列',
+    'voice-prompt': '语音提示',
     }
 
 
@@ -1406,7 +1438,6 @@ def main():
     icons.sort(key=lambda x: (list(CATEGORY_MAP).index(x['cat']), x['id']))
 
     payload = {
-        'version': '1.0.0',
         'total': len(icons),
         'categories': [{'id': i, 'label': l} for i, l in CATEGORIES],
         'icons': icons,

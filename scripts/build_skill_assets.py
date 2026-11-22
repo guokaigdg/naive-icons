@@ -3,13 +3,13 @@
 生成 skill 的派生产物。源永远是 svg/ + scripts/build_website.py + skills 里的同义词表。
 
 产出两个文件，都不要手改：
-  skills/naive-icons/reference/catalog.md   921 枚的目录表（id / 中文名 / 组件名 / 什么时候用）
+  skills/naive-icons/reference/catalog.md   936 枚的目录表（id / 中文名 / 组件名 / 什么时候用）
   skills/naive-icons/scripts/icons.json    全部 SVG 源码，给 emit.py 用
 
 为什么要 icons.json：skill 被 npx skills add 装到用户机器时，只会拷贝
 skills/naive-icons/ 目录本身，拿不到仓库根的 svg/。把源码收进一个文件，
 skill 就自包含了，用户不必先 npm i naive-icons 才能让助手生成代码。
-收成一个文件而不是拷 921 个 svg，是为了不在仓库里堆重复文件。
+收成一个文件而不是拷 936 个 svg，是为了不在仓库里堆重复文件。
 
     python3 scripts/build_skill_assets.py          # 生成
     python3 scripts/build_skill_assets.py --check  # 只校验是否已是最新（CI 可用）
@@ -41,6 +41,9 @@ CATEGORY_ORDER = [
     'interface', 'action', 'media', 'navigation', 'communication',
     'nature', 'animals', 'food', 'finance', 'objects', 'office', 'devices',
     'places', 'tools', 'health', 'sports', 'transport', 'emoji',
+    # 新增分类必须同步到这里，否则图标不进 catalog.md（但 --check 仍会「通过」，
+    # 因为它只比对输出与磁盘是否一致，不比对内容是否完整）
+    'ai', 'dev',
 ]
 
 

@@ -31,7 +31,7 @@
     Features
 </h2>
 
-- 921 icons across 18 categories — interface, actions, nature, animals, food, transport, emoji and more
+- 936 icons across 18 categories — interface, actions, nature, animals, food, transport, emoji and more
 - Every icon ships as both an SVG file and a React TSX component
 - Full TypeScript types plus helpers: `scaledStroke`, `createIcon`, `iconNames` and more
 - Tree-shakeable imports, `currentColor` support, and a11y titles built in
@@ -54,7 +54,7 @@ npx skills add guokaigdg/naive-icons
     Installation
 </h2>
 
-Two packages ship the same 921 icons. Pick the one that matches your framework:
+Two packages ship the same 936 icons. Pick the one that matches your framework:
 
 | Framework | Package | Requires |
 | --- | --- | --- |
@@ -201,7 +201,7 @@ const map: Record<IconId, () => Promise<unknown>> = {
 };
 ```
 
-`import * as icons` also allows name lookup, but bundles all 921 icons and kills
+`import * as icons` also allows name lookup, but bundles all 936 icons and kills
 tree-shaking. `iconNames` lets you load only what you use.
 
 For your own icons in the same style, use `createIcon` — identical root node, a11y

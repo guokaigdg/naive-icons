@@ -2,7 +2,7 @@
  * 所有内置图标的 id（kebab-case），运行时数组。
  *
  * IconId 只是纯类型，编译后不存在；需要「按名字动态取图标」时用这个数组，
- * 配合动态 import 别把 921 枚全打进包：
+ * 配合动态 import 别把 936 枚全打进包：
  *
  * import { iconNames } from 'naive-icons-vue';
  *
@@ -12,6 +12,7 @@ export const iconNames = [
   'abacus',
   'acorn',
   'activity',
+  'ai-agent',
   'air-conditioner',
   'air-fryer',
   'airplane',
@@ -117,6 +118,7 @@ export const iconNames = [
   'brain',
   'bread',
   'bread-maker',
+  'breakpoint',
   'bridge',
   'briefcase',
   'broccoli',
@@ -133,6 +135,7 @@ export const iconNames = [
   'business-card',
   'butterfly',
   'cable-car',
+  'cache',
   'cactus',
   'cafe',
   'cake',
@@ -184,6 +187,7 @@ export const iconNames = [
   'circle-dot',
   'clamp',
   'clapperboard',
+  'cli',
   'climbing',
   'clipboard',
   'clipboard-check',
@@ -203,6 +207,7 @@ export const iconNames = [
   'clown',
   'cocktail',
   'code',
+  'code-review',
   'coffee',
   'coffee-cup',
   'coffee-grinder',
@@ -213,7 +218,11 @@ export const iconNames = [
   'columns',
   'command',
   'compass',
+  'component',
+  'config',
   'confused',
+  'container',
+  'context',
   'cookie',
   'cool',
   'copy',
@@ -361,6 +370,7 @@ export const iconNames = [
   'garbage-truck',
   'gas-station',
   'gauge',
+  'generate',
   'ghost',
   'gift',
   'giraffe',
@@ -467,8 +477,10 @@ export const iconNames = [
   'list',
   'list-check',
   'list-plus',
+  'llm',
   'loan',
   'lobster',
+  'localhost',
   'locate',
   'location',
   'location-off',
@@ -631,10 +643,12 @@ export const iconNames = [
   'presentation',
   'printer',
   'projector',
+  'prompt',
   'pulse-oximeter',
   'pumpkin',
   'puzzle',
   'qr-code',
+  'queue',
   'quote',
   'rabbit',
   'radio',
@@ -883,6 +897,7 @@ export const iconNames = [
   'video-plus',
   'vinyl',
   'virus',
+  'voice-prompt',
   'voicemail',
   'volcano',
   'volleyball',
@@ -940,6 +955,7 @@ export type IconName =
   | 'AbacusIcon'
   | 'AcornIcon'
   | 'ActivityIcon'
+  | 'AiAgentIcon'
   | 'AirConditionerIcon'
   | 'AirFryerIcon'
   | 'AirplaneIcon'
@@ -1045,6 +1061,7 @@ export type IconName =
   | 'BrainIcon'
   | 'BreadIcon'
   | 'BreadMakerIcon'
+  | 'BreakpointIcon'
   | 'BridgeIcon'
   | 'BriefcaseIcon'
   | 'BroccoliIcon'
@@ -1061,6 +1078,7 @@ export type IconName =
   | 'BusinessCardIcon'
   | 'ButterflyIcon'
   | 'CableCarIcon'
+  | 'CacheIcon'
   | 'CactusIcon'
   | 'CafeIcon'
   | 'CakeIcon'
@@ -1112,6 +1130,7 @@ export type IconName =
   | 'CircleIcon'
   | 'ClampIcon'
   | 'ClapperboardIcon'
+  | 'CliIcon'
   | 'ClimbingIcon'
   | 'ClipboardCheckIcon'
   | 'ClipboardIcon'
@@ -1131,6 +1150,7 @@ export type IconName =
   | 'ClownIcon'
   | 'CocktailIcon'
   | 'CodeIcon'
+  | 'CodeReviewIcon'
   | 'CoffeeCupIcon'
   | 'CoffeeGrinderIcon'
   | 'CoffeeIcon'
@@ -1141,7 +1161,11 @@ export type IconName =
   | 'ColumnsIcon'
   | 'CommandIcon'
   | 'CompassIcon'
+  | 'ComponentIcon'
+  | 'ConfigIcon'
   | 'ConfusedIcon'
+  | 'ContainerIcon'
+  | 'ContextIcon'
   | 'CookieIcon'
   | 'CoolIcon'
   | 'CopyIcon'
@@ -1289,6 +1313,7 @@ export type IconName =
   | 'GarbageTruckIcon'
   | 'GasStationIcon'
   | 'GaugeIcon'
+  | 'GenerateIcon'
   | 'GhostIcon'
   | 'GiftIcon'
   | 'GiraffeIcon'
@@ -1395,8 +1420,10 @@ export type IconName =
   | 'ListCheckIcon'
   | 'ListIcon'
   | 'ListPlusIcon'
+  | 'LlmIcon'
   | 'LoanIcon'
   | 'LobsterIcon'
+  | 'LocalhostIcon'
   | 'LocateIcon'
   | 'LocationIcon'
   | 'LocationOffIcon'
@@ -1559,10 +1586,12 @@ export type IconName =
   | 'PresentationIcon'
   | 'PrinterIcon'
   | 'ProjectorIcon'
+  | 'PromptIcon'
   | 'PulseOximeterIcon'
   | 'PumpkinIcon'
   | 'PuzzleIcon'
   | 'QrCodeIcon'
+  | 'QueueIcon'
   | 'QuoteIcon'
   | 'RabbitIcon'
   | 'RadioIcon'
@@ -1811,6 +1840,7 @@ export type IconName =
   | 'VideoPlusIcon'
   | 'VinylIcon'
   | 'VirusIcon'
+  | 'VoicePromptIcon'
   | 'VoicemailIcon'
   | 'VolcanoIcon'
   | 'VolleyballIcon'

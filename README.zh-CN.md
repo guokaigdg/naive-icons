@@ -31,7 +31,7 @@
     特性
 </h2>
 
-- 921 枚图标，覆盖 18 个分类——界面、操作、自然、动物、食物、交通、表情等
+- 936 枚图标，覆盖 18 个分类——界面、操作、自然、动物、食物、交通、表情等
 - 每枚图标同时提供 SVG 源文件与 React TSX 组件
 - 完整 TypeScript 类型，并导出 `scaledStroke`、`createIcon`、`iconNames` 等工具
 - 支持按需引入、`currentColor` 跟随文字色，内置无障碍标题
@@ -53,7 +53,7 @@ npx skills add guokaigdg/naive-icons
     安装
 </h2>
 
-本库有两个包，卖的是同一套 921 枚图标。按你的框架挑一个装：
+本库有两个包，卖的是同一套 936 枚图标。按你的框架挑一个装：
 
 | 框架 | 包名 | 需要 |
 | --- | --- | --- |
@@ -197,7 +197,7 @@ const map: Record<IconId, () => Promise<unknown>> = {
 };
 ```
 
-`import * as icons` 也能按名取，但会打进全部 921 枚、tree-shaking 归零；`iconNames` 只加载用到的图标。
+`import * as icons` 也能按名取，但会打进全部 936 枚、tree-shaking 归零；`iconNames` 只加载用到的图标。
 
 自建同风格图标用 `createIcon`，根节点、无障碍与描边缩放与内置图标完全一致：
 

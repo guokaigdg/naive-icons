@@ -25,9 +25,9 @@ CATEGORIES = {
     'navigation': '导航方位', 'communication': '通信', 'nature': '自然天气', 'finance': '金融',
     'animals': '动物', 'food': '食物饮品', 'objects': '日常物品',
     'devices': '设备硬件', 'places': '建筑场所', 'tools': '工具', 'office': '办公',
-    'health': '健康医疗', 'sports': '运动', 'transport': '交通工具', 'emoji': '表情'
+    'health': '健康医疗', 'sports': '运动', 'transport': '交通工具', 'emoji': '表情', 'ai': 'AI 智能', 'dev': '开发部署'
 }
-# ── 921 枚图标：id -> (中文名, 分类) ──────────────────────────────────
+# ── 936 枚图标：id -> (中文名, 分类) ──────────────────────────────────
 ICONS = {
     'airplane': ('飞机', 'transport'), 'alert-circle': ('提示', 'interface'),
     'alert-triangle': ('警告', 'interface'), 'anchor': ('锚', 'navigation'),
@@ -787,11 +787,44 @@ ICONS = {
     'bitcoin': ('比特币', 'finance'),
     'coupon': ('优惠券', 'finance'),
     'stock-ticker': ('行情走势', 'finance'),
+    'ai-agent': ('AI 智能体', 'ai'),
+    'breakpoint': ('断点', 'dev'),
+    'cache': ('缓存', 'dev'),
+    'cli': ('命令行', 'dev'),
+    'code-review': ('代码审查', 'dev'),
+    'component': ('组件', 'dev'),
+    'config': ('配置', 'dev'),
+    'container': ('容器', 'dev'),
+    'context': ('上下文', 'ai'),
+    'generate': ('生成', 'ai'),
+    'llm': ('大语言模型', 'ai'),
+    'localhost': ('本地服务', 'dev'),
+    'prompt': ('提示词', 'ai'),
+    'queue': ('队列', 'dev'),
+    'voice-prompt': ('语音提示', 'ai'),
 }
 # ── 同义词 / 意图映射：关键词 -> 候选图标 ──────────────────────────────
 # 按 UI 意图组织，而不是按字母表。左边可写中文、英文或常见缩写，
 # 检索时用子串包含匹配，越长的关键词权重越高。
 SYNONYMS = {
+    # 2026-11 vibe coding：AI 智能与开发部署
+    'AI 智能体': ['ai-agent'], 'ai-agent': ['ai-agent'],
+    '断点': ['breakpoint'], 'breakpoint': ['breakpoint'],
+    '缓存': ['cache'], 'cache': ['cache'],
+    '命令行': ['cli'], 'cli': ['cli'],
+    '代码审查': ['code-review'], 'code-review': ['code-review'],
+    '组件': ['component'], 'component': ['component'],
+    '配置': ['config'], 'config': ['config'],
+    '容器': ['container'], 'container': ['container'],
+    '上下文': ['context'], 'context': ['context'],
+    '生成': ['generate'], 'generate': ['generate'],
+    '大语言模型': ['llm'], 'llm': ['llm'],
+    '本地服务': ['localhost'], 'localhost': ['localhost'],
+    '提示词': ['prompt'], 'prompt': ['prompt'],
+    '队列': ['queue'], 'queue': ['queue'],
+    '语音提示': ['voice-prompt'], 'voice-prompt': ['voice-prompt'],
+    '智能体': ['ai-agent'],
+    '大模型': ['llm'],
     # 2026-11 第五批：自然与导航
     '晴间多云': ['cloud-sun'], '晴天': ['cloud-sun', 'sun'], '晴': ['cloud-sun', 'sun'],
     '多云': ['cloud', 'cloud-sun'], '云太阳': ['cloud-sun'],

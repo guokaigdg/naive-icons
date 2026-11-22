@@ -79,7 +79,7 @@
 | `percent` | 百分号 | `PercentIcon` | 百分号、百分比、percent |
 | `rows` | 行 | `RowsIcon` | — |
 | `search` | 搜索 | `SearchIcon` | 搜索、查找、放大镜、查找文件、search |
-| `settings` | 设置 | `SettingsIcon` | 管理员、设置、配置、齿轮、偏好、admin、settings |
+| `settings` | 设置 | `SettingsIcon` | 配置、管理员、设置、齿轮、偏好、config、admin |
 | `shield` | 安全 | `ShieldIcon` | 登录、权限、管理员、隐私、安全、认证、保险 |
 | `shield-alert` | 安全警告 | `ShieldAlertIcon` | 安全警告 |
 | `shield-check` | 安全校验 | `ShieldCheckIcon` | 防护 |
@@ -180,7 +180,7 @@
 | `clapperboard` | 场记板 | `ClapperboardIcon` | 场记 |
 | `cloud-download` | 云下载 | `CloudDownloadIcon` | 云下载、clouddownload |
 | `cloud-upload` | 云上传 | `CloudUploadIcon` | 云上传、cloudupload |
-| `code` | 代码 | `CodeIcon` | 代码、开发、编程、源码、终端、命令行、花括号 |
+| `code` | 代码 | `CodeIcon` | 命令行、代码、开发、编程、源码、终端、花括号 |
 | `earbuds` | 无线耳机 | `EarbudsIcon` | 无线耳机、earbuds |
 | `fast-forward` | 快进 | `FastForwardIcon` | 下一段 |
 | `file` | 文件 | `FileIcon` | 文件、文档、文本文件、file |
@@ -233,7 +233,7 @@
 | `skip-back` | 上一段 | `SkipBackIcon` | 上一段 |
 | `skip-forward` | 下一段 | `SkipForwardIcon` | 下一段 |
 | `table` | 表格 | `TableIcon` | 表格、table |
-| `terminal` | 终端 | `TerminalIcon` | 终端、命令行、terminal、debug |
+| `terminal` | 终端 | `TerminalIcon` | 命令行、终端、terminal、debug |
 | `trending-up` | 上升趋势 | `TrendingUpIcon` | 趋势、上升、柱状图、图表 |
 | `tv` | 电视 | `TvIcon` | 电视、电视机、投屏、tv |
 | `video` | 视频 | `VideoIcon` | 视频、影片、胶片、电影、录制、video |
@@ -1016,3 +1016,28 @@
 | `tongue-out` | 吐舌 | `TongueOutIcon` | 吐舌 |
 | `wink` | 眨眼 | `WinkIcon` | 眨眼、得意、wink |
 | `worried` | 担忧 | `WorriedIcon` | 担忧、紧张 |
+
+## AI 智能（6 枚）
+
+| id | 中文名 | 组件名 | 什么时候用 |
+|---|---|---|---|
+| `ai-agent` | AI 智能体 | `AiAgentIcon` | AI 智能体、智能体、ai-agent |
+| `context` | 上下文 | `ContextIcon` | 上下文、context |
+| `generate` | 生成 | `GenerateIcon` | 生成、generate |
+| `llm` | 大语言模型 | `LlmIcon` | 大语言模型、大模型、llm |
+| `prompt` | 提示词 | `PromptIcon` | 提示词、prompt |
+| `voice-prompt` | 语音提示 | `VoicePromptIcon` | 语音提示、voice-prompt |
+
+## 开发部署（9 枚）
+
+| id | 中文名 | 组件名 | 什么时候用 |
+|---|---|---|---|
+| `breakpoint` | 断点 | `BreakpointIcon` | 断点、breakpoint |
+| `cache` | 缓存 | `CacheIcon` | 缓存、cache |
+| `cli` | 命令行 | `CliIcon` | cli |
+| `code-review` | 代码审查 | `CodeReviewIcon` | 代码审查、code-review |
+| `component` | 组件 | `ComponentIcon` | 组件、component |
+| `config` | 配置 | `ConfigIcon` | config |
+| `container` | 容器 | `ContainerIcon` | 容器、container |
+| `localhost` | 本地服务 | `LocalhostIcon` | 本地服务、localhost |
+| `queue` | 队列 | `QueueIcon` | 队列、queue |
